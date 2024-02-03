@@ -1,0 +1,5 @@
+#Intelij idea settings
+*.idea
+
+# Notepad backup file
+*.bak

@@ -1,0 +1,114 @@
+First and foremost:
+1. Install Windows termial if you're using windows 10 or above.
+2. Install and setup WSL2
+3. Install vim
+4. Install Posh
+	winget install JanDeDobbeleer.OhMyPosh -s winget
+5. Install powertoys
+6. Install git
+7. Install unZip
+		winget install -e --id GnuWin32.UnZip
+
+Access Wsl files:
+1. Use Linux icon on the Windows Nav bar.
+2. Run '\\wsl$\' cmd directly under windows run (windows + r) option
+------------------------------------------------------------------------------------
+Bind all the localhost connections from wsl to windows localhost:
+Run below command:
+
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+
+Explanation:
+Accessing via localhost: If you prefer to use localhost instead of the IP address, you can utilize a feature called "localhost forwarding" in WSL 2. This feature allows you to access services running in WSL 2 via localhost on Windows. To enable localhost forwarding, add the following line to your ~/.bashrc or ~/.bash_profile file in WSL:
+
+After adding this line, restart your WSL 2 instance or source the file (e.g., source ~/.bashrc). This will make services running in WSL 2 available via localhost on your Windows system.
+
+This way you can run anythign on wsl linux and access it via localhost on windows directly, without you have to change the conf files
+of those applications one by one.
+------------------------------------------------------------------------------------
+Create external automatic backup:
+	Open the Start menu.
+	Search for Control Panel and click the top result to open it.
+	Under the System and Security section, find and click on “Backup and Restore”.
+	Click the “Set up backup” option.
+	Choose an external drive (such as a USB drive) to store your backups.
+	Select the “Let me choose” option to customize what gets backed up.
+	Check the items under “Data Files” and include the Local Disk (C:) (which contains your system files).
+	Click “Next” and set up the backup schedule (frequency, date, and time) 1.
+------------------------------------------------------------------------------------
+How to install Kubernates on windows?
+Install winget
+
+Install curl using wininstall-
+	wininstall url -
+	https://winstall.app/apps/cURL.cURL
+
+Install kubectl using cURL and test using below command if kubectl and kubernates is working or not
+kubectl get All #If it shows the result, then it's working 
+
+Go to settings icon of docker desktop and tick kubernates and apply
+
+go to this page. page is https://winget.run/pkg/Kubernetes/minikube and install minikube uisng winget.
+------------------------------------------------------------------------------------
+Install sdkman:
+1. Instal using wsl:
+	1. sudo apt install unzip
+	2. sudo apt install zip
+	3. https://sdkman.io/install
+		3.i. curl -s "https://get.sdkman.io" | bash
+		3.ii. source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+3. Install using git bash on windows without wsl.
+ 1. Install git bash
+ 2. install 7 zip (directly using .exe  or using winget)
+ 3. use the above command given under step 3.
+
+Note:- After installing sdkman via wsl, go to intelij and from here you can directly use the sdk java version
+which is installed under windows wsl directory (Follow below steps for that). Also keep in mind that you must always install 
+atleast one latest java lts version on windows in order for all the other api's outside intelij to use it.
+
+Steps to switch sdkman installed java vesions:-
+1. Go to File -> Project structure
+2. Click on + sign and wait for it to show the installed wsl sdks in the popup lists. In case if  doesn't shows then manually select that folder.
+3. Just select.
+4. done!!!
+------------------------------------------------------------------------------------
+sdkman commands:
+sdk list #It will show all the supported installations including java, Kotlin etc.
+sdk list java
+sdk install java paste_selected_name
+sdk default java paste_selected_name
+------------------------------------------------------------------------------------
+Opening File Explorer - win + enable
+Set Focus on Side Bar - shift + tab
+Open a New Window with the Same Folder - ctrl + N
+Close a File Explorer Window - ctrl + W || Another option to close the window is Alt + F4
+Create a New Folder - Crtl + Shift + N
+Navigate to Other Folders - Backspace || Alt + ← , Alt + → 
+Navigate to the Parent Folder - Alt + ↑ 
+Renaming Files and Folders - f2
+Select the Address Bar - Ctrl + L || Alt + D
+Search File Explorer - Ctrl + F
+Change the View (detailed/big icon etc.) - Ctrl + Shift + 2 and Details Ctrl + Shift + 6
+Right-Click Menu - shift + f10
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------

@@ -1,0 +1,55 @@
+docker build -t apigateway-layred -f Dockerfile.layered .layered
+
+docker logs --since time_stamp docker_id #Take the time_stamp from the api repsonse or from the docker compose cmd
+
+docker compose -f docker-compose-kafka.yml up
+
+docker compose -f docker-compose-kafka.yml up -d #d for deteched mode
+
+docker compose -f docker-microservices-ecom.yml up -d
+
+docker compose -f docker-microserices-ecom.yml restart broker #It will just restart the service, which will bot have the changed code
+
+**In order to have the changed code to ttake effect, use below set of command on one service in a dockerfile**
+
+**We are starting only discovery-server service inside docker-microservices-ecom.yml
+docker-compose -f docker-microserices-ecom.yml stop -t discovery-server
+docker-compose -f docker-microserices-ecom.yml build discovery-server
+docker-compose -f docker-microserices-ecom.yml up --no-start discovery-server
+docker-compose -f docker-microserices-ecom.yml start discovery-server
+
+**Distributed tracking using zipkin**
+
+Docker Command
+
+docker run -d -p 9411:9411 openzipkin/zipkin**
+
+## Docker commands
+
+docker inspect <CONTAINER_ID>
+
+docker stop $(docker ps -a -q) #It will stop all the docker containers
+
+docker rm container_id #to remove the container, in case of say name conflict while starting
+
+docker inspect container_id
+
+docker compose -f docker-microservices-ecom.yml up discovery-server -d #start only one service out of many inside docker compoase file. Before running, please commit depends on section.
+
+docker logs --since time_stamp container_id # Check logs after a specific date
+
+docker logs -f container_name #checking live logs by service name in docker-compose file. container_name is as per docker compose service container_name
+
+#Redis
+
+**Run redis as a cache using docker**
+
+docker run -p 6379:6379 -d redis:latest
+
+## Run Docker-compose-ecom
+docker  compose -f docker-microservices-ecom-minimal.yml up -d
+--------------------------------------------------------------------
+docker run -e eurekaClient.url=http://eureka:password@localhost:8761/eureka/eureka -e eureka.username=eureka -e eureka.password -p 8761:8761 eureka:latest
+
+docker run -e eurekaClient.url
+--------------------------------------------------------------------
