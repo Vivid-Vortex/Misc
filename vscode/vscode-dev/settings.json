@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.preferredHighContrastColorTheme": "Default High Contrast Light",
+    "editor.mouseWheelZoom": true,
+    "editor.minimap.enabled": false,
+    "workbench.activityBar.location": "top",
+    "window.commandCenter": false,
+    "editor.tabSize": 2,
+    "explorer.confirmDragAndDrop": false,
+    "editor.wordWrap": "on"
+}
