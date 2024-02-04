@@ -1,0 +1,11 @@
+{
+  "workbench.preferredHighContrastColorTheme": "Default High Contrast Light",
+  "editor.mouseWheelZoom": true,
+  "editor.minimap.enabled": false,
+  "window.commandCenter": false,
+  "editor.tabSize": 2,
+  "explorer.confirmDragAndDrop": false,
+  "editor.wordWrap": "on",
+  "window.autoDetectColorScheme": true,
+  "workbench.activityBar.location": "hidden"
+}
