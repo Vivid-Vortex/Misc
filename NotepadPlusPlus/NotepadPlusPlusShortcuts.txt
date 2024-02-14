@@ -1,0 +1,2 @@
+type nul > NotepadPlusPlusShortcuts.txt - Creates an empty file 
+alt + shift + a (custom) - show/hide Folder as Workspace
