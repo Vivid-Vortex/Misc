@@ -9,8 +9,9 @@
 #list all the branches
 	git branch -a
 
-git log - show logs of all the branches
-git status - show the status of the current branch
+git log # show logs of all the branches
+git log --graph --oneline #shows log history in one line
+git status # show the status of the current branch
 
 #Merge branch
 1. first check your branch (say dev) which you want to merge with say (master). check if everything alright.
@@ -22,3 +23,21 @@ git status - show the status of the current branch
 You can checkout to a new commit with #git checkout commit_id
 Then you can check logs of that commit with #git log
 
+git rm --cached <file>..." to unstage files
+
+#Modify previous commit of the branch you're in.
+	git checkout branch_name #Move to your desired branch in which you want to make any changes to any particular commit
+	git log --graph --oneline #shows log history in one line
+	Select your desired commit id
+	git checkout <commit_id>
+	git commit --amend -m "Modified message"
+	git checkout . #Moves the head back to the most current or most recent working directly.
+
+
+#git hard/soft reset
+	If you reset --hard, it will make your local code and local history be just like it was at that commit. But if you wanted to push this to someone else who has the new history, it would fail:
+
+	git reset --hard c14809fa
+	And if you reset --soft, it will move your HEAD to where they were , but leave your local files etc. the same:
+
+	git reset --soft c14809fa
