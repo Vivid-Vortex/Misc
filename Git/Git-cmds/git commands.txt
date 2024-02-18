@@ -1,0 +1,24 @@
+#Fetch remote branch upstream/downstram
+	git fetch -v
+
+#Creates a new branch
+	git checkout -b branch_name - Creates a new branch and switches to it
+	git branch branch_name - creates a new branch
+	git checkout branch_name - simply switches to given branch
+
+#list all the branches
+	git branch -a
+
+git log - show logs of all the branches
+git status - show the status of the current branch
+
+#Merge branch
+1. first check your branch (say dev) which you want to merge with say (master). check if everything alright.
+2. then switch to the branch master.
+3. check the status of master. check if everything is clean and commited there.
+4. now trigger this command to merge. command is git merge dev.
+5. Now you can trigger git log cmd to see head will be pointed to master, dev and all the logs will also be shown in the same list.
+
+You can checkout to a new commit with #git checkout commit_id
+Then you can check logs of that commit with #git log
+
