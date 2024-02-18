@@ -1,0 +1,3 @@
+# ESC to start command prompt, then
+:q!		# exit vi without saving
+:wq!	# exit vi with saving (! means exiting even if file is read only)

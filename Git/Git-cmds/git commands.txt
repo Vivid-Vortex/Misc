@@ -19,3 +19,6 @@ git status - show the status of the current branch
 4. now trigger this command to merge. command is git merge dev.
 5. Now you can trigger git log cmd to see head will be pointed to master, dev and all the logs will also be shown in the same list.
 
+You can checkout to a new commit with #git checkout commit_id
+Then you can check logs of that commit with #git log
+
