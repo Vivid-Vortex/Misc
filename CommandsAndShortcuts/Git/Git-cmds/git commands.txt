@@ -41,3 +41,6 @@ git rm --cached <file>..." to unstage files
 	And if you reset --soft, it will move your HEAD to where they were , but leave your local files etc. the same:
 
 	git reset --soft c14809fa
+
+#To sort out long file lenght not supported issue.
+git config core.longpaths true #Open git bash/cmd/powershell/termila etc in admin mode
