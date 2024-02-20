@@ -13,6 +13,7 @@
 
 git log # show logs of all the branches
 git log --graph --oneline #shows log history in one line
+git log branch_name --oneline #You can view logs of any branch while staying on any branch. Just put branch name of the branch you wanna see log off
 git status # show the status of the current branch
 
 #Merge branch
@@ -161,8 +162,25 @@ m1 -> m2 -> m3----
 In the above pic, m4 which is the merge commit on feature_branch has all the changes as well as the merge commit history on the feature_branch itself.
 
 ----------------------------------------------------------------------------------------
-Resolving conflits:
+Resolving merge and/or rebase conflits:
 git merge --abort #It will abort any merge in case of any conflicts
 Check this image:
 ResolvingConflicts.jpg
+
+----------------------------------------------------------------------------------------
+git cherry pick and resolving cherry pick conflict:
+
+----------------------------------------------------------------------------------------
+Rewriting Git History:
+	Amending commits
+	Rewording commit messages
+	Deleting commits
+	Reordering commits
+	Squashing commits
+	Splitting commits
+
+Quick tips: Just use git rebase -i HEAD~number_of_commits_from_head_you_wanna_go_back
+example:- git rebase -i HEAD~2
+An editor will be opened after hitting enter. Just replace the commands the sha. Commands would be given under commented Commands: section.
+After hitting enter, another editor will open, where you can do your work. Save and exit.
 ----------------------------------------------------------------------------------------
