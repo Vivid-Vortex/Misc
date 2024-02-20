@@ -1,3 +1,5 @@
+#All the commits are immutable. That means once the commit is created, they cannot be changed.
+
 #Fetch remote branch upstream/downstram
 	git fetch -v
 
@@ -44,3 +46,103 @@ git rm --cached <file>..." to unstage files
 
 #To sort out long file lenght not supported issue.
 git config core.longpaths true #Open git bash/cmd/powershell/termila etc in admin mode
+----------------------------------------------------------------------------------------
+Merge vs Rebase:-
+Merge:
+	#Say you want to merge main into feature branch.
+		git checkout main #move to branch main
+		git  pull #pull latest remove branch changes.
+		git checkout feature_branch #to the branch (say feature_branch) where you want to merge whatever branch (say main).
+		git pull #It will pull the changes from the branch from where it was copied/created in the first place. In this it will pull from local main
+		git checkout main
+		git merge --no-ff feature_branch #--no-ff option is used to void fast forward merge and previous histories of the feature_branch.
+		git push. #Push to remote.
+
+	#Say you just want to update your feature_branch with all the latest changes from main branch.
+Rebase:
+	git checkout feature_branch
+	git rebase main
+	#With rebase cmd, git will set aside all the feature_branch changes (commits say commmit1, commit 2) to the holding (temp) area. 
+	#After that git will pick every commit from the holding area one by one (first commit1 then commit2 etc.) and then adjust those commits to the latest
+	commit on the main branch. Lets' say the latest/recent commit on the main branch is main3. So the commit1 will point to main3 instead of main2. As there were
+	#one more commit main3 which was there on the main branch, whcih happens to be the latest and the greatest commit on the main branch. 
+	So the chain will look like below.
+	Before rebase:
+	main1 -> main2 -> main3
+						\
+						fb1 -> fb2
+						
+	After rebase:
+	main1 -> main2 -> main3
+											\
+											fb1 -> fb2
+	#When you'll move the main branch and merge fb(feature_branch) with -no-ff option. There'll be a third commit main4 (copy of feature branch) which will be created on main branch.
+	main1 -> main2 -> main3------main4
+											\					/
+											fb1 -> fb2
+	#But with the help of --no-ff flag/cmd option. You graph/history (i.e.)
+	with --no-ff
+		main1 -> main2 -> main3------main4
+											\					/
+											fb1 -> fb2
+	
+	without --no-ff, incase let's assume there's no other commit history on the main branch and you're only one going to commit to the top of main branch
+	in that case there'll be a fast forward commit and the history fb1 -> fb2 will be merged and will no longer exist. So in order to avoid this situation,
+	we must use --no-ff option in order to be cautious and preserve history. Becuse you never know if there's or there isn't any commit on the main branch.
+	And especially when your intention is to preserve the history (which is always a best practice).
+	
+	without --no-ff
+	
+		main1 -> main2 -> main3------main4
+		
+	#Note:
+	#All the commits are immutable. That means once the commit is created, they cannot be changed.
+	#This is important to know, because when git rewrites the history of the local branch (feature_branch as per our example), it
+	#created a new sha or commit id.
+	
+	#Important
+	#It is important to note that, we should use rebase on local branch only and not the shared branch (github main), because it will rewrite the histories.
+	#Also relating to the above point, we should not use rebase on the main branch (which is the local copy of the shared remote branch). We should always
+	#checkout to our feature branch and then rebase the local main (of course after pulling the main remote changes to local main) and not the other way round.
+	
+#Now the question arises, why we should do rebase OF OUR FEATURE_BRANCH in order to pull the latest changes from the main branch (Assuming local main is in sync with remote main).
+Say we have a branch like below:
+
+m1 -> m2 -> m3
+			\
+			f1 -> f2
+			
+So the situation here is as follows:
+After we have taken the copy from point m2 of the main branch and started working further on it. Meanwhile someone else commited their changes to main branch as m3.
+Observer carefully this point, in both the cases merge from main to feature_branch wil occur.
+While both git pull and git rebase can integrate changes from a main branch into your feature branch, they achieve this in different ways, leading to distinct outcomes and impacting your Git history:
+
+While both git pull and git rebase can integrate changes from a main branch into your feature branch, they achieve this in different ways, leading to distinct outcomes and impacting your Git history:
+
+Git Pull:
+Integration: Performs a "merge," creating a new merge commit in your feature branch. This commit records the merging of changes from the main branch at a specific point in time.
+Git history: Creates a linear history with branches diverging and then merging. This can make it clearer to visualize how changes integrated from the main branch.
+Collaboration: More suitable for working on shared branches where others might be contributing and you want to keep your branch independent. Merge commits track individual contributions.
+Potential conflicts: Might require resolving merge conflicts if changes in both branches overlap.
+
+Git Rebase:
+Integration: Replays your feature branch commits on top of the latest main branch changes. This rewrites your branch's history to appear as if they were always made after the main branch updates.
+Git history: Creates a more streamlined, linear history where your feature branch commits appear directly after the main branch changes. This can be cleaner for personal branches not yet shared.
+Collaboration: Less suitable for shared branches as rewriting history can cause issues for others who have already pulled or integrated your branch.
+No conflicts: Usually doesn't introduce merge conflicts, as your commits are replayed on top of the main branch without merging.
+
+Choosing the right option:
+Pull: Use if you're working on a shared branch, want separate merge commits for tracking changes, and are willing to handle potential conflicts.
+Rebase: Use if you're working on a personal branch, prefer a cleaner history, and don't anticipate collaborating with others on the branch.
+
+Remember:
+Be cautious with rebasing shared branches due to potential disruptions for others.
+Consider using git pull --rebase to rebase after pulling changes (only recommended for advanced users).
+Understand the implications of each approach before integrating changes.
+
+Conclusion:
+1. First rebase your feature_branch to main branch (and keep on rebasing your feature_branch from time to time until you finish working on that feature branch) and then merging
+to main, instead of directly pulling and merging to main. Chances of conflicts would be too high otherwise.
+2. Always (extremely important to note), do the rebase on your local non-shared branch (in this case it is feature_branch)
+----------------------------------------------------------------------------------------
+	
