@@ -145,4 +145,13 @@ Conclusion:
 to main, instead of directly pulling and merging to main. Chances of conflicts would be too high otherwise.
 2. Always (extremely important to note), do the rebase on your local non-shared branch (in this case it is feature_branch)
 ----------------------------------------------------------------------------------------
-	
+Differenc between Merge and pull. The point is that in both the cases content is flowing from one point to another, so what's the difference.
+Point is we can checkout main and pull the changes from feature_branch to main. And then push it to remote. And likewise every team member can do.
+Same thing we can checkout feature_branch and pull the changes from main. So What's difference.
+
+And. The difference lies in the history. When we merge any changes from any branch to any branch, there will be a "merge commit" created corresponding to that.
+We already know merging from any feature_branch to main and the merge commit gets created. Same way we can merge main into any feature_branch and likewise a merge commitw
+will be created. So instead of pullling main branch changes we are merging main to the feature_branch. That will create a merge commit on the feature brancha
+and this commit will be shown on the branch as the commit (both visually and as commmit sha).
+
+----------------------------------------------------------------------------------------
