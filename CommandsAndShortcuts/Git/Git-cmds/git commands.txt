@@ -154,4 +154,10 @@ We already know merging from any feature_branch to main and the merge commit get
 will be created. So instead of pullling main branch changes we are merging main to the feature_branch. That will create a merge commit on the feature brancha
 and this commit will be shown on the branch as the commit (both visually and as commmit sha).
 
+m1 -> m2 -> m3----
+			\						\		
+			f1 -> f2 -> m4
+
+In the above pic, m4 which is the merge commit on feature_branch has all the changes as well as the merge commit history on the feature_branch itself.
+
 ----------------------------------------------------------------------------------------
