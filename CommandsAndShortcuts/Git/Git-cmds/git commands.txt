@@ -161,3 +161,8 @@ m1 -> m2 -> m3----
 In the above pic, m4 which is the merge commit on feature_branch has all the changes as well as the merge commit history on the feature_branch itself.
 
 ----------------------------------------------------------------------------------------
+Resolving conflits:
+git merge --abort #It will abort any merge in case of any conflicts
+Check this image:
+ResolvingConflicts.jpg
+----------------------------------------------------------------------------------------
