@@ -184,3 +184,101 @@ example:- git rebase -i HEAD~2
 An editor will be opened after hitting enter. Just replace the commands the sha. Commands would be given under commented Commands: section.
 After hitting enter, another editor will open, where you can do your work. Save and exit.
 ----------------------------------------------------------------------------------------
+Stashing:
+Very simple stash workflow:
+	git stash #It will stash all the tracked files (but not the untracked ones, so first do git add . to stage all the current files before stashing)
+	git stash list #It will show the list of all the stash entries.
+	git statsh show #If only one stash entry
+	git stash pop #It will take the latest stash from the stash stack
+
+git stash -m "stash_comment" #It will allow to give some meaningful comment to the stash to easily identify it laster
+git stash list #It will show the stash stack with that comment you addede in the last step.
+
+git stash pop --index stash_index_numer #stash_index_numer will be the number of fetch a particular index with its number
+
+#You can assign a particular stash to their own branch only
+git stash branch branch_name index_number #With this cmd, you can assign the statsh with index number say 1 (you've given in index_number to) to it's own branch with branch name given. And after runnig this cmd, you will automatically be moved to that branch.
+git log --oneline #You will find out that you're now in the new brancha
+
+#To drop a stash entry
+git stash drop index_number
+
+#To drop entire stash stack
+git stash clear
+
+##fixing merge conflict
+
+#In case of any conflit which arises during stash pop operation. If you have any unstaged changes in your working directory then 
+#git will abort the stash pop operation and the put the popped stash back to the stack.
+#Plus it will also let us know what's the problem is.
+
+git status #It will show the modified files in your working directory
+git stash show index_number #The index should be of the stash number for which you got the conflict. You will see both the cmds (above and this one) will point to the same file.
+
+#Strategy 1 to fix the conflict. Simply put of the changes (working directory changes or stash changes) to another seperate branch. And when you're done with your current change. You can either merge or rebase these two branches.
+
+#Strategy 2 is to know that the stash operation is being aborted since we had some unstaged files in our working directory. 
+#So first thing to do is to stage the changes in our working directoy (Only staging will do and commit not necessary).
+#Now do pop
+git stash pop index_number
+#You will get conflict. But now you will clearly see the files where conflict is in red and the files which can be merge without any issue in green.
+#So open that file in red and manually fix the issue and then save it
+#git status
+#You will see the changes which are staged in green and just now merged fixed file in red saying unmerged paths. So to resolve this finally use git add . cmd and it will resolve the conflict.
+git status #Now everything should be staged and in green
+#Merg conflict resolved!!!
+#Go one step further
+#As a best practice, leave a trail of this issue for the future developer or may be you in future to know that you got this issue in the past
+#So to leave a trail, create a commit history or simply say commit with a proper message.
+#git log --oneline
+#So if you remember we solved the stash merge conflict manually. So we need to clear the stash manually (becuase there was a  conflict, git will not remove the itself).
+git stash list
+git stash drop index_number
+git stash list
+
+----------------------------------------------------------------------------------------
+#Git Delete
+
+git log --oneline
+git reset --hard HEAD~1 #HEAD will move one step back and since it is a hard reset, anything above head will be gone (DELETED). That included commits and working directory changes. So be very careful.
+
+#So now insted of deleting anything, you can choose to undo the commit only. 
+#This is different from deleting, since changes are only uncommited and will move back to the staging area. And so it will not be deleted from the working directory either.
+git reset --soft HEAD~1 #It will undo you last commit and will move back the changes to the staging area.
+git log --online #The last commit will not show in the graph
+git status #You wil find your last commited changes back in the staging area.
+
+#Deleting commits further than one commit from the HEAD.
+
+A word of caution: Never drop commits on the shared branch. Or as a rule of thumb, never do it outside feature branch or non-shared branch (which you're not going to push to remote stream.)
+And if for any reason if you have to push the droped commit to the shared branch use git reword which is like reversing the effects of a commit non distructively.
+Git reword is also a safer alternative to git drop, but it's non destructive in nature.
+git rebase -i HEAD~2 #I want to "manipulate" last two commits from HEAD. Using the term manipulate because we can do alot of operations using interactive reabse. rebase -i means Interactive rebase. 
+A pop up will open an editor after this cmd.
+In the opened editor you'll see two last two commits (because we did HEAD~2) in one graph line way
+Now from here just change the initial letter of the commit which you want to play with. Say if pick some_hash Updated READMe is shown, then simply make the pick to drop in order to drop that particular commit.
+And when you will save and close the editor, git will start doing rebasing. So essentially git will start from that first commit which appeard in the pop up window after rebase -i cmd, and then it will move back towards initial position of the HEAD.
+One thing to note here is that, since git commits are immutable in nature. So essentially when we are doing rebase, git is changing the history or rewritting the history.
+So essentially, when we saved the editor after rebase -i cmd, git will start moving from that first commit that appeard in that interactive rebase editor and it till start moving towards,
+the previous HEAD position. In the process, it will definetly rewrite or do whatever cmds we chosse in the interactive rebase windws and in addition to that it will also
+replace all the other commits with a new commit hash. Essentially it means all the changes of those unmodified commits will remain same, but it will be put in place with a new hash.
+
+fb1 -> fb2 -> fb3
+
+Higher chance of conflict when doing git drop in interactive rebase especiallly when doing the drop operation way below the latest commit. Becuase there will be multiple transitive dependencies which will produce conflict.
+So essentially, let's say if we try to drop fb3, then a conflict might occurs becuae some files in fb3 commit, which would be dependent on fb2 which we are not deleting.
+So this way git drop has a higher chanches of conflict. So better to avoid it. And better we should not choose to drop any commit at the first  place. So whatever operations we
+have to do, we should do it in current working directly state and then commit it with a proper commit message and a obviosuely a new commit id/hash. And most importantly,
+since as a thumb rule we must do these kind of operation in a seperate branch, as a best practice as we know, we should use atomic commit and don't make the feature branch
+very large and then wait for it to merge in the main branch. If we use atomic commits, then there will be no such deep commits which you will have to drop, so the situation will not arise in the first place.
+
+
+
+
+
+
+
+
+
+
+
