@@ -47,6 +47,12 @@ git rm --cached <file>..." to unstage files
 
 #To sort out long file lenght not supported issue.
 git config core.longpaths true #Open git bash/cmd/powershell/termila etc in admin mode
+
+#To change the default editor of git to vim
+git config --global core.editor vim
+
+#To change the default editor of git to notepad++
+git config --global core.editor notepad++.exe
 ----------------------------------------------------------------------------------------
 Merge vs Rebase:-
 Merge:
@@ -271,6 +277,19 @@ So this way git drop has a higher chanches of conflict. So better to avoid it. A
 have to do, we should do it in current working directly state and then commit it with a proper commit message and a obviosuely a new commit id/hash. And most importantly,
 since as a thumb rule we must do these kind of operation in a seperate branch, as a best practice as we know, we should use atomic commit and don't make the feature branch
 very large and then wait for it to merge in the main branch. If we use atomic commits, then there will be no such deep commits which you will have to drop, so the situation will not arise in the first place.
+
+so If any conflict already occured. so runnig
+git rebase --abort #to abort the rebasing in case of conflict.
+
+#git revert
+So better use another alternative which is git revert which is also non destructive.
+
+----------------------------------------------------------------------------------------
+Change commit message:
+
+#To modify the latest commit message
+git commit --amend -m "New commit message"
+
 
 
 
