@@ -8,6 +8,9 @@
 	git branch branch_name - creates a new branch
 	git checkout branch_name - simply switches to given branch
 
+#delete a particular branch
+git branch -d branch_name
+
 #list all the branches
 	git branch -a
 
@@ -290,7 +293,27 @@ Change commit message:
 #To modify the latest commit message
 git commit --amend -m "New commit message"
 
+#To modify any commit below the latest commit
+#Use interactive rebase
+git rebase -i HEAD~2 #It will show the last two commit in the editor of you choise.
+#You will see two commits with pick in the begening followd by the sha and then the commit message.
+#pick means no-op (No operation) for git
+#Change the pick for the commit for which you want to reword the commit message.
+#Changing the reword will give you an opportunity by git (when it will run reabse after you save and close the editor) to type a commit message of your choice.
+#All the hash shown in that opened editor will be modified since git commits are immutable. It will generate another copy of those and discard the old one, through garbage collector, whch you can run by yoru own using git gc if you want to, or else it will run automatically.
 
+----------------------------------------------------------------------------------------
+git squash:
+#squash is not a command. It is one of the many options available under git interactive rebasing system.
+#Squash is used to repackage commits which are related to each other.
+git rebase -i HEAD~3 #It will tell the git that I want to act upon the last 3 commits.
+So as always we do in rebase interactive, we just need to touch the keyword pick for the commits which we want to modify in anyway.
+Ans since we are going to squash (or meld in other words) particularly so in this case pick will be modified to sqash (also you can see the same under the comments section of the opend file.)
+So just change the picks of the commits which you want to squash in one commit.
+So as always in interactive rebase, once you save and close the first editor, another editor will open which will allow you to do your changes.
+Now in the second editor, just edit comment (as you would usually prefer over delete unless everythigs okay. Aslo better than remove) or remove those commit messages.
+
+----------------------------------------------------------------------------------------
 
 
 
