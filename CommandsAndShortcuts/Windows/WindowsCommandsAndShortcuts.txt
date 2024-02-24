@@ -1,0 +1,3 @@
+Access Wsl files:
+1. Use Linux icon on the Windows Nav bar.
+2. Run '\\wsl$\' cmd directly under windows run (windows + r) option

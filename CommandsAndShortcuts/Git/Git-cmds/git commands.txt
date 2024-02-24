@@ -8,12 +8,6 @@
 	git branch branch_name - creates a new branch
 	git checkout branch_name - simply switches to given branch
 
-#delete a particular branch
-git branch -d branch_name
-
-#list all the branches
-	git branch -a
-
 git log # show logs of all the branches
 git log --graph --oneline #shows log history in one line
 git log branch_name --oneline #You can view logs of any branch while staying on any branch. Just put branch name of the branch you wanna see log off
@@ -56,6 +50,16 @@ git config --global core.editor vim
 
 #To change the default editor of git to notepad++
 git config --global core.editor notepad++.exe
+
+#To delete the branch
+git branch -d branch_name #It will not delete until it is merged, so safe option. Use it always as a first choice over -D option.
+
+#To force delete any branch, even if it's not merged
+git branch -D branch_name
+
+#list all the branches
+	git branch -a
+
 ----------------------------------------------------------------------------------------
 Merge vs Rebase:-
 Merge:
