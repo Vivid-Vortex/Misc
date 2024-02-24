@@ -261,7 +261,8 @@ git reset --hard HEAD~1 #HEAD will move one step back and since it is a hard res
 
 #So now insted of deleting anything, you can choose to undo the commit only. 
 #This is different from deleting, since changes are only uncommited and will move back to the staging area. And so it will not be deleted from the working directory either.
-git reset --soft HEAD~1 #It will undo you last commit and will move back the changes to the staging area.
+git reset --soft HEAD~1 #It will undo you last commit and will move back the changes to the "staging area" (and not the working directory) or commited changes to uncommited state
+but it won't affect your working directory.
 git log --online #The last commit will not show in the graph
 git status #You wil find your last commited changes back in the staging area.
 
