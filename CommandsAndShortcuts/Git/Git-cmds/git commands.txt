@@ -42,6 +42,10 @@ git rm --cached <file>..." to unstage files
 
 	git reset --soft c14809fa
 
+#To change credentials
+git config --global user.email "ctntc9.dpk@gmail.com"
+git config --global user.name "Vivid-Vortex"
+	
 #To sort out long file lenght not supported issue.
 git config core.longpaths true #Open git bash/cmd/powershell/termila etc in admin mode
 
@@ -354,7 +358,21 @@ where you will first commit the staged files. Just imagine this in the below pic
 				{Staging area}
 {master}							{dev1}
 --------------
+#If no changes are there between the current branch you're in and the new branch you're creating, then the new branch will not be spawned from the branch you're in currently.
+#In that case, since both the branches (i.e. the current branch you're in and the newly created branch) will point to the next content/commit matching branch.
 
+Below pic depicts when both dev1 and dev2 commits/changes are same as main
+main----
+	\		\
+	dev1 \
+			dev2
+
+Below pic depicts when we create another branch dev2, when the base branch content is different from it's base branch, that is main. So it create a new branch spawning from dev1.
+main----
+	\		
+	dev1 
+		\
+		dev2
 ----------------------------------------------------------------------------------------
 
 
