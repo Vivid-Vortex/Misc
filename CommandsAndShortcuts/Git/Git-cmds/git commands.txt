@@ -314,6 +314,45 @@ So as always in interactive rebase, once you save and close the first editor, an
 Now in the second editor, just edit comment (as you would usually prefer over delete unless everythigs okay. Aslo better than remove) or remove those commit messages.
 
 ----------------------------------------------------------------------------------------
+Staging is a part of the repository's state, not tied to a specific branch:
+Use case:
+Initially I had only one branch master in git. In this branch I added a text file name dev1.txt. Then without staging it, I 
+checkedout and created and branch name dev1 from this branch master. After checking out to dev1, I staged dev1.txt. When I 
+did git checkout master again, why is dev1.txt staged there, even through I had staged this file only in dev1 and not in master.
+
+Reason:
+When you switch between branches in Git, any changes that are not committed are carried over to the new branch. This includes staged changes.
+
+In your scenario, you initially made changes to the master branch by adding a text file named dev1.txt. Then, without staging this file, you created a new branch called dev1 from master. 
+When you switched to the dev1 branch and staged dev1.txt, you staged the changes in that branch only.
+
+However, when you checked out master again, Git kept the staged changes (in this case, the staging of dev1.txt) because staging is a part of the repository's state, not tied to a specific branch. Git doesn't reset the staging area when you switch branches; 
+it preserves the staging area to maintain the changes you've made until you either commit or reset them explicitly.
+
+If you want to unstage changes when switching branches, you can use the command:
+
+git reset
+
+This will unstage any changes in the current branch, allowing you to switch to another branch without carrying over the staged changes.
+
+				{Staging area}
+{master}							{dev1}
+
+As you can see in the above pic that staging area is common to both master and dev1 branch.
+--------------
+#When you create any branch from any branch (say dev1 from master), so the "commited" changes (commited only and not the staged only changes because 
+staging is part of the overrall git repo and not tied to any branch) will be carry foraded to the next branch you're creating, because it was created considering
+it as a base for the next branch. So all the committed changes from master will be copied to dev1.
+
+#When you create a branch without commiting anything in the current branch. So nothing will be carry forwaded. The changes will remain intact to the branch
+where you will first commit the staged files. Just imagine this in the below picture.
+
+				{Staging area}
+{master}							{dev1}
+--------------
+
+----------------------------------------------------------------------------------------
+
 
 
 
