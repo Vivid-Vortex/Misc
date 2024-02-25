@@ -1,3 +1,12 @@
+First and foremost:
+1. Install Windows termial if you're using windows 10 or above.
+2. Install and setup WSL2
+3. Install vim
+4. Install Posh
+	winget install JanDeDobbeleer.OhMyPosh -s winget
+5. Install powertoys
+6. Install git
+
 Access Wsl files:
 1. Use Linux icon on the Windows Nav bar.
 2. Run '\\wsl$\' cmd directly under windows run (windows + r) option
