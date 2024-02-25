@@ -8,7 +8,18 @@
 #Now complete meaning as a whole is local main is tracking/pointing to remote main.
 git branch -vv
 
+#Run this to see the difference between your remote branch commit(s) difference and local branch commit(s)
+git log origin/main
+
 ## Collaboration
+#Basic commands
+- git clone <url> #It will clone the remote repo to local repo
+	- Eg:- git cloen repository_url 
+- git fetch <repository> #Download changes from the specified remote repository
+	- Eg:- git fetch orgin
+- git push <repository> <branch> #Upload local changes to the specified remote repository and branch
+	- Eg:- git push origin main
+
 #How to check if any changes made to remote repo since the last time you pulled the remote branch.
 git status
 #you will see a messag, your branch is up to date with origin/main. This means that no body has made any changes to the remote main, since the last time you pulled from it.
@@ -22,6 +33,13 @@ git push origin main (instead of main, we can put any desired remote branch_name
 #At last simply run 
 git log --oneline
 #If everything your local and remote is in sync, then you'll see a message as 'HEAD -> main, origin/main, origin/HEAD'
+#Now use below command. You will see remote commits and local commits and difference.
+git log origin/main
+#Now instead of pulling the changes from remote, you should better merge the origin/main. Here merging origin/main or remote branch is like merging any other local branch.
+#But here you're directly merging local from remote. So now do merge with below commands.
+git merge origin/main
+
+
 
 
 #Creates a new branch
