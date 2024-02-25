@@ -48,6 +48,11 @@ git checkout <commit-hash>/current-branch-name
 git config --global user.email "ctntc9.dpk@gmail.com"
 git config --global user.name "Vivid-Vortex"
 
+#If you want to customize the remote repo you're pushing the local changes to then use below command.
+#Generally you should first create the repo, then clone the repo, then go to the repo directoy and then from there you should push the changes.
+#In that case you don't need to use, below command as your remote is already specified in .git/git.conf file.
+git remote set-url origin https://github.com/Vivid-Vortex/Misc.git
+
 #To authenticate git bash with ssh token from github
 git config --global credential.helper '!f () { sleep 1; echo "username=git token=<TOKEN>"; }; f' #replace <TOKEN> with the actual token
 	
