@@ -157,6 +157,12 @@ Choosing the right option:
 Pull: Use if you're working on a shared branch, want separate merge commits for tracking changes, and are willing to handle potential conflicts.
 Rebase: Use if you're working on a personal branch, prefer a cleaner history, and don't anticipate collaborating with others on the branch.
 
+-------My Two Cents on using Merge and Rebase----------
+1. We must not use rebase outside the unshred feature local branch at all.
+2. We should always prefer merge over rebase, in order to merge the branches, as both will ultimately do merge only and create a merge commit.
+3. We should use only interactive rebase as there are multiple useful options availabel under it. And if we have to use those options then only we should hink of rebasing.
+-----------------------------
+
 Remember:
 Be cautious with rebasing shared branches due to potential disruptions for others.
 Consider using git pull --rebase to rebase after pulling changes (only recommended for advanced users).
@@ -187,6 +193,15 @@ Resolving merge and/or rebase conflits:
 git merge --abort #It will abort any merge in case of any conflicts
 Check this image:
 ResolvingConflicts.jpg
+
+-----------
+If you want to abort the merge/rebase then use git merge/rebase --abort. It will put the current directory back to normal state.
+If you want to contiue with the ongoing merge/rebase operation, then go to that file (which would be showing along with the conflict message) and fix the conflict.
+then run git add . #It will mark the conflict as resolved.
+then run git merge/rebase --continue
+merge/rebase is done now.
+You can check the log graph with git log --graph --oneline
+-----------
 
 ----------------------------------------------------------------------------------------
 git cherry pick and resolving cherry pick conflict:
