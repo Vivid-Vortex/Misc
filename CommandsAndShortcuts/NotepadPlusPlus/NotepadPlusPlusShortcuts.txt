@@ -1,2 +1,10 @@
 type nul > NotepadPlusPlusShortcuts.txt - Creates an empty file 
 alt + shift + a (custom) - show/hide Folder as Workspace
+
+---------------------
+Install notepad++ git plugin
+Assign shortcut as alt + ~ to opent the git prompt
+Now with one shortcut you can manage all your git local and remote repo. No need to context switch between multiple ide's such
+as Github desktop or Intelij git or VS Code git.
+You can even use Git GUI and GiTK, which comes out of the box with notepad++ git plugin.
+---------------------
