@@ -3,6 +3,27 @@
 #Fetch remote branch upstream/downstram
 	git fetch -v
 
+#Which branches are remote tracking within my repository. Result could be like main sha_id origin/main. 
+#Here main represent local main branch. origin represents remote pointer which is pointing to remote main branch.
+#Now complete meaning as a whole is local main is tracking/pointing to remote main.
+git branch -vv
+
+## Collaboration
+#How to check if any changes made to remote repo since the last time you pulled the remote branch.
+git status
+#you will see a messag, your branch is up to date with origin/main. This means that no body has made any changes to the remote main, since the last time you pulled from it.
+#Now go ahead and commit some changes to your local main. Then run git status.
+git status
+#You will seee a message that your branch is ahead of origin/main by 1 commit. That means HEAD pointer on local main branch has moved one pointer ahead of the remote main head pinter. 
+git log --oneline
+#Here you will see that HEAD -> main, i.e. HEAD is point to main. This commit sha will be higher compared to origin/main, origin/HEAD.
+git fetch origin #It will fetch any changes from origin main to local main
+git push origin main (instead of main, we can put any desired remote branch_name to push to)
+#At last simply run 
+git log --oneline
+#If everything your local and remote is in sync, then you'll see a message as 'HEAD -> main, origin/main, origin/HEAD'
+
+
 #Creates a new branch
 	git checkout -b branch_name - Creates a new branch and switches to it
 	git branch branch_name - creates a new branch
