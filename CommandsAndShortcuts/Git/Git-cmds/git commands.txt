@@ -160,7 +160,7 @@ Rebase: Use if you're working on a personal branch, prefer a cleaner history, an
 -------My Two Cents on using Merge and Rebase----------
 1. We must not use rebase outside the unshred feature local branch at all.
 2. We should always prefer merge over rebase, in order to merge the branches, as both will ultimately do merge only and create a merge commit.
-3. We should use only interactive rebase as there are multiple useful options availabel under it. And if we have to use those options then only we should hink of rebasing.
+3. We should go with interactive rebase only if we have to use those multiple options featured under interactive rebase pop up screen.
 -----------------------------
 
 Remember:
