@@ -47,6 +47,9 @@ git checkout <commit-hash>/current-branch-name
 #To change credentials
 git config --global user.email "ctntc9.dpk@gmail.com"
 git config --global user.name "Vivid-Vortex"
+
+#To authenticate git bash with ssh token from github
+git config --global credential.helper '!f () { sleep 1; echo "username=git token=<TOKEN>"; }; f' #replace <TOKEN> with the actual token
 	
 #To sort out long file lenght not supported issue.
 git config core.longpaths true #Open git bash/cmd/powershell/termila etc in admin mode
