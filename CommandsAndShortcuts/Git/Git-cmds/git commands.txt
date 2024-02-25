@@ -36,6 +36,8 @@ git rm --cached <file>..." to unstage files
 
 #git hard/soft reset
 	If you reset --hard, it will make your local code and local history be just like it was at that commit. But if you wanted to push this to someone else who has the new history, it would fail:
+#To undo git soft reset
+git checkout <commit-hash>/current-branch-name
 
 	git reset --hard c14809fa
 	And if you reset --soft, it will move your HEAD to where they were , but leave your local files etc. the same:
@@ -64,6 +66,8 @@ git branch -D branch_name
 #list all the branches
 	git branch -a
 
+#To see the history of HEAD movements.
+git reflog #press q to move out of the reflog window
 ----------------------------------------------------------------------------------------
 Merge vs Rebase:-
 Merge:
