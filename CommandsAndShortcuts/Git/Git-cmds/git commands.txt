@@ -17,7 +17,10 @@ git log origin/main
 	- Eg:- git cloen repository_url 
 - git fetch <repository> #Download changes from the specified remote repository
 	- Eg:- git fetch orgin
-- git push <repository> <branch> #Upload local changes to the specified remote repository and branch
+- git push #Upload all local changes (includes all local branches) to the specified remote repository and branch. It will push anything (ofcouse except .gitignore ones), even newly created branches etc to remote.
+	- Eg:- git push
+
+- git push <repository> <branch> #Upload all local changes (includes all local branches) to the specified remote repository and branch
 	- Eg:- git push origin main
 
 #How to check if any changes made to remote repo since the last time you pulled the remote branch.
