@@ -10,3 +10,15 @@ First and foremost:
 Access Wsl files:
 1. Use Linux icon on the Windows Nav bar.
 2. Run '\\wsl$\' cmd directly under windows run (windows + r) option
+------------------------------------------------------------------------------------
+Bind all the localhost connections from wsl to windows localhost:
+Run below command:
+
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+
+Explanation:
+Accessing via localhost: If you prefer to use localhost instead of the IP address, you can utilize a feature called "localhost forwarding" in WSL 2. This feature allows you to access services running in WSL 2 via localhost on Windows. To enable localhost forwarding, add the following line to your ~/.bashrc or ~/.bash_profile file in WSL:
+
+After adding this line, restart your WSL 2 instance or source the file (e.g., source ~/.bashrc). This will make services running in WSL 2 available via localhost on your Windows system.
+
+------------------------------------------------------------------------------------
