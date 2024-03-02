@@ -21,4 +21,6 @@ Accessing via localhost: If you prefer to use localhost instead of the IP addres
 
 After adding this line, restart your WSL 2 instance or source the file (e.g., source ~/.bashrc). This will make services running in WSL 2 available via localhost on your Windows system.
 
+This way you can run anythign on wsl linux and access it via localhost on windows directly, without you have to change the conf files
+of those applications one by one.
 ------------------------------------------------------------------------------------
