@@ -8,3 +8,5 @@ Now with one shortcut you can manage all your git local and remote repo. No need
 as Github desktop or Intelij git or VS Code git.
 You can even use Git GUI and GiTK, which comes out of the box with notepad++ git plugin.
 ---------------------
+
+alt + f12 = git command prompt #custom keyMapper. Make sure to install git plugin before assigning.

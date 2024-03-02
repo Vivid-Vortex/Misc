@@ -1,4 +1,7 @@
 ctrl + shift + f12 = hide all the windows and focus on the current editor.
+
+ctrl + shift + f10 = run
+
 ctrl + shift + t = create a new test for any classes or method. Just put the cursor over the classes or methods for which you want the test classes to be generated and then use this shortcut.
 
 Extraction:
