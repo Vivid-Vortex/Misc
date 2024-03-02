@@ -1,2 +1,8 @@
 ctrl + shift + f12 = hide all the windows and focus on the current editor.
 ctrl + shift + t = create a new test for any classes or method. Just put the cursor over the classes or methods for which you want the test classes to be generated and then use this shortcut.
+
+Extraction:
+	ctrl + alt + M -	extract method
+	ctrl + alt + V -	extract variables {Most widely used}
+	ctrl + alt + P -	extract parameter
+	ctrl + alt + C -	extract constants
