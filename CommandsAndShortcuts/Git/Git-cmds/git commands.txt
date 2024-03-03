@@ -72,9 +72,13 @@ git rm --cached <file>..." to unstage files
 	git log --graph --oneline #shows log history in one line
 	Select your desired commit id
 	git checkout <commit_id>
-	git commit --amend -m "Modified message"
+	git commit --amend -m "Modified message" OR git commit --amend #second cmd will open a text editor where firt line represents summary and one line after space reprents description.
 	git checkout . #Moves the head back to the most current or most recent working directly.
-
+	#In can if you want to push the changes to remote then use below commands.
+	git push --force 
+	##Beaware that push will rewrite the remote repo history which is not at all recommended. If you just want to change commit message, then it's okay. It you ware chaning anything related to the actual content, then do not 
+	#change history as your teammates who has taken your commit, will face issues. So to change the content, better
+	#use another latest commit.
 
 #git hard/soft reset
 	If you reset --hard, it will make your local code and local history be just like it was at that commit. But if you wanted to push this to someone else who has the new history, it would fail:
