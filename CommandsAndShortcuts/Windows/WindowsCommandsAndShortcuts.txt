@@ -24,3 +24,15 @@ After adding this line, restart your WSL 2 instance or source the file (e.g., so
 This way you can run anythign on wsl linux and access it via localhost on windows directly, without you have to change the conf files
 of those applications one by one.
 ------------------------------------------------------------------------------------
+Create external automatic backup:
+	Open the Start menu.
+	Search for Control Panel and click the top result to open it.
+	Under the System and Security section, find and click on “Backup and Restore”.
+	Click the “Set up backup” option.
+	Choose an external drive (such as a USB drive) to store your backups.
+	Select the “Let me choose” option to customize what gets backed up.
+	Check the items under “Data Files” and include the Local Disk (C:) (which contains your system files).
+	Click “Next” and set up the backup schedule (frequency, date, and time) 1.
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
