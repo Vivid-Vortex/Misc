@@ -472,6 +472,33 @@ Since you've set up the upstream branch in the previous step, this command will 
 
 Verify: After pushing, you can verify that the upstream branch is set correctly by running git branch -vv. It will show you the tracking information for each branch.
 ----------------------------------------------------------------------------------------
+fetch vs pull:
+
+git fetch and git pull are both used to fetch changes from a remote repository, but they have different behaviors:
+
+git fetch:
+	Fetches changes from the remote repository to your local repository, but it doesn't automatically merge them with your current branch.
+	Updates the remote-tracking branches (e.g., origin/master) in your local repository to reflect the changes on the remote, allowing you to see what has changed without integrating those changes into your local branches.
+	Does not modify your local branches.
+	Useful for reviewing changes before integrating them into your local branches.
+
+Syntax:
+	git fetch <remote>
+	
+Example: git fetch origin
+
+git pull:
+	Fetches changes from the remote repository and automatically merges them into your current branch.
+	Essentially, it's a combination of git fetch followed by git merge.
+	Updates your local branch with the changes from the remote repository.
+	Automatically merges the changes into your current branch, which may result in merge conflicts if there are conflicting changes.
+Syntax:
+	git pull <remote> <branch>
+	
+Example: git pull origin master
+
+In summary, git fetch simply retrieves the latest changes from the remote repository without merging them, whereas git pull not only fetches the changes but also merges them into your current branch automatically.
+----------------------------------------------------------------------------------------
 
 
 
