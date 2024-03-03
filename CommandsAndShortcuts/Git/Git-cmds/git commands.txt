@@ -444,7 +444,30 @@ main----
 		\
 		dev2
 ----------------------------------------------------------------------------------------
+upstream Issue:
+I tried to push my git repo changes using git push command. but in the process I am getting a error saying 
 
+Error:
+	fatal: The current branch master has no upstream branch.
+	To push the current branch and set the remote as upstream, use.
+
+Resolution and explanation:
+This error message indicates that you're trying to push changes from a branch (master in this case) that doesn't have an upstream branch configured. An upstream branch is essentially the remote branch that your local branch is tracking.
+
+To resolve this issue, you can follow these steps:
+
+Check your local branches: First, ensure you're on the branch you want to push. You can do this by running git branch command. If you're not on the master branch, switch to it using git checkout master.
+
+Set upstream branch: Once you're on the correct branch (master in this case), you need to set the upstream branch. You can do this using the -u or --set-upstream-to option with git push, like so:
+	git push -u origin master
+This command pushes your changes to the master branch on the remote named origin, and also sets up the tracking relationship between your local master branch and the remote origin/master.
+
+Push changes: After setting the upstream branch, you can simply push your changes using git push:
+	git push
+Since you've set up the upstream branch in the previous step, this command will know where to push your changes.
+
+Verify: After pushing, you can verify that the upstream branch is set correctly by running git branch -vv. It will show you the tracking information for each branch.
+----------------------------------------------------------------------------------------
 
 
 
