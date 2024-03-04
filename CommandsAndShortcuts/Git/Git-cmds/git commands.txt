@@ -17,6 +17,7 @@ git log origin/main
 	- Eg:- git cloen repository_url 
 - git fetch <repository> #Download changes from the specified remote repository
 	- Eg:- git fetch orgin
+- git pull #check the difference between fetch and merge given below
 - git push #Upload all local changes (includes all local branches) to the specified remote repository and branch. It will push anything (ofcouse except .gitignore ones), even newly created branches etc to remote.
 	- Eg:- git push
 
@@ -92,7 +93,10 @@ git checkout <commit-hash>/current-branch-name
 
 #To change credentials
 git config --global user.email "ctntc9.dpk@gmail.com"
+git config --global user.email #It will give you the current user.name
+
 git config --global user.name "Vivid-Vortex"
+git config --global user.name #It will give the current user.name value
 
 #If you want to customize the remote repo you're pushing the local changes to then use below command.
 #Generally you should first create the repo, then clone the repo, then go to the repo directoy and then from there you should push the changes.
@@ -101,7 +105,7 @@ git remote set-url origin https://github.com/Vivid-Vortex/Misc.git
 
 #To authenticate git bash with ssh token from github
 git config --global credential.helper '!f () { sleep 1; echo "username=git token=<TOKEN>"; }; f' #replace <TOKEN> with the actual token
-	
+
 #To sort out long file lenght not supported issue.
 git config core.longpaths true #Open git bash/cmd/powershell/termila etc in admin mode
 
