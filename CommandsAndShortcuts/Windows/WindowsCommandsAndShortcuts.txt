@@ -34,5 +34,17 @@ Create external automatic backup:
 	Check the items under “Data Files” and include the Local Disk (C:) (which contains your system files).
 	Click “Next” and set up the backup schedule (frequency, date, and time) 1.
 ------------------------------------------------------------------------------------
+How to install Kubernates on windows?
+Install winget
 
+Install curl using wininstall-
+	wininstall url -
+	https://winstall.app/apps/cURL.cURL
+
+Install kubectl using cURL and test using below command if kubectl and kubernates is working or not
+kubectl get All #If it shows the result, then it's working 
+
+Go to settings icon of docker desktop and tick kubernates and apply
+
+go to this page. page is https://winget.run/pkg/Kubernetes/minikube and install minikube uisng winget.
 ------------------------------------------------------------------------------------
