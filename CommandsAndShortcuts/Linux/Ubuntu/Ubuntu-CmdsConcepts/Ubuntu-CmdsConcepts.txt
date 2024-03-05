@@ -1,6 +1,18 @@
 ** Make sure to uninstall and fully clean any existing package or files realted to the software or setting you're going to install
 in linux/ubuntu. Else it won't work properly.
 -------------------------------------------------------------------------------------------
+unzip file_name.zip #to unzip any file
+ls -lt 
+# l - This option displays long format output, including permissions, owner, group, size, and modification time. 
+#t - This option sorts the output by modification time.
+# r - in ascending order sorting
+
+ls -lt --exclude="*.extension1" --exclude="*.extension2" #to exclude any particular type of extension
+
+#To show only directories and exclude all file types (yes! even directories are also counted under files in linux)
+ls -ltd -- */
+#-d: This option lists directories only, excluding regular files and other file types.
+#-- */: This pattern matches all directories (represented by /) within the
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
