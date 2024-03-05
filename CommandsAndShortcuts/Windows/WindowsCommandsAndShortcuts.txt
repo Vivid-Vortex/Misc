@@ -6,6 +6,8 @@ First and foremost:
 	winget install JanDeDobbeleer.OhMyPosh -s winget
 5. Install powertoys
 6. Install git
+7. Install unZip
+		winget install -e --id GnuWin32.UnZip
 
 Access Wsl files:
 1. Use Linux icon on the Windows Nav bar.
@@ -47,4 +49,36 @@ kubectl get All #If it shows the result, then it's working
 Go to settings icon of docker desktop and tick kubernates and apply
 
 go to this page. page is https://winget.run/pkg/Kubernetes/minikube and install minikube uisng winget.
+------------------------------------------------------------------------------------
+Install sdkman:
+1. Instal using wsl:
+	1. sudo apt install unzip
+	2. sudo apt install zip
+	3. https://sdkman.io/install
+		3.i. curl -s "https://get.sdkman.io" | bash
+		3.ii. source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+3. Install using git bash on windows without wsl.
+ 1. Install git bash
+ 2. install 7 zip (directly using .exe  or using winget)
+ 3. use the above command given under step 3.
+
+Note:- After installing sdkman via wsl, go to intelij and from here you can directly use the sdk java version
+which is installed under windows wsl directory (Follow below steps for that). Also keep in mind that you must always install 
+atleast one latest java lts version on windows in order for all the other api's outside intelij to use it.
+
+Steps to switch sdkman installed java vesions:-
+1. Go to File -> Project structure
+2. Click on + sign and wait for it to show the installed wsl sdks in the popup lists. In case if  doesn't shows then manually select that folder.
+3. Just select.
+4. done!!!
+------------------------------------------------------------------------------------
+sdkman commands:
+sdk list #It will show all the supported installations including java, Kotlin etc.
+sdk list java
+sdk install java paste_selected_name
+sdk default java paste_selected_name
+------------------------------------------------------------------------------------
+
+
 ------------------------------------------------------------------------------------
