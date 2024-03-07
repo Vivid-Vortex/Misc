@@ -503,6 +503,24 @@ Example: git pull origin master
 
 In summary, git fetch simply retrieves the latest changes from the remote repository without merging them, whereas git pull not only fetches the changes but also merges them into your current branch automatically.
 ----------------------------------------------------------------------------------------
+To compare two local branches in Git using the command line, you can use the git diff command with the branch names. Here's how you can do it:
+
+git diff branch1..branch2
+Replace branch1 and branch2 with the names of the branches you want to compare.
+This command will show the difference between the two branches. 
+
+If you want to see the differences in files between the branches, you can add --name-only flag:
+git diff --name-only branch1..branch2
+This will list only the names of the files that are different between the two branches.
+
+If you want to see a summary of the differences in terms of added, modified, or deleted lines, you can use the --stat flag:
+git diff --stat branch1..branch2
+This will provide a summary of the changes between the two branches.
+
+And if you want a brief summary of the differences, you can use the --summary flag:
+git diff --summary branch1..branch2
+This will give a summarized output of the differences between the two branches.
+----------------------------------------------------------------------------------------
 
 
 
