@@ -521,6 +521,24 @@ And if you want a brief summary of the differences, you can use the --summary fl
 git diff --summary branch1..branch2
 This will give a summarized output of the differences between the two branches.
 ----------------------------------------------------------------------------------------
+git commenting startegy:
+
+Use proper symbols for modification(s), addition(s) or removal/substraction(s) of any file(s).
+Use these symbol everywhre in your comment, which first is followed by git (and github as well if you're using it)
+and second a very short way to represent the intentation and history of what happend, which can be very easy to track 
+down the history in case of scenarios such as errors later on.
+
+Intelij keyshortcuts(.) & addition of fedora file(+)
+
+1. Added few intelij shortcuts
+2. Added fedora concepts as initial commit
+
+sidenote: 
+(.) - represents modification
+(+) - represent addition (of new file(s))
+(-) - represent substraction(of new file(s))
+----------------------------------------------------------------------------------------
+
 
 
 
