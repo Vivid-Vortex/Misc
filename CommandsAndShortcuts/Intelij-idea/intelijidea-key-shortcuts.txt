@@ -9,3 +9,11 @@ Extraction:
 	ctrl + alt + V -	extract variables {Most widely used}
 	ctrl + alt + P -	extract parameter
 	ctrl + alt + C -	extract constants
+	
+#Keyboard shortcut to fold all code blocks
+Ctrl + Shift + NumPad Minus (-)/Plus (+)
+
+
+dynamic programming - less questions being asked
+arrays (I think sliding windows based would be) - alot of questions
+trees, backtracking or priority queues - good chances of being asked
