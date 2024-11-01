@@ -781,6 +781,15 @@ use git commit -a to commit only modified and deleted files.
 git add -u . #in place of git add .
 git commit -a -m "" #in place of git commit -m ""
 ----------------------------------------------------------------------------------------
+
+git rebase -i HEAD~4
+
+git rebase -i --root
+
+vim:
+%s/pick/s/g
+
+git push origin branch_name --force #no need to give branch_name if you're on same branch on which you want to push. Better check the current branch by using git branch.
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
