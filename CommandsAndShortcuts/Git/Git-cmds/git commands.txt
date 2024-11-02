@@ -831,6 +831,52 @@ CHANGES TO BE COMMITTED VS CHANGES NOT STAGED FOR COMMIT VS UNTRACKED FILES:
 
 	Untracked files = new files not yet tracked by Git.
 ----------------------------------------------------------------------------------------
+When I am doing git status from wsl terminal then I am seeing a file as untracked whereas If I check through windows command prompt then no file are showing:
+
+I see some ^M added to one of the file
+
++Most common error while you create any file in windows and try to run it in wsl:^M
+
+	The `^M` character you’re seeing in one of your files indicates that the file has Windows-style line endings (CRLF) instead of Unix-style line endings (LF). The `^M` character is a visual representation of the carriage return character (`\r`), which is used in Windows to indicate the end of a line. In contrast, Unix and Linux systems (including WSL) use only the line feed character (`\n`) to indicate the end of a line.
+
+	### Common Causes of `^M` Characters
+
+	1. **Creating Files in Windows**: If you create or edit files in Windows applications (like Notepad or some IDEs), they typically use CRLF line endings. When these files are viewed in WSL or a Unix-like environment, the `^M` character appears.
+
+	2. **Version Control Systems**: If you’re using Git, files with CRLF endings might be checked in, leading to issues when the same files are checked out in a Unix environment.
+
+	### Solutions to Remove `^M` Characters
+
+	1. **Using `dos2unix`**:
+		 - The easiest way to convert files with Windows-style line endings to Unix-style line endings in WSL is to use the `dos2unix` command. First, install `dos2unix` if it's not already available:
+			 ```bash
+			 sudo apt install dos2unix
+			 ```
+		 - Then, convert the file:
+			 ```bash
+			 dos2unix yourfile.txt
+			 ```
+
+	2. **Using `sed`**:
+		 - If you don't have `dos2unix`, you can also use `sed` to remove the `^M` characters:
+			 ```bash
+			 sed -i 's/\r$//' yourfile.txt
+			 ```
+
+	3. **Using Text Editors**:
+		 - Open the file in a text editor that supports changing line endings, such as Visual Studio Code, Sublime Text, or Notepad++. In these editors, you can often choose to save the file with Unix line endings (LF).
+
+	4. **Configure Git to Handle Line Endings**:
+		 - To prevent this issue from happening in the future, you can configure Git to handle line endings correctly. Run the following command in your repository:
+			 ```bash
+			 git config --global core.autocrlf input
+			 ```
+		 - This setting will convert CRLF to LF on commit but will leave LF as LF on checkout, preventing the `^M` characters from appearing in the first place.
+
+	### Conclusion
+
+	The `^M` character in your files is an indication of Windows-style line endings. By converting your files to Unix-style line endings using one of the methods mentioned above, you can resolve the issue and ensure compatibility in your WSL environment. If you have further questions or need more assistance, feel free to ask!
+
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
