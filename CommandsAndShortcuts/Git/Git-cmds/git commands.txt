@@ -791,8 +791,45 @@ vim:
 
 git push origin branch_name --force #no need to give branch_name if you're on same branch on which you want to push. Better check the current branch by using git branch.
 ----------------------------------------------------------------------------------------
+CLEANING - Untracked Files:
+If you want to clean up your working directory by removing all files not currently staged or committed, as they're already pushed to GitHub. Here’s a straightforward approach:
+List the files to be cleaned:
+
+git clean -n
+Remove the untracked files:
+
+git clean -f
+Remove untracked directories (if any):
+
+git clean -fd
+This will get rid of all the untracked files and directories, leaving your working directory clean and in sync with what's already on GitHub.
 ----------------------------------------------------------------------------------------
+CLEANING - Tracked Files:
+git reset --hard
+
+This command will:
+
+Discard all changes in tracked files.
+
+Reset the index to match the last commit.
+
+Set the working directory to match the index.
 ----------------------------------------------------------------------------------------
+CHANGES TO BE COMMITTED VS CHANGES NOT STAGED FOR COMMIT VS UNTRACKED FILES:
+
+	Changes to be committed: These are changes you've staged using git add. These will be included in your next commit. Think of it as a "ready to go" status.
+
+	Changes not staged for commit: These are modifications to tracked files that you've made in your working directory but haven't yet staged for commit. Basically, these changes are known to Git but not yet marked for inclusion in the next commit.
+
+	Untracked files: These are files in your working directory that Git isn't tracking at all. They've never been staged or committed, so Git is unaware of their history or changes.
+
+	In a nutshell:
+
+	To be committed = staged changes.
+
+	Not staged for commit = tracked but unstaged changes. Means any RUD (minus C from CRUD) operation in existing tracked files. Also renaming files, directories etc. Bascially any sort of change.
+
+	Untracked files = new files not yet tracked by Git.
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
