@@ -883,7 +883,7 @@ Create a snapshot of current branch: - you can use this to safely backup your ch
 You can use command substitution in your shell to dynamically get the current branch name when creating a new branch. Here's how:
 
 ```bash
-git branch snapshot-1-$(git rev-parse --abbrev-ref HEAD)
+git branch $(git rev-parse --abbrev-ref HEAD)-snapshot-1
 ```
 
 ### Explanation:
