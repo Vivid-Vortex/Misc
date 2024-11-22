@@ -963,6 +963,18 @@ If you're on a branch `feature-branch`, the new branch will be named:
 new-branch-feature-branch
 ```
 ----------------------------------------------------------------------------------------
+To change the commit order using vim and reabase.
+
+Use case - you have commit1, commit2, commit3. You want to sqash commit1 and commit3 without affecting commit2.
+Solution - 1. First you need to reorder commits as commit1, commit3, commit2. And then squash commit 3, which will be sqashed with next commit in line which is commit1.
+
+Reordering the commits in vim rebase:-
+Reorder the Commits:
+
+Use the arrow keys to navigate to the line you want to move (e.g., pick <hash3>).
+Cut the line using dd (this deletes the line but keeps it in memory).
+Navigate to the desired position and paste the line using p.
+
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
