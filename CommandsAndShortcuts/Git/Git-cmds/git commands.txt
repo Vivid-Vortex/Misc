@@ -878,6 +878,24 @@ I see some ^M added to one of the file
 	The `^M` character in your files is an indication of Windows-style line endings. By converting your files to Unix-style line endings using one of the methods mentioned above, you can resolve the issue and ensure compatibility in your WSL environment. If you have further questions or need more assistance, feel free to ask!
 
 ----------------------------------------------------------------------------------------
+Create a snapshot of current branch:
+
+You can use command substitution in your shell to dynamically get the current branch name when creating a new branch. Here's how:
+
+```bash
+git checkout -b new-branch-$(git rev-parse --abbrev-ref HEAD)
+```
+
+### Explanation:
+1. **`$(...)`**: Substitutes the output of the command (`git rev-parse --abbrev-ref HEAD`) into the `git checkout -b` command.
+2. **`new-branch-`**: Prefix for your new branch.
+3. **`git rev-parse --abbrev-ref HEAD`**: Gets the current branch name dynamically.
+
+### Example Output:
+If you're on a branch `feature-branch`, the new branch will be named:
+```
+new-branch-feature-branch
+```
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
