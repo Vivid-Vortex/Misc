@@ -805,6 +805,11 @@ git clean -fd
 This will get rid of all the untracked files and directories, leaving your working directory clean and in sync with what's already on GitHub.
 ----------------------------------------------------------------------------------------
 CLEANING - Tracked Files:
+usual command for hard reset: git reset --hard <commit-hash>
+ - <commit-hash>: The target commit hash you want to reset to (can also use HEAD~n or a branch name).
+ - Omitting <commit-hash> defaults to HEAD, discarding all uncommitted changes.
+
+# Equivalent to Github desktop select all -> right-click -> discard (one/all) file(s).
 git reset --hard
 
 This command will:
