@@ -820,6 +820,67 @@ Reset the index to match the last commit.
 
 Set the working directory to match the index.
 ----------------------------------------------------------------------------------------
+git clean -fd vs git reset --hard
+
+Here’s the difference between `git reset --hard` and `git clean`:
+
+---
+
+### **1. `git reset --hard`**
+- **What it does**: 
+   - Resets the current branch to a specific commit (or `HEAD` by default).
+   - Updates the **working directory**, **staging area**, and **HEAD** to match the target commit.
+   - Removes **tracked changes** (changes to files already being tracked by Git).
+
+- **Scope**: Affects only **tracked files** and changes related to commits.
+
+#### **Use Case**:
+- You want to undo changes to **tracked files** and revert to a specific commit.
+
+#### **Example**:
+```bash
+git reset --hard HEAD~1
+```
+- Moves the branch back by one commit and restores files to that state, discarding changes in tracked files.
+
+---
+
+### **2. `git clean`**
+- **What it does**: 
+   - Deletes **untracked files and directories** (files not added to Git).
+   - Does not affect tracked files or commit history.
+
+- **Scope**: Only affects **untracked files** and **untracked directories**.
+
+#### **Use Case**:
+- You want to remove files or directories that are not tracked by Git (e.g., build artifacts, temporary files).
+
+#### **Example**:
+```bash
+git clean -f -d
+```
+- Deletes all untracked files (`-f`) and untracked directories (`-d`).
+
+---
+
+### **Key Differences**
+| **Aspect**             | **`git reset --hard`**         | **`git clean`**               |
+|-------------------------|--------------------------------|--------------------------------|
+| **Scope**              | Tracked files only            | Untracked files/directories   |
+| **Affects Commit History** | Yes (resets to a specific commit) | No                            |
+| **Deletes Files?**      | No, only restores tracked files to a commit | Yes, removes untracked files |
+| **Command Context**     | Used to revert commits or reset working directory | Used to clean up untracked files |
+
+---
+
+### **Combined Usage**
+To completely reset a repository to a clean state:
+```bash
+git reset --hard
+git clean -f -d
+```
+This discards all tracked changes and deletes all untracked files and directories.
+----------------------------------------------------------------------------------------
 CHANGES TO BE COMMITTED VS CHANGES NOT STAGED FOR COMMIT VS UNTRACKED FILES:
 
 	Changes to be committed: These are changes you've staged using git add. These will be included in your next commit. Think of it as a "ready to go" status.
