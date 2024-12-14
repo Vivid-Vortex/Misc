@@ -14,6 +14,12 @@ ls -ltd -- */
 #-d: This option lists directories only, excluding regular files and other file types.
 #-- */: This pattern matches all directories (represented by /) within the
 -------------------------------------------------------------------------------------------
+cd /path/to/directory
+rm *
+rm -rf .* # Including Hidden Files: If you also want to delete hidden files (those starting with a dot), use:
+
+#Use the rm command with the -rf options to delete all files and directories:
+rm -rf * 
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------

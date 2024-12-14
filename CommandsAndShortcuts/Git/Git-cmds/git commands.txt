@@ -980,6 +980,11 @@ Cut the line using dd (this deletes the line but keeps it in memory).
 Navigate to the desired position and paste the line using p.
 
 ----------------------------------------------------------------------------------------
+To show the log of the current branch: git log
+This command will display the commit history for the current branch you are on. If you want to see a more concise log, you can use: git git log --oneline
+to show graph git log --graph --oneline
+If you need to filter the log further, you can use additional options. For example, to see the log of the current branch with a specific author: git log --author="Author Name"
+Or to see the log with a specific date range: git log --since="2023-01-01" --until="2023-12-31"
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
