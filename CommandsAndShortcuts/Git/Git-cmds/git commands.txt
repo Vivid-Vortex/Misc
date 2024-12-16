@@ -828,6 +828,9 @@ git clean -fd vs git reset --hard
 
 Here’s the difference between `git reset --hard` and `git clean`:
 
+In Short use the combination of these two to discard both tracked as well as untracked files:
+git reset --hard && git clean -fd
+
 ---
 
 ### **1. `git reset --hard`**
