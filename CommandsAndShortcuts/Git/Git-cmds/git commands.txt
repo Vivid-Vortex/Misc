@@ -986,8 +986,23 @@ to show graph git log --graph --oneline
 If you need to filter the log further, you can use additional options. For example, to see the log of the current branch with a specific author: git log --author="Author Name"
 Or to see the log with a specific date range: git log --since="2023-01-01" --until="2023-12-31"
 ----------------------------------------------------------------------------------------
+Create a new branch in githb and link it to local git directory:
+
+Go to GitHub and create a new repository. Do not initialize it with a README, .gitignore, or license.
+Copy the URL of your new GitHub repository. It will look something like https://github.com/your-username/your-repo.git.
+git remote add origin https://github.com/your-username/your-repo.git for example, git remote add origin https://github.com/Code-Deepak-Code/Cpp-Dll-Build.git
+git push -u origin master
 ----------------------------------------------------------------------------------------
+Set upstream branch.
+
+Context on what is upstream branch: --set-upstream or -u: This option sets the upstream branch for the given local branch. It configures the local branch to track the remote branch. This means that future git push or git pull commands will know which remote branch to interact with by default.
+origin: This is the name of the remote repository. By default, when you clone a repository, it is named origin.
+master: This is the name of the branch you are pushing. In this context, it refers to the main branch of your repository.
+
+full command:
+git push --set-upstream origin master
 ----------------------------------------------------------------------------------------
+gh repo create test-repo-from-local --public
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
