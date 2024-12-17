@@ -1,0 +1,1 @@
+alt + pg up/pg down - to increase/decrease brightness
