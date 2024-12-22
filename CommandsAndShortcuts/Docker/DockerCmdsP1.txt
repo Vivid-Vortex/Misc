@@ -30,6 +30,8 @@ docker inspect <CONTAINER_ID>
 
 docker stop $(docker ps -a -q) #It will stop all the docker containers
 
+docker rm $(docker ps -a -q) #It will remove all the docker containers
+
 docker rm container_id #to remove the container, in case of say name conflict while starting
 
 docker inspect container_id

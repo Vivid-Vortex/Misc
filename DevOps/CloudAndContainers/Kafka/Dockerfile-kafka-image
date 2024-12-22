@@ -1,0 +1,16 @@
+FROM openjdk:11-jre-slim
+
+# Install necessary tools
+RUN apt-get update && apt-get install -y wget tar
+
+# Download and extract Kafka
+RUN wget https://downloads.apache.org/kafka/3.0.0/kafka_2.13-3.0.0.tgz -O /tmp/kafka.tgz && \
+    tar -xzf /tmp/kafka.tgz -C /opt && \
+    mv /opt/kafka_2.13-3.0.0 /opt/kafka
+
+# Set environment variables
+ENV KAFKA_HOME=/opt/kafka
+ENV PATH=$PATH:$KAFKA_HOME/bin
+
+# Set entrypoint
+ENTRYPOINT ["java", "-jar", "/app/your-application.jar"]
