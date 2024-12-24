@@ -32,6 +32,9 @@ docker stop $(docker ps -a -q) #It will stop all the docker containers
 
 docker rm $(docker ps -a -q) #It will remove all the docker containers
 
+# Stop and remove all containers (docker ps at the end will show if all the contianer removed succesfully);
+docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q) && docker ps
+
 docker rm container_id #to remove the container, in case of say name conflict while starting
 
 docker inspect container_id
