@@ -2,4 +2,6 @@
 
 Misc
 
-[CopilotForCli](../Misc/CommandsAndShortcuts/tools/copilot.md#copilot-for-cli)
+[CopilotForCli](./Concepts/FilePathConcept.md)
+
+[copilot](./CommandsAndShortcuts/tools/copilot.md#how-are-you)
