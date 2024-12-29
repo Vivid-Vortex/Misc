@@ -5,15 +5,18 @@
 *.bak
 
 # Ignore all files in the .vscode directory
-*.vscode/
+/vscode
+.vscode/
 
 # Ignore all Logseq-related files and directories
 /logseq
 *.logseq
 
 # Ignore all MarkText-related files
-*.marktext/
+/marktext
+.marktext/
 
 # Ignore all Obsidian-related files and directories
-*.obsidian/
+/obsidian
+.obsidian/
 
