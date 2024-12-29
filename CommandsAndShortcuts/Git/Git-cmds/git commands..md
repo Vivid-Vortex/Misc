@@ -116,6 +116,9 @@ git config --global credential.helper '!f () { sleep 1; echo "username=git token
 #To sort out long file lenght not supported issue.
 git config --system core.longpaths true #Open git bash/cmd/powershell/termila etc in admin  mode Or You can open git bash in admin mode and use this command.
 
+# To ignore whitespaces Changes. Use gitbash in admin/root mode.
+git config --system apply.whitespace nowarn
+
 #To change the default editor of git to vim
 git config --global core.editor vim
 
