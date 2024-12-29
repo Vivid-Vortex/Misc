@@ -11,10 +11,14 @@
             "id": "ff2a490410cf1b99",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "CommandsAndShortcuts/Git/Git-cmds/gh-tool.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "gh-tool"
             }
           }
         ]
@@ -48,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Clean",
+                "query": "cache",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,12 +73,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 389.5
   },
   "right": {
     "id": "e5c520fd6ba86728",
@@ -90,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "CommandsAndShortcuts/Git/Git-cmds/gh-tool.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for gh-tool"
             }
           },
           {
@@ -108,11 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "CommandsAndShortcuts/Git/Git-cmds/gh-tool.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from gh-tool"
             }
           },
           {
@@ -133,9 +138,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "CommandsAndShortcuts/Git/Git-cmds/gh-tool.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of gh-tool"
             }
           }
         ]
@@ -157,32 +164,51 @@
   },
   "active": "ff2a490410cf1b99",
   "lastOpenFiles": [
+    "CommandsAndShortcuts/Git/Git-cmds/git commands..md",
+    "watch_and_stage.sh",
+    "README.md",
+    "Intelij-idea/settings.zip",
+    "Intelij-idea/Plugins/Plugins-list..md",
+    "Intelij-idea/Markdown-tutorial-intelij.md",
+    "DevOps/CloudAndContainers/Kafka/Dockerfile-kafka-image",
+    "DevOps/CloudAndContainers/Kafka/docker-compose-kafka.yml",
     "Concepts/SystemDesign/SystemDesign_concepts.t.md",
-    "Concepts/Reactive-Java/ReactiveJavaConcetps.t.md",
-    "Concepts/Cloud/Common-Cloud-concepts.t.md",
-    "Concepts/Api-Automation-Tests-Newman/ApiAutomationTestUsingNewman.t.md",
     "Concepts/SystemDesign/Design principle/SOLID.t.md",
+    "Concepts/Reactive-Java/ReactiveJavaConcetps.t.md",
     "Concepts/Project management/SDLC frameworks/ProjectManagement.t.md",
+    "Concepts/FilePathConcept.md",
+    "Concepts/DevOps/K8s/k8s-commands.pdf",
+    "Concepts/DevOps/K8s/CI & CD",
+    "Concepts/Database/NoSql/MongoDb/MongoDb.t.md",
+    "Concepts/Cloud/Common-Cloud-concepts.t.md",
     "Concepts/Cloud/Azure/Azure-Concepts.t.md",
     "Concepts/Backend/Kafka/Kafka-concetps-p1.t.md",
     "Concepts/Backend/JavaReactive/JavaReactiveConcepts.t.md",
+    "Concepts/Backend/Java/Virtual_Threads/Virtual_Threads_vs_and_Reactive_pramming.md",
     "Concepts/Backend/Java/ServiceInterfaceUtility.t.md",
+    "Concepts/Backend/Java/Java 8 specifics/Java8Concepts.t.md",
     "Concepts/Backend/Java/AutowiredAnnotationOptionalAfterSpring4.3.t.md",
     "Concepts/Backend/Java/AdvantagesOfConstructorBasedInjectionInSpring.t.md",
-    "Concepts/Database/NoSql/MongoDb/MongoDb.t.md",
-    "Concepts/Backend/Java/Java 8 specifics/Java8Concepts.t.md",
-    "Concepts/FilePathConcept.md",
-    "CommandsAndShortcuts/Gradle/gradleShortcuts..md",
-    "CommandsAndShortcuts/Gradle/gradleShortcuts..md.bak",
-    "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts..md",
-    "CommandsAndShortcuts/Linux/Ubuntu/Ubuntu-CmdsConcepts/Ubuntu-CmdsConcepts..md",
-    "CommandsAndShortcuts/tools/MarkText-MarkDown-Editor/markdown-cheat-sheet.md",
-    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/JsonTools/testfiles/small/subsmall/comment_json_as_txt..md",
-    "Concepts/Backend/Java/Virtual_Threads/Virtual_Threads_vs_and_Reactive_pramming.md",
+    "Concepts/Api-Automation-Tests-Newman/ApiAutomationTestUsingNewman.t.md",
     "CommandsAndShortcuts/WSL/WslConcepts..md",
+    "CommandsAndShortcuts/vscode/vscode-dev/vscode-lightweight/vscode-lightweighttips..md",
+    "CommandsAndShortcuts/vscode/vscode-dev/settings.json",
+    "CommandsAndShortcuts/vscode/vscode-dev/keybindings.json",
     "CommandsAndShortcuts/vscode/VS-Code-shortcuts..md",
-    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlusShortcuts..md",
-    "CommandsAndShortcuts/maven/maven..md",
-    "CommandsAndShortcuts/Docker/DockerCmdsP1..md"
+    "CommandsAndShortcuts/vscode/vs-code-plugins.md",
+    "CommandsAndShortcuts/vi-editor/vi-editor-cmds/vi-editor-cmds..md",
+    "CommandsAndShortcuts/tools/MarkText-MarkDown-Editor/MarkTextMarkDownEditorNotes.md",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/scripts/startup.py",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/scripts/Samples/Swap2Words.py",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/lib/idlelib/Icons/folder.gif",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/up.png",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/up-pressed.png",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/down-pressed.png",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/comment.png",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/comment-close.png",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/comment-bright.png",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/ajax-loader.gif",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/NppMarkdownPanel/help/save-btn.png",
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/NppMarkdownPanel/help/pluginfolder.png"
   ]
 }
