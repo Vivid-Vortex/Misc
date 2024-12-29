@@ -3,3 +3,17 @@
 
 # Notepad backup file
 *.bak
+
+# Ignore all files in the .vscode directory
+*.vscode/
+
+# Ignore all Logseq-related files and directories
+/logseq
+*.logseq
+
+# Ignore all MarkText-related files
+*.marktext/
+
+# Ignore all Obsidian-related files and directories
+*.obsidian/
+
