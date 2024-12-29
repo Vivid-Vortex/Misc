@@ -19,3 +19,5 @@
 # Ignore all Obsidian-related files and directories
 # Note .obsidian is a hidden folder (containing multiple internal files) in the root. Note how it is ignored.
 /.obsidian
+/.obsidian
+.obsidian/workspace.json
