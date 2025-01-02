@@ -1,60 +1,136 @@
-docker build -t apigateway-layred -f Dockerfile.layered .layered
+Docker Commands Reference Guide
+---
 
-docker logs --since time_stamp docker_id #Take the time_stamp from the api repsonse or from the docker compose cmd
+## Basic Commands
 
-docker compose -f docker-compose-kafka.yml up
+###### Note: Use linux based or wsl terminal to run below commands. You can use vs code or Intlij inbuild wsl based terminal.
 
-docker compose -f docker-compose-kafka.yml up -d #d for deteched mode
+### Stop all containers
 
-docker compose -f docker-microservices-ecom.yml up -d
+```bash
+docker stop $(docker ps -a -q)
+```
 
-docker compose -f docker-microserices-ecom.yml restart broker #It will just restart the service, which will bot have the changed code
+### Remove all containers
 
-**In order to have the changed code to ttake effect, use below set of command on one service in a dockerfile**
+```bash
+docker rm $(docker ps -a -q)
+```
 
-**We are starting only discovery-server service inside docker-microservices-ecom.yml
-docker-compose -f docker-microserices-ecom.yml stop -t discovery-server
-docker-compose -f docker-microserices-ecom.yml build discovery-server
-docker-compose -f docker-microserices-ecom.yml up --no-start discovery-server
-docker-compose -f docker-microserices-ecom.yml start discovery-server
+### Stop and remove all containers, then verify
 
-**Distributed tracking using zipkin**
-
-Docker Command
-
-docker run -d -p 9411:9411 openzipkin/zipkin**
-
-## Docker commands
-
-docker inspect <CONTAINER_ID>
-
-docker stop $(docker ps -a -q) #It will stop all the docker containers
-
-docker rm $(docker ps -a -q) #It will remove all the docker containers
-
-# Stop and remove all containers (docker ps at the end will show if all the contianer removed succesfully);
+```bash
 docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q) && docker ps
+```
 
-docker rm container_id #to remove the container, in case of say name conflict while starting
+### Remove specific container
 
+```bash
+docker rm container_id
+```
+
+### Inspect container
+
+```bash
 docker inspect container_id
+```
 
-docker compose -f docker-microservices-ecom.yml up discovery-server -d #start only one service out of many inside docker compoase file. Before running, please commit depends on section.
+### View container logs since timestamp
 
-docker logs --since time_stamp container_id # Check logs after a specific date
+```bash
+docker logs --since time_stamp container_id
+```
 
-docker logs -f container_name #checking live logs by service name in docker-compose file. container_name is as per docker compose service container_name
+### View live logs by service name
 
-#Redis
+```bash
+docker logs -f container_name
+```
 
-**Run redis as a cache using docker**
+## Docker Compose Commands
 
+### Start Kafka services
+
+```bash
+docker compose -f docker-compose-kafka.yml up
+```
+
+### Start Kafka services in detached mode
+
+```bash
+docker compose -f docker-compose-kafka.yml up -d
+```
+
+### Start microservices
+
+```bash
+docker compose -f docker-microservices-ecom.yml up -d
+```
+
+### Restart broker service
+
+```bash
+docker compose -f docker-microserices-ecom.yml restart broker
+```
+
+### Start single service from compose file
+
+```bash
+docker compose -f docker-microservices-ecom.yml up discovery-server -d
+```
+
+### Run minimal microservices
+
+```bash
+docker compose -f docker-microservices-ecom-minimal.yml up -d
+```
+
+## Building and Updating Services
+
+### Build layered API gateway
+
+```bash
+docker build -t apigateway-layred -f Dockerfile.layered .layered
+```
+
+### Update single service (discovery-server example)
+
+```bash
+docker-compose -f docker-microserices-ecom.yml stop discovery-server
+```
+
+```bash
+docker-compose -f docker-microserices-ecom.yml build discovery-server
+```
+
+```bash
+docker-compose -f docker-microserices-ecom.yml up --no-start discovery-server
+```
+
+```bash
+docker-compose -f docker-microserices-ecom.yml start discovery-server
+```
+
+## Service-Specific Commands
+
+### Start Zipkin for distributed tracking
+
+```bash
+docker run -d -p 9411:9411 openzipkin/zipkin
+```
+
+### Start Redis Cache
+
+```bash
 docker run -p 6379:6379 -d redis:latest
+```
 
-## Run Docker-compose-ecom
-docker  compose -f docker-microservices-ecom-minimal.yml up -d
---------------------------------------------------------------------
-docker run -e eurekaClient.url=http://eureka:password@localhost:8761/eureka/eureka -e eureka.username=eureka -e eureka.password -p 8761:8761 eureka:latest
+### Start Eureka Server
 
-docker run -e eurekaClient.url
---------------------------------------------------------------------
+```bash
+docker run -e eurekaClient.url=http://eureka:password@localhost:8761/eureka/eureka \
+          -e eureka.username=eureka \
+          -e eureka.password \
+          -p 8761:8761 \
+          eureka:latest
+```
