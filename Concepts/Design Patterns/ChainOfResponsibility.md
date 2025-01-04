@@ -1,4 +1,4 @@
-Explain Chain of Responsibility using Rest API Controller->Service Low Level Architecture
+## Explain Chain of Responsibility using Rest API Controller->Service Low Level Architecture
 
 ---
 
@@ -40,7 +40,7 @@ Imagine a request to approve a loan application.  The request might go through a
 
 ---
 
-Example using sprinboot and spring
+### Example using sprinboot and spring
 
 ---
 
@@ -214,7 +214,7 @@ This Spring Boot application demonstrates the chain of responsibility pattern.  
 
 ---
 
-Chains involved in the above example
+### Chains involved in the above example
 
 ---
 
