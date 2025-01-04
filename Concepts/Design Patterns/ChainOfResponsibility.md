@@ -1,6 +1,6 @@
-## Explain Chain of Responsibility using Rest API Controller->Service Low Level Architecture
+Explain Chain of Responsibility using Rest API Controller->Service Low Level Architecture
 
-
+---
 
 The Chain of Responsibility pattern is a behavioral design pattern that lets you pass requests along a chain of handlers.  Each handler has a chance to process the request.  If a handler can't handle the request, it passes it to the next handler in the chain. This way, you can decouple the sender of a request from its receiver(s).
 
