@@ -40,8 +40,6 @@ Imagine a request to approve a loan application.  The request might go through a
 
 ### Example using sprinboot and spring
 
----
-
 Here's an example of the Chain of Responsibility pattern implemented in Spring Boot, demonstrating loose coupling and extensibility.  This example simulates a request processing pipeline for user registration.  Each step in the pipeline performs a specific validation or action.
 
 **1. Interfaces and Base Class:**
@@ -214,7 +212,7 @@ This Spring Boot application demonstrates the chain of responsibility pattern.  
 
 ### Chains involved in the above example
 
----
+
 
 The chain of steps in the Spring Boot example follows this order:
 
