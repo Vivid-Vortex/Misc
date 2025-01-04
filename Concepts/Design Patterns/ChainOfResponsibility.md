@@ -212,8 +212,6 @@ This Spring Boot application demonstrates the chain of responsibility pattern.  
 
 ### Chains involved in the above example
 
-
-
 The chain of steps in the Spring Boot example follows this order:
 
 1. **`EmailValidationStep`:** This step first checks if the user's provided email address conforms to a basic regular expression pattern.  If the email is invalid according to this pattern, the `process` method returns `false`, stopping further processing.  If the email is valid, the method calls `super.process(user)`, passing control to the next step in the chain.
