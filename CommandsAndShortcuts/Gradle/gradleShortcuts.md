@@ -1,5 +1,5 @@
 #Clean Gradle Cache: Sometimes, Gradle's cache files might cause issues with directory deletion. You can try cleaning #Gradle's cache by running the following command in your project directory:
-#./gradlew cleanBuildCache
+./gradlew cleanBuildCache
 
 #Refresh Dependencies: Sometimes, Gradle might not fetch the latest dependencies due to caching. You can force Gradle to refresh dependencies #by running the following command in your project directory:
 ./gradlew --refresh-dependencies
@@ -18,5 +18,12 @@ Dependency Conflicts: Check for any potential dependency conflicts in your proje
 
 #Use Ctrl + f12 to open terminal and then run below command to clean build and skip test while building
 ./gradlew clean build -x test
+
+#Skip checks, unit tests and Integration tests on Gradle while doing build
+```
+build -x test -x check -x IntegrationTest
+```
+
+
 
 
