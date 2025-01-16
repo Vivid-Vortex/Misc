@@ -33,7 +33,8 @@ function sumAndInsertUntilColumn() {
   let currentDate = new Date(firstDate);
 
   // Loop through each week (every 6 columns) until March 31st (stopColumn)
-  while (currentDate <= new Date('2025-12-31')) {
+  // while (currentDate <= new Date('2025-12-31')) { / Get report generated for all year
+  while (currentDate <= new Date()) { // Get report generated till current date
     console.log("Loop Starts --------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     
     // Get the start of the week (Monday) and the end of the week (Sunday)
