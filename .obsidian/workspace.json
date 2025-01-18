@@ -11,14 +11,14 @@
             "id": "ff2a490410cf1b99",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "CommandsAndShortcuts/Git/Git-cmds/gh-tool.md",
-                "mode": "source",
-                "source": false
+                "aFile": "READM.md",
+                "bFile": "READM.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "gh-tool"
+              "icon": "diff",
+              "title": "Diff: READM"
             }
           }
         ]
@@ -144,13 +144,23 @@
               "icon": "lucide-list",
               "title": "Outline of gh-tool"
             }
+          },
+          {
+            "id": "32f2a8cc0581a021",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 578.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -159,7 +169,8 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "ff2a490410cf1b99",
