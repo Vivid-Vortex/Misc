@@ -11,14 +11,14 @@
             "id": "ff2a490410cf1b99",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "READM.md",
-                "bFile": "READM.md",
-                "aRef": ""
+                "file": "CommandsAndShortcuts/Gradle/gradleShortcut.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: READM"
+              "icon": "lucide-file",
+              "title": "gradleShortcut"
             }
           }
         ]
@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "cache",
+                "query": "gradle",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,7 +73,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -151,8 +152,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ],
@@ -169,12 +170,12 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false
+      "command-palette:Open command palette": false
     }
   },
   "active": "ff2a490410cf1b99",
   "lastOpenFiles": [
+    "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak",
     "CommandsAndShortcuts/Git/Git-cmds/git commands..md",
     "watch_and_stage.sh",
     "README.md",
@@ -208,7 +209,6 @@
     "CommandsAndShortcuts/vscode/VS-Code-shortcuts..md",
     "CommandsAndShortcuts/vscode/vs-code-plugins.md",
     "CommandsAndShortcuts/vi-editor/vi-editor-cmds/vi-editor-cmds..md",
-    "CommandsAndShortcuts/tools/MarkText-MarkDown-Editor/MarkTextMarkDownEditorNotes.md",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/scripts/startup.py",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/scripts/Samples/Swap2Words.py",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/lib/idlelib/Icons/folder.gif",

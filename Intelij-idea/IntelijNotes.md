@@ -1,0 +1,1 @@
+Explore: what's Menmonic Bookmark in intelij, use ctrl + f11

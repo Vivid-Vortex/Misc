@@ -30,6 +30,31 @@ Templates acrynyms:
 sout - System.out.println()
 prsf - private static final
 ----------------------------------------------------------------------------------
+Extract constant: ctrl + alt + c.
+
+In IntelliJ IDEA, you can use the **Extract Constant** shortcut to extract a value like `"value"` and define it as a `private static final` field. Follow these steps:
+
+### Steps to Extract Constant:
+1. Place your cursor on the `"value"` string.
+2. Use the shortcut:  
+   **Windows/Linux**: `Ctrl + Alt + C`  
+   **Mac**: `Command + Option + C`
+3. IntelliJ will prompt you to specify a name for the constant. For example, type `VALUE`.
+4. Press `Enter`. IntelliJ will refactor the code and create the constant.
+
+### Example Before Refactoring:
+```java
+"value".equals(obj.getValue());
+```
+
+### Example After Refactoring:
+```java
+private static final String VALUE = "value";
+
+VALUE.equals(obj.getValue());
+```
+
+This makes the code cleaner, reusable, and adheres to good coding practices.
 ----------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------
