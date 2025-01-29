@@ -24,6 +24,14 @@ Dependency Conflicts: Check for any potential dependency conflicts in your proje
 build -x test -x check -x IntegrationTest
 ```
 
+---
+excluding custom gradle build such as docker-test:
+
+clean build pitest <mark> -x docker-test:build</mark
+***In this simply by excluding the build part of that check, you can remove all it's subsequent check such as docker-test:check, docker-test:classes etc.
+
+
+
 
 
 
