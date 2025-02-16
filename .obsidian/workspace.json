@@ -174,15 +174,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "18698c0d11daf7f0",
+  "active": "ff2a490410cf1b99",
   "lastOpenFiles": [
+    "vsCodeDarculaTheme.png",
+    "CommandsAndShortcuts/vscode/vs-code-plugin.md",
     "Assets/ba284a7fe424b0da003fd95ec1791b76a6d5f7c5.png",
     "Concepts/SystemDesign/LowLevelDesign/Clarifying Question to ask.md",
     "Concepts/SystemDesign/LowLevelDesign",
     "Untitled.canvas",
     "2025-02-16.md",
-    "CommandsAndShortcuts/vscode/vs-code-plugin.md",
-    "vsCodeDarculaTheme.png",
     "Intelij-idea/IntelijNotes.md",
     "CommandsAndShortcuts/Gradle/gradleShortcut.md",
     "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak",
@@ -221,7 +221,6 @@
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/comment.png",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/comment-close.png",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/comment-bright.png",
-    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/ajax-loader.gif",
-    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/NppMarkdownPanel/help/save-btn.png"
+    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/ajax-loader.gif"
   ]
 }
