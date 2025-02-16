@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/Gradle/gradleShortcut.md",
+                "file": "CommandsAndShortcuts/vscode/vs-code-plugin.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "gradleShortcut"
+              "title": "vs-code-plugin"
             }
           }
         ]
@@ -52,10 +52,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "gradle",
+                "query": "vs code",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
@@ -161,7 +161,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 578.5
+    "width": 578.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -175,6 +176,7 @@
   },
   "active": "ff2a490410cf1b99",
   "lastOpenFiles": [
+    "CommandsAndShortcuts/Gradle/gradleShortcut.md",
     "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak",
     "CommandsAndShortcuts/Git/Git-cmds/git commands..md",
     "watch_and_stage.sh",
@@ -210,7 +212,6 @@
     "CommandsAndShortcuts/vscode/vs-code-plugins.md",
     "CommandsAndShortcuts/vi-editor/vi-editor-cmds/vi-editor-cmds..md",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/scripts/startup.py",
-    "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/scripts/Samples/Swap2Words.py",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/lib/idlelib/Icons/folder.gif",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/up.png",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/up-pressed.png",

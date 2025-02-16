@@ -7,5 +7,10 @@ Quick and Simple Text Selection
 ```
 
 
+### VS Code Theme:
+
+```
+Aura Dracula Spirit
+```
 
 
