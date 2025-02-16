@@ -13,6 +13,6 @@ Quick and Simple Text Selection
 Aura Spirit Dracula Theme
 ```
 
-![](Pasted%20image%2020250216135647.png)
+![](vsCodeDarculaTheme.png)
 
 
