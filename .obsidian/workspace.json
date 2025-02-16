@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/vscode/vs-code-plugin.md",
+                "file": "Concepts/SystemDesign/LowLevelDesign/Clarifying Question to ask.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "vs-code-plugin"
+              "title": "Clarifying Question to ask"
             }
           }
         ]
@@ -176,21 +176,21 @@
   },
   "active": "ff2a490410cf1b99",
   "lastOpenFiles": [
-    "Assets/vs-code-plugin/2025-02-17-03-44-40-image.png",
+    "Assets/2025-02-17-03-56-31-image.png",
+    "Assets/2025-02-17-03-56-11-image.png",
+    "Assets/2025-02-17-03-55-39-image.png",
+    "Assets/2025-02-17-03-55-24-image.png",
+    "Assets/2025-02-17-03-54-34-image.png",
+    "Assets/2025-02-17-03-54-09-image.png",
+    "CommandsAndShortcuts/vscode/vs-code-plugin.md",
+    "Assets/2025-02-17-03-52-21-image.png",
+    "Assets/2025-02-17-03-51-50-image.png",
+    "Assets/2025-02-17-03-51-42-image.png",
+    "Assets/2025-02-17-03-51-02-image.png",
+    "Assets/2025-02-17-03-51-00-image.png",
     "Assets/vs-code-plugin",
-    "Assets/2025-02-17-03-44-40-image.png",
-    "CommandsAndShortcuts/vscode/Assets/vs-code-plugin/2025-02-17-03-43-27-image.png",
-    "Assets/2025-02-17-03-43-27-image.png",
-    "CommandsAndShortcuts/vscode/Assets/vs-code-plugin/2025-02-17-03-42-59-image.png",
     "CommandsAndShortcuts/vscode/Assets/vs-code-plugin",
     "CommandsAndShortcuts/vscode/Assets",
-    "Assets/2025-02-17-03-42-59-image.png",
-    "Assets/2025-02-17-03-41-42-image.png",
-    "Assets/2025-02-17-03-41-19-image.png",
-    "Assets/2025-02-17-03-41-10-image.png",
-    "Assets/2025-02-17-03-40-56-image.png",
-    "Assets/2025-02-17-03-40-07-image.png",
-    "CommandsAndShortcuts/vscode/vs-code-plugin.md",
     "Concepts/SystemDesign/LowLevelDesign/Clarifying Question to ask.md",
     "Concepts/SystemDesign/LowLevelDesign",
     "Untitled.canvas",
