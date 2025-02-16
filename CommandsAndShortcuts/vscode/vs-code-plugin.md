@@ -10,6 +10,6 @@ Quick and Simple Text Selection
 Aura Spirit Dracula Theme
 ```
 
-![](../../assets/ba284a7fe424b0da003fd95ec1791b76a6d5f7c5.png)
+![](./../../assets/ba284a7fe424b0da003fd95ec1791b76a6d5f7c5.png)
 
 
