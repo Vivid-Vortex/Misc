@@ -4,4 +4,3 @@ ctrl + shift + F = project wise search for any type of files #equivalent to doub
 ctrl + B = to toggle explorer section on/off #It is equivalent to intelij's alt + 1
 
 alt + 1 = custom keyword binding. It is used to toggle activity bar
-
