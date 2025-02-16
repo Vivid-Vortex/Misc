@@ -13,3 +13,5 @@ Aura Spirit Dracula Theme
 ![](./../../Assets/ba284a7fe424b0da003fd95ec1791b76a6d5f7c5.png)
 
 
+
+![](Assets/vs-code-plugin/2025-02-17-03-43-27-image.png)
