@@ -10,7 +10,9 @@ Quick and Simple Text Selection
 ### VS Code Theme:
 
 ```
-Aura Dracula Spirit
+Aura Spirit Dracula Theme
 ```
+
+![](Pasted%20image%2020250216135647.png)
 
 

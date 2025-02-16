@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Intelij-idea/IntelijNotes.md",
+                "file": "CommandsAndShortcuts/vscode/vs-code-plugin.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IntelijNotes"
+              "title": "vs-code-plugin"
             }
           }
         ]
@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "intelij",
+                "query": "vs code theme",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -176,6 +176,8 @@
   },
   "active": "ff2a490410cf1b99",
   "lastOpenFiles": [
+    "Pasted image 20250216135647.png",
+    "Intelij-idea/IntelijNotes.md",
     "CommandsAndShortcuts/vscode/vs-code-plugin.md",
     "CommandsAndShortcuts/Gradle/gradleShortcut.md",
     "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak",
@@ -209,8 +211,6 @@
     "CommandsAndShortcuts/vscode/vscode-dev/vscode-lightweight/vscode-lightweighttips..md",
     "CommandsAndShortcuts/vscode/vscode-dev/settings.json",
     "CommandsAndShortcuts/vscode/vscode-dev/keybindings.json",
-    "CommandsAndShortcuts/vscode/VS-Code-shortcuts..md",
-    "CommandsAndShortcuts/vscode/vs-code-plugins.md",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/scripts/startup.py",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/lib/idlelib/Icons/folder.gif",
     "CommandsAndShortcuts/NotepadPlusPlus/NotepadPlusPlus-plugins/PythonScript/doc/_static/up.png",
