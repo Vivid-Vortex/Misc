@@ -36,6 +36,8 @@ git fetch origin #It will fetch any changes from origin main to local main
 git push origin main (instead of main, we can put any desired remote branch_name to push to)
 #At last simply run 
 git log --oneline
+#To see only your logs
+git log --author="your_name_which_shows_in_intelij_github_desktop" --oneline
 #If everything your local and remote is in sync, then you'll see a message as 'HEAD -> main, origin/main, origin/HEAD'
 #Now use below command. You will see remote commits and local commits and difference.
 git log origin/main
