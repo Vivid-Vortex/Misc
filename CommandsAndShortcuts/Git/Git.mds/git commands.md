@@ -1012,7 +1012,65 @@ git push --set-upstream origin master
 ----------------------------------------------------------------------------------------
 gh repo create test-repo-from-local --public
 ----------------------------------------------------------------------------------------
+### Globally (for all your Git repositories):
+
+git config --global core.compression 0
+
+### Per Repository:
+
+git config core.compression 0
+
+### reenable file compression
+
+git config --global core.compression 9 # globally
+git config core.compression 9 # Per Repository:
+
+### Reset (Never used to better use above ones)
+
+To Restore the Default Behavior (Recommended):
+
+Instead of explicitly setting a compression level, you can remove the core.compression setting altogether. This will make Git revert to its default compression behavior.
+
+Globally:
+
+Bash
+
+git config --global --unset core.compression
+Per Repository:
+
+Bash
+
+git config --unset core.compression
 ----------------------------------------------------------------------------------------
+### Increase/Decrase/Reset buffer size
+
+Globally (for all your Git repositories):
+
+Bash
+
+git config --global http.postBuffer <size_in_bytes>
+Replace <size_in_bytes> with the desired buffer size. For example, to set it to 500MB:
+
+Bash
+
+git config --global http.postBuffer 524288000
+You can use units like k, m, or g for kilobytes, megabytes, or gigabytes respectively:
+
+Bash
+
+git config --global http.postBuffer 500m
+Per Repository:
+
+Navigate to the root directory of your Git repository and run:
+
+Bash
+
+git config http.postBuffer <size_in_bytes>
+For example:
+
+Bash
+
+git config http.postBuffer 250m
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
