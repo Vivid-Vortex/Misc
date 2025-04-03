@@ -6,3 +6,13 @@ kill any windows tasks which is occuping the required port (which is say 2181):
 2. copy processId and run below command
 taskkill /PID 4528 -F #Here is 4528 is the processId.
 
+---
+### To get serial number
+
+wmic bios get serialnumber 
+---
+### To get hostname
+
+hostnmae
+---
+
