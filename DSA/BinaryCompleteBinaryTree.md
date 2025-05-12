@@ -66,8 +66,8 @@ In this example, the root (9) is the largest element. For every parent-child rel
 **Relationship between Heaps, Binary Trees, and Complete Binary Trees:**
 
 * Both min-heaps and max-heaps are typically implemented using **complete binary trees**. The complete binary tree structure ensures that the heap can be efficiently represented as an array, which is often how it's done in practice.
-* While a heap is a type of binary tree (specifically a complete binary tree with the heap property), ==not all complete binary trees are heaps. A complete binary tree only becomes a heap if it satisfies the min-heap or max-heap property.
-* Similarly, not all binary trees are heaps or complete binary trees. A general binary tree doesn't have the structural constraints of completeness or the ordering property of heaps.==
+* While a heap is a type of binary tree (specifically a complete binary tree with the heap property), <mark>not all complete binary trees are heaps. A complete binary tree only becomes a heap if it satisfies the min-heap or max-heap property.
+* Similarly, not all binary trees are heaps or complete binary trees. A general binary tree doesn't have the structural constraints of completeness or the ordering property of heaps.</mark>
 
 **In summary:**
 
