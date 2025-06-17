@@ -1072,7 +1072,28 @@ Bash
 
 git config http.postBuffer 250m
 ----------------------------------------------------------------------------------------
+git revert - safe way to revert the changes on protected branches as it doesn't alter history. This create a commit history which revers the changes of the commit or number of commits specified.
+
+You can use git revert HEAD~3..HEAD
+
+git revert any one branch.
+
+#revert merge commits on main branch or any other protected branch.
+git revert -m 1 <merge commit hash> # -m 1 gtell git which parent to keep.
+
+-m 1 means treat the first parent as the mainline (i.e. keep changes from the branch yopu were on when you did the commit)
+
+-m 2 would mean keep the changes from the merged-in branch and revert the others.
 ----------------------------------------------------------------------------------------
+How to know the merge commit merged branch?
+
+git show <merge-commit-hash>
+
+Output:
+Merge: a1wrwe 4eajgl
+
+a1wrwe - Parent 1
+4eajgl - parent 2
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
