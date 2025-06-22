@@ -6,7 +6,7 @@ kill any windows tasks which is occuping the required port (which is say 2181):
 2. copy processId and run below command
 taskkill /PID 4528 -F #Here is 4528 is the processId.
 
-Note: Short combining step 1 and step 2 (for powershell admin mode only):
+Note: Short combining step 1 and step 2 (for powershell admin mode only): Just modify port number.
 
 foreach ($p in (netstat -ano | findstr :8183 | % { $_.Split()[-1] } | Select-Object -Unique)) { taskkill /F /PID $p }
 
