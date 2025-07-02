@@ -2,7 +2,7 @@
 
 ## 📦 1. Download the ZIP Version of VS Code
 
-- Go to [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
+- Go to [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download) || [private-link](https://drive.google.com/file/d/1IdAVApHUuua3Smj4AyF4wSYxtGExQmnt/view?usp=sharing)
 - Select the **ZIP archive** for Windows
 - Extract it to a folder such as `C:\IDE\VSCode-light-zipVer`
 - Create a seperate icon for this using, right click on code.exe inside home folder -> send to -> desktop shortcut
