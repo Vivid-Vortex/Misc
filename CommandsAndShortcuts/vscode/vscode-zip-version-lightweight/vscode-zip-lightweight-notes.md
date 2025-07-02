@@ -5,6 +5,7 @@
 - Go to [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
 - Select the **ZIP archive** for Windows
 - Extract it to a folder such as `C:\IDE\VSCode-light-zipVer`
+- Create a seperate icon for this using, right click on code.exe inside home folder -> send to -> desktop shortcut
 
 ## 🗃️ 2. Enable Portable Mode
 
