@@ -63,6 +63,13 @@ Install sdkman:
  2. install 7 zip (directly using .exe  or using winget)
  3. use the above command given under step 3.
 
+4. Directly on Windows:
+1. Go on then, paste and run the following in a terminal: 
+		curl -s "https://get.sdkman.io" | bash
+2. For upgradel: 
+		Please consider running the following if you need to upgrade.
+    $ sdk selfupdate force
+
 Note:- After installing sdkman via wsl, go to intelij and from here you can directly use the sdk java version
 which is installed under windows wsl directory (Follow below steps for that). Also keep in mind that you must always install 
 atleast one latest java lts version on windows in order for all the other api's outside intelij to use it.

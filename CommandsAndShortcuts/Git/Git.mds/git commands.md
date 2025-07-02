@@ -1095,6 +1095,36 @@ Merge: a1wrwe 4eajgl
 a1wrwe - Parent 1
 4eajgl - parent 2
 ----------------------------------------------------------------------------------------
+Authentication:
+Git to Github connections majorly uses two types of authentication one is SSH and HTTPS - Both types of uyou will find on github.
+
+Switch to HTTPS + Token Instead of SSH (as it requires you to setup public key etc which is bit more complicated to setup than https version)
+
+If you don’t want to deal with SSH, change remote to HTTPS:
+
+```bash
+git remote set-url origin https://github.com/Vivid-Vortex/your-repo.git
+```
+
+Then do:
+
+```bash
+git pull
+```
+
+Git will prompt you for:
+
+* **Username** → `Vivid-Vortex`
+* **Password** → Paste your **Personal Access Token** (not your actual password)
+
+You can store this using:
+
+```bash
+git config --global credential.helper store
+```
+
+
+
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
