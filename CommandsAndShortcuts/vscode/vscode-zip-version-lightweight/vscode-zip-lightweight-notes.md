@@ -4,7 +4,7 @@
 
 - Go to [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
 - Select the **ZIP archive** for Windows
-- Extract it to a folder such as `D:\Apps\VSCode-Portable`
+- Extract it to a folder such as `C:\IDE\VSCode-light-zipVer`
 
 ## 🗃️ 2. Enable Portable Mode
 
