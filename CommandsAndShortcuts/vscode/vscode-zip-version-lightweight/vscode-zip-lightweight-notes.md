@@ -83,6 +83,10 @@ If you want to move your custom portable setup to another PC:
 You can use the [vs-code-lightweight-data-folder](https://github.com/Vivid-Vortex/vs-code-lightweight-data-folder.git) repository.  
 Just clone or download its contents and place the `data` folder next to `Code.exe` for an instant minimal setup.
 
+** In case if you loose the setup - you can download it from below link: **
+
+https://drive.google.com/file/d/1IdAVApHUuua3Smj4AyF4wSYxtGExQmnt/view?usp=sharing
+
 ---
 
 Want to create a one-click launcher or USB-ready version of this portable setup next? I can show you that too.
