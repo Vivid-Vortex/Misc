@@ -1,0 +1,84 @@
+# 🧭 Setting Up Lightweight VS Code in Portable Mode
+
+## 📦 1. Download the ZIP Version of VS Code
+
+- Go to [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
+- Select the **ZIP archive** for Windows
+- Extract it to a folder such as `D:\Apps\VSCode-Portable`
+
+## 🗃️ 2. Enable Portable Mode
+
+- Inside the extracted folder, create a subfolder named `data`  
+  Folder structure should look like:
+  ```
+  D:\Apps\VSCode-Portable\
+  ├── Code.exe
+  └── data\
+  ```
+
+## ⚙️ 3. Add Lightweight Settings
+
+- Navigate to:
+  ```
+  D:\Apps\VSCode-Portable\data\User\
+  ```
+- Create or edit `settings.json` and paste:
+
+```json
+{
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/dist": true,
+    "**/build": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.git/**": true,
+    "**/dist/**": true,
+    "**/build/**": true
+  },
+  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": null,
+  "workbench.activityBar.visible": false,
+  "workbench.statusBar.visible": false,
+  "extensions.autoUpdate": false,
+  "extensions.autoCheckUpdates": false,
+  "breadcrumbs.enabled": false,
+  "window.zoomLevel": 0,
+  "window.restoreWindows": "none",
+  "files.autoSave": "off",
+  "editor.quickSuggestions": false,
+  "editor.hover.enabled": false,
+  "editor.parameterHints.enabled": false,
+  "editor.codeLens": false,
+  "editor.suggestOnTriggerCharacters": false
+}
+```
+
+## 🚀 4. Launch VS Code
+
+- Run `Code.exe` directly from the portable folder
+
+## ✈️ 5. Optional: Carry Your Setup Across Systems
+
+If you want to move your custom portable setup to another PC:
+
+- Just copy the entire `data` folder, which contains:
+  - Your settings
+  - Installed extensions
+  - Keybindings
+  - Editor history
+
+- On the new system:
+  1. Download and extract the **ZIP version** of VS Code
+  2. Paste your saved `data` folder next to `Code.exe`
+
+> ✅ When you launch `Code.exe`, all your settings and extensions will be restored just as they were.
+
+---
+
+Want to create a one-click launcher or USB-ready version of this portable setup next? I can show you that too.
