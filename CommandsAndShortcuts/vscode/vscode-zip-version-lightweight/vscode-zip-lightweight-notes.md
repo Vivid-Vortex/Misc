@@ -49,7 +49,7 @@
   "extensions.autoCheckUpdates": false,
   "breadcrumbs.enabled": false,
   "window.zoomLevel": 0,
-  "window.restoreWindows": "none",
+  "window.restoreWindows": "one",
   "files.autoSave": "off",
   "editor.quickSuggestions": false,
   "editor.hover.enabled": false,
@@ -78,6 +78,10 @@ If you want to move your custom portable setup to another PC:
   2. Paste your saved `data` folder next to `Code.exe`
 
 > ✅ When you launch `Code.exe`, all your settings and extensions will be restored just as they were.
+
+**💡 Want a ready-made lightweight `data` folder?**  
+You can use the [vs-code-lightweight-data-folder](https://github.com/Vivid-Vortex/vs-code-lightweight-data-folder.git) repository.  
+Just clone or download its contents and place the `data` folder next to `Code.exe` for an instant minimal setup.
 
 ---
 
