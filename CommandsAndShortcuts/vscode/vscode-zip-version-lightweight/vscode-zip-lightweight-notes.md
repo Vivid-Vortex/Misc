@@ -12,7 +12,7 @@
 - Inside the extracted folder, create a subfolder named `data`  
   Folder structure should look like:
   ```
-  D:\Apps\VSCode-Portable\
+  D:\Apps\VSCode-light-zipVer\
   ├── Code.exe
   └── data\
   ```
