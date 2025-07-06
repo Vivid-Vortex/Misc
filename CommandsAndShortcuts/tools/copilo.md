@@ -1,36 +1,44 @@
-## Know copilot features
+# GitHub Copilot Features and Setup
 
-https://code.visualstudio.com/docs/copilot/copilot-vscode-features
+## Copilot Features Documentation
+
+For comprehensive information about GitHub Copilot features, visit:
+[VS Code Copilot Features](https://code.visualstudio.com/docs/copilot/copilot-vscode-features)
 
 ## Copilot for CLI
 
-look into below file to install gh
+### Prerequisites
+Look into the following file to install GitHub CLI (`gh`):
+[GitHub CLI Tool Guide](../Git/Git-cmds/gh-tool.md)
 
-```
-CommandsAndShortcuts\Git\Git-cmds\gh-tool.md
-```
+### Installation Steps
 
-```
-gh auth login
-```
+1. **Authenticate with GitHub:**
+   ```bash
+   gh auth login
+   ```
 
-```
-gh extension install github/gh-copilot
-```
+2. **Install Copilot Extension:**
+   ```bash
+   gh extension install github/gh-copilot
+   ```
 
-To upgrade to the latest version
-
-```
-gh extension upgrade github/gh-copilot
-```
+3. **Upgrade to Latest Version:**
+   ```bash
+   gh extension upgrade github/gh-copilot
+   ```
 
 ---
 
-### This is Gread
+## Example Usage
+
+### This is Great
 
 # How are you
 
 ![alt text](image.jpg)
+
+### Task Checklist
 
 - [x] Write the press release  
 - [ ] Update the website  

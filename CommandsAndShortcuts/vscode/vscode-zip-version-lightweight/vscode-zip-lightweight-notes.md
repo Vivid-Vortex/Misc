@@ -5,12 +5,13 @@
 - Go to [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download) || [private-link](https://drive.google.com/file/d/1IdAVApHUuua3Smj4AyF4wSYxtGExQmnt/view?usp=sharing)
 - Select the **ZIP archive** for Windows
 - Extract it to a folder such as `C:\IDE\VSCode-light-zipVer`
-- Create a seperate icon for this using, right click on code.exe inside home folder -> send to -> desktop shortcut
+- Create a separate icon for this using: right click on `code.exe` inside home folder → send to → desktop shortcut
 
 ## 🗃️ 2. Enable Portable Mode
 
-- Inside the extracted folder, create a subfolder named `data`  
-  Folder structure should look like:
+- Inside the extracted folder, create a subfolder named `data`
+- Folder structure should look like:
+  
   ```
   D:\Apps\VSCode-light-zipVer\
   ├── Code.exe
@@ -20,6 +21,7 @@
 ## ⚙️ 3. Add Lightweight Settings
 
 - Navigate to:
+  
   ```
   D:\Apps\VSCode-Portable\data\User\
   ```
@@ -69,22 +71,28 @@
 If you want to move your custom portable setup to another PC:
 
 - Just copy the entire `data` folder, which contains:
+  
   - Your settings
   - Installed extensions
   - Keybindings
   - Editor history
 
 - On the new system:
+  
   1. Download and extract the **ZIP version** of VS Code
   2. Paste your saved `data` folder next to `Code.exe`
 
 > ✅ When you launch `Code.exe`, all your settings and extensions will be restored just as they were.
 
-**💡 Want a ready-made lightweight `data` folder?**  
+## 💡 Ready-Made Setup
+
+**Want a ready-made lightweight `data` folder?**  
 You can use the [vs-code-lightweight-data-folder](https://github.com/Vivid-Vortex/vs-code-lightweight-data-folder.git) repository.  
 Just clone or download its contents and place the `data` folder next to `Code.exe` for an instant minimal setup.
 
-** In case if you loose the setup - you can download it from below link: **
+## 🔄 Backup Link
+
+**In case you lose the setup - you can download it from the link below:**
 
 https://drive.google.com/file/d/1IdAVApHUuua3Smj4AyF4wSYxtGExQmnt/view?usp=sharing
 

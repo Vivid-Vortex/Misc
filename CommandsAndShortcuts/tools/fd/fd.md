@@ -1,21 +1,14 @@
-**Question:**  
-What is `fd` and how do I install it?
-
----
-
----
+# FD - Fast File/Folder Finder
 
 ## 🚀 What is `fd`?
 
-| Feature           | Description                                                    |
-| ----------------- | -------------------------------------------------------------- |
-| 🔍 Tool Type      | File/folder searcher                                           |
-| ⚡ Speed           | Much faster than `find`                                        |
-| 🖍️ Output        | Colorized, cleaner                                             |
-| 📦 Syntax         | Intuitive and minimal                                          |
+| Feature | Description |
+|---------|-------------|
+| 🔍 Tool Type | File/folder searcher |
+| ⚡ Speed | Much faster than `find` |
+| 🖍️ Output | Colorized, cleaner |
+| 📦 Syntax | Intuitive and minimal |
 | 🧠 Smart Defaults | Ignores `.gitignore`, hidden/system files (unless told not to) |
-
----
 
 ### ✅ Example Usage
 
@@ -46,7 +39,7 @@ fd
 
 ---
 
-### ⚠️ Note for Ubuntu:
+### ⚠️ Note for Ubuntu
 
 On Ubuntu, `fd` installs as:
 
@@ -77,32 +70,35 @@ fd --type d linux
 
 ## ✅ Summary
 
-| Task                         | Command                                |
-| ---------------------------- | -------------------------------------- |
-| Install on Ubuntu            | `sudo apt install fd-find`             |
-| Use without alias            | `fdfind`                               |
-| Recommended                  | Add `alias fd='fdfind'` to `~/.bashrc` |
-| Search dirs case-insensitive | `fd --type d --ignore-case linux`      |
+| Task | Command |
+|------|---------|
+| Install on Ubuntu | `sudo apt install fd-find` |
+| Use without alias | `fdfind` |
+| Recommended | Add `alias fd='fdfind'` to `~/.bashrc` |
+| Search dirs case-insensitive | `fd --type d --ignore-case linux` |
 
 ---
 
-### My Two Cents:
+## My Two Cents
 
-If you want to find any directory named linux in any of the sub directories, use:
+If you want to find any directory named linux in any of the subdirectories, use:
 
-`fdfind --type d linux`
+```bash
+fdfind --type d linux
+```
 
-**Output**
+**Output:**
+```
+CommandsAndShortcuts/Linux
+```
 
-`CommandsAndShortcuts/Linux`
+If you want to search both files and directories, then don't use `--type d`.
 
-If you want to search both files and directories then don't use --type d
-
-**If you want to include directories, files and inside content of the files, then use ripgrep**
+**If you want to include directories, files and inside content of the files, then use ripgrep.**
 
 ## 🆚 `fd` / `fdfind` vs `rg`
 
-| Tool            | Searches What     | Purpose                                |
-| --------------- | ----------------- | -------------------------------------- |
-| `fd` / `fdfind` | File/folder names | Fast path search                       |
-| `rg` (ripgrep)  | File **content**  | Grep alternative, powerful text search |
+| Tool | Searches What | Purpose |
+|------|---------------|---------|
+| `fd` / `fdfind` | File/folder names | Fast path search |
+| `rg` (ripgrep) | File **content** | Grep alternative, powerful text search |

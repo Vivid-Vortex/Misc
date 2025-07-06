@@ -1,30 +1,46 @@
-In order to change the opacity of the windows terminal or wsl terminal.
-Go to terminal settings -> On the extreme bottom left corner you will see open json file option. Click on it.
-It should be opend inside vscode by default.
-Look for profiles section. Then under profiles, you will see defaults as empty. Use below two options inside defaults.
-"defaults": { "useAcrylic": true, "acrylicOpacity": 0.7 },
+# WSL (Windows Subsystem for Linux) Concepts and Configuration
 
----------------------------------
+## Terminal Opacity Configuration
 
-You can use Windows Subsystem for Linux (WSL) to create files and folders in your Windows directory:
-Here's how you can do it:
+To change the opacity of the Windows Terminal or WSL terminal:
 
-Access Windows directory: In your WSL terminal, navigate to the mount point for your Windows drive. This is typically /mnt/c for the C drive.   
+1. Go to **Terminal Settings**
+2. Click **"Open JSON file"** option in the extreme bottom left corner
+3. The file should open in VS Code by default
+4. Look for the `profiles` section
+5. Under `profiles`, you will see `defaults` as empty
+6. Use the following configuration inside `defaults`:
 
-Create files and folders: Use standard Linux commands like touch, mkdir, and cp to create files and directories. For example:
+```json
+"defaults": {
+  "useAcrylic": true,
+  "acrylicOpacity": 0.7
+}
+```
 
-Bash
+## Accessing Windows Directory from WSL
 
+You can use Windows Subsystem for Linux (WSL) to create files and folders in your Windows directory.
+
+### Access Windows Directory
+In your WSL terminal, navigate to the mount point for your Windows drive. This is typically `/mnt/c` for the C drive.
+
+### Create Files and Folders
+Use standard Linux commands like `touch`, `mkdir`, and `cp` to create files and directories.
+
+**Examples:**
+```bash
 # Create a new file
-
 touch /mnt/c/new_file.txt
 
 # Create a new directory
-
 mkdir /mnt/c/new_directory
+```
 
-Example treid:-
-/mnt/c/Users/${use_name}/Downloads
+### Example Path
+```bash
+/mnt/c/Users/${user_name}/Downloads
+```
 
-Generally use "/mnt/c/${use_name}/Deepak" to directly do cd and from there on you can simply naviage anywhere and do your activities through wsl on windows.
----------------------------------
+### Quick Navigation
+Generally use `/mnt/c/${user_name}/Deepak` to directly do `cd` and from there you can simply navigate anywhere and perform your activities through WSL on Windows.
