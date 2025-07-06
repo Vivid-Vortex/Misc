@@ -15,5 +15,6 @@ Aura Spirit Dracula Theme
 ![](../../../../Assets/2025-02-17-03-56-31-image.png)
 
 ### Already taken fork:
+
 Dendron: https://dendron.so 
 In addiont to this, you can use VS Code Code Reveal [vscode-reveal]
