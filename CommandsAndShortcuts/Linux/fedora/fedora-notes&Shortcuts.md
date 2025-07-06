@@ -5,16 +5,18 @@ Open Terminal: Open the terminal in Fedora using one of the methods mentioned ea
 Update Package Repository Metadata: First, update the package repository metadata to ensure you have the latest information about available packages. Run the following command:
 
 - sudo dnf check-update
-Upgrade Packages: After updating the repository metadata, you can upgrade all installed packages to their latest versions using the following command:
+  Upgrade Packages: After updating the repository metadata, you can upgrade all installed packages to their latest versions using the following command:
 
 - sudo dnf upgrade
-Optional: Clean Package Cache: You can optionally clean the package cache to free up disk space after the upgrade. Run the following command:
+  Optional: Clean Package Cache: You can optionally clean the package cache to free up disk space after the upgrade. Run the following command:
 
 - sudo dnf clean packages
-That's it! The dnf package manager will handle the package update process for you. Make sure to run these commands with sudo privileges to perform system-level operations.
-============================================================================================================================
-#check disk space
-df -h
+  
+  That's it! The dnf package manager will handle the package update process for you. Make sure to run these commands with sudo privileges to perform system-level operations.
+  ============================================================================================================================
+  
+  #check disk space
+  df -h
 
 #Check Filesystem Integrity
 sudo fsck /dev/sdaX
@@ -24,6 +26,7 @@ checking and mouting file system:
 lsblk #show all the filesystem in a tree structure ASCII diagram.
 
 ------
+
 #Check the space of each file system
 df -h
 
@@ -40,6 +43,7 @@ tmpfs                793M  180K  793M   1% /run/user/1000
 
 Note: /dev/mapper/live-rw ("You can see the first row, of the above output") is the default root file system of fedora and it's Mount point is /
 ------
+
 #mount the file system.
 sudo fsck /dev/sdaX #replace x with the file system number say sda1, sda2 etc.
 
@@ -63,23 +67,33 @@ zram0       252:0    0  7.7G  0 disk [SWAP]
 
 ============================================================================================================================
 ============================================================================================================================
+
 ============================================================================================================================
 ============================================================================================================================
+
 ============================================================================================================================
 ============================================================================================================================
+
 ============================================================================================================================
 ============================================================================================================================
+
 ============================================================================================================================
 ============================================================================================================================
+
 ============================================================================================================================
 ============================================================================================================================
+
 ============================================================================================================================
 ============================================================================================================================
+
 ============================================================================================================================
 ============================================================================================================================
+
 ============================================================================================================================
 ============================================================================================================================
+
 ============================================================================================================================
 ============================================================================================================================
+
 ============================================================================================================================
 ============================================================================================================================
