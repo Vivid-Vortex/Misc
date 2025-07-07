@@ -1,0 +1,12 @@
+- Opening File Explorer - win + enable
+- Set Focus on Side Bar - shift + tab
+- Open a New Window with the Same Folder - ctrl + N
+- Close a File Explorer Window - ctrl + W || Another option to close the window is Alt + F4
+- Create a New Folder - Crtl + Shift + N
+- Navigate to Other Folders - Backspace || Alt + ← , Alt + → 
+- Navigate to the Parent Folder - Alt + ↑ 
+- Renaming Files and Folders - f2
+- Select the Address Bar - Ctrl + L || Alt + D
+- Search File Explorer - Ctrl + F
+- Change the View (detailed/big icon etc.) - Ctrl + Shift + 2 and Details Ctrl + Shift + 6
+- Right-Click Menu - shift + f10
