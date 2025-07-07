@@ -12,18 +12,21 @@ Here are a few methods to remove the `^M` characters from your script:
 #### Method 1: Use `dos2unix`
 
 1. **Install `dos2unix`** if it’s not already installed in your WSL environment. You can install it using:
+   
    ```bash
    sudo apt-get install dos2unix
    ```
 
 2. **Convert the Script**:
    Run the following command to convert your script:
+   
    ```bash
    dos2unix watch_and_stage.sh (say you are running file named watch_and_stage.sh)
    ```
 
 3. **Run the Script Again**:
    Now, try running your script again:
+   
    ```bash
    ./watch_and_stage.sh
    ```

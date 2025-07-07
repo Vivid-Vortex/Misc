@@ -8,9 +8,6 @@ First and foremost:
 5. Install powertoys
 6. Install git
 7. Install unZip
-8. Intall f.lux
-9. Install Auto Dark Mode 
-10 Instlal WSL and set 2 as default
    
    f.lux - can install from MS Store
    
