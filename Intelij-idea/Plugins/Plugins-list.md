@@ -5,6 +5,8 @@ Lombok
 Docker
 Gradianto
 Github Actions Manager - check if vs code is better or this. Preferably use VS Code if it's better since it provides wsl way to operate on linux.
+JPA Buddy
+
 
 ChatGPT-EasyCode"
 clouds-docker-impl"
