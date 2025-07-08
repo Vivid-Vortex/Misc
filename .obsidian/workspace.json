@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Intelij-idea/IntelijNotes.md",
+                "file": "Intelij-idea/Plugins/Plugins-list.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IntelijNotes"
+              "title": "Plugins-list"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "intelij",
+                "query": "intelij plugin",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -89,8 +89,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -190,8 +189,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0d413dc346288085",
+  "active": "18698c0d11daf7f0",
   "lastOpenFiles": [
+    "CommandsAndShortcuts/Git/Git.mds/git commands.md",
+    "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md",
+    "Intelij-idea/IntelijNotes.md",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
     "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
@@ -206,14 +208,12 @@
     "CommandsAndShortcuts/vscode/vs-code-plugin.md",
     "Assets/2025-02-17-03-52-21-image.png",
     "Assets/2025-02-17-03-51-50-image.png",
-    "Assets/2025-02-17-03-51-42-image.png",
     "Assets/vs-code-plugin",
     "CommandsAndShortcuts/vscode/Assets/vs-code-plugin",
     "CommandsAndShortcuts/vscode/Assets",
     "Concepts/SystemDesign/LowLevelDesign",
     "Untitled.canvas",
     "2025-02-16.md",
-    "Intelij-idea/IntelijNotes.md",
     "CommandsAndShortcuts/Gradle/gradleShortcut.md",
     "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak",
     "CommandsAndShortcuts/Git/Git-cmds/git commands..md",
@@ -237,7 +237,6 @@
     "Concepts/Backend/JavaReactive/JavaReactiveConcepts.t.md",
     "Concepts/Backend/Java/Virtual_Threads/Virtual_Threads_vs_and_Reactive_pramming.md",
     "Concepts/Backend/Java/ServiceInterfaceUtility.t.md",
-    "Concepts/Backend/Java/Java 8 specifics/Java8Concepts.t.md",
-    "Concepts/Backend/Java/AutowiredAnnotationOptionalAfterSpring4.3.t.md"
+    "Concepts/Backend/Java/Java 8 specifics/Java8Concepts.t.md"
   ]
 }
