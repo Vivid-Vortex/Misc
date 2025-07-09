@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/WSL/InstallRunDockerInWSL.md.md",
+                "file": "Concepts/DevOps/Observability/ELK_Stack.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "InstallRunDockerInWSL.md"
+              "title": "ELK_Stack"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "wsl",
+                "query": "logsta",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -191,8 +191,10 @@
   },
   "active": "18698c0d11daf7f0",
   "lastOpenFiles": [
-    "CommandsAndShortcuts/WSL/WslConcepts.md",
+    "Concepts/DevOps/Observability/LGTM_ELK.md",
+    "Concepts/DevOps/Observability/ELK_Stack.md",
     "CommandsAndShortcuts/WSL/InstallRunDockerInWSL.md.md",
+    "CommandsAndShortcuts/WSL/WslConcepts.md",
     "Intelij-idea/Plugins/Plugins-list.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands.md",
     "CommandsAndShortcuts/Microsoft/Windows/Run_shell_scripst_using_wsl.md",
@@ -235,8 +237,6 @@
     "Concepts/Project management/SDLC frameworks/ProjectManagement.t.md",
     "Concepts/FilePathConcept.md",
     "Concepts/DevOps/K8s/k8s-commands.pdf",
-    "Concepts/Database/NoSql/MongoDb/MongoDb.t.md",
-    "Concepts/Cloud/Common-Cloud-concepts.t.md",
-    "Concepts/Cloud/Azure/Azure-Concepts.t.md"
+    "Concepts/Database/NoSql/MongoDb/MongoDb.t.md"
   ]
 }
