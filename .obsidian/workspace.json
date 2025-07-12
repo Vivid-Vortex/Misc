@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concepts/DevOps/Observability/ELK_Stack.md",
+                "file": "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ELK_Stack"
+              "title": "NewWindowsAppToInstall"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "logsta",
+                "query": "window",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -167,8 +167,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
@@ -176,8 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 578.5,
-    "collapsed": true
+    "width": 578.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -186,13 +185,55 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "18698c0d11daf7f0",
+  "floating": {
+    "id": "fc3b63ab6ca4b160",
+    "type": "floating",
+    "children": [
+      {
+        "id": "f230ab1e2d00d528",
+        "type": "window",
+        "children": [
+          {
+            "id": "5d0230f3e304e131",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "e5fa59f05ac64c08",
+                "type": "leaf",
+                "state": {
+                  "type": "webviewer",
+                  "state": {
+                    "url": "https://publish.obsidian.md/git-doc/Start+here",
+                    "title": "Start here - Git Documentation - Obsidian Publish",
+                    "mode": "webview"
+                  },
+                  "icon": "globe-2",
+                  "title": "Start here - Git Documentation - Obsidian Publish"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 448,
+        "y": 116,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "0d413dc346288085",
   "lastOpenFiles": [
-    "Concepts/DevOps/Observability/LGTM_ELK.md",
+    "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
+    "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "Concepts/DevOps/Observability/ELK_Stack.md",
+    "Concepts/DevOps/Observability/LGTM_ELK.md",
     "CommandsAndShortcuts/WSL/InstallRunDockerInWSL.md.md",
     "CommandsAndShortcuts/WSL/WslConcepts.md",
     "Intelij-idea/Plugins/Plugins-list.md",
@@ -203,8 +244,6 @@
     "Intelij-idea/IntelijNotes.md",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
-    "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
-    "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "Concepts/SystemDesign/LowLevelDesign/Clarifying Question to ask.md",
     "Assets/2025-02-17-03-56-31-image.png",
     "Assets/2025-02-17-03-56-11-image.png",

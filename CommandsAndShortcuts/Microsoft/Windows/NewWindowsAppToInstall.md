@@ -8,6 +8,8 @@ First and foremost:
 5. Install powertoys
 6. Install git
 7. Install unZip
+8. ffmpeg # for video to audio conversion - you can use vlc for the same though
+    ``winget install ffmpeg``
    
    f.lux - can install from MS Store
    
