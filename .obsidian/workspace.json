@@ -27,12 +27,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
+                "file": "Concepts/AIStack/Agents/AgenticAINotes.md",
                 "mode": "source",
-                "source": false
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
               "icon": "lucide-file",
-              "title": "NewWindowsAppToInstall"
+              "title": "AgenticAINotes"
             }
           }
         ],
@@ -68,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "window",
+                "query": "gen AI",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -176,7 +186,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 578.5
+    "width": 578.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -189,46 +200,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "floating": {
-    "id": "fc3b63ab6ca4b160",
-    "type": "floating",
-    "children": [
-      {
-        "id": "f230ab1e2d00d528",
-        "type": "window",
-        "children": [
-          {
-            "id": "5d0230f3e304e131",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "e5fa59f05ac64c08",
-                "type": "leaf",
-                "state": {
-                  "type": "webviewer",
-                  "state": {
-                    "url": "https://publish.obsidian.md/git-doc/Start+here",
-                    "title": "Start here - Git Documentation - Obsidian Publish",
-                    "mode": "webview"
-                  },
-                  "icon": "globe-2",
-                  "title": "Start here - Git Documentation - Obsidian Publish"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 448,
-        "y": 116,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "0d413dc346288085",
+  "active": "18698c0d11daf7f0",
   "lastOpenFiles": [
     "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
