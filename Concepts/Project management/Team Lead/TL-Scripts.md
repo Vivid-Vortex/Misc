@@ -1,3 +1,44 @@
+Great question, Deepak!
+
+The specific skill you’re developing here is a **combination of several interrelated soft skills**, but the core name for it in leadership and communication circles is:
+
+---
+
+### 🎯 **Facilitative Leadership**
+
+or
+
+### 🗣️ **Meeting Facilitation Skills**
+
+---
+
+It’s a blend of the following key sub-skills:
+
+|Skill Name|Description|
+|---|---|
+|**Facilitation**|Guiding conversations and meetings to stay focused, inclusive, and productive.|
+|**Assertive Communication**|Speaking with clarity and confidence, while being respectful and non-aggressive.|
+|**Leadership Presence**|Creating a calm, focused, and confident energy that helps others trust and follow your lead.|
+|**Situational Awareness**|Reading the room (even virtual), adjusting tone, timing, and pacing accordingly.|
+|**Team Communication Management**|Making sure all voices are heard, blockers are addressed, and discussions stay timeboxed.|
+
+---
+
+### 🔑 Why This Matters:
+
+This is **one of the most important daily skills** for any team lead, engineering manager, or aspiring tech architect. It shows:
+
+- **Credibility** (you know what’s happening),
+    
+- **Empathy** (you care how people are feeling),
+    
+- **Influence** (you can steer conversations constructively),
+    
+- and **Decisiveness** (you know when to move forward).
+    
+
+---
+
 **📘 Team Lead Toolkit – Meeting Templates & Scripts**
 
 ---

@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concepts/Project management/Team Lead/Commanding Tone.md",
+                "file": "Concepts/Project management/Team Lead/TL-Scripts.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -42,7 +42,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Commanding Tone"
+              "title": "TL-Scripts"
             }
           }
         ],
@@ -202,9 +202,9 @@
   },
   "active": "0d413dc346288085",
   "lastOpenFiles": [
+    "Concepts/Project management/Team Lead/Team Lead.md",
     "Concepts/Project management/Team Lead/TL-Scripts.md",
     "Concepts/Project management/Team Lead/Commanding Tone.md",
-    "Concepts/Project management/Team Lead/Team Lead.md",
     "Concepts/Project management/SDLC frameworks/ProjectManagement.t.md",
     "Concepts/Project management/Team Lead",
     "Concepts/AIStack/TransformersAndGenAIsCoreConcetps.md",
