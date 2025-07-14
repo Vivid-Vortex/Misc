@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concepts/AIStack/TransformersAndGenAIsCoreConcetps.md",
+                "file": "Concepts/Project management/Team Lead/Commanding Tone.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -42,7 +42,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "TransformersAndGenAIsCoreConcetps"
+              "title": "Commanding Tone"
             }
           }
         ],
@@ -66,7 +66,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -78,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "gen AI",
+                "query": "team",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -202,8 +202,13 @@
   },
   "active": "0d413dc346288085",
   "lastOpenFiles": [
-    "Concepts/AIStack/Agents/AgenticAINotes.md",
+    "Concepts/Project management/Team Lead/TL-Scripts.md",
+    "Concepts/Project management/Team Lead/Commanding Tone.md",
+    "Concepts/Project management/Team Lead/Team Lead.md",
+    "Concepts/Project management/SDLC frameworks/ProjectManagement.t.md",
+    "Concepts/Project management/Team Lead",
     "Concepts/AIStack/TransformersAndGenAIsCoreConcetps.md",
+    "Concepts/AIStack/Agents/AgenticAINotes.md",
     "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "Concepts/DevOps/Observability/ELK_Stack.md",
@@ -243,11 +248,6 @@
     "Intelij-idea/Plugins/Plugins-list..md",
     "Intelij-idea/Markdown-tutorial-intelij.md",
     "DevOps/CloudAndContainers/Kafka/Dockerfile-kafka-image",
-    "DevOps/CloudAndContainers/Kafka/docker-compose-kafka.yml",
-    "Concepts/SystemDesign/SystemDesign_concepts.t.md",
-    "Concepts/SystemDesign/Design principle/SOLID.t.md",
-    "Concepts/Reactive-Java/ReactiveJavaConcetps.t.md",
-    "Concepts/Project management/SDLC frameworks/ProjectManagement.t.md",
-    "Concepts/DevOps/K8s/k8s-commands.pdf"
+    "DevOps/CloudAndContainers/Kafka/docker-compose-kafka.yml"
   ]
 }
