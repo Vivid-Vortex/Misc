@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
+                "file": "CommandsAndShortcuts/Git/Git.mds/git commands.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,11 +52,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "git commands-refactored"
+              "title": "git commands"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -109,8 +108,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -211,10 +209,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "24ec2325a1bdc296",
+  "active": "b4c1f3b1e4bb437e",
   "lastOpenFiles": [
-    "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
+    "CommandsAndShortcuts/Git/Git.mds/git commands.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
+    "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands copy.md",
     "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-intelij.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
@@ -232,7 +231,6 @@
     "CommandsAndShortcuts/WSL/InstallRunDockerInWSL.md.md",
     "CommandsAndShortcuts/WSL/WslConcepts.md",
     "Intelij-idea/Plugins/Plugins-list.md",
-    "CommandsAndShortcuts/Git/Git.mds/git commands.md",
     "CommandsAndShortcuts/Microsoft/Windows/Run_shell_scripst_using_wsl.md",
     "CommandsAndShortcuts/WSL/WslIntallSteps.md",
     "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md",
