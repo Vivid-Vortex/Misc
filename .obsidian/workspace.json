@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-i.md",
+                "file": "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-intelij.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "vs-code-code-navigation-shortcuts-as-per-i"
+              "title": "vs-code-code-navigation-shortcuts-as-per-intelij"
             }
           }
         ]
@@ -185,10 +185,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ea2f231727928139",
+  "active": "18698c0d11daf7f0",
   "lastOpenFiles": [
     "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
-    "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-i.md",
+    "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-intelij.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "CommandsAndShortcuts/vscode/vscode-zip-version-lightweight/vscode-zip-lightweight-notes.md",
     "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
