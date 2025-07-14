@@ -89,41 +89,41 @@ Would you like me to:
 > 💻 Platform: **Windows/Linux**  
 > 🧠 Scope: **Code Navigation + Editing + Refactoring**
 
-|**Action Category**|**Function**|**VS Code Shortcut**|**IntelliJ IDEA Shortcut**|
-|---|---|---|---|
-|🧭 Navigation|Go to File|`Ctrl + P`|`Ctrl + Shift + N`|
-||Go to Symbol in File|`Ctrl + Shift + O`|`Ctrl + F12`|
-||Go to Symbol in Workspace|`Ctrl + T`|`Ctrl + Alt + Shift + N`|
-||Go to Definition|`F12`|`Ctrl + B` / `Ctrl + Click`|
-||Peek Definition|`Alt + F12`|`Ctrl + Shift + I`|
-||Go to Implementation|`Ctrl + F12`|`Ctrl + Alt + B`|
-||Navigate Back / Forward|`Alt + ← / →`|`Ctrl + Alt + ← / →`|
-||Go to Line|`Ctrl + G`|`Ctrl + G`|
-||Go to Matching Bracket|`Ctrl + Shift + \`|`Ctrl + ]`|
-||View Recent Files|`Ctrl + R`|`Ctrl + E`|
-||Jump to Last Edit Location|`Ctrl + K Ctrl + Q`|`Ctrl + Shift + Backspace`|
-||Show All Errors / Problems Panel|`Ctrl + Shift + M`|`Alt + 6`|
-||Next/Prev Error or Warning|`F8 / Shift + F8`|`F2 / Shift + F2`|
-|✍️ Editing|Duplicate Line|`Shift + Alt + ↓`|`Ctrl + D`|
-||Delete Line|`Ctrl + Shift + K`|`Ctrl + Y`|
-||Move Line Up / Down|`Alt + ↑ / ↓`|`Shift + Alt + ↑ / ↓`|
-||Toggle Line Comment|`Ctrl + /`|`Ctrl + /`|
-||Toggle Block Comment|`Shift + Alt + A`|`Ctrl + Shift + /`|
-||Format Document|`Shift + Alt + F`|`Ctrl + Alt + L`|
-||Multi-Cursor (Add)|`Alt + Click`|`Alt + Click`|
-||Multi-Cursor (Next Match)|`Ctrl + D`|`Alt + J`|
-||Select All Occurrences|`Ctrl + Shift + L`|`Ctrl + Alt + Shift + J`|
-||Undo / Redo|`Ctrl + Z / Ctrl + Y`|`Ctrl + Z / Ctrl + Shift + Z`|
-||Expand / Shrink Selection|`Shift + Alt + → / ←`|`Ctrl + W / Ctrl + Shift + W`|
-|🛠 Refactoring|Rename Symbol|`F2`|`Shift + F6`|
-||Quick Fix / Show Suggestions|`Ctrl + .`|`Alt + Enter`|
-||Extract Method|No default (via extensions)|`Ctrl + Alt + M`|
-||Extract Variable|No default (via extensions)|`Ctrl + Alt + V`|
-||Inline Variable / Method|No default (via extensions)|`Ctrl + Alt + N`|
-||Safe Delete|No default|`Alt + Delete`|
-||Change Signature|No default|`Ctrl + F6`|
-||Move Declaration|No default|`F6`|
-||Introduce Constant / Field / Parameter|No default|`Ctrl + Alt + C / F / P`|
+| **Action Category** | **Function**                           | **VS Code Shortcut**        | **IntelliJ IDEA Shortcut**    |
+| ------------------- | -------------------------------------- | --------------------------- | ----------------------------- |
+| 🧭 Navigation       | Go to File                             | `Ctrl + P`                  | `Ctrl + Shift + N`            |
+|                     | Go to Symbol in File                   | `Ctrl + Shift + O`          | `Ctrl + F12`                  |
+|                     | Go to Symbol in Workspace              | `Ctrl + T`                  | `Ctrl + Alt + Shift + N`      |
+|                     | Go to Definition                       | `F12`                       | `Ctrl + B` / `Ctrl + Click`   |
+|                     | Peek Definition                        | `Alt + F12`                 | `Ctrl + Shift + I`            |
+|                     | Go to Implementation                   | `Ctrl + F12`                | `Ctrl + Alt + B`              |
+|                     | Navigate Back / Forward                | `Alt + ← / →`               | `Ctrl + Alt + ← / →`          |
+|                     | Go to Line                             | `Ctrl + G`                  | `Ctrl + G`                    |
+|                     | Go to Matching Bracket                 | `Ctrl + Shift + \`          | `Ctrl + ]`                    |
+|                     | View Recent Files                      | `Ctrl + R`                  | `Ctrl + E`                    |
+|                     | Jump to Last Edit Location             | `Ctrl + K Ctrl + Q`         | `Ctrl + Shift + Backspace`    |
+|                     | Show All Errors / Problems Panel       | `Ctrl + Shift + M`          | `Alt + 6`                     |
+|                     | Next/Prev Error or Warning             | `F8 / Shift + F8`           | `F2 / Shift + F2`             |
+| ✍️ Editing          | Duplicate Line                         | `Shift + Alt + ↓`           | `Ctrl + D`                    |
+|                     | Delete Line                            | `Ctrl + Shift + K`          | `Ctrl + Y`                    |
+|                     | Move Line Up / Down                    | `Alt + ↑ / ↓`               | `Shift + Alt + ↑ / ↓`         |
+|                     | Toggle Line Comment                    | `Ctrl + /`                  | `Ctrl + /`                    |
+|                     | Toggle Block Comment                   | `Shift + Alt + A`           | `Ctrl + Shift + /`            |
+|                     | Format Document                        | `Shift + Alt + F`           | `Ctrl + Alt + L`              |
+|                     | Multi-Cursor (Add)                     | `Alt + Click`               | `Alt + Click`                 |
+|                     | Multi-Cursor (Next Match)              | `Ctrl + D`                  | `Alt + J`                     |
+|                     | Select All Occurrences                 | `Ctrl + Shift + L`          | `Ctrl + Alt + Shift + J`      |
+|                     | Undo / Redo                            | `Ctrl + Z / Ctrl + Y`       | `Ctrl + Z / Ctrl + Shift + Z` |
+|                     | Expand / Shrink Selection              | `Shift + Alt + → / ←`       | `Ctrl + W / Ctrl + Shift + W` |
+| 🛠 Refactoring      | Rename Symbol                          | `F2`                        | `Shift + F6`                  |
+|                     | Quick Fix / Show Suggestions           | `Ctrl + .`                  | `Alt + Enter`                 |
+|                     | Extract Method                         | No default (via extensions) | `Ctrl + Alt + M`              |
+|                     | Extract Variable                       | No default (via extensions) | `Ctrl + Alt + V`              |
+|                     | Inline Variable / Method               | No default (via extensions) | `Ctrl + Alt + N`              |
+|                     | Safe Delete                            | No default                  | `Alt + Delete`                |
+|                     | Change Signature                       | No default                  | `Ctrl + F6`                   |
+|                     | Move Declaration                       | No default                  | `F6`                          |
+|                     | Introduce Constant / Field / Parameter | No default                  | `Ctrl + Alt + C / F / P`      |
 
 ---
 
