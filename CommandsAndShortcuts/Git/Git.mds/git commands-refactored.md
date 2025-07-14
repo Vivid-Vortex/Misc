@@ -756,11 +756,22 @@ git config --system apply.whitespace nowarn
 ### 12.1 Creating Snapshots
 
 ```bash
-# Create snapshot of current branch
+# Create snapshot of current branch - this one will Prints `HEAD`
+# **`git rev-parse --abbrev-ref HEAD`** is considered more robust and is # commonly used in scripts, as it is less likely to change behavior across Git versions. If you are in a detached HEAD state, it will output `HEAD`
 git branch snapshot-1-$(git rev-parse --abbrev-ref HEAD)
+
+# Create snapshot of current branch - this one will Prints nothing
+# **`git branch --show-current`** is newer (introduced in Git 2.22) and is intended for user convenience. It prints the branch name if you are on a branch, but outputs nothing if you are in a detached HEAD state
+git branch snapshot-1-$(git branch --show-current)
 
 # Example: if on 'feature-branch', creates 'snapshot-1-feature-branch'
 ```
+
+| Shell      | Command Example                                                                               |
+| ---------- | --------------------------------------------------------------------------------------------- |
+| Bash       | `git branch snapshot-$(git rev-parse --abbrev-ref HEAD)-$(date +"%Y%m%d%H%M%S")`              |
+| PowerShell | `git branch snapshot-$(git rev-parse --abbrev-ref HEAD)-$(Get-Date -Format "yyyyMMddHHmmss")` |
+| cmd.exe    | Use environment variables and string manipulation (not as straightforward as Bash/PowerShell) |
 
 ### 12.2 Commit Reordering
 

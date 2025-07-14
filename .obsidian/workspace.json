@@ -30,8 +30,33 @@
               "icon": "lucide-file",
               "title": "git commands-refactored"
             }
+          },
+          {
+            "id": "24ec2325a1bdc296",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "git commands-refactored"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -186,7 +211,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b4c1f3b1e4bb437e",
+  "active": "24ec2325a1bdc296",
   "lastOpenFiles": [
     "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
