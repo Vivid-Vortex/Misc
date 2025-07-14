@@ -1,5 +1,7 @@
 # Git Commands & Concepts Reference
-> **Important**: This file is a shortend and formatted version of [git commands](git%20commands.md)
+> **Important**: This file is a shortened and formatted version of [git commands](git%20commands.md)
+
+
 > **Important**: All commits are immutable. Once a commit is created, it cannot be changed.
 
 ## Table of Contents
