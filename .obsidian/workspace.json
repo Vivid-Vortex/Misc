@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
+                "file": "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "VS-Code-shortcuts"
+              "title": "git commands-refactored"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "vscode",
+                "query": "git-co",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -84,7 +84,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -187,8 +188,10 @@
   },
   "active": "b4c1f3b1e4bb437e",
   "lastOpenFiles": [
-    "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-intelij.md",
     "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
+    "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
+    "CommandsAndShortcuts/Git/Git.mds/git commands copy.md",
+    "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-intelij.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "CommandsAndShortcuts/vscode/vscode-zip-version-lightweight/vscode-zip-lightweight-notes.md",
     "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
@@ -227,9 +230,7 @@
     "Concepts/SystemDesign/LowLevelDesign",
     "Untitled.canvas",
     "2025-02-16.md",
-    "CommandsAndShortcuts/Gradle/gradleShortcut.md",
     "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak",
-    "CommandsAndShortcuts/Git/Git-cmds/git commands..md",
     "watch_and_stage.sh",
     "Intelij-idea/settings.zip",
     "DevOps/CloudAndContainers/Kafka/Dockerfile-kafka-image",
