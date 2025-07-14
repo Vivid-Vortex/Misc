@@ -771,6 +771,7 @@ git branch snapshot-1-$(git branch --show-current)
 | ---------- | --------------------------------------------------------------------------------------------- |
 | Bash       | `git branch snapshot-$(git rev-parse --abbrev-ref HEAD)-$(date +"%Y%m%d%H%M%S")`              |
 | PowerShell | `git branch snapshot-$(git rev-parse --abbrev-ref HEAD)-$(Get-Date -Format "yyyyMMddHHmmss")` |
+| Mac Os     | `git branch snapshot-1-$(git rev-parse --abbrev-ref HEAD)-$(date +"%Y%m%d%H%M%S")`            |
 | cmd.exe    | Use environment variables and string manipulation (not as straightforward as Bash/PowerShell) |
 
 ### 12.2 Commit Reordering
