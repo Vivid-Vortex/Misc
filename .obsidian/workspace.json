@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
+                "file": "CommandsAndShortcuts/Microsoft/Windows/WindowsTaskSchedullars.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "git commands-refactored"
+              "title": "WindowsTaskSchedullars"
             }
           },
           {
@@ -87,7 +87,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "git-co",
+                "query": "windows",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -211,14 +211,15 @@
   },
   "active": "b4c1f3b1e4bb437e",
   "lastOpenFiles": [
-    "CommandsAndShortcuts/Git/Git.mds/git commands.md",
+    "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
+    "CommandsAndShortcuts/Microsoft/Windows/WindowsTaskSchedullars.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
+    "CommandsAndShortcuts/Git/Git.mds/git commands.md",
     "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands copy.md",
     "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-intelij.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "CommandsAndShortcuts/vscode/vscode-zip-version-lightweight/vscode-zip-lightweight-notes.md",
-    "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
     "Concepts/Project management/Team Lead/TL-Scripts.md",
     "Concepts/Project management/Team Lead/Team Lead.md",
     "Concepts/Project management/Team Lead/Commanding Tone.md",
@@ -252,7 +253,6 @@
     "CommandsAndShortcuts/vscode/Assets",
     "Concepts/SystemDesign/LowLevelDesign",
     "Untitled.canvas",
-    "2025-02-16.md",
     "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak",
     "watch_and_stage.sh",
     "Intelij-idea/settings.zip",
