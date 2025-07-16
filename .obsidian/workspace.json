@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/Microsoft/Windows/WindowsTaskSchedullars.md",
+                "file": "Concepts/DevOps/Observability/RUM(Real User Monitoring) or Session Replay.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "WindowsTaskSchedullars"
+              "title": "RUM(Real User Monitoring) or Session Replay"
             }
           },
           {
@@ -87,7 +87,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "windows",
+                "query": "observa",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -108,7 +108,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -209,10 +210,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b4c1f3b1e4bb437e",
+  "active": "dff7378d7db44e38",
   "lastOpenFiles": [
-    "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
+    "Concepts/DevOps/Observability/LGTM_ELK.md",
+    "Concepts/DevOps/Observability/RUM(Real User Monitoring) or Session Replay.md",
+    "Concepts/SystemDesign/SystemDesign_concepts.t.md",
+    "Concepts/DevOps/Observability/ELK_Stack.md",
+    "RUM.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsTaskSchedullars.md",
+    "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands.md",
     "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
@@ -227,25 +233,20 @@
     "Concepts/Project management/Team Lead",
     "Concepts/AIStack/TransformersAndGenAIsCoreConcetps.md",
     "Concepts/AIStack/Agents/AgenticAINotes.md",
-    "Concepts/DevOps/Observability/ELK_Stack.md",
-    "Concepts/DevOps/Observability/LGTM_ELK.md",
     "CommandsAndShortcuts/WSL/InstallRunDockerInWSL.md.md",
     "CommandsAndShortcuts/WSL/WslConcepts.md",
     "Intelij-idea/Plugins/Plugins-list.md",
     "CommandsAndShortcuts/Microsoft/Windows/Run_shell_scripst_using_wsl.md",
     "CommandsAndShortcuts/WSL/WslIntallSteps.md",
     "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md",
-    "Intelij-idea/IntelijNotes.md",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
-    "Concepts/SystemDesign/LowLevelDesign/Clarifying Question to ask.md",
     "Assets/2025-02-17-03-56-31-image.png",
     "Assets/2025-02-17-03-56-11-image.png",
     "Assets/2025-02-17-03-55-39-image.png",
     "Assets/2025-02-17-03-55-24-image.png",
     "Assets/2025-02-17-03-54-34-image.png",
     "Assets/2025-02-17-03-54-09-image.png",
-    "CommandsAndShortcuts/vscode/vs-code-plugin.md",
     "Assets/2025-02-17-03-52-21-image.png",
     "Assets/2025-02-17-03-51-50-image.png",
     "Assets/vs-code-plugin",
