@@ -4,55 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "82da5720e8774184",
+        "id": "02d173d6e3b14f4c",
         "type": "tabs",
         "children": [
           {
-            "id": "b4c1f3b1e4bb437e",
+            "id": "78d46e1b27855434",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Concepts/DevOps/Observability/RUM(Real User Monitoring) or Session Replay.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "RUM(Real User Monitoring) or Session Replay"
-            }
-          },
-          {
-            "id": "24ec2325a1bdc296",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CommandsAndShortcuts/Git/Git.mds/git commands.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "git commands"
+              "title": "New tab"
             }
           }
         ]
@@ -87,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "observa",
+                "query": "prompts",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -108,8 +70,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -210,17 +171,27 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dff7378d7db44e38",
+  "active": "78d46e1b27855434",
   "lastOpenFiles": [
-    "Concepts/DevOps/Observability/LGTM_ELK.md",
+    "CommandsAndShortcuts/Git/Git.mds/git commands.md",
+    "Concepts/GenAIUseCases/UseProSearchesEffectively.md",
+    "Concepts/GenAIUseCases/UseProSearchesEffectively.md.bak",
+    "Concepts/GenAIPrompts/UseFullDailyPrompts-1.md",
+    "Concepts/GenAIUseCases",
+    "Concepts/AIStack/GenAIRAGTechStack.md",
+    "Concepts/GenAIPrompts",
+    "CommandsAndShortcuts/GenAIPromptsForJava.md",
+    "2025-07-19.md",
+    "Untitled.canvas",
+    "Concepts/AIStack/TransformersAndGenAIsCoreConcetps.md",
     "Concepts/DevOps/Observability/RUM(Real User Monitoring) or Session Replay.md",
+    "Concepts/DevOps/Observability/LGTM_ELK.md",
     "Concepts/SystemDesign/SystemDesign_concepts.t.md",
     "Concepts/DevOps/Observability/ELK_Stack.md",
     "RUM.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsTaskSchedullars.md",
     "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
-    "CommandsAndShortcuts/Git/Git.mds/git commands.md",
     "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands copy.md",
     "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-intelij.md",
@@ -231,14 +202,7 @@
     "Concepts/Project management/Team Lead/Commanding Tone.md",
     "Concepts/Project management/SDLC frameworks/ProjectManagement.t.md",
     "Concepts/Project management/Team Lead",
-    "Concepts/AIStack/TransformersAndGenAIsCoreConcetps.md",
     "Concepts/AIStack/Agents/AgenticAINotes.md",
-    "CommandsAndShortcuts/WSL/InstallRunDockerInWSL.md.md",
-    "CommandsAndShortcuts/WSL/WslConcepts.md",
-    "Intelij-idea/Plugins/Plugins-list.md",
-    "CommandsAndShortcuts/Microsoft/Windows/Run_shell_scripst_using_wsl.md",
-    "CommandsAndShortcuts/WSL/WslIntallSteps.md",
-    "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
     "Assets/2025-02-17-03-56-31-image.png",
@@ -253,11 +217,7 @@
     "CommandsAndShortcuts/vscode/Assets/vs-code-plugin",
     "CommandsAndShortcuts/vscode/Assets",
     "Concepts/SystemDesign/LowLevelDesign",
-    "Untitled.canvas",
     "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak",
-    "watch_and_stage.sh",
-    "Intelij-idea/settings.zip",
-    "DevOps/CloudAndContainers/Kafka/Dockerfile-kafka-image",
-    "DevOps/CloudAndContainers/Kafka/docker-compose-kafka.yml"
+    "watch_and_stage.sh"
   ]
 }
