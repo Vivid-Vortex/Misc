@@ -11,10 +11,24 @@
             "id": "78d46e1b27855434",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Concepts/FrontEnd/React/Untitled.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Untitled"
             }
           }
         ]
@@ -49,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "prompts",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -173,6 +187,8 @@
   },
   "active": "78d46e1b27855434",
   "lastOpenFiles": [
+    "Concepts/FrontEnd/React/Untitled.md",
+    "Concepts/FrontEnd/React",
     "CommandsAndShortcuts/Git/Git.mds/git commands.md",
     "Concepts/GenAIUseCases/UseProSearchesEffectively.md",
     "Concepts/GenAIUseCases/UseProSearchesEffectively.md.bak",
@@ -217,7 +233,6 @@
     "CommandsAndShortcuts/vscode/Assets/vs-code-plugin",
     "CommandsAndShortcuts/vscode/Assets",
     "Concepts/SystemDesign/LowLevelDesign",
-    "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak",
-    "watch_and_stage.sh"
+    "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak"
   ]
 }
