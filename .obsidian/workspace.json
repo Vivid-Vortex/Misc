@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concepts/FrontEnd/React/Untitled.md",
+                "file": "CommandsAndShortcuts/maven/Maven-commands.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Maven-commands"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "gradle",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -185,8 +185,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "78d46e1b27855434",
+  "active": "18698c0d11daf7f0",
   "lastOpenFiles": [
+    "CommandsAndShortcuts/maven/maven.md",
+    "CommandsAndShortcuts/maven/Maven-commands.md",
+    "CommandsAndShortcuts/Gradle/gradleShortcut.md",
     "Concepts/FrontEnd/React/Untitled.md",
     "Concepts/FrontEnd/React",
     "CommandsAndShortcuts/Git/Git.mds/git commands.md",
@@ -215,10 +218,7 @@
     "CommandsAndShortcuts/vscode/vscode-zip-version-lightweight/vscode-zip-lightweight-notes.md",
     "Concepts/Project management/Team Lead/TL-Scripts.md",
     "Concepts/Project management/Team Lead/Team Lead.md",
-    "Concepts/Project management/Team Lead/Commanding Tone.md",
-    "Concepts/Project management/SDLC frameworks/ProjectManagement.t.md",
     "Concepts/Project management/Team Lead",
-    "Concepts/AIStack/Agents/AgenticAINotes.md",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
     "Assets/2025-02-17-03-56-31-image.png",
