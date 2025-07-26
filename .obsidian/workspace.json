@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concepts/FrontEnd/HTML Tags List.md",
+                "file": "Concepts/FrontEnd/CSS Properties.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "HTML Tags List"
+              "title": "CSS Properties"
             }
           }
         ]
@@ -187,8 +187,9 @@
   },
   "active": "78d46e1b27855434",
   "lastOpenFiles": [
-    "CommandsAndShortcuts/maven/Maven-commands.md",
     "Concepts/FrontEnd/HTML Tags List.md",
+    "Concepts/FrontEnd/CSS Properties.md",
+    "CommandsAndShortcuts/maven/Maven-commands.md",
     "CommandsAndShortcuts/maven/maven.md",
     "CommandsAndShortcuts/Gradle/gradleShortcut.md",
     "Concepts/FrontEnd/React/Untitled.md",
@@ -217,7 +218,6 @@
     "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-intelij.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "CommandsAndShortcuts/vscode/vscode-zip-version-lightweight/vscode-zip-lightweight-notes.md",
-    "Concepts/Project management/Team Lead/TL-Scripts.md",
     "Concepts/Project management/Team Lead",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
