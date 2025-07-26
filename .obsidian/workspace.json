@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concepts/AIStack/Qwen Coder CLI setup.md",
+                "file": "CommandsAndShortcuts/Microsoft/Windows/Export Equivalent cmd on wndows.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Qwen Coder CLI setup"
+              "title": "Export Equivalent cmd on wndows"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "genai",
+                "query": "windows",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -187,8 +187,10 @@
   },
   "active": "78d46e1b27855434",
   "lastOpenFiles": [
-    "Concepts/AIStack/GenAIRAGTechStack.md",
+    "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
+    "CommandsAndShortcuts/Microsoft/Windows/Export Equivalent cmd on wndows.md",
     "Concepts/AIStack/Qwen Coder CLI setup.md",
+    "Concepts/AIStack/GenAIRAGTechStack.md",
     "Concepts/AIStack/GenAIPromptsForJava.md",
     "Concepts/FrontEnd/CSS Properties.md",
     "Concepts/FrontEnd/HTML Tags List.md",
@@ -212,12 +214,10 @@
     "Concepts/DevOps/Observability/ELK_Stack.md",
     "RUM.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsTaskSchedullars.md",
-    "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
     "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands copy.md",
     "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-intelij.md",
-    "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "Concepts/Project management/Team Lead",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
