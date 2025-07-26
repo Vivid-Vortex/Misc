@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/maven/Maven-commands.md",
+                "file": "Concepts/FrontEnd/HTML Tags List.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Maven-commands"
+              "title": "HTML Tags List"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "gradle",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -185,10 +185,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "18698c0d11daf7f0",
+  "active": "78d46e1b27855434",
   "lastOpenFiles": [
-    "CommandsAndShortcuts/maven/maven.md",
     "CommandsAndShortcuts/maven/Maven-commands.md",
+    "Concepts/FrontEnd/HTML Tags List.md",
+    "CommandsAndShortcuts/maven/maven.md",
     "CommandsAndShortcuts/Gradle/gradleShortcut.md",
     "Concepts/FrontEnd/React/Untitled.md",
     "Concepts/FrontEnd/React",
@@ -217,7 +218,6 @@
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "CommandsAndShortcuts/vscode/vscode-zip-version-lightweight/vscode-zip-lightweight-notes.md",
     "Concepts/Project management/Team Lead/TL-Scripts.md",
-    "Concepts/Project management/Team Lead/Team Lead.md",
     "Concepts/Project management/Team Lead",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
