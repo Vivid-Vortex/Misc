@@ -24,6 +24,7 @@ IntelliJ (LHS) to VS-Code(RHS)
 |                           |                                                                   |                                                                                                    |
 |                           |                                                                   |                                                                                                    |
 * You can jump between the editor and the file tree / project structure using ctrl + shift + E and then again pressing ctrl + tab*
+* Shift + Alt + ↑ / ↓ - Use to to create a duplicate of current line up or down. Similar to ctrl + D in intelij/Notepad++.
 ---
 
 ### ✅ Notes:

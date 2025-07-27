@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
+                "file": "CommandsAndShortcuts/Linux/common/Common Linux Commands.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "VS-Code-shortcuts"
+              "title": "Common Linux Commands"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "vscod",
+                "query": "linux",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -187,6 +187,10 @@
   },
   "active": "78d46e1b27855434",
   "lastOpenFiles": [
+    "CommandsAndShortcuts/Linux/common/Pasted image 20250727215851.png",
+    "CommandsAndShortcuts/Linux/common/common-linux-utils.md",
+    "CommandsAndShortcuts/Linux/common/Common Linux Commands.md",
+    "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
     "CommandsAndShortcuts/vscode/vscode-dev/vscode-lightweight/vscode-lightweighttips.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandsAndShortcuts.md",
@@ -214,10 +218,6 @@
     "Concepts/DevOps/Observability/RUM(Real User Monitoring) or Session Replay.md",
     "Concepts/DevOps/Observability/LGTM_ELK.md",
     "Concepts/SystemDesign/SystemDesign_concepts.t.md",
-    "Concepts/DevOps/Observability/ELK_Stack.md",
-    "RUM.md",
-    "CommandsAndShortcuts/Microsoft/Windows/WindowsTaskSchedullars.md",
-    "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
     "Concepts/Project management/Team Lead",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
