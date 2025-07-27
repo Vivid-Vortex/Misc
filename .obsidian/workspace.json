@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/Microsoft/Windows/Export Equivalent cmd on wndows.md",
+                "file": "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Export Equivalent cmd on wndows"
+              "title": "VS-Code-shortcuts"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "windows",
+                "query": "vscod",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -187,6 +187,9 @@
   },
   "active": "78d46e1b27855434",
   "lastOpenFiles": [
+    "CommandsAndShortcuts/vscode/vscode-dev/vscode-lightweight/vscode-lightweighttips.md",
+    "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
+    "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandsAndShortcuts.md",
     "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
     "CommandsAndShortcuts/Microsoft/Windows/Export Equivalent cmd on wndows.md",
     "Concepts/AIStack/Qwen Coder CLI setup.md",
@@ -215,9 +218,6 @@
     "RUM.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsTaskSchedullars.md",
     "CommandsAndShortcuts/Git/Git.mds/git commands-refactored.md",
-    "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
-    "CommandsAndShortcuts/Git/Git.mds/git commands copy.md",
-    "CommandsAndShortcuts/vscode/vs-code-code-navigation-shortcuts-as-per-intelij.md",
     "Concepts/Project management/Team Lead",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",

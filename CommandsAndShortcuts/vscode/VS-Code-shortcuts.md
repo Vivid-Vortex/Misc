@@ -23,7 +23,7 @@ IntelliJ (LHS) to VS-Code(RHS)
 |                           |                                                                   |                                                                                                    |
 |                           |                                                                   |                                                                                                    |
 |                           |                                                                   |                                                                                                    |
-
+* You can jump between the editor and the file tree / project structure using ctrl + shift + E and then again pressing ctrl + tab*
 ---
 
 ### ✅ Notes:

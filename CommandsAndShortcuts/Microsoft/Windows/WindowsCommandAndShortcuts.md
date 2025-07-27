@@ -10,3 +10,7 @@
 - Search File Explorer - Ctrl + F
 - Change the View (detailed/big icon etc.) - Ctrl + Shift + 2 and Details Ctrl + Shift + 6
 - Right-Click Menu - shift + f10
+- Open Windows Terminal from File Explorer - type wt in the terminal url bar
+- Open command prompt from File Explorer - type cmd in the terminal url bar
+- Open power shell from File Explorer - type pwsh in the terminal url bar
+- Open WSL terminal from File Explorer - type wsl in the terminal url bar
