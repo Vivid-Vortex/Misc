@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/Linux/common/Common Linux Commands.md",
+                "file": "Concepts/SDLC/Testing/TestingTypes.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Common Linux Commands"
+              "title": "TestingTypes"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "linux",
+                "query": "testing",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -187,9 +187,16 @@
   },
   "active": "78d46e1b27855434",
   "lastOpenFiles": [
+    "Concepts/SystemDesign/Design principle/SOLID..md",
+    "Concepts/SDLC/Testing/TestingTypes.md",
+    "Concepts/SDLC/Testing",
+    "Concepts/Api-Automation-Tests-Newman/ApiAutomationTestUsingNewman.t.md",
+    "Concepts/PublicSpeaking/ImpromptuSpeakingTechniques.md",
+    "Concepts/Project management/Team Lead/Team Lead.md",
+    "Concepts/PublicSpeaking",
+    "CommandsAndShortcuts/Linux/common/Common Linux Commands.md",
     "CommandsAndShortcuts/Linux/common/Pasted image 20250727215851.png",
     "CommandsAndShortcuts/Linux/common/common-linux-utils.md",
-    "CommandsAndShortcuts/Linux/common/Common Linux Commands.md",
     "CommandsAndShortcuts/vscode/VS-Code-shortcuts.md",
     "CommandsAndShortcuts/vscode/vscode-dev/vscode-lightweight/vscode-lightweighttips.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
@@ -214,10 +221,6 @@
     "Concepts/GenAIPrompts",
     "2025-07-19.md",
     "Untitled.canvas",
-    "Concepts/AIStack/TransformersAndGenAIsCoreConcetps.md",
-    "Concepts/DevOps/Observability/RUM(Real User Monitoring) or Session Replay.md",
-    "Concepts/DevOps/Observability/LGTM_ELK.md",
-    "Concepts/SystemDesign/SystemDesign_concepts.t.md",
     "Concepts/Project management/Team Lead",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
@@ -228,11 +231,8 @@
     "Assets/2025-02-17-03-54-34-image.png",
     "Assets/2025-02-17-03-54-09-image.png",
     "Assets/2025-02-17-03-52-21-image.png",
-    "Assets/2025-02-17-03-51-50-image.png",
     "Assets/vs-code-plugin",
     "CommandsAndShortcuts/vscode/Assets/vs-code-plugin",
-    "CommandsAndShortcuts/vscode/Assets",
-    "Concepts/SystemDesign/LowLevelDesign",
-    "CommandsAndShortcuts/Intelij-idea/intelijidea-key-shortcuts.md.bak"
+    "CommandsAndShortcuts/vscode/Assets"
   ]
 }
