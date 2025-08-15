@@ -20,3 +20,14 @@ ctrl + c twice
 
 #YT video reference
 https://www.youtube.com/watch?v=kv57HqEb2j8&ab_channel=AstroKJoseph
+
+---
+
+#Know these current set Parameters value in windows using powershell
+
+[System.Environment]::GetEnvironmentVariable("OPENAI_BASE_URL", "Machine")
+[System.Environment]::GetEnvironmentVariable("OPENAI_MODEL", "Machine")
+
+#Know these current set Parameters value in windows using cmd
+echo %OPENAI_BASE_URL%
+echo %OPENAI_MODEL%
