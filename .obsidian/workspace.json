@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/tools/SlackMessaging/Slack Tips & Tricks.md",
+                "file": "CommandsAndShortcuts/Mobile/Andriod/Build APK without Andriod Studio.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,23 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Slack Tips & Tricks"
-            }
-          },
-          {
-            "id": "325a73dc101f9cc3",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.9.10"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.10"
+              "title": "Build APK without Andriod Studio"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -199,10 +186,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "325a73dc101f9cc3",
+  "active": "78d46e1b27855434",
   "lastOpenFiles": [
-    "Concepts/SDLC/Testing/TestingTypes.md",
+    "CommandsAndShortcuts/Mobile/Andriod/Steps to set andriod sdk env variables.md",
+    "CommandsAndShortcuts/Mobile/Andriod/Build APK without Andriod Studio.md",
     "CommandsAndShortcuts/tools/SlackMessaging/Slack Tips & Tricks.md",
+    "Ste.md",
+    "Untitled.base",
+    "CommandsAndShortcuts/Mobile/Andriod",
+    "CommandsAndShortcuts/Mobile",
+    "Concepts/SDLC/Testing/TestingTypes.md",
     "CommandsAndShortcuts/tools/SlackMessaging",
     "Concepts/SystemDesign/Design principle/SOLID..md",
     "Concepts/SDLC/Testing",
@@ -229,14 +222,10 @@
     "CommandsAndShortcuts/Gradle/gradleShortcut.md",
     "Concepts/FrontEnd/React/Untitled.md",
     "Concepts/FrontEnd/React",
-    "CommandsAndShortcuts/Git/Git.mds/git commands.md",
-    "Concepts/GenAIUseCases/UseProSearchesEffectively.md",
     "Concepts/GenAIUseCases/UseProSearchesEffectively.md.bak",
-    "Concepts/GenAIPrompts/UseFullDailyPrompts-1.md",
     "Concepts/GenAIUseCases",
     "Concepts/GenAIPrompts",
     "Untitled.canvas",
-    "Concepts/Project management/Team Lead",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
     "Assets/2025-02-17-03-56-31-image.png",
@@ -245,8 +234,6 @@
     "Assets/2025-02-17-03-55-24-image.png",
     "Assets/2025-02-17-03-54-34-image.png",
     "Assets/2025-02-17-03-54-09-image.png",
-    "Assets/2025-02-17-03-52-21-image.png",
-    "Assets/vs-code-plugin",
-    "CommandsAndShortcuts/vscode/Assets/vs-code-plugin"
+    "Assets/2025-02-17-03-52-21-image.png"
   ]
 }
