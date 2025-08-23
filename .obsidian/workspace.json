@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concepts/SDLC/Testing/TestingTypes.md",
+                "file": "CommandsAndShortcuts/tools/SlackMessaging/Slack Tips & Tricks.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "TestingTypes"
+              "title": "Slack Tips & Tricks"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "testing",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -187,8 +187,10 @@
   },
   "active": "78d46e1b27855434",
   "lastOpenFiles": [
-    "Concepts/SystemDesign/Design principle/SOLID..md",
     "Concepts/SDLC/Testing/TestingTypes.md",
+    "CommandsAndShortcuts/tools/SlackMessaging/Slack Tips & Tricks.md",
+    "CommandsAndShortcuts/tools/SlackMessaging",
+    "Concepts/SystemDesign/Design principle/SOLID..md",
     "Concepts/SDLC/Testing",
     "Concepts/Api-Automation-Tests-Newman/ApiAutomationTestUsingNewman.t.md",
     "Concepts/PublicSpeaking/ImpromptuSpeakingTechniques.md",
@@ -219,7 +221,6 @@
     "Concepts/GenAIPrompts/UseFullDailyPrompts-1.md",
     "Concepts/GenAIUseCases",
     "Concepts/GenAIPrompts",
-    "2025-07-19.md",
     "Untitled.canvas",
     "Concepts/Project management/Team Lead",
     "Intelij-idea/Pasted image 20250708155228.png",
@@ -232,7 +233,6 @@
     "Assets/2025-02-17-03-54-09-image.png",
     "Assets/2025-02-17-03-52-21-image.png",
     "Assets/vs-code-plugin",
-    "CommandsAndShortcuts/vscode/Assets/vs-code-plugin",
-    "CommandsAndShortcuts/vscode/Assets"
+    "CommandsAndShortcuts/vscode/Assets/vs-code-plugin"
   ]
 }
