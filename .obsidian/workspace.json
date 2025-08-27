@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/Mobile/Andriod/Build APK without Andriod Studio.md",
+                "file": "Concepts/FrontEnd/NextJS/NextJS_Features.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Build APK without Andriod Studio"
+              "title": "NextJS_Features"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "FrontEnd",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -188,8 +188,10 @@
   },
   "active": "78d46e1b27855434",
   "lastOpenFiles": [
-    "CommandsAndShortcuts/Mobile/Andriod/Steps to set andriod sdk env variables.md",
     "CommandsAndShortcuts/Mobile/Andriod/Build APK without Andriod Studio.md",
+    "Concepts/FrontEnd/NextJS/NextJS_Features.md",
+    "Concepts/FrontEnd/NextJS",
+    "CommandsAndShortcuts/Mobile/Andriod/Steps to set andriod sdk env variables.md",
     "CommandsAndShortcuts/tools/SlackMessaging/Slack Tips & Tricks.md",
     "Ste.md",
     "Untitled.base",
@@ -220,11 +222,9 @@
     "CommandsAndShortcuts/maven/Maven-commands.md",
     "CommandsAndShortcuts/maven/maven.md",
     "CommandsAndShortcuts/Gradle/gradleShortcut.md",
-    "Concepts/FrontEnd/React/Untitled.md",
     "Concepts/FrontEnd/React",
     "Concepts/GenAIUseCases/UseProSearchesEffectively.md.bak",
     "Concepts/GenAIUseCases",
-    "Concepts/GenAIPrompts",
     "Untitled.canvas",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
