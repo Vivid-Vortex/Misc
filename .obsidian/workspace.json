@@ -30,8 +30,21 @@
               "icon": "lucide-file",
               "title": "NextJS_Features"
             }
+          },
+          {
+            "id": "cd59ea29c174bb63",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.12"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.12"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -186,7 +199,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "78d46e1b27855434",
+  "active": "cd59ea29c174bb63",
   "lastOpenFiles": [
     "CommandsAndShortcuts/Mobile/Andriod/Build APK without Andriod Studio.md",
     "Concepts/FrontEnd/NextJS/NextJS_Features.md",
