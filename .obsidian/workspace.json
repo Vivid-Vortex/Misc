@@ -35,12 +35,24 @@
             "id": "cd59ea29c174bb63",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.9.12"
+                "file": "CommandsAndShortcuts/Git/Git.mds/gitignore indexedOrStaged changes.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.12"
+              "icon": "lucide-file",
+              "title": "gitignore indexedOrStaged changes"
             }
           }
         ],
@@ -201,6 +213,7 @@
   },
   "active": "cd59ea29c174bb63",
   "lastOpenFiles": [
+    "CommandsAndShortcuts/Git/Git.mds/gitignore indexedOrStaged changes.md",
     "CommandsAndShortcuts/Mobile/Andriod/Build APK without Andriod Studio.md",
     "Concepts/FrontEnd/NextJS/NextJS_Features.md",
     "Concepts/FrontEnd/NextJS",
@@ -234,7 +247,6 @@
     "Concepts/FrontEnd/HTML Tags List.md",
     "CommandsAndShortcuts/maven/Maven-commands.md",
     "CommandsAndShortcuts/maven/maven.md",
-    "CommandsAndShortcuts/Gradle/gradleShortcut.md",
     "Concepts/FrontEnd/React",
     "Concepts/GenAIUseCases/UseProSearchesEffectively.md.bak",
     "Concepts/GenAIUseCases",
