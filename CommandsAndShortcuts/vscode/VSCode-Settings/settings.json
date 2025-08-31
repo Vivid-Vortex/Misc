@@ -1,0 +1,88 @@
+{
+  "tabnine.experimentalAutoImports": true,
+  "window.zoomLevel": 1,
+  "security.workspace.trust.untrustedFiles": "open",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "notebook.editorOptionsCustomizations": {},
+  "terminal.integrated.defaultProfile.windows": [
+    "PowerShell",
+    "Windows PowerShell",
+    "Git Bash",
+    "Command Prompt",
+    "JavaScript Debug Terminal"
+  ],
+  "editor.wordWrap": "on",
+  "editor.fontSize": 21,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "liveServer.settings.host": "192.168.56.1",
+  "editor.mouseWheelZoom": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "azure-event-hub-explorer.eventHubConnectionString": "Endpoint=sb://eventhubecomnamespace001.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=blank=",
+  "azure-event-hub-explorer.eventHubEntityName": "ecomeventhub001",
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "editor.tabSize": 2,
+  "git.autofetch": true,
+  "redhat.telemetry.enabled": true,
+  "@azure.argTenant": "",
+  "markdown.extension.print.theme": "dark",
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "editor.semanticTokenColorCustomizations": {},
+  "workbench.editor.enablePreview": false,
+  "codegraphy.selectedColor": "#fff",
+  "codegraphy.nodeSettings": [
+    {
+      "extension": "*.js",
+      "color": "#4985be"
+    },
+    {
+      "extension": "*.ts",
+      "color": "#eac73e"
+    },
+    { "extension": "*.txt", "color": "#4985be" },
+    { "extension": "*.md", "color": "#4985be" }
+  ],
+  "workbench.colorTheme": "Aura Dracula Spirit (Synthwave)",
+  "git.openRepositoryInParentFolders": "never",
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.location": "top",
+  "settingsSync.ignoredExtensions": []
+
+  // To make it lightweight - start
+  // "telemetry.enableTelemetry": false,
+  // "files.watcherExclude": {
+  //   "**/.git/objects/**": true,
+  //   "**/.git/subtree-cache/**": true,
+  //   "**/node_modules/**": true,
+  //   "**/dist/**": true
+  // },
+  // "editor.codeLens": false,
+  // "editor.suggestOnTriggerCharacters": false,
+  // "editor.quickSuggestions": {
+  //   "comments": "off",
+  //   "strings": "off",
+  //   "other": "off"
+  // },
+  // "editor.parameterHints.enabled": false,
+  // "editor.hover.enabled": false,
+  // "editor.minimap.enabled": false,
+  // "workbench.colorTheme": "Default Dark+",
+  // "workbench.startupEditor": "none",
+  // "workbench.enableExperiments": false,
+  // "workbench.editor.closeEmptyGroups": true,
+  // "files.exclude": {
+  //   "**/.git": true,
+  //   "**/.svn": true,
+  //   "**/.hg": true,
+  //   "**/CVS": true,
+  //   "**/.DS_Store": true
+  // },
+  // "extensions.experimental.affinity": { "extensionHost": { "maxMemory": 256 } }
+  // To make it lightweight - end
+}
