@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CommandsAndShortcuts/Git/Git.mds/gitignore indexedOrStaged changes.md",
+                "file": "Concepts/Food/Snacks for Energy & Focus Before a 1-Hour Meeting.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "gitignore indexedOrStaged changes"
+              "title": "Snacks for Energy & Focus Before a 1-Hour Meeting"
             }
           }
         ],
@@ -213,6 +213,10 @@
   },
   "active": "cd59ea29c174bb63",
   "lastOpenFiles": [
+    "Concepts/Food/Weekly Snack Ready Chart (for Meetings).md",
+    "Concepts/Food/Snacks for Energy & Focus Before a 1-Hour Meeting.md",
+    "Concepts/Food/Quick brain boosters food supliments.md",
+    "Concepts/Food/food-sources-high-calories.md",
     "CommandsAndShortcuts/Git/Git.mds/gitignore indexedOrStaged changes.md",
     "CommandsAndShortcuts/Mobile/Andriod/Build APK without Andriod Studio.md",
     "Concepts/FrontEnd/NextJS/NextJS_Features.md",
@@ -243,10 +247,6 @@
     "Concepts/AIStack/Qwen Coder CLI setup.md",
     "Concepts/AIStack/GenAIRAGTechStack.md",
     "Concepts/AIStack/GenAIPromptsForJava.md",
-    "Concepts/FrontEnd/CSS Properties.md",
-    "Concepts/FrontEnd/HTML Tags List.md",
-    "CommandsAndShortcuts/maven/Maven-commands.md",
-    "CommandsAndShortcuts/maven/maven.md",
     "Concepts/FrontEnd/React",
     "Concepts/GenAIUseCases/UseProSearchesEffectively.md.bak",
     "Concepts/GenAIUseCases",
