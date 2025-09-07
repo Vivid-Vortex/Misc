@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concepts/Food/Brain energy + Carbs or Glucose.md",
+                "file": "CommandsAndShortcuts/Mobile/Chatgpt-chat-on-react-native/react-native.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Brain energy + Carbs or Glucose"
+              "title": "react-native"
             }
           }
         ],
@@ -88,7 +88,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "FrontEnd",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": true,
@@ -213,8 +213,14 @@
   },
   "active": "cd59ea29c174bb63",
   "lastOpenFiles": [
-    "Concepts/Food/Snacks for Energy & Focus Before a 1-Hour Meeting.md",
+    "CommandsAndShortcuts/Mobile/Chatgpt-chat-on-react-native/react-native.md",
     "Concepts/Food/Brain energy + Carbs or Glucose.md",
+    "CommandsAndShortcuts/Mobile/Chatgpt-chat-on-react-native/New Text Document.txt",
+    "CommandsAndShortcuts/Mobile/Chatgpt-chat-on-react-native",
+    "CommandsAndShortcuts/Mobile/New folder",
+    "CommandsAndShortcuts/Mobile/Untitled.md",
+    "CommandsAndShortcuts/Mobile/react_native_firebase_qa.md",
+    "Concepts/Food/Snacks for Energy & Focus Before a 1-Hour Meeting.md",
     "Concepts/Food/Weekly Snack Ready Chart (for Meetings).md",
     "Concepts/Food/Quick brain boosters food supliments.md",
     "Concepts/Food/food-sources-high-calories.md",
@@ -244,12 +250,6 @@
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandAndShortcuts.md",
     "CommandsAndShortcuts/Microsoft/Windows/WindowsCommandsAndShortcuts.md",
     "CommandsAndShortcuts/Microsoft/Windows/NewWindowsAppToInstall.md",
-    "CommandsAndShortcuts/Microsoft/Windows/Export Equivalent cmd on wndows.md",
-    "Concepts/AIStack/Qwen Coder CLI setup.md",
-    "Concepts/AIStack/GenAIRAGTechStack.md",
-    "Concepts/FrontEnd/React",
-    "Concepts/GenAIUseCases/UseProSearchesEffectively.md.bak",
-    "Concepts/GenAIUseCases",
     "Untitled.canvas",
     "Intelij-idea/Pasted image 20250708155228.png",
     "Pasted image 20250708154825.png",
