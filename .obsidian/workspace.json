@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concepts/Food/Snacks for Energy & Focus Before a 1-Hour Meeting.md",
+                "file": "Concepts/Food/Brain energy + Carbs or Glucose.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Snacks for Energy & Focus Before a 1-Hour Meeting"
+              "title": "Brain energy + Carbs or Glucose"
             }
           }
         ],
@@ -213,8 +213,9 @@
   },
   "active": "cd59ea29c174bb63",
   "lastOpenFiles": [
-    "Concepts/Food/Weekly Snack Ready Chart (for Meetings).md",
     "Concepts/Food/Snacks for Energy & Focus Before a 1-Hour Meeting.md",
+    "Concepts/Food/Brain energy + Carbs or Glucose.md",
+    "Concepts/Food/Weekly Snack Ready Chart (for Meetings).md",
     "Concepts/Food/Quick brain boosters food supliments.md",
     "Concepts/Food/food-sources-high-calories.md",
     "CommandsAndShortcuts/Git/Git.mds/gitignore indexedOrStaged changes.md",
@@ -246,7 +247,6 @@
     "CommandsAndShortcuts/Microsoft/Windows/Export Equivalent cmd on wndows.md",
     "Concepts/AIStack/Qwen Coder CLI setup.md",
     "Concepts/AIStack/GenAIRAGTechStack.md",
-    "Concepts/AIStack/GenAIPromptsForJava.md",
     "Concepts/FrontEnd/React",
     "Concepts/GenAIUseCases/UseProSearchesEffectively.md.bak",
     "Concepts/GenAIUseCases",
