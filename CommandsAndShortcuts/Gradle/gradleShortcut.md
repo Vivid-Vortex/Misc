@@ -20,19 +20,16 @@ Dependency Conflicts: Check for any potential dependency conflicts in your proje
 ./gradlew clean build -x test
 
 #Skip checks, unit tests and Integration tests on Gradle while doing build
+
 ```
 build -x test -x check -x IntegrationTest
 ```
 
 ---
+
 excluding custom gradle build such as docker-test:
 
 ### In below code clean will happen followed by build. In the build it will exclude docker-test:build and thus all the subsequent docker-test checks.
+
 graldle clean build <mark>-x docker-test:build</mark
-***In this simply by excluding the build part of that check, you can remove all it's subsequent check such as docker-test:check, docker-test:classes etc.
-
-
-
-
-
-
+\*\*\*In this simply by excluding the build part of that check, you can remove all it's subsequent check such as docker-test:check, docker-test:classes etc.

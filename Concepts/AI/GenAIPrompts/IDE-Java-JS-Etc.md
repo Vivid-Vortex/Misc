@@ -1,0 +1,2 @@
+Go in an incrementaal fashion -> First ask the agent to draw a simple easy to understand or digest flow diagram of any particular flow.
+Create a simplified , easy-to-digest flow diagram focusing just on the core user-creation topic withoug all the complex edge cases and error handlings.
