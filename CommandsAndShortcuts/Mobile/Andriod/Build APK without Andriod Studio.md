@@ -22,6 +22,11 @@ However, the **exact command depends on your project setup** (React Native, plai
     ./gradlew assembleRelease    # On macOS/Linux
     gradlew.bat assembleRelease  # On Windows
     ```
+		
+		Below is for Goodtime pomodoro app.
+		```
+		./gradlew :androidApp:assembleGoogleRelease
+		```
     
 3. Find your APK at:
     
