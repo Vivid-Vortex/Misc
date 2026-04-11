@@ -1245,7 +1245,120 @@ git config --global credential.helper store
 `git add . && git commit -m "random push" && git push`
 
 ----------------------------------------------------------------------------------------
+ **Git Tags And Versioning***
 
+ What is a Git Tag?
+
+    A tag is a named pointer to a specific commit in git history. Think of it as a permanent bookmark that says "this exact commit is version X.Y.Z".
+
+    Unlike branches (which move forward as you add commits), tags never move — they always point to the same commit forever.
+    
+ Why Tags Matter for Versioning & Releases
+
+    ┌───────────────────────────────────────────────┬────────────────────────────────────────────────────────────┐
+    │                 Without Tags                  │                         With Tags                          │
+    ├───────────────────────────────────────────────┼────────────────────────────────────────────────────────────┤
+    │ Hard to know which commit was "version 3.1.0" │ Any commit can be traced back to its exact version         │
+    ├───────────────────────────────────────────────┼────────────────────────────────────────────────────────────┤
+    │ Can't reproduce an old build                  │ Checkout v3.1.0 tag → get the exact code from that release │
+    ├───────────────────────────────────────────────┼────────────────────────────────────────────────────────────┤
+    │ GitHub Releases have no reference point       │ GitHub Release is tied to the tag forever                  │
+    └───────────────────────────────────────────────┴────────────────────────────────────────────────────────────┘
+    
+ git tag v3.1.0
+    - Creates a tag named v3.1.0 on your current latest commit locally
+    - Nothing is pushed to GitHub yet — it only exists on your machine
+
+ git push origin dev
+- Pushes your code commits on the dev branch to GitHub
+- Tags are NOT pushed by this — they need a separate push
+
+ git push origin v3.1.0
+    - Pushes the tag itself to GitHub
+    - This is what triggers the GitHub Actions workflow (say, because the workflow listens for v* tag pushes)
+
+     In your workflow specifically:
+    - The tag v3.1.0 tells GitHub Actions what version name to use
+    - The workflow extracts 3.1.0 from the tag name (strips the v)
+    - The APK gets named PomodoroAuto-3.1.0-build346.apk
+    - A GitHub Release is created under that exact tag
+
+    ---
+    General Industry Significance
+
+    Tags follow Semantic Versioning (SemVer): vMAJOR.MINOR.PATCH
+
+    ┌───────┬────────────────────────────────────┬─────────────────┐
+    │ Part  │         When to increment          │     Example     │
+    ├───────┼────────────────────────────────────┼─────────────────┤
+    │ MAJOR │ Breaking changes, big rewrites     │ v2.0.0 → v3.0.0 │
+    ├───────┼────────────────────────────────────┼─────────────────┤
+    │ MINOR │ New features, backwards compatible │ v3.0.0 → v3.1.0 │
+    ├───────┼────────────────────────────────────┼─────────────────┤
+    │ PATCH │ Bug fixes only                     │ v3.1.0 → v3.1.1 │
+    └───────┴────────────────────────────────────┴─────────────────┘
+
+    So v3.1.0 means: major version 3, minor feature release 1, no patches yet.
+
+    ---
+    Quick Mental Model
+
+    ▎ Branch = a road that keeps extending
+    ▎ Tag = a mile marker permanently fixed at one spot on that road
+
+For example in Github Repo (https://github.com/Andriod-Developmentt/minimalist-pomodoro-app.git - dev branch) and commit (fd67de984608a6c37e7c1c27145cad444a30b386):
+
+Files changed/created:
+
+  ┌─────────────────────────────────────┬───────────────────────────────────────────────────────────────────┐
+  │                File                 │                              Change                               │
+  ├─────────────────────────────────────┼───────────────────────────────────────────────────────────────────┤
+  │ version.properties                  │ New — single source of truth for version                          │
+  ├─────────────────────────────────────┼───────────────────────────────────────────────────────────────────┤
+  │ androidApp/build.gradle.kts         │ Reads version from version.properties instead of hardcoded values │
+  ├─────────────────────────────────────┼───────────────────────────────────────────────────────────────────┤
+  │ .github/workflows/build-release.yml │ New — GitHub Actions CI/CD pipeline                               │
+  └─────────────────────────────────────┴───────────────────────────────────────────────────────────────────┘
+
+  ---
+  How to use
+
+  To release a new version (e.g. 3.1.0):
+
+  # 1. Edit version.properties manually (only needed for versionName change)
+  #    versionCode is auto-incremented by GitHub Actions
+  #
+  #    Edit: VERSION_NAME=3.1.0   ← change this for major/minor bumps
+  #          VERSION_CODE=345     ← leave this, CI will increment it
+
+  # 2. Commit your code changes
+  git add .
+  git commit -m "feat: my new feature"
+
+  # 3. Push a version tag — this triggers the CI build
+  git tag v3.1.0
+  git push origin dev
+  git push origin v3.1.0
+
+  GitHub Actions will then:
+  1. Auto-increment VERSION_CODE (346, 347, … on every release)
+  2. Build the googleRelease APK
+  3. Create a GitHub Release at github.com/your-repo/releases
+  4. Attach PomodoroAuto-3.1.0-build346.apk for direct download
+
+  ---
+  Version file location
+
+  ▎ version.properties (project root) — edit VERSION_NAME here for major/minor version bumps. versionCode is managed automatically.
+
+  ---
+  One-time GitHub setup required
+
+  Since the release build uses the debug signing key, it works out of the box. No secrets needed. If you later add a production keystore, add these to GitHub repo Settings → Secrets:
+  - KEYSTORE_BASE64
+  - KEY_ALIAS
+  - KEY_PASSWORD
+  - STORE_PASSWORD
 ----------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------
