@@ -188,8 +188,6 @@ Handle Pattern =
 This is not an official GoF pattern,
 but a **very powerful mental model** used across modern systems.
 
-```
-
 ---
 
 ## 💡 My Opinion (Important)
@@ -197,15 +195,6 @@ but a **very powerful mental model** used across modern systems.
 This version is now **perfect for revision + interviews** because:
 
 - You have **analogy + simple example + real code**
-- You clearly understand:
+- You clearly understand: Check PublisherImpl, SubscriptionImpl, SubscriberImpl and com.vinsguru.sec01.Demo in  `https://github.com/Vivid-Vortex/java-reactive-programming-course/blob/c6a5f2e33fae09c65cc960dc033482d775d4a4a7/01-reactive-programming-playground/src/main/java/com/vinsguru/sec01/publisher/PublisherImpl.java#L11`
   - ❌ What is NOT handle (`PublisherImpl`)
   - ✅ What IS handle (`Subscription`)
-
-👉 This clarity is exactly what separates **mid-level vs architect thinking**
-
----
-
-If you want next:
-👉 I can compress this into a **2-minute interview answer**  
-👉 Or convert into **flashcards for quick revision**
-```
