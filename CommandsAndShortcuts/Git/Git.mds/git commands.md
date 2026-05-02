@@ -1361,6 +1361,97 @@ Files changed/created:
   - STORE_PASSWORD
 ----------------------------------------------------------------------------------------
 
+### ❓ What is `git show`?
+
+**Answer:**
+`git show` is used to display detailed information about a specific commit. It shows:
+
+* Commit metadata (author, date, message)
+* Changes introduced in that commit (diff)
+
+**Simple Example:**
+
+```bash
+git show <commit-id>
+```
+
+👉 If you run just:
+
+```bash
+git show
+```
+
+It shows the **latest commit**.
+
+**Use case:**
+When you want to quickly inspect what exactly changed in a commit.
+
+---
+
+### ❓ How to commit in Git with title and description?
+
+**Answer:**
+In Git, a commit message typically has:
+
+1. **Title (short summary)**
+2. **Description (detailed explanation)**
+
+---
+
+### ✅ Recommended Way (Best Practice)
+
+```bash
+git commit
+```
+
+This opens an editor where you write:
+
+```
+Add user authentication module
+
+Implemented login and signup APIs.
+Added JWT-based authentication.
+Handled password encryption using BCrypt.
+```
+
+---
+
+### ✅ One-liner (Quick way)
+
+```bash
+git commit -m "Add user authentication module" -m "Implemented login and signup APIs"
+```
+
+* First `-m` → Title
+* Second `-m` → Description
+
+---
+
+### 🧠 My Practical Advice (based on your experience level)
+
+Since you're aiming for architect-level thinking:
+
+* Keep **title ≤ 50 characters**
+* Make it **action-oriented** (e.g., Add, Fix, Refactor)
+* Use description to explain:
+
+  * **Why** the change was made
+  * Not just **what**
+
+👉 Bad:
+
+```
+Fixed bug
+```
+
+👉 Good:
+
+```
+Fix null pointer in payment service
+
+Handled null response from external API to prevent service crash.
+```
+
 ----------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------
