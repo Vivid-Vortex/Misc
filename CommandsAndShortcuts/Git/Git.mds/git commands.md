@@ -1,757 +1,880 @@
-#All the commits are immutable. That means once the commit is created, they cannot be changed.
+# Git Commands Reference
 
-#Fetch remote branch upstream/downstram
-    git fetch -v
+> **Note:** All commits are immutable. Once a commit is created, it cannot be changed.
 
-#Which branches are remote tracking within my repository. Result could be like main sha_id origin/main. 
-#Here main represent local main branch. origin represents remote pointer which is pointing to remote main branch.
-#Now complete meaning as a whole is local main is tracking/pointing to remote main.
+## Remote Tracking
+
+```bash
+# Fetch remote branch (upstream/downstream)
+git fetch -v
+```
+
+To see which branches are remote-tracking within your repository:
+
+```bash
 git branch -vv
+```
 
-#Run this to see the difference between your remote branch commit(s) difference and local branch commit(s)
+The result could be like `main sha_id origin/main`. Here `main` represents the local main branch, and `origin` represents the remote pointer which is pointing to the remote main branch. The complete meaning is: local `main` is tracking/pointing to remote `main`.
+
+To see the difference between your remote branch commits and local branch commits:
+
+```bash
 git log origin/main
+```
+
+---
 
 ## Collaboration
 
-#Basic commands
+### Basic Commands
 
-- git clone <url> #It will clone the remote repo to local repo
-  
-  - Eg:- git cloen repository_url 
+- `git clone <url>` — Clone the remote repo to local repo
+  - Example: `git clone repository_url`
 
-- git fetch <repository> #Download changes from the specified remote repository
-  
-  - Eg:- git fetch orgin
+- `git fetch <repository>` — Download changes from the specified remote repository
+  - Example: `git fetch origin`
 
-- git pull #check the difference between fetch and merge given below
+- `git pull` — Check the difference between fetch and merge in the section below
 
-- git push #Upload all local changes (includes all local branches) to the specified remote repository and branch. It will push anything (ofcouse except .gitignore ones), even newly created branches etc to remote.
-  
-  - Eg:- git push
+- `git push` — Upload all local changes (including all local branches) to the specified remote repository and branch. It will push everything (except `.gitignore` ones), even newly created branches, to remote.
+  - Example: `git push`
 
-- git push <repository> <branch> #Upload all local changes (includes all local branches) to the specified remote repository and branch
-  
-  - Eg:- git push origin main
+- `git push <repository> <branch>` — Upload all local changes to the specified remote repository and branch
+  - Example: `git push origin main`
 
-#How to check if any changes made to remote repo since the last time you pulled the remote branch.
+### Checking for Remote Changes
+
+To check if any changes were made to the remote repo since the last time you pulled:
+
+```bash
 git status
-#you will see a messag, your branch is up to date with origin/main. This means that no body has made any changes to the remote main, since the last time you pulled from it.
-#Now go ahead and commit some changes to your local main. Then run git status.
-git status
-#You will seee a message that your branch is ahead of origin/main by 1 commit. That means HEAD pointer on local main branch has moved one pointer ahead of the remote main head pinter. 
+```
+
+You will see a message: *"your branch is up to date with origin/main"*. This means nobody has made any changes to the remote main since the last time you pulled from it.
+
+Now go ahead and commit some changes to your local main, then run `git status` again.
+
+You will see a message that your branch is ahead of `origin/main` by 1 commit. That means the HEAD pointer on the local main branch has moved one pointer ahead of the remote main HEAD pointer.
+
+```bash
 git log --oneline
-#Here you will see that HEAD -> main, i.e. HEAD is point to main. This commit sha will be higher compared to origin/main, origin/HEAD.
-git fetch origin #It will fetch any changes from origin main to local main
-git push origin main (instead of main, we can put any desired remote branch_name to push to)
-#At last simply run 
-git log --oneline
-#To see only your logs. first-parent will show you only your and your branch commit excluding other branches. This could be quite useful in case if you want to cherry-pick or something. The --first-parent option ensures you only see direct commits on your current branch, excluding merged branch histories.
-git log --first-parent --author="your_name_which_shows_in_intelij_github_desktop" --oneline
-#If everything your local and remote is in sync, then you'll see a message as 'HEAD -> main, origin/main, origin/HEAD'
-#Now use below command. You will see remote commits and local commits and difference.
-git log origin/main
-#Now instead of pulling the changes from remote, you should better merge the origin/main. Here merging origin/main or remote branch is like merging any other local branch.
-#But here you're directly merging local from remote. So now do merge with below commands.
+```
+
+Here you will see that `HEAD -> main`, i.e. HEAD is pointing to main. This commit SHA will be higher compared to `origin/main`, `origin/HEAD`.
+
+```bash
+git fetch origin         # Fetch any changes from origin main to local main
+git push origin main     # Replace 'main' with any desired remote branch name to push to
+```
+
+To see only your logs:
+
+```bash
+# --first-parent shows only direct commits on your current branch, excluding merged branch histories
+git log --first-parent --author="your_name_which_shows_in_intellij_github_desktop" --oneline
+```
+
+If your local and remote are in sync, you will see: `HEAD -> main, origin/main, origin/HEAD`.
+
+```bash
+git log origin/main   # See remote commits, local commits, and their difference
+```
+
+Instead of pulling changes from remote, you should merge `origin/main` directly. Merging `origin/main` or a remote branch is like merging any other local branch.
+
+```bash
 git merge origin/main
+```
 
-#Creates a new branch
-    git checkout -b branch_name - Creates a new branch and switches to it
-    git branch branch_name - creates a new branch
-    git checkout branch_name - simply switches to given branch
+---
 
-git log # show logs of all the branches
-git log --graph --oneline #shows log history in one line
-git log branch_name --oneline #You can view logs of any branch while staying on any branch. Just put branch name of the branch you wanna see log off
-git status # show the status of the current branch
+## Branch Operations
 
-#Merge branch
+```bash
+git checkout -b branch_name    # Creates a new branch and switches to it
+git branch branch_name         # Creates a new branch
+git checkout branch_name       # Simply switches to the given branch
 
-1. first check your branch (say dev) which you want to merge with say (master). check if everything alright.
-2. then switch to the branch master.
-3. check the status of master. check if everything is clean and commited there.
-4. now trigger this command to merge. command is git merge dev.
-5. Now you can trigger git log cmd to see head will be pointed to master, dev and all the logs will also be shown in the same list.
+git log                         # Shows logs of all branches
+git log --graph --oneline       # Shows log history in one line
+git log branch_name --oneline   # View logs of any branch while staying on any branch
+git status                      # Shows the status of the current branch
+```
 
-You can checkout to a new commit with #git checkout commit_id
-Then you can check logs of that commit with #git log
+### Merging a Branch
 
-git rm --cached <file>..." to unstage files
+1. First check your branch (say `dev`) which you want to merge with (say `master`). Check if everything is alright.
+2. Then switch to the branch `master`.
+3. Check the status of `master`. Check if everything is clean and committed.
+4. Now trigger the merge command: `git merge dev`.
+5. Now trigger `git log` to see HEAD will be pointed to `master`, `dev`, and all the logs will also be shown in the same list.
 
-#Modify previous commit of the branch you're in.
-    git checkout branch_name #Move to your desired branch in which you want to make any changes to any particular commit
-    git log --graph --oneline #shows log history in one line
-    Select your desired commit id
-    git checkout <commit_id>
-    git commit --amend -m "Modified message" OR git commit --amend #second cmd will open a text editor where firt line represents summary and one line after space reprents description.
-    git checkout . #Moves the head back to the most current or most recent working directly.
-    #In can if you want to push the changes to remote then use below commands.
-    git push --force 
-    ##Beaware that push will rewrite the remote repo history which is not at all recommended. If you just want to change commit message, then it's okay. It you ware chaning anything related to the actual content, then do not 
-    #change history as your teammates who has taken your commit, will face issues. So to change the content, better
-    #use another latest commit.
+You can checkout to a specific commit with `git checkout <commit_id>`, then check the logs of that commit with `git log`.
 
-** One thing to note about push is that, the branch you will be in at the time of the push, will automatically be push to the origin or remote repo. So always be careful to merge to main and push to remote while being in the local main branch only.
+```bash
+git rm --cached <file>   # Unstage a file
+```
 
-#git hard/soft reset
-    If you reset --hard, it will make your local code and local history be just like it was at that commit. But if you wanted to push this to someone else who has the new history, it would fail:
-#To undo git soft reset
+### Modifying a Previous Commit
+
+```bash
+git checkout branch_name     # Move to your desired branch
+git log --graph --oneline    # View log history, select your desired commit ID
+git checkout <commit_id>
+git commit --amend -m "Modified message"
+# OR:
+git commit --amend
+# Second command opens a text editor where the first line is the summary
+# and a line after a blank line is the description.
+git checkout .               # Moves HEAD back to the most current working directory
+```
+
+To push the changes to remote:
+
+```bash
+git push --force
+```
+
+> **Warning:** Force push will rewrite the remote repo history, which is **not recommended**. If you just want to change a commit message, it is okay. If you are changing anything related to the actual content, **do not change history** as your teammates who have taken your commit will face issues. To change content, it is better to use another latest commit.
+
+> **Important:** The branch you are in at the time of the push will automatically be pushed to the origin or remote repo. So always be careful to merge to main and push to remote while being in the local main branch only.
+
+---
+
+## Reset
+
+### Hard Reset
+
+If you reset `--hard`, it will make your local code and local history be just like it was at that commit. If you wanted to push this to someone else who has the new history, it would fail.
+
+```bash
+git reset --hard c14809fa
+```
+
+### Soft Reset
+
+If you reset `--soft`, it will move your HEAD to where it was, but leave your local files the same:
+
+```bash
+git reset --soft c14809fa
+```
+
+### Undo a Soft Reset
+
+```bash
 git checkout <commit-hash>/current-branch-name
+```
 
-    git reset --hard c14809fa
-    And if you reset --soft, it will move your HEAD to where they were , but leave your local files etc. the same:
-    
-    git reset --soft c14809fa
+---
 
-#To show all the config details
+## Configuration
+
+```bash
+# Show all config details
 git config --list
-q: Exits the list without making any changes.
-Spacebar or Down Arrow: Scrolls down to view the next configuration option.
+# Press 'q' to exit the list, Spacebar or Down Arrow to scroll
+```
 
-#To change credentials
+### Change Credentials
+
+```bash
 git config --global user.email "ctntc9.dpk@gmail.com"
-git config --global user.email #It will give you the current user.name
+git config --global user.email    # Shows the current user.email
 
 git config --global user.name "Vivid-Vortex"
-git config --global user.name #It will give the current user.name value
+git config --global user.name     # Shows the current user.name value
+```
 
-#If you want to customize the remote repo you're pushing the local changes to then use below command.
-#Generally you should first create the repo, then clone the repo, then go to the repo directoy and then from there you should push the changes.
-#In that case you don't need to use, below command as your remote is already specified in .git/git.conf file.
+### Set Remote URL
+
+If you want to customize the remote repo you are pushing to:
+
+```bash
 git remote set-url origin https://github.com/Vivid-Vortex/Misc.git
+```
 
-#To authenticate git bash with ssh token from github
-git config --global credential.helper '!f () { sleep 1; echo "username=git token=<TOKEN>"; }; f' #replace <TOKEN> with the actual token
+> Generally you should first create the repo, then clone it, then go to the repo directory and push from there. In that case you do not need to use the above command as your remote is already specified in `.git/config`.
 
-#To sort out long file lenght not supported issue.
-git config --system core.longpaths true #Open git bash/cmd/powershell/termila etc in admin  mode Or You can open git bash in admin mode and use this command.
+### Authenticate Git Bash with SSH Token from GitHub
 
-# To ignore whitespaces Changes. Use gitbash in admin/root mode.
+```bash
+git config --global credential.helper '!f () { sleep 1; echo "username=git token=<TOKEN>"; }; f'
+# Replace <TOKEN> with the actual token
+```
 
+### Fix Long File Path Issue
+
+```bash
+# Open git bash/cmd/powershell/terminal in admin mode
+git config --system core.longpaths true
+```
+
+### Ignore Whitespace Changes
+
+```bash
+# Use git bash in admin/root mode
 git config --system apply.whitespace nowarn
+```
 
-#To change the default editor of git to vim
-git config --global core.editor vim
+### Change Default Editor
 
-#To change the default editor of git to notepad++
-git config --global core.editor notepad++.exe
+```bash
+git config --global core.editor vim            # Change to vim
+git config --global core.editor notepad++.exe  # Change to Notepad++
+```
 
-#To delete the branch
-git branch -d branch_name #It will not delete until it is merged, so safe option. Use it always as a first choice over -D option.
+### Delete a Branch
 
-#To force delete any branch, even if it's not merged
-git branch -D branch_name
+```bash
+git branch -d branch_name   # Safe delete — will not delete if unmerged (preferred)
+git branch -D branch_name   # Force delete — even if not merged
+```
 
-#list all the branches
-    git branch -a
+### List All Branches
 
-#To see the history of HEAD movements.
-git reflog #press q to move out of the reflog window
+```bash
+git branch -a
+```
 
-----------------------------------------------------------------------------------------
+### View HEAD History
 
-Note :- To change any configuration settings you can use git bash. Run it in admin mode.
-And use the command. It will work by using --system argument even if you don't have any
-active git repo locally.
+```bash
+git reflog   # Press 'q' to exit the reflog window
+```
 
-----------------------------------------------------------------------------------------
+---
 
-Merge vs Rebase:-
-Merge:
-    #Say you want to merge main into feature branch.
-        git checkout main #move to branch main
-        git  pull #pull latest remove branch changes.
-        git checkout feature_branch #to the branch (say feature_branch) where you want to merge whatever branch (say main).
-        git pull #It will pull the changes from the branch from where it was copied/created in the first place. In this it will pull from local main
-        git checkout main
-        git merge --no-ff feature_branch #--no-ff option is used to void fast forward merge and previous histories of the feature_branch.
-        git push. #Push to remote.
+> **Note:** To change any configuration settings, you can use git bash. Run it in admin mode and use the command with `--system` argument, even if you do not have any active git repo locally.
 
-    #Say you just want to update your feature_branch with all the latest changes from main branch.
+---
 
-Rebase:
-    git checkout feature_branch
-    git rebase main
-    #With rebase cmd, git will set aside all the feature_branch changes (commits say commmit1, commit 2) to the holding (temp) area. 
-    #After that git will pick every commit from the holding area one by one (first commit1 then commit2 etc.) and then adjust those commits to the latest
-    commit on the main branch. Lets' say the latest/recent commit on the main branch is main3. So the commit1 will point to main3 instead of main2. As there were
-    #one more commit main3 which was there on the main branch, whcih happens to be the latest and the greatest commit on the main branch. 
-    So the chain will look like below.
-    Before rebase:
-    main1 -> main2 -> main3
+## Merge vs Rebase
+
+### Merge
+
+Say you want to merge `main` into a feature branch:
+
+```bash
+git checkout main               # Move to branch main
+git pull                        # Pull latest remote branch changes
+git checkout feature_branch     # Switch to the branch where you want to merge main
+git pull                        # Pull changes from the branch where it was copied/created
+git checkout main
+git merge --no-ff feature_branch    # --no-ff avoids fast-forward merge and preserves history
+git push                        # Push to remote
+```
+
+### Rebase
+
+```bash
+git checkout feature_branch
+git rebase main
+```
+
+With the rebase command, git will set aside all the feature branch changes (commits say `commit1`, `commit2`) to a holding (temp) area. After that, git will pick every commit from the holding area one by one and then adjust those commits to the latest commit on the main branch. Let's say the latest commit on the main branch is `main3`. So `commit1` will point to `main3` instead of `main2`.
+
+**Before rebase:**
+
+```
+main1 -> main2 -> main3
+                    \
+                    fb1 -> fb2
+```
+
+**After rebase:**
+
+```
+main1 -> main2 -> main3
                         \
                         fb1 -> fb2
+```
 
-    After rebase:
-    main1 -> main2 -> main3
-                                            \
-                                            fb1 -> fb2
-    #When you'll move the main branch and merge fb(feature_branch) with -no-ff option. There'll be a third commit main4 (copy of feature branch) which will be created on main branch.
-    main1 -> main2 -> main3------main4
-                                            \                    /
-                                            fb1 -> fb2
-    #But with the help of --no-ff flag/cmd option. You graph/history (i.e.)
-    with --no-ff
-        main1 -> main2 -> main3------main4
-                                            \                    /
-                                            fb1 -> fb2
-    
-    without --no-ff, incase let's assume there's no other commit history on the main branch and you're only one going to commit to the top of main branch
-    in that case there'll be a fast forward commit and the history fb1 -> fb2 will be merged and will no longer exist. So in order to avoid this situation,
-    we must use --no-ff option in order to be cautious and preserve history. Becuse you never know if there's or there isn't any commit on the main branch.
-    And especially when your intention is to preserve the history (which is always a best practice).
-    
-    without --no-ff
-    
-        main1 -> main2 -> main3------main4
-    
-    #Note:
-    #All the commits are immutable. That means once the commit is created, they cannot be changed.
-    #This is important to know, because when git rewrites the history of the local branch (feature_branch as per our example), it
-    #created a new sha or commit id.
-    
-    #Important
-    #It is important to note that, we should use rebase on local branch only and not the shared branch (github main), because it will rewrite the histories.
-    #Also relating to the above point, we should not use rebase on the main branch (which is the local copy of the shared remote branch). We should always
-    #checkout to our feature branch and then rebase the local main (of course after pulling the main remote changes to local main) and not the other way round.
+When you move the main branch and merge the feature branch with `--no-ff`, a third commit `main4` (copy of feature branch) will be created on the main branch.
 
-#Now the question arises, why we should do rebase OF OUR FEATURE_BRANCH in order to pull the latest changes from the main branch (Assuming local main is in sync with remote main).
+**With `--no-ff`:**
+
+```
+main1 -> main2 -> main3 ------ main4
+                        \                    /
+                        fb1 -> fb2
+```
+
+**Without `--no-ff`** (in case there is no other commit history on main and you are the only one committing): there will be a fast-forward commit and the history `fb1 -> fb2` will be merged and will no longer exist. So use `--no-ff` to preserve history — especially when your intention is to preserve history (which is always a best practice).
+
+```
+main1 -> main2 -> main3 ------ main4
+```
+
+> **Note:** All commits are immutable. When git rewrites the history of the local branch, it creates a new SHA or commit ID.
+
+> **Important:** We should use rebase on local branches only and not on shared branches (like GitHub main), because it will rewrite the histories. We should always checkout to our feature branch and then rebase from local main (after pulling the main remote changes to local main) and not the other way around.
+
+### Why Rebase Feature Branch Instead of Pulling?
+
 Say we have a branch like below:
 
+```
 m1 -> m2 -> m3
             \
             f1 -> f2
+```
 
-So the situation here is as follows:
-After we have taken the copy from point m2 of the main branch and started working further on it. Meanwhile someone else commited their changes to main branch as m3.
-Observer carefully this point, in both the cases merge from main to feature_branch wil occur.
-While both git pull and git rebase can integrate changes from a main branch into your feature branch, they achieve this in different ways, leading to distinct outcomes and impacting your Git history:
+After we took the copy from point `m2` and started working, someone else committed `m3` to main. Here is the difference between pull and rebase:
 
-While both git pull and git rebase can integrate changes from a main branch into your feature branch, they achieve this in different ways, leading to distinct outcomes and impacting your Git history:
+#### Git Pull
 
-Git Pull:
-Integration: Performs a "merge," creating a new merge commit in your feature branch. This commit records the merging of changes from the main branch at a specific point in time.
-Git history: Creates a linear history with branches diverging and then merging. This can make it clearer to visualize how changes integrated from the main branch.
-Collaboration: More suitable for working on shared branches where others might be contributing and you want to keep your branch independent. Merge commits track individual contributions.
-Potential conflicts: Might require resolving merge conflicts if changes in both branches overlap.
+- **Integration:** Performs a "merge," creating a new merge commit in your feature branch.
+- **Git history:** Creates a linear history with branches diverging and then merging.
+- **Collaboration:** More suitable for working on shared branches.
+- **Potential conflicts:** Might require resolving merge conflicts if changes overlap.
 
-Git Rebase:
-Integration: Replays your feature branch commits on top of the latest main branch changes. This rewrites your branch's history to appear as if they were always made after the main branch updates.
-Git history: Creates a more streamlined, linear history where your feature branch commits appear directly after the main branch changes. This can be cleaner for personal branches not yet shared.
-Collaboration: Less suitable for shared branches as rewriting history can cause issues for others who have already pulled or integrated your branch.
-No conflicts: Usually doesn't introduce merge conflicts, as your commits are replayed on top of the main branch without merging.
+#### Git Rebase
 
-Choosing the right option:
-Pull: Use if you're working on a shared branch, want separate merge commits for tracking changes, and are willing to handle potential conflicts.
-Rebase: Use if you're working on a personal branch, prefer a cleaner history, and don't anticipate collaborating with others on the branch.
+- **Integration:** Replays your feature branch commits on top of the latest main branch changes, rewriting your branch's history.
+- **Git history:** Creates a more streamlined, linear history.
+- **Collaboration:** Less suitable for shared branches as rewriting history can cause issues for others.
+- **No conflicts:** Usually does not introduce merge conflicts.
 
--------My Two Cents on using Merge and Rebase----------
+#### Choosing the Right Option
 
-1. We must not use rebase outside the unshred feature local branch at all.
-2. We should always prefer merge over rebase, in order to merge the branches, as both will ultimately do merge only and create a merge commit.
-3. We should go with interactive rebase only if we have to use those multiple options featured under interactive rebase pop up screen.
+- **Pull:** Use if you are working on a shared branch, want separate merge commits, and are willing to handle potential conflicts.
+- **Rebase:** Use if you are working on a personal branch and prefer a cleaner history.
 
-** Please look into this section (do ctrl + F) named ### 3. Rebase and Merge, in order to find and understand how rewrites the history
------------------------------
+### My Two Cents on Using Merge and Rebase
 
-Remember:
-Be cautious with rebasing shared branches due to potential disruptions for others.
-Consider using git pull --rebase to rebase after pulling changes (only recommended for advanced users).
-Understand the implications of each approach before integrating changes.
+1. We must not use rebase outside the unshared feature local branch at all.
+2. We should always prefer merge over rebase in order to merge branches, as both will ultimately do a merge and create a merge commit.
+3. We should go with interactive rebase only if we have to use those multiple options featured under the interactive rebase pop-up screen.
 
-Conclusion:
+> **Please look into the section named `### 3. Rebase and Merge`** (do Ctrl+F) in order to find and understand how it rewrites history.
 
-1. First rebase your feature_branch to main branch (and keep on rebasing your feature_branch from time to time until you finish working on that feature branch) and then merging
-   to main, instead of directly pulling and merging to main. Chances of conflicts would be too high otherwise.
-2. Always (extremely important to note), do the rebase on your local non-shared branch (in this case it is feature_branch)
+> **Remember:** Be cautious with rebasing shared branches due to potential disruptions for others. Consider using `git pull --rebase` only if you are an advanced user. Understand the implications of each approach before integrating changes.
 
-----------------------------------------------------------------------------------------
+### Conclusion
 
-Differenc between Merge and pull. The point is that in both the cases content is flowing from one point to another, so what's the difference.
-Point is we can checkout main and pull the changes from feature_branch to main. And then push it to remote. And likewise every team member can do.
-Same thing we can checkout feature_branch and pull the changes from main. So What's difference.
+1. First rebase your feature branch to main (and keep on rebasing from time to time until you finish), then merge to main — instead of directly pulling and merging. Chances of conflicts would be too high otherwise.
+2. Always do the rebase on your local non-shared branch (in this case, the feature branch).
 
-And. The difference lies in the history. When we merge any changes from any branch to any branch, there will be a "merge commit" created corresponding to that.
-We already know merging from any feature_branch to main and the merge commit gets created. Same way we can merge main into any feature_branch and likewise a merge commitw
-will be created. So instead of pullling main branch changes we are merging main to the feature_branch. That will create a merge commit on the feature brancha
-and this commit will be shown on the branch as the commit (both visually and as commmit sha).
+---
 
-m1 -> m2 -> m3----
-            \                        \        
+## Difference Between Merge and Pull
+
+The difference lies in the history. When we merge any changes from any branch to any branch, a "merge commit" is created. Same way we can merge main into any feature branch — a merge commit will be created on the feature branch. So instead of pulling main branch changes, we are merging main to the feature branch.
+
+```
+m1 -> m2 -> m3 ---
+            \                    \
             f1 -> f2 -> m4
+```
 
-In the above pic, m4 which is the merge commit on feature_branch has all the changes as well as the merge commit history on the feature_branch itself.
+In the above diagram, `m4` is the merge commit on the feature branch and has all the changes as well as the merge commit history on the feature branch itself.
 
-----------------------------------------------------------------------------------------
+---
 
-Resolving merge and/or rebase conflits:
-git merge --abort #It will abort any merge in case of any conflicts
-Check this image:
-ResolvingConflicts.jpg
+## Resolving Merge and/or Rebase Conflicts
 
------------
+```bash
+git merge --abort   # Abort any merge in case of conflicts
+```
 
-If you want to abort the merge/rebase then use git merge/rebase --abort. It will put the current directory back to normal state.
-If you want to contiue with the ongoing merge/rebase operation, then go to that file (which would be showing along with the conflict message) and fix the conflict.
-then run git add . #It will mark the conflict as resolved.
-then run git merge/rebase --continue
-merge/rebase is done now.
-You can check the log graph with git log --graph --oneline
+Check the image: `ResolvingConflicts.jpg`
 
------------
+If you want to abort the merge/rebase, use `git merge --abort` or `git rebase --abort`. It will put the current directory back to normal state.
 
-----------------------------------------------------------------------------------------
+If you want to continue with the ongoing merge/rebase operation:
+1. Go to the file showing the conflict and fix it.
+2. Run `git add .` — this marks the conflict as resolved.
+3. Run `git merge --continue` or `git rebase --continue`.
 
-git cherry pick and resolving cherry pick conflict:
+The merge/rebase is done. You can check the log graph with:
 
-----------------------------------------------------------------------------------------
+```bash
+git log --graph --oneline
+```
 
-Rewriting Git History:
-    Amending commits
-    Rewording commit messages
-    Deleting commits
-    Reordering commits
-    Squashing commits
-    Splitting commits
+---
 
-Quick tips: Just use git rebase -i HEAD~number_of_commits_from_head_you_wanna_go_back
-example:- git rebase -i HEAD~2
-An editor will be opened after hitting enter. Just replace the commands the sha. Commands would be given under commented Commands: section.
-After hitting enter, another editor will open, where you can do your work. Save and exit.
+## Cherry Pick and Resolving Cherry Pick Conflicts
 
-----------------------------------------------------------------------------------------
+---
 
-Stashing:
-Very simple stash workflow:
-    git stash #It will stash all the tracked files (but not the untracked ones, so first do git add . to stage all the current files before stashing)
-    git stash list #It will show the list of all the stash entries.
-    git statsh show #If only one stash entry
-    git stash pop #It will take the latest stash from the stash stack
+## Rewriting Git History
 
-git stash -m "stash_comment" #It will allow to give some meaningful comment to the stash to easily identify it laster
-git stash list #It will show the stash stack with that comment you addede in the last step.
+- Amending commits
+- Rewording commit messages
+- Deleting commits
+- Reordering commits
+- Squashing commits
+- Splitting commits
 
-git stash pop --index stash_index_numer #stash_index_numer will be the number of fetch a particular index with its number
+**Quick tip:** Use `git rebase -i HEAD~<number_of_commits_from_HEAD_you_want_to_go_back>`.
 
-#You can assign a particular stash to their own branch only
-git stash branch branch_name index_number #With this cmd, you can assign the statsh with index number say 1 (you've given in index_number to) to it's own branch with branch name given. And after runnig this cmd, you will automatically be moved to that branch.
-git log --oneline #You will find out that you're now in the new brancha
+```bash
+# Example: act on last 2 commits
+git rebase -i HEAD~2
+```
 
-#To drop a stash entry
-git stash drop index_number
+An editor will open after hitting Enter. Replace the command keyword before the SHA. Available commands are listed in the commented `Commands:` section. After saving, another editor will open where you can do your work. Save and exit.
 
-#To drop entire stash stack
-git stash clear
+---
 
-##fixing merge conflict
+## Stashing
 
-#In case of any conflit which arises during stash pop operation. If you have any unstaged changes in your working directory then 
-#git will abort the stash pop operation and the put the popped stash back to the stack.
-#Plus it will also let us know what's the problem is.
+### Basic Stash Workflow
 
-git status #It will show the modified files in your working directory
-git stash show index_number #The index should be of the stash number for which you got the conflict. You will see both the cmds (above and this one) will point to the same file.
+```bash
+git stash       # Stash all tracked files (not untracked — run git add . first to stage all current files)
+git stash list  # Show the list of all stash entries
+git stash show  # If only one stash entry
+git stash pop   # Take the latest stash from the stash stack
 
-#Strategy 1 to fix the conflict. Simply put of the changes (working directory changes or stash changes) to another seperate branch. And when you're done with your current change. You can either merge or rebase these two branches.
+git stash -m "stash_comment"           # Add a meaningful comment to identify the stash later
+git stash pop --index <stash_index>    # Pop a stash at a particular index
+```
 
-#Strategy 2 is to know that the stash operation is being aborted since we had some unstaged files in our working directory. 
-#So first thing to do is to stage the changes in our working directoy (Only staging will do and commit not necessary).
-#Now do pop
-git stash pop index_number
-#You will get conflict. But now you will clearly see the files where conflict is in red and the files which can be merge without any issue in green.
-#So open that file in red and manually fix the issue and then save it
-#git status
-#You will see the changes which are staged in green and just now merged fixed file in red saying unmerged paths. So to resolve this finally use git add . cmd and it will resolve the conflict.
-git status #Now everything should be staged and in green
-#Merg conflict resolved!!!
-#Go one step further
-#As a best practice, leave a trail of this issue for the future developer or may be you in future to know that you got this issue in the past
-#So to leave a trail, create a commit history or simply say commit with a proper message.
-#git log --oneline
-#So if you remember we solved the stash merge conflict manually. So we need to clear the stash manually (becuase there was a  conflict, git will not remove the itself).
+```bash
+# Assign a stash to its own branch
+git stash branch <branch_name> <index_number>
+# Assigns the stash at the given index to its own branch and automatically moves you to that branch
+git log --oneline   # You will find that you are now in the new branch
+```
+
+```bash
+git stash drop <index_number>   # Drop a specific stash entry
+git stash clear                  # Drop the entire stash stack
+```
+
+### Fixing Merge Conflicts During Stash Pop
+
+If you have any unstaged changes in your working directory, git will abort the stash pop operation and put the popped stash back to the stack.
+
+```bash
+git status                          # Show modified files in your working directory
+git stash show <index_number>       # Check the stash that caused the conflict
+```
+
+**Strategy 1:** Put either the working directory changes or stash changes into a separate branch. When you are done with your current change, you can either merge or rebase these two branches.
+
+**Strategy 2:** Stage the changes in your working directory first (only staging, commit not necessary), then pop:
+
+```bash
+git stash pop <index_number>
+```
+
+You will get a conflict. Open the red (conflicting) file, manually fix the issue, and save it.
+
+```bash
+git status   # Staged changes in green, just-fixed file in red (unmerged paths)
+git add .    # Resolve the conflict
+git status   # Now everything should be staged and in green
+# Merge conflict resolved!
+```
+
+As a best practice, create a commit with a proper message to leave a trail of this issue.
+
+Since we solved the stash merge conflict manually, clear the stash manually (git will not remove it itself when there is a conflict):
+
+```bash
 git stash list
-git stash drop index_number
+git stash drop <index_number>
 git stash list
+```
 
-----------------------------------------------------------------------------------------
+---
 
-#Git Delete
+## Git Delete / Reset
 
+```bash
 git log --oneline
-git reset --hard HEAD~1 #HEAD will move one step back and since it is a hard reset, anything above head will be gone (DELETED). That included commits and working directory changes. So be very careful.
+git reset --hard HEAD~1
+# HEAD will move one step back, and since it is a hard reset, anything above HEAD will be gone (DELETED).
+# This includes commits and working directory changes — be very careful.
+```
 
-#So now insted of deleting anything, you can choose to undo the commit only. 
-#This is different from deleting, since changes are only uncommited and will move back to the staging area. And so it will not be deleted from the working directory either.
-git reset --soft HEAD~1 #It will undo you last commit and will move back the changes to the "staging area" (and not the working directory) or commited changes to uncommited state
-but it won't affect your working directory.
-git log --online #The last commit will not show in the graph
-git status #You wil find your last commited changes back in the staging area.
+To undo the commit only (without deleting the changes):
 
-#Deleting commits further than one commit from the HEAD.
+```bash
+git reset --soft HEAD~1
+# Undoes your last commit and moves back the changes to the "staging area" (not the working directory).
+# It will not affect your working directory.
+git log --oneline   # The last commit will not show in the graph
+git status          # Your last committed changes will be back in the staging area
+```
 
-A word of caution: Never drop commits on the shared branch. Or as a rule of thumb, never do it outside feature branch or non-shared branch (which you're not going to push to remote stream.)
-And if for any reason if you have to push the droped commit to the shared branch use git reword which is like reversing the effects of a commit non distructively.
-Git reword is also a safer alternative to git drop, but it's non destructive in nature.
-git rebase -i HEAD~2 #I want to "manipulate" last two commits from HEAD. Using the term manipulate because we can do alot of operations using interactive reabse. rebase -i means Interactive rebase. 
-A pop up will open an editor after this cmd.
-In the opened editor you'll see two last two commits (because we did HEAD~2) in one graph line way
-Now from here just change the initial letter of the commit which you want to play with. Say if pick some_hash Updated READMe is shown, then simply make the pick to drop in order to drop that particular commit.
-And when you will save and close the editor, git will start doing rebasing. So essentially git will start from that first commit which appeard in the pop up window after rebase -i cmd, and then it will move back towards initial position of the HEAD.
-One thing to note here is that, since git commits are immutable in nature. So essentially when we are doing rebase, git is changing the history or rewritting the history.
-So essentially, when we saved the editor after rebase -i cmd, git will start moving from that first commit that appeard in that interactive rebase editor and it till start moving towards,
-the previous HEAD position. In the process, it will definetly rewrite or do whatever cmds we chosse in the interactive rebase windws and in addition to that it will also
-replace all the other commits with a new commit hash. Essentially it means all the changes of those unmodified commits will remain same, but it will be put in place with a new hash.
+### Deleting Commits Further Than One Commit from HEAD
 
+> **Caution:** Never drop commits on the shared branch. As a rule of thumb, never do it outside a feature branch or non-shared branch. If for any reason you have to push the dropped commit to the shared branch, use `git revert` — it reverses the effects of a commit non-destructively.
+
+```bash
+git rebase -i HEAD~2   # "Manipulate" the last two commits from HEAD
+```
+
+An editor will open. Change the initial keyword of the commit you want to play with — for example, change `pick` to `drop` to drop that particular commit. Since git commits are immutable, doing a rebase rewrites history and replaces all commit hashes, even for unmodified commits.
+
+```
 fb1 -> fb2 -> fb3
+```
 
-Higher chance of conflict when doing git drop in interactive rebase especiallly when doing the drop operation way below the latest commit. Becuase there will be multiple transitive dependencies which will produce conflict.
-So essentially, let's say if we try to drop fb3, then a conflict might occurs becuae some files in fb3 commit, which would be dependent on fb2 which we are not deleting.
-So this way git drop has a higher chanches of conflict. So better to avoid it. And better we should not choose to drop any commit at the first  place. So whatever operations we
-have to do, we should do it in current working directly state and then commit it with a proper commit message and a obviosuely a new commit id/hash. And most importantly,
-since as a thumb rule we must do these kind of operation in a seperate branch, as a best practice as we know, we should use atomic commit and don't make the feature branch
-very large and then wait for it to merge in the main branch. If we use atomic commits, then there will be no such deep commits which you will have to drop, so the situation will not arise in the first place.
+There is a higher chance of conflict when dropping a commit way below the latest commit due to multiple transitive dependencies. It is better to avoid dropping commits altogether — instead, make a new commit with the desired changes.
 
-so If any conflict already occured. so runnig
-git rebase --abort #to abort the rebasing in case of conflict.
+```bash
+git rebase --abort   # Abort the rebasing in case of conflict
+```
 
-#git revert
-So better use another alternative which is git revert which is also non destructive.
+### Git Revert
 
-----------------------------------------------------------------------------------------
+`git revert` is a safer, non-destructive alternative to dropping commits.
 
-Change commit message:
+---
 
-#To modify the latest commit message
+## Changing Commit Messages
+
+### Modify the Latest Commit Message
+
+```bash
 git commit --amend -m "New commit message"
+```
 
-#To modify any commit below the latest commit
-#Use interactive rebase
-git rebase -i HEAD~2 #It will show the last two commit in the editor of you choise.
-#You will see two commits with pick in the begening followd by the sha and then the commit message.
-#pick means no-op (No operation) for git
-#Change the pick for the commit for which you want to reword the commit message.
-#Changing the reword will give you an opportunity by git (when it will run reabse after you save and close the editor) to type a commit message of your choice.
-#All the hash shown in that opened editor will be modified since git commits are immutable. It will generate another copy of those and discard the old one, through garbage collector, whch you can run by yoru own using git gc if you want to, or else it will run automatically.
+### Modify Any Commit Below the Latest
 
-----------------------------------------------------------------------------------------
+```bash
+git rebase -i HEAD~2   # Show the last two commits in the editor
+```
 
-git squash:
-#squash is not a command. It is one of the many options available under git interactive rebasing system.
-#Squash is used to repackage commits which are related to each other.
-git rebase -i HEAD~3 #It will tell the git that I want to act upon the last 3 commits.
-So as always we do in rebase interactive, we just need to touch the keyword pick for the commits which we want to modify in anyway.
-Ans since we are going to squash (or meld in other words) particularly so in this case pick will be modified to sqash (also you can see the same under the comments section of the opend file.)
-So just change the picks of the commits which you want to squash in one commit.
-So as always in interactive rebase, once you save and close the first editor, another editor will open which will allow you to do your changes.
-Now in the second editor, just edit comment (as you would usually prefer over delete unless everythigs okay. Aslo better than remove) or remove those commit messages.
+You will see two commits with `pick` at the beginning, followed by the SHA and then the commit message. `pick` means no-op (no operation) for git. Change `pick` to `reword` for the commit whose message you want to change. Git will prompt you to type a new commit message when it runs the rebase.
 
-----------------------------------------------------------------------------------------
+> **Note:** All commit hashes shown in the editor will be modified since git commits are immutable. Old ones will be discarded through the garbage collector (runs automatically, or manually with `git gc`).
 
-Staging is a part of the repository's state, not tied to a specific branch:
-Use case:
-Initially I had only one branch master in git. In this branch I added a text file name dev1.txt. Then without staging it, I 
-checkedout and created and branch name dev1 from this branch master. After checking out to dev1, I staged dev1.txt. When I 
-did git checkout master again, why is dev1.txt staged there, even through I had staged this file only in dev1 and not in master.
+---
 
-Reason:
-When you switch between branches in Git, any changes that are not committed are carried over to the new branch. This includes staged changes.
+## Git Squash
 
-In your scenario, you initially made changes to the master branch by adding a text file named dev1.txt. Then, without staging this file, you created a new branch called dev1 from master. 
-When you switched to the dev1 branch and staged dev1.txt, you staged the changes in that branch only.
+Squash is not a command — it is one of the many options available under git interactive rebasing. Squash is used to repackage commits which are related to each other.
 
-However, when you checked out master again, Git kept the staged changes (in this case, the staging of dev1.txt) because staging is a part of the repository's state, not tied to a specific branch. Git doesn't reset the staging area when you switch branches; 
-it preserves the staging area to maintain the changes you've made until you either commit or reset them explicitly.
+```bash
+git rebase -i HEAD~3   # Act upon the last 3 commits
+```
 
-If you want to unstage changes when switching branches, you can use the command:
+Change `pick` to `squash` for the commits you want to squash (meld) into one commit. Once you save and close the first editor, another editor will open which will allow you to edit or remove those commit messages.
 
-git reset
+---
 
-This will unstage any changes in the current branch, allowing you to switch to another branch without carrying over the staged changes.
+## Staging Area
 
-                {Staging area}
+> **Staging is a part of the repository's state, not tied to a specific branch.**
 
-{master}                            {dev1}
+**Use case:**
+Initially I had only one branch `master`. In this branch I added a text file named `dev1.txt`. Then without staging it, I checked out and created a branch named `dev1` from `master`. After checking out to `dev1`, I staged `dev1.txt`. When I did `git checkout master` again, why is `dev1.txt` staged there, even though I had staged this file only in `dev1` and not in `master`?
 
-As you can see in the above pic that staging area is common to both master and dev1 branch.
---------------
+**Reason:**
+When you switch between branches in Git, any changes that are not committed are carried over to the new branch. This includes staged changes. Git does not reset the staging area when you switch branches; it preserves it until you either commit or reset explicitly.
 
-#When you create any branch from any branch (say dev1 from master), so the "commited" changes (commited only and not the staged only changes because 
-staging is part of the overrall git repo and not tied to any branch) will be carry foraded to the next branch you're creating, because it was created considering
-it as a base for the next branch. So all the committed changes from master will be copied to dev1.
+To unstage changes when switching branches:
 
-#When you create a branch without commiting anything in the current branch. So nothing will be carry forwaded. The changes will remain intact to the branch
-where you will first commit the staged files. Just imagine this in the below picture.
+```bash
+git reset   # Unstages any changes in the current branch
+```
 
-                {Staging area}
+```
+    {Staging area}
 
-{master}                            {dev1}
---------------
+{master}                  {dev1}
+```
 
-#If no changes are there between the current branch you're in and the new branch you're creating, then the new branch will not be spawned from the branch you're in currently.
-#In that case, since both the branches (i.e. the current branch you're in and the newly created branch) will point to the next content/commit matching branch.
+As shown above, the staging area is common to both `master` and `dev1`.
 
-Below pic depicts when both dev1 and dev2 commits/changes are same as main
-main----
+---
+
+When you create any branch from another branch (say `dev1` from `master`), the **committed** changes will be carried forward to the next branch because it was created using it as a base. Staged-only changes are not tied to any specific branch.
+
+When you create a branch without committing anything in the current branch, nothing will be carried forward. The changes will remain intact to the branch where you will first commit the staged files.
+
+If no changes exist between the current branch and the new branch you are creating, then the new branch will not spawn from the current one — both will point to the same commit.
+
+**Both `dev1` and `dev2` commits/changes are same as `main`:**
+
+```
+main ----
     \        \
     dev1 \
             dev2
+```
 
-Below pic depicts when we create another branch dev2, when the base branch content is different from it's base branch, that is main. So it create a new branch spawning from dev1.
-main----
-    \        
-    dev1 
+**`dev2` is created from `dev1` and the base branch content is different from `main`:**
+
+```
+main ----
+    \
+    dev1
         \
         dev2
+```
 
-----------------------------------------------------------------------------------------
+---
 
-upstream Issue:
-I tried to push my git repo changes using git push command. but in the process I am getting a error saying 
+## Upstream Issue
 
-Error:
-    fatal: The current branch master has no upstream branch.
-    To push the current branch and set the remote as upstream, use.
+**Error:**
 
-Resolution and explanation:
-This error message indicates that you're trying to push changes from a branch (master in this case) that doesn't have an upstream branch configured. An upstream branch is essentially the remote branch that your local branch is tracking.
+```
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use...
+```
 
-To resolve this issue, you can follow these steps:
+**Resolution:**
 
-Check your local branches: First, ensure you're on the branch you want to push. You can do this by running git branch command. If you're not on the master branch, switch to it using git checkout master.
+This error indicates that you are trying to push changes from a branch (`master`) that does not have an upstream branch configured. An upstream branch is the remote branch that your local branch is tracking.
 
-Set upstream branch: Once you're on the correct branch (master in this case), you need to set the upstream branch. You can do this using the -u or --set-upstream-to option with git push, like so:
-    git push -u origin master
-This command pushes your changes to the master branch on the remote named origin, and also sets up the tracking relationship between your local master branch and the remote origin/master.
+**Steps to resolve:**
 
-Push changes: After setting the upstream branch, you can simply push your changes using git push:
-    git push
-Since you've set up the upstream branch in the previous step, this command will know where to push your changes.
+1. Ensure you are on the branch you want to push: `git branch` / `git checkout master`
 
-Verify: After pushing, you can verify that the upstream branch is set correctly by running git branch -vv. It will show you the tracking information for each branch.
-----------------------------------------------------------------------------------------
+2. Set the upstream branch:
 
-fetch vs pull:
+   ```bash
+   git push -u origin master
+   ```
 
-#Simply put: git pull = git fetch + git merge wherein all the remote commits will be fetched and merged locally,
-#whereas in git fetch, you're in controll which commit you want to merge.
+3. After setting up, future pushes can simply use:
 
-git fetch and git pull are both used to fetch changes from a remote repository, but they have different behaviors:
+   ```bash
+   git push
+   ```
 
-git fetch:
-    Fetches changes from the remote repository to your local repository, but it doesn't automatically merge them with your current branch.
-    Updates the remote-tracking branches (e.g., origin/master) in your local repository to reflect the changes on the remote, allowing you to see what has changed without integrating those changes into your local branches.
-    Does not modify your local branches.
-    Useful for reviewing changes before integrating them into your local branches.
+4. Verify:
 
-Syntax:
-    git fetch <remote>
+   ```bash
+   git branch -vv   # Shows the tracking information for each branch
+   ```
 
-Example: git fetch origin
+---
 
-git pull:
-    Fetches changes from the remote repository and automatically merges them into your current branch.
-    Essentially, it's a combination of git fetch followed by git merge.
-    Updates your local branch with the changes from the remote repository.
-    Automatically merges the changes into your current branch, which may result in merge conflicts if there are conflicting changes.
-Syntax:
-    git pull <remote> <branch>
+## Fetch vs Pull
 
-Example: git pull origin master
+> **Simply put:** `git pull` = `git fetch` + `git merge` (all remote commits will be fetched and merged locally), whereas with `git fetch`, you are in control of which commits you want to merge.
 
-#Essentially, it is a two step and rather a safe process if you want to merge remote changes into local.
-step 1: Checkout to whatever branch you want to fetch.
-step 2: git fetch -v
-step 3: git merge
+### `git fetch`
 
-#fetch provides choice - You can choose which remote commit you want to merge locally. That is why is a safer option than git pull.
-#Please look at below pic to under the difference between git pull and fetch
-#git fetch vs merge.jpg
+- Fetches changes from the remote repository but **does not automatically merge** them with your current branch.
+- Updates the remote-tracking branches (e.g., `origin/master`) to reflect remote changes.
+- Does not modify your local branches.
+- Useful for reviewing changes before integrating them.
 
-#Steps to choose which commits to merge into local from remote
-git fetch #Use git fetch to update your local knowledge of remote changes.
-git log #Use git log to review the fetched commits and decide which ones you want to integrate.
-git merge #Use git merge <branch_name> to merge an entire branch (if there are no conflicts).
-git cherry-pick <commit_hash> #Use git cherry-pick <commit_hash> to selectively apply individual commits from a remote branch.
+```bash
+git fetch <remote>
+# Example:
+git fetch origin
+```
 
-In summary, git fetch simply retrieves the latest changes from the remote repository without merging them, whereas git pull not only fetches the changes but also merges them into your current branch automatically.
-----------------------------------------------------------------------------------------
+### `git pull`
 
-To compare two local branches in Git using the command line, you can use the git diff command with the branch names. Here's how you can do it:
+- Fetches changes and **automatically merges** them into your current branch.
+- Essentially: `git fetch` followed by `git merge`.
+- May result in merge conflicts if there are conflicting changes.
 
-git diff branch1..branch2
-Replace branch1 and branch2 with the names of the branches you want to compare.
-This command will show the difference between the two branches. 
+```bash
+git pull <remote> <branch>
+# Example:
+git pull origin master
+```
 
-If you want to see the differences in files between the branches, you can add --name-only flag:
-git diff --name-only branch1..branch2
-This will list only the names of the files that are different between the two branches.
+### Safe Two-Step Process
 
-If you want to see a summary of the differences in terms of added, modified, or deleted lines, you can use the --stat flag:
-git diff --stat branch1..branch2
-This will provide a summary of the changes between the two branches.
+```bash
+git checkout <branch>   # Step 1: Checkout the branch you want to fetch
+git fetch -v             # Step 2: Fetch
+git merge                # Step 3: Merge
+```
 
-And if you want a brief summary of the differences, you can use the --summary flag:
-git diff --summary branch1..branch2
-This will give a summarized output of the differences between the two branches.
+`git fetch` provides choice — you can choose which remote commits you want to merge locally. That is why it is a safer option than `git pull`.
 
-----------------------------------------------------------------------------------------
+### Selectively Merging Fetched Commits
 
-git commenting startegy:
+```bash
+git fetch                        # Update your local knowledge of remote changes
+git log                          # Review fetched commits and decide which to integrate
+git merge <branch_name>          # Merge an entire branch (if there are no conflicts)
+git cherry-pick <commit_hash>    # Selectively apply individual commits from a remote branch
+```
 
-Use proper symbols for modification(s), addition(s) or removal/substraction(s) of any file(s).
-Use these symbol everywhre in your comment, which first is followed by git (and github as well if you're using it)
-and second a very short way to represent the intentation and history of what happend, which can be very easy to track 
-down the history in case of scenarios such as errors later on.
+---
 
-Intelij keyshortcuts(.) & addition of fedora file(+)
+## Comparing Branches
 
-1. Added few intelij shortcuts
+```bash
+git diff branch1..branch2               # Show difference between two branches
+git diff --name-only branch1..branch2   # List only the names of files that differ
+git diff --stat branch1..branch2        # Summary of added, modified, or deleted lines
+git diff --summary branch1..branch2     # Brief summary of differences
+```
+
+---
+
+## Git Commenting Strategy
+
+Use proper symbols for modifications, additions, or removals of any file(s). Use these symbols everywhere in your comments — both in git and GitHub.
+
+```
+Intellij keyshortcuts(.) & addition of fedora file(+)
+
+1. Added few IntelliJ shortcuts
 2. Added fedora concepts as initial commit
+```
 
-sidenote: 
-(.) - represents modification
-(+) - represent addition (of new file(s))
-(-) - represent substraction(of new file(s))
+**Sidenote:**
+- `.` — represents modification
+- `+` — represents addition (of new file(s))
+- `-` — represents subtraction (of removed file(s))
 
-----------------------------------------------------------------------------------------
+---
 
-Git Rename branch:
-To rename a Git branch using the command line, you can follow these steps:
+## Rename a Branch
 
-1. Checkout to the branch which you want to rename.
-   
+1. Checkout to the branch you want to rename:
+
+   ```bash
    git checkout <old_branch_name>
+   ```
 
-2. **Rename the Branch:** Use the `git branch -m` command to rename the branch.
-   
+2. **Rename the branch:**
+
+   ```bash
    git branch -m <new_branch_name>
-   
-   Replace `<new_branch_name>` with the desired new name for the branch.
+   ```
 
-3. **Push the Renamed Branch (Optional):** If you have already pushed the old branch to a remote repository, you will need to push the renamed branch as well. Use the `-u` option to set up the tracking information.
-   
+3. **Push the renamed branch (optional):** If you have already pushed the old branch to a remote repository, push the renamed branch as well:
+
+   ```bash
    git push -u origin <new_branch_name>
-   
-   Replace `<new_branch_name>` with the new name of the branch.
+   ```
 
-----------------------------------------------------------------------------------------
+---
 
-remove any files from git ignore:=
+## Remove Files from .gitignore
 
-add the file inside .gitignore file 
-and then run this command
-git rm --cached gradle.properties #f the gradle.properties file is already tracked by Git, you need to remove it from tracking. Run the following command in your terminal:
+Add the file inside `.gitignore` and then run:
 
-----------------------------------------------------------------------------------------
+```bash
+git rm --cached gradle.properties
+# If the file is already tracked by Git, this removes it from tracking
+```
 
-Checkout remote branch :-
-    To checkout a remote branch in Git using the Bash command line, you will typically use the `git checkout` command followed by the `-b` option to create a new local branch that tracks the remote branch. Here are the steps:
+---
 
-    ### Steps to Checkout a Remote Branch
-    
-    1. **Fetch All Remote Branches**:
-         First, ensure you have the latest references to all remote branches by fetching them from the remote repository:
-         ```bash
-         git fetch
-         ```
-    
-    2. **List All Remote Branches**:
-         You can list all remote branches to verify the branch name you want to checkout:
-         ```bash
-         git branch -r
-         ```
-    
-    3. **Checkout the Remote Branch**:
-         To checkout a remote branch (e.g., `feature-branch`) and create a corresponding local branch:
-         ```bash
-         git checkout -b feature-branch origin/feature-branch
-         ```
-         This command does two things:
-         - `-b feature-branch` creates a new local branch named `feature-branch`.
-         - `origin/feature-branch` specifies the remote branch to track.
-        ------------------
-        latest personal discovery:
-        git checkout remote_branch_name #You just need to use branch name and you can exclude other parts appended before branch_name.
-        #This will simply checkout the remote branch and create a local copy of it.
-    
-    4. **Verify the Checkout**:
-         You can verify that the branch is checked out and tracking the correct remote branch:
-         ```bash
-         git branch -vv
-         ```
-    
-    ### Example
-    
-    Here is an example of the full process:
-    
-    ```bash
-    # Fetch all remote branches
-    git fetch
-    
-    # List all remote branches
-    git branch -r
-    
-    # Checkout the remote branch 'feature-branch'
-    git checkout -b feature-branch origin/feature-branch
-    
-    # Verify the branch
-    git branch -vv
-    ```
-    
-    ### Explanation
-    
-    - `git fetch`: Updates your local copy of the remote branches without changing your working directory.
-    - `git branch -r`: Lists remote branches.
-    - `git checkout -b <local-branch> <remote-branch>`: Creates a new local branch from the specified remote branch and checks it out.
-    - `git branch -vv`: Shows the local branches and their upstream tracking branches.
-    
-    By following these steps, you can successfully checkout a remote branch and start working on it locally.
+## Checkout a Remote Branch
 
-----------------------------------------------------------------------------------------
+### Steps
 
-git reset #unstage all files
-----------------------------------------------------------------------------------------
+1. **Fetch all remote branches:**
 
-If you created any project before creating or cloning any git repo. You can push it to existing git repo using below method.
+   ```bash
+   git fetch
+   ```
 
-…or create a new repository on the command line
+2. **List all remote branches:**
+
+   ```bash
+   git branch -r
+   ```
+
+3. **Checkout the remote branch:**
+
+   ```bash
+   git checkout -b feature-branch origin/feature-branch
+   ```
+
+   This command does two things:
+   - `-b feature-branch` creates a new local branch named `feature-branch`.
+   - `origin/feature-branch` specifies the remote branch to track.
+
+   **Shortcut (personal discovery):**
+
+   ```bash
+   git checkout remote_branch_name
+   # Just use the branch name — exclude other parts appended before it.
+   # This will checkout the remote branch and create a local copy of it.
+   ```
+
+4. **Verify the checkout:**
+
+   ```bash
+   git branch -vv
+   ```
+
+### Example
+
+```bash
+git fetch
+git branch -r
+git checkout -b feature-branch origin/feature-branch
+git branch -vv
+```
+
+### Explanation
+
+- `git fetch` — Updates your local copy of the remote branches without changing your working directory.
+- `git branch -r` — Lists remote branches.
+- `git checkout -b <local-branch> <remote-branch>` — Creates a new local branch from the specified remote branch and checks it out.
+- `git branch -vv` — Shows the local branches and their upstream tracking branches.
+
+---
+
+## Unstage All Files
+
+```bash
+git reset   # Unstage all files
+```
+
+---
+
+## Push an Existing Local Project to GitHub
+
+If you created any project before creating or cloning any git repo, you can push it to an existing git repo using the below methods.
+
+### Create a New Repository on the Command Line
+
+```bash
 echo "# SpringbootExceptionHandlerDemo" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
-git branch -M main #Sets the default branch. For more info see seperate section based on this.
+git branch -M main
 git remote add origin https://github.com/Vivid-Vortex/SpringbootExceptionHandlerDemo.git
 git push -u origin main
+```
 
-…or push an existing repository from the command line
+### Push an Existing Repository from the Command Line
+
+```bash
 git remote add origin https://github.com/Vivid-Vortex/SpringbootExceptionHandlerDemo.git
 git branch -M main
 git push -u origin main
+```
 
-----------------------------------------------------------------------------------------
+---
 
+## Set Default Branch (`git branch -M`)
+
+```bash
 git branch -M branch_name
-#Sets the default branch. This branch will always be pushed in case of git push, since it's a default branch.
-#Another way of pushing your prefered branch without setting any default branch (which is main/master in most cases), is to just switch to that branch and then
-#go to git desktop and then click on the git push icon, which would be visisble after all the changes commited.
+```
 
-----------------------------------------------------------------------------------------
+Sets the default branch. This branch will always be pushed in case of `git push`, since it is the default branch.
 
-#Github merge options explained
+Another way of pushing your preferred branch without setting any default branch is to just switch to that branch and then go to git desktop and click on the git push icon, which will be visible after all the changes are committed.
 
-When merging branches in GitHub, you have three primary options: "Create a merge commit," "Squash and merge," and "Rebase and merge." Each option handles the commit history differently and can be chosen based on your project's workflow and preferences.
+---
+
+## GitHub Merge Options Explained
+
+When merging branches in GitHub, you have three primary options: "Create a merge commit," "Squash and merge," and "Rebase and merge."
 
 ### 1. Create a Merge Commit
 
-**What it does:**
+**What it does:** Combines the feature branch into the target branch by creating a new "merge commit," preserving the complete history of both branches.
 
-- Combines the feature branch into the target branch by creating a new "merge commit."
-- This merge commit preserves the complete history of both branches.
-
-**Advantages:**
-
-- Retains the full commit history, showing all individual commits and the context in which they were created.
-- Helps to visualize the history of how changes were integrated and who contributed them.
-- Useful for projects where maintaining a detailed history is important for tracking changes and debugging.
+**Advantages:** Retains full commit history, shows individual commits and context, useful for projects where maintaining detailed history is important.
 
 **Example:**
 
@@ -767,22 +890,9 @@ When merging branches in GitHub, you have three primary options: "Create a merge
 
 ### 2. Squash and Merge
 
-**What it does:**
+**What it does:** Combines all commits from the feature branch into a single commit before merging.
 
-- Combines all commits from the feature branch into a single commit before merging into the target branch.
-- The resulting commit on the target branch contains the changes of all the squashed commits with a new commit message.
-
-**Advantages:**
-
-- Simplifies the commit history by reducing multiple commits into one, making the history easier to read.
-- Useful for keeping the main branch history clean and concise, especially when feature branches contain many small or intermediate commits.
-
-**Example:**
-
-```
-* Single squashed commit (main)
-* Previous commit (main)
-```
+**Advantages:** Simplifies the commit history, useful for keeping the main branch history clean and concise.
 
 **Before:**
 
@@ -802,33 +912,9 @@ When merging branches in GitHub, you have three primary options: "Create a merge
 
 ### 3. Rebase and Merge
 
-**What it does:**
+**What it does:** Re-applies the commits from the feature branch onto the tip of the target branch. No merge commit is created; history is rewritten to appear linear.
 
-- Re-applies the commits from the feature branch onto the tip of the target branch.
-- No merge commit is created; the history is rewritten to make it appear as if the commits were created directly on top of the target branch.
-
-**Advantages:**
-
-- Maintains a linear project history, which can be easier to understand and follow.
-- Keeps the commit history clean without merge commits, useful for projects that prefer a straight-line history.
-
-**Example:**
-
-```
-* Commit message 3 (main)
-* Commit message 2 (main)
-* Commit message 1 (main)
-* Previous commit (main)
-```
-
-**Before:**
-
-```
-* Commit message 3 (feature-branch)
-* Commit message 2 (feature-branch)
-* Commit message 1 (feature-branch)
-* Previous commit (main)
-```
+**Advantages:** Maintains a linear project history, keeps commit history clean without merge commits.
 
 **After:**
 
@@ -841,564 +927,473 @@ When merging branches in GitHub, you have three primary options: "Create a merge
 
 ### Choosing the Right Option
 
-- **Create a Merge Commit:** Choose this if you want to preserve the full history of commits, showing how branches have diverged and merged. This is often the default choice for many projects.
-- **Squash and Merge:** Use this when you want to combine multiple commits from a feature branch into a single commit. It’s ideal for maintaining a clean and concise history.
-- **Rebase and Merge:** Opt for this if you prefer a linear history without merge commits. This can make the project history easier to navigate and understand.
-
-Each option has its own use cases and benefits, so the choice depends on your project’s workflow, team preferences, and the importance of the commit history structure.
-----------------------------------------------------------------------------------------
-
-# Don't use git add .
-
-it is adivasble not to use git add . directly to stage the modified or untracked files as it will
-stage even the files place in .gitignore. If you are using git version 2.0 or later, then use
-git add -u to stage only modified and deleted files and
-use git commit -a to commit only modified and deleted files.
-
-git add -u . #in place of git add .
-git commit -a -m "" #in place of git commit -m ""
-
-----------------------------------------------------------------------------------------
-
-git rebase -i HEAD~4
-
-git rebase -i --root
-
-vim:
-%s/pick/s/g
-
-git push origin branch_name --force #no need to give branch_name if you're on same branch on which you want to push. Better check the current branch by using git branch.
-----------------------------------------------------------------------------------------
-
-CLEANING - Untracked Files:
-If you want to clean up your working directory by removing all files not currently staged or committed, as they're already pushed to GitHub. Here’s a straightforward approach:
-List the files to be cleaned:
-
-git clean -n
-Remove the untracked files:
-
-git clean -f
-Remove untracked directories (if any):
-
-git clean -fd
-This will get rid of all the untracked files and directories, leaving your working directory clean and in sync with what's already on GitHub.
-
-----------------------------------------------------------------------------------------
-
-CLEANING - Tracked Files:
-usual command for hard reset: git reset --hard <commit-hash>
-
-- <commit-hash>: The target commit hash you want to reset to (can also use HEAD~n or a branch name).
-- Omitting <commit-hash> defaults to HEAD, discarding all uncommitted changes.
-
-# Equivalent to Github desktop select all -> right-click -> discard (one/all) file(s).
-
-git reset --hard
-
-This command will:
-
-Discard all changes in tracked files.
-
-Reset the index to match the last commit.
-
-Set the working directory to match the index.
-----------------------------------------------------------------------------------------
-
-git clean -fd vs git reset --hard
-
-Here’s the difference between `git reset --hard` and `git clean`:
-
-In Short use the combination of these two to discard both tracked as well as untracked files:
-git reset --hard && git clean -fd
+- **Create a Merge Commit:** Choose this to preserve the full history of commits. This is often the default choice for many projects.
+- **Squash and Merge:** Use this to combine multiple commits from a feature branch into a single commit.
+- **Rebase and Merge:** Opt for this if you prefer a linear history without merge commits.
 
 ---
 
-### **1. `git reset --hard`**
+## Don't Use `git add .`
 
-- **What it does**: 
-  
-  - Resets the current branch to a specific commit (or `HEAD` by default).
-  - Updates the **working directory**, **staging area**, and **HEAD** to match the target commit.
-  - Removes **tracked changes** (changes to files already being tracked by Git).
+It is advisable not to use `git add .` directly to stage modified or untracked files as it will stage even the files placed in `.gitignore`. If you are using git version 2.0 or later, use:
 
-- **Scope**: Affects only **tracked files** and changes related to commits.
+```bash
+git add -u .        # Stage only modified and deleted files (in place of git add .)
+git commit -a -m "" # Commit only modified and deleted files (in place of git commit -m "")
+```
 
-#### **Use Case**:
+---
 
-- You want to undo changes to **tracked files** and revert to a specific commit.
+## Vim Interactive Rebase
 
-#### **Example**:
+```bash
+git rebase -i HEAD~4
+git rebase -i --root
+```
+
+In vim, to replace all `pick` with `s` (squash):
+
+```vim
+%s/pick/s/g
+```
+
+```bash
+git push origin branch_name --force
+# No need to give branch_name if you are already on that branch.
+# Better check the current branch using git branch.
+```
+
+---
+
+## Cleaning — Untracked Files
+
+To clean up your working directory by removing all files not currently staged or committed:
+
+```bash
+git clean -n    # List the files to be cleaned (dry run)
+git clean -f    # Remove untracked files
+git clean -fd   # Remove untracked directories (if any)
+```
+
+---
+
+## Cleaning — Tracked Files
+
+```bash
+# Equivalent to GitHub Desktop: select all -> right-click -> discard (one/all) file(s)
+git reset --hard
+```
+
+This command will:
+- Discard all changes in tracked files.
+- Reset the index to match the last commit.
+- Set the working directory to match the index.
+
+```bash
+git reset --hard <commit-hash>
+```
+
+- `<commit-hash>` — The target commit hash (can also use `HEAD~n` or a branch name).
+- Omitting `<commit-hash>` defaults to `HEAD`, discarding all uncommitted changes.
+
+---
+
+## `git clean -fd` vs `git reset --hard`
+
+To completely reset a repository to a clean state, use both:
+
+```bash
+git reset --hard && git clean -fd
+```
+
+### `git reset --hard`
+
+- Resets the current branch to a specific commit (or `HEAD` by default).
+- Updates the **working directory**, **staging area**, and **HEAD**.
+- Removes **tracked changes** only.
 
 ```bash
 git reset --hard HEAD~1
 ```
 
-- Moves the branch back by one commit and restores files to that state, discarding changes in tracked files.
+### `git clean`
 
----
-
-### **2. `git clean`**
-
-- **What it does**: 
-  
-  - Deletes **untracked files and directories** (files not added to Git).
-  - Does not affect tracked files or commit history.
-
-- **Scope**: Only affects **untracked files** and **untracked directories**.
-
-#### **Use Case**:
-
-- You want to remove files or directories that are not tracked by Git (e.g., build artifacts, temporary files).
-
-#### **Example**:
+- Deletes **untracked files and directories**.
+- Does not affect tracked files or commit history.
 
 ```bash
 git clean -f -d
 ```
 
-- Deletes all untracked files (`-f`) and untracked directories (`-d`).
+### Key Differences
+
+| Aspect | `git reset --hard` | `git clean` |
+| --- | --- | --- |
+| **Scope** | Tracked files only | Untracked files/directories |
+| **Affects Commit History** | Yes (resets to a specific commit) | No |
+| **Deletes Files?** | No, only restores tracked files | Yes, removes untracked files |
+| **Command Context** | Revert commits or reset working directory | Clean up untracked files |
 
 ---
 
-### **Key Differences**
+## Changes to Be Committed vs Changes Not Staged vs Untracked Files
 
-| **Aspect**                 | **`git reset --hard`**                            | **`git clean`**                  |
-| -------------------------- | ------------------------------------------------- | -------------------------------- |
-| **Scope**                  | Tracked files only                                | Untracked files/directories      |
-| **Affects Commit History** | Yes (resets to a specific commit)                 | No                               |
-| **Deletes Files?**         | No, only restores tracked files to a commit       | Yes, removes untracked files     |
-| **Command Context**        | Used to revert commits or reset working directory | Used to clean up untracked files |
+- **Changes to be committed:** These are changes you have staged using `git add`. They will be included in your next commit. Think of it as a "ready to go" status.
+
+- **Changes not staged for commit:** These are modifications to tracked files that you have made in your working directory but have not yet staged for commit. Git is aware of them but they are not marked for inclusion in the next commit. This includes any RUD (minus C from CRUD) operations on existing tracked files — renaming files, directories, etc.
+
+- **Untracked files:** These are files in your working directory that Git is not tracking at all. They have never been staged or committed.
+
+**In a nutshell:**
+- To be committed = staged changes
+- Not staged for commit = tracked but unstaged changes
+- Untracked files = new files not yet tracked by Git
 
 ---
 
-### **Combined Usage**
+## WSL — `^M` Characters Issue
 
-To completely reset a repository to a clean state:
+**Symptom:** When doing `git status` from the WSL terminal, a file appears as untracked whereas checking through Windows Command Prompt shows no files. A `^M` character is visible in one of the files.
+
+The `^M` character indicates Windows-style line endings (CRLF) instead of Unix-style (LF). The `^M` is a visual representation of the carriage return character (`\r`).
+
+### Common Causes
+
+1. **Creating files in Windows:** Applications like Notepad or some IDEs use CRLF line endings. When viewed in WSL, the `^M` character appears.
+2. **Version control systems:** Files with CRLF endings might be checked in, leading to issues when checked out in a Unix environment.
+
+### Solutions
+
+1. **Using `dos2unix`:**
+
+   ```bash
+   sudo apt install dos2unix
+   dos2unix yourfile.txt
+   ```
+
+2. **Using `sed`:**
+
+   ```bash
+   sed -i 's/\r$//' yourfile.txt
+   ```
+
+3. **Using text editors:** Open in VS Code, Sublime Text, or Notepad++ and save with Unix (LF) line endings.
+
+4. **Configure Git to handle line endings:**
+
+   ```bash
+   git config --global core.autocrlf input
+   ```
+
+   This converts CRLF to LF on commit but leaves LF as LF on checkout, preventing `^M` characters from appearing.
+
+---
+
+## Create a Snapshot of Current Branch
+
+You can use this to safely backup your changes quickly.
 
 ```bash
-git reset --hard
-git clean -f -d
-```
-
-This discards all tracked changes and deletes all untracked files and directories.
-----------------------------------------------------------------------------------------
-
-CHANGES TO BE COMMITTED VS CHANGES NOT STAGED FOR COMMIT VS UNTRACKED FILES:
-
-    Changes to be committed: These are changes you've staged using git add. These will be included in your next commit. Think of it as a "ready to go" status.
-    
-    Changes not staged for commit: These are modifications to tracked files that you've made in your working directory but haven't yet staged for commit. Basically, these changes are known to Git but not yet marked for inclusion in the next commit.
-    
-    Untracked files: These are files in your working directory that Git isn't tracking at all. They've never been staged or committed, so Git is unaware of their history or changes.
-    
-    In a nutshell:
-    
-    To be committed = staged changes.
-    
-    Not staged for commit = tracked but unstaged changes. Means any RUD (minus C from CRUD) operation in existing tracked files. Also renaming files, directories etc. Bascially any sort of change.
-    
-    Untracked files = new files not yet tracked by Git.
-
-----------------------------------------------------------------------------------------
-
-When I am doing git status from wsl terminal then I am seeing a file as untracked whereas If I check through windows command prompt then no file are showing:
-
-I see some ^M added to one of the file
-
-+Most common error while you create any file in windows and try to run it in wsl:^M
-
-    The `^M` character you’re seeing in one of your files indicates that the file has Windows-style line endings (CRLF) instead of Unix-style line endings (LF). The `^M` character is a visual representation of the carriage return character (`\r`), which is used in Windows to indicate the end of a line. In contrast, Unix and Linux systems (including WSL) use only the line feed character (`\n`) to indicate the end of a line.
-    
-    ### Common Causes of `^M` Characters
-    
-    1. **Creating Files in Windows**: If you create or edit files in Windows applications (like Notepad or some IDEs), they typically use CRLF line endings. When these files are viewed in WSL or a Unix-like environment, the `^M` character appears.
-    
-    2. **Version Control Systems**: If you’re using Git, files with CRLF endings might be checked in, leading to issues when the same files are checked out in a Unix environment.
-    
-    ### Solutions to Remove `^M` Characters
-    
-    1. **Using `dos2unix`**:
-         - The easiest way to convert files with Windows-style line endings to Unix-style line endings in WSL is to use the `dos2unix` command. First, install `dos2unix` if it's not already available:
-             ```bash
-             sudo apt install dos2unix
-             ```
-         - Then, convert the file:
-             ```bash
-             dos2unix yourfile.txt
-             ```
-    
-    2. **Using `sed`**:
-         - If you don't have `dos2unix`, you can also use `sed` to remove the `^M` characters:
-             ```bash
-             sed -i 's/\r$//' yourfile.txt
-             ```
-    
-    3. **Using Text Editors**:
-         - Open the file in a text editor that supports changing line endings, such as Visual Studio Code, Sublime Text, or Notepad++. In these editors, you can often choose to save the file with Unix line endings (LF).
-    
-    4. **Configure Git to Handle Line Endings**:
-         - To prevent this issue from happening in the future, you can configure Git to handle line endings correctly. Run the following command in your repository:
-             ```bash
-             git config --global core.autocrlf input
-             ```
-         - This setting will convert CRLF to LF on commit but will leave LF as LF on checkout, preventing the `^M` characters from appearing in the first place.
-    
-    ### Conclusion
-    
-    The `^M` character in your files is an indication of Windows-style line endings. By converting your files to Unix-style line endings using one of the methods mentioned above, you can resolve the issue and ensure compatibility in your WSL environment. If you have further questions or need more assistance, feel free to ask!
-
-----------------------------------------------------------------------------------------
-
-Create a snapshot of current branch: - you can use this to safely backup your changes quickly.
-
-You can use command substitution in your shell to dynamically get the current branch name when creating a new branch. Here's how:
-
-```
 git branch snapshot-1-$(git rev-parse --abbrev-ref HEAD)
 ```
 
-### Explanation:
+**Explanation:**
+- `$(...)` — Substitutes the output of `git rev-parse --abbrev-ref HEAD` into the command.
+- `snapshot-1-` — Prefix for your new branch.
+- `git rev-parse --abbrev-ref HEAD` — Gets the current branch name dynamically.
 
-1. **`$(...)`**: Substitutes the output of the command (`git rev-parse --abbrev-ref HEAD`) into the `git checkout -b` command.
-2. **`new-branch-`**: Prefix for your new branch.
-3. **`git rev-parse --abbrev-ref HEAD`**: Gets the current branch name dynamically.
+**Example:** If you are on `feature-branch`, the new branch will be named `snapshot-1-feature-branch`.
 
-### Example Output:
+---
 
-If you're on a branch `feature-branch`, the new branch will be named:
+## Reordering Commits Using Vim and Rebase
 
+**Use case:** You have `commit1`, `commit2`, `commit3`. You want to squash `commit1` and `commit3` without affecting `commit2`.
+
+**Solution:** First reorder commits as `commit1`, `commit3`, `commit2`. Then squash `commit3`, which will be squashed with the next commit in line (`commit1`).
+
+**Reordering commits in vim rebase:**
+1. Navigate to the line you want to move using arrow keys.
+2. Cut the line using `dd` (deletes the line but keeps it in memory).
+3. Navigate to the desired position and paste using `p`.
+
+---
+
+## Show Log of Current Branch
+
+```bash
+git log                                               # Display commit history for the current branch
+git log --oneline                                     # Concise log
+git log --graph --oneline                             # Show graph
+git log --author="Author Name"                        # Filter by author
+git log --since="2023-01-01" --until="2023-12-31"    # Filter by date range
 ```
-new-branch-feature-branch
-```
 
-----------------------------------------------------------------------------------------
+---
 
-To change the commit order using vim and reabase.
+## Create a New Repository on GitHub and Link to Local Git Directory
 
-Use case - you have commit1, commit2, commit3. You want to sqash commit1 and commit3 without affecting commit2.
-Solution - 1. First you need to reorder commits as commit1, commit3, commit2. And then squash commit 3, which will be sqashed with next commit in line which is commit1.
+1. Go to GitHub and create a new repository. Do not initialize it with a README, `.gitignore`, or license.
+2. Copy the URL of your new GitHub repository.
 
-Reordering the commits in vim rebase:-
-Reorder the Commits:
-
-Use the arrow keys to navigate to the line you want to move (e.g., pick <hash3>).
-Cut the line using dd (this deletes the line but keeps it in memory).
-Navigate to the desired position and paste the line using p.
-
-----------------------------------------------------------------------------------------
-
-To show the log of the current branch: git log
-This command will display the commit history for the current branch you are on. If you want to see a more concise log, you can use: git git log --oneline
-to show graph git log --graph --oneline
-If you need to filter the log further, you can use additional options. For example, to see the log of the current branch with a specific author: git log --author="Author Name"
-Or to see the log with a specific date range: git log --since="2023-01-01" --until="2023-12-31"
-
-----------------------------------------------------------------------------------------
-
-Create a new branch in githb and link it to local git directory:
-
-Go to GitHub and create a new repository. Do not initialize it with a README, .gitignore, or license.
-Copy the URL of your new GitHub repository. It will look something like https://github.com/your-username/your-repo.git.
-git remote add origin https://github.com/your-username/your-repo.git for example, git remote add origin https://github.com/Code-Deepak-Code/Cpp-Dll-Build.git
+```bash
+git remote add origin https://github.com/your-username/your-repo.git
+# Example:
+git remote add origin https://github.com/Code-Deepak-Code/Cpp-Dll-Build.git
 git push -u origin master
+```
 
-----------------------------------------------------------------------------------------
+---
 
-Set upstream branch.
+## Set Upstream Branch
 
-Context on what is upstream branch: --set-upstream or -u: This option sets the upstream branch for the given local branch. It configures the local branch to track the remote branch. This means that future git push or git pull commands will know which remote branch to interact with by default.
-origin: This is the name of the remote repository. By default, when you clone a repository, it is named origin.
-master: This is the name of the branch you are pushing. In this context, it refers to the main branch of your repository.
+**Context:** `--set-upstream` or `-u` configures the local branch to track the remote branch. This means future `git push` or `git pull` commands will know which remote branch to interact with by default.
 
-full command:
+- `origin` — the name of the remote repository (default when you clone a repository).
+- `master` — the name of the branch you are pushing.
+
+```bash
 git push --set-upstream origin master
+```
 
-----------------------------------------------------------------------------------------
+---
 
+## Create a GitHub Repo from CLI
+
+```bash
 gh repo create test-repo-from-local --public
-----------------------------------------------------------------------------------------
+```
 
-### Globally (for all your Git repositories):
+---
 
-git config --global core.compression 0
+## Compression Settings
 
-### Per Repository:
+### Disable File Compression
 
-git config core.compression 0
+```bash
+git config --global core.compression 0   # Globally
+git config core.compression 0             # Per repository
+```
 
-### reenable file compression
+### Re-enable File Compression
 
-git config --global core.compression 9 # globally
-git config core.compression 9 # Per Repository:
+```bash
+git config --global core.compression 9   # Globally
+git config core.compression 9             # Per repository
+```
 
-### Reset (Never used to better use above ones)
+### Reset to Default Behavior (Recommended)
 
-To Restore the Default Behavior (Recommended):
+Remove the `core.compression` setting to revert to Git's default compression behavior:
 
-Instead of explicitly setting a compression level, you can remove the core.compression setting altogether. This will make Git revert to its default compression behavior.
+```bash
+git config --global --unset core.compression   # Globally
+git config --unset core.compression             # Per repository
+```
 
-Globally:
+---
 
-Bash
+## Increase/Decrease/Reset Buffer Size
 
-git config --global --unset core.compression
-Per Repository:
+### Globally
 
-Bash
-
-git config --unset core.compression
-----------------------------------------------------------------------------------------
-
-### Increase/Decrase/Reset buffer size
-
-Globally (for all your Git repositories):
-
-Bash
-
+```bash
 git config --global http.postBuffer <size_in_bytes>
-Replace <size_in_bytes> with the desired buffer size. For example, to set it to 500MB:
-
-Bash
-
+# Example: Set to 500MB
 git config --global http.postBuffer 524288000
-You can use units like k, m, or g for kilobytes, megabytes, or gigabytes respectively:
-
-Bash
-
+# Or using units (k, m, g for kilobytes, megabytes, gigabytes):
 git config --global http.postBuffer 500m
-Per Repository:
+```
 
-Navigate to the root directory of your Git repository and run:
+### Per Repository
 
-Bash
-
+```bash
 git config http.postBuffer <size_in_bytes>
-For example:
-
-Bash
-
+# Example:
 git config http.postBuffer 250m
-----------------------------------------------------------------------------------------
+```
 
-git revert - safe way to revert the changes on protected branches as it doesn't alter history. This create a commit history which revers the changes of the commit or number of commits specified.
+---
 
-You can use git revert HEAD~3..HEAD
+## Git Revert
 
-git revert any one branch.
+`git revert` is a safe way to revert changes on protected branches as it does not alter history. It creates a commit that reverses the changes of the specified commit(s).
 
-#revert merge commits on main branch or any other protected branch.
-git revert -m 1 <merge commit hash> # -m 1 gtell git which parent to keep.
+```bash
+git revert HEAD~3..HEAD
 
--m 1 means treat the first parent as the mainline (i.e. keep changes from the branch yopu were on when you did the commit)
+git revert <any_branch>
 
--m 2 would mean keep the changes from the merged-in branch and revert the others.
-----------------------------------------------------------------------------------------
+# Revert merge commits on main branch or any other protected branch
+git revert -m 1 <merge_commit_hash>
+```
 
-How to know the merge commit merged branch?
+- `-m 1` tells git which parent to keep.
+- `-m 1` means treat the first parent as the mainline (keep changes from the branch you were on when you did the merge).
+- `-m 2` means keep the changes from the merged-in branch and revert the others.
 
+---
+
+## How to Identify Which Branches Were Merged in a Merge Commit
+
+```bash
 git show <merge-commit-hash>
+```
 
-Output:
+**Output:**
+
+```
 Merge: a1wrwe 4eajgl
 
 a1wrwe - Parent 1
-4eajgl - parent 2
+4eajgl - Parent 2
+```
 
-----------------------------------------------------------------------------------------
+---
 
-Authentication:
-Git to Github connections majorly uses two types of authentication one is SSH and HTTPS - Both types of uyou will find on github.
+## Authentication
 
-Switch to HTTPS + Token Instead of SSH (as it requires you to setup public key etc which is bit more complicated to setup than https version)
+Git to GitHub connections majorly use two types of authentication: **SSH** and **HTTPS** — both are available on GitHub.
 
-If you don’t want to deal with SSH, change remote to HTTPS:
+### Switch to HTTPS + Token (Instead of SSH)
+
+SSH requires you to set up a public key, which is a bit more complicated to set up than HTTPS.
 
 ```bash
 git remote set-url origin https://github.com/Vivid-Vortex/your-repo.git
-```
-
-Then do:
-
-```bash
 git pull
 ```
 
 Git will prompt you for:
+- **Username** — `Vivid-Vortex`
+- **Password** — Paste your **Personal Access Token** (not your actual password)
 
-* **Username** → `Vivid-Vortex`
-* **Password** → Paste your **Personal Access Token** (not your actual password)
-
-You can store this using:
+To store credentials:
 
 ```bash
 git config --global credential.helper store
 ```
 
-----------------------------------------------------------------------------------------
+---
 
-**For PowerShell**
+## Quick Push Commands
 
-`git add . ; git commit -m "random push" ; git push`
+**For PowerShell:**
 
-**For command line**
+```powershell
+git add . ; git commit -m "random push" ; git push
+```
 
-`git add . && git commit -m "random push" && git push`
+**For Command Line:**
 
-----------------------------------------------------------------------------------------
- **Git Tags And Versioning***
+```bash
+git add . && git commit -m "random push" && git push
+```
 
- What is a Git Tag?
+---
 
-    A tag is a named pointer to a specific commit in git history. Think of it as a permanent bookmark that says "this exact commit is version X.Y.Z".
+## Git Tags and Versioning
 
-    Unlike branches (which move forward as you add commits), tags never move — they always point to the same commit forever.
-    
- Why Tags Matter for Versioning & Releases
+### What is a Git Tag?
 
-    ┌───────────────────────────────────────────────┬────────────────────────────────────────────────────────────┐
-    │                 Without Tags                  │                         With Tags                          │
-    ├───────────────────────────────────────────────┼────────────────────────────────────────────────────────────┤
-    │ Hard to know which commit was "version 3.1.0" │ Any commit can be traced back to its exact version         │
-    ├───────────────────────────────────────────────┼────────────────────────────────────────────────────────────┤
-    │ Can't reproduce an old build                  │ Checkout v3.1.0 tag → get the exact code from that release │
-    ├───────────────────────────────────────────────┼────────────────────────────────────────────────────────────┤
-    │ GitHub Releases have no reference point       │ GitHub Release is tied to the tag forever                  │
-    └───────────────────────────────────────────────┴────────────────────────────────────────────────────────────┘
-    
- git tag v3.1.0
-    - Creates a tag named v3.1.0 on your current latest commit locally
-    - Nothing is pushed to GitHub yet — it only exists on your machine
+A tag is a named pointer to a specific commit in git history. Think of it as a permanent bookmark that says "this exact commit is version X.Y.Z".
 
- git push origin dev
-- Pushes your code commits on the dev branch to GitHub
-- Tags are NOT pushed by this — they need a separate push
+Unlike branches (which move forward as you add commits), tags never move — they always point to the same commit forever.
 
- git push origin v3.1.0
-    - Pushes the tag itself to GitHub
-    - This is what triggers the GitHub Actions workflow (say, because the workflow listens for v* tag pushes)
+### Why Tags Matter for Versioning & Releases
 
-     In your workflow specifically:
-    - The tag v3.1.0 tells GitHub Actions what version name to use
-    - The workflow extracts 3.1.0 from the tag name (strips the v)
-    - The APK gets named PomodoroAuto-3.1.0-build346.apk
-    - A GitHub Release is created under that exact tag
+| Without Tags | With Tags |
+| --- | --- |
+| Hard to know which commit was "version 3.1.0" | Any commit can be traced back to its exact version |
+| Can't reproduce an old build | Checkout `v3.1.0` tag to get the exact code from that release |
+| GitHub Releases have no reference point | GitHub Release is tied to the tag forever |
 
-    ---
-    General Industry Significance
+### Tag Commands
 
-    Tags follow Semantic Versioning (SemVer): vMAJOR.MINOR.PATCH
+```bash
+git tag v3.1.0           # Create a tag on your current latest commit locally
+                          # Nothing is pushed to GitHub yet — it only exists on your machine
 
-    ┌───────┬────────────────────────────────────┬─────────────────┐
-    │ Part  │         When to increment          │     Example     │
-    ├───────┼────────────────────────────────────┼─────────────────┤
-    │ MAJOR │ Breaking changes, big rewrites     │ v2.0.0 → v3.0.0 │
-    ├───────┼────────────────────────────────────┼─────────────────┤
-    │ MINOR │ New features, backwards compatible │ v3.0.0 → v3.1.0 │
-    ├───────┼────────────────────────────────────┼─────────────────┤
-    │ PATCH │ Bug fixes only                     │ v3.1.0 → v3.1.1 │
-    └───────┴────────────────────────────────────┴─────────────────┘
+git push origin dev       # Push your code commits on the dev branch to GitHub
+                          # Tags are NOT pushed by this — they need a separate push
 
-    So v3.1.0 means: major version 3, minor feature release 1, no patches yet.
+git push origin v3.1.0   # Push the tag itself to GitHub
+                          # This triggers the GitHub Actions workflow
+```
 
-    ---
-    Quick Mental Model
+### Semantic Versioning (SemVer): `vMAJOR.MINOR.PATCH`
 
-    ▎ Branch = a road that keeps extending
-    ▎ Tag = a mile marker permanently fixed at one spot on that road
+| Part | When to Increment | Example |
+| --- | --- | --- |
+| MAJOR | Breaking changes, big rewrites | `v2.0.0 -> v3.0.0` |
+| MINOR | New features, backwards compatible | `v3.0.0 -> v3.1.0` |
+| PATCH | Bug fixes only | `v3.1.0 -> v3.1.1` |
 
-For example in Github Repo (https://github.com/Andriod-Developmentt/minimalist-pomodoro-app.git - dev branch) and commit (fd67de984608a6c37e7c1c27145cad444a30b386):
+> **Quick Mental Model:**
+> - Branch = a road that keeps extending
+> - Tag = a mile marker permanently fixed at one spot on that road
 
-Files changed/created:
+### Example: Releasing a New Version (e.g., 3.1.0)
 
-  ┌─────────────────────────────────────┬───────────────────────────────────────────────────────────────────┐
-  │                File                 │                              Change                               │
-  ├─────────────────────────────────────┼───────────────────────────────────────────────────────────────────┤
-  │ version.properties                  │ New — single source of truth for version                          │
-  ├─────────────────────────────────────┼───────────────────────────────────────────────────────────────────┤
-  │ androidApp/build.gradle.kts         │ Reads version from version.properties instead of hardcoded values │
-  ├─────────────────────────────────────┼───────────────────────────────────────────────────────────────────┤
-  │ .github/workflows/build-release.yml │ New — GitHub Actions CI/CD pipeline                               │
-  └─────────────────────────────────────┴───────────────────────────────────────────────────────────────────┘
+```bash
+# 1. Edit version.properties manually (only needed for versionName change)
+#    versionCode is auto-incremented by GitHub Actions
+#    Edit: VERSION_NAME=3.1.0   <- change this for major/minor bumps
+#          VERSION_CODE=345     <- leave this, CI will increment it
 
-  ---
-  How to use
+# 2. Commit your code changes
+git add .
+git commit -m "feat: my new feature"
 
-  To release a new version (e.g. 3.1.0):
+# 3. Push a version tag — this triggers the CI build
+git tag v3.1.0
+git push origin dev
+git push origin v3.1.0
+```
 
-  # 1. Edit version.properties manually (only needed for versionName change)
-  #    versionCode is auto-incremented by GitHub Actions
-  #
-  #    Edit: VERSION_NAME=3.1.0   ← change this for major/minor bumps
-  #          VERSION_CODE=345     ← leave this, CI will increment it
+GitHub Actions will then:
+1. Auto-increment `VERSION_CODE` (346, 347, ... on every release)
+2. Build the googleRelease APK
+3. Create a GitHub Release at `github.com/your-repo/releases`
+4. Attach `PomodoroAuto-3.1.0-build346.apk` for direct download
 
-  # 2. Commit your code changes
-  git add .
-  git commit -m "feat: my new feature"
+### Files Changed/Created
 
-  # 3. Push a version tag — this triggers the CI build
-  git tag v3.1.0
-  git push origin dev
-  git push origin v3.1.0
+| File | Change |
+| --- | --- |
+| `version.properties` | New — single source of truth for version |
+| `androidApp/build.gradle.kts` | Reads version from `version.properties` instead of hardcoded values |
+| `.github/workflows/build-release.yml` | New — GitHub Actions CI/CD pipeline |
 
-  GitHub Actions will then:
-  1. Auto-increment VERSION_CODE (346, 347, … on every release)
-  2. Build the googleRelease APK
-  3. Create a GitHub Release at github.com/your-repo/releases
-  4. Attach PomodoroAuto-3.1.0-build346.apk for direct download
+**Version file location:** `version.properties` (project root) — edit `VERSION_NAME` here for major/minor version bumps. `versionCode` is managed automatically.
 
-  ---
-  Version file location
+**One-time GitHub setup required:** Since the release build uses the debug signing key, it works out of the box. No secrets needed. If you later add a production keystore, add these to GitHub repo Settings -> Secrets:
+- `KEYSTORE_BASE64`
+- `KEY_ALIAS`
+- `KEY_PASSWORD`
+- `STORE_PASSWORD`
 
-  ▎ version.properties (project root) — edit VERSION_NAME here for major/minor version bumps. versionCode is managed automatically.
+---
 
-  ---
-  One-time GitHub setup required
+## `git show`
 
-  Since the release build uses the debug signing key, it works out of the box. No secrets needed. If you later add a production keystore, add these to GitHub repo Settings → Secrets:
-  - KEYSTORE_BASE64
-  - KEY_ALIAS
-  - KEY_PASSWORD
-  - STORE_PASSWORD
-----------------------------------------------------------------------------------------
-
-### ❓ What is `git show`?
-
-**Answer:**
 `git show` is used to display detailed information about a specific commit. It shows:
-
-* Commit metadata (author, date, message)
-* Changes introduced in that commit (diff)
-
-**Simple Example:**
+- Commit metadata (author, date, message)
+- Changes introduced in that commit (diff)
 
 ```bash
 git show <commit-id>
+
+git show   # Shows the latest commit
 ```
 
-👉 If you run just:
-
-```bash
-git show
-```
-
-It shows the **latest commit**.
-
-**Use case:**
-When you want to quickly inspect what exactly changed in a commit.
+**Use case:** When you want to quickly inspect what exactly changed in a commit.
 
 ---
 
-### ❓ How to commit in Git with title and description?
+## Commit with Title and Description
 
-**Answer:**
-In Git, a commit message typically has:
-
-1. **Title (short summary)**
-2. **Description (detailed explanation)**
-
----
-
-### ✅ Recommended Way (Best Practice)
+### Recommended Way (Best Practice)
 
 ```bash
 git commit
@@ -1414,44 +1409,33 @@ Added JWT-based authentication.
 Handled password encryption using BCrypt.
 ```
 
----
-
-### ✅ One-liner (Quick way)
+### One-liner (Quick Way)
 
 ```bash
 git commit -m "Add user authentication module" -m "Implemented login and signup APIs"
 ```
 
-* First `-m` → Title
-* Second `-m` → Description
+- First `-m` — Title
+- Second `-m` — Description
 
----
+### Best Practices
 
-### 🧠 My Practical Advice (based on your experience level)
+Since you are aiming for architect-level thinking:
 
-Since you're aiming for architect-level thinking:
+- Keep **title <= 50 characters**
+- Make it **action-oriented** (e.g., Add, Fix, Refactor)
+- Use description to explain **why** the change was made, not just **what**
 
-* Keep **title ≤ 50 characters**
-* Make it **action-oriented** (e.g., Add, Fix, Refactor)
-* Use description to explain:
-
-  * **Why** the change was made
-  * Not just **what**
-
-👉 Bad:
+**Bad:**
 
 ```
 Fixed bug
 ```
 
-👉 Good:
+**Good:**
 
 ```
 Fix null pointer in payment service
 
 Handled null response from external API to prevent service crash.
 ```
-
-----------------------------------------------------------------------------------------
-
-----------------------------------------------------------------------------------------
