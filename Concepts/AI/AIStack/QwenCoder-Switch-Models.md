@@ -1,7 +1,3 @@
-Your sentence is understandable, Deepak. A cleaner version would be:
-
-> “Is there any easy way to switch between free and paid Qwen models through the CLI?”
-
 ## Question:
 
 How can you easily switch between free and paid Qwen models in CLI tools?
