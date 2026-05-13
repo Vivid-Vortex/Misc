@@ -1,4 +1,6 @@
-## This file tells you how to grasp long boring and sometimes slow (sometimes not so to the point) concept in an easier way. 
+## This file tells you how to grasp long boring and sometimes slow (sometimes not so to the point) YouTube concepts in an easier way. This is applicable to all YouTube videos or in fact an video if you can generate summary of it quickly. 
+
+First you quickly grasp the concept using llm like chatgpt and then you watch the same video, it will make more sense. Also it (understanding) will be like watching it twice. 
 
 
 1. Summerize YouTube video
