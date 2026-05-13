@@ -2,6 +2,10 @@
 
 First you quickly grasp the concept using llm like chatgpt and then you watch the same video, it will make more sense. Also it (understanding) will be like watching it twice. 
 
+This prompt example is especially helpful because unlike this example most YT tutorials use multiple files to explain which is not so good to digest the topics easily. 
+
+You can also download thir github given repo and ask llm or agent to simplify each topic like below and give explain like below as comments and you can add your own comments also and commit to your repo. That way you can execute locally and notes will be saved. 
+
 
 1. Summerize YouTube video
 2. Copy paste summary in chatgpt and ask to generate and explain further concepts as per below format in short and simple way. 
