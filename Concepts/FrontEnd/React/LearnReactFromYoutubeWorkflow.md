@@ -1,7 +1,7 @@
 1. Summerize YouTube video
 2. Copy paste summary in chatgpt and ask to generate and explain further concepts as per below format in short and simple way. 
 
-Prompt: Explain me below concept in short and simple way as per given format. 
+Prompt: Explain me below (and further concepts) concept in short and simple way as per given format. 
 
 `<You YT summary here>`
 
