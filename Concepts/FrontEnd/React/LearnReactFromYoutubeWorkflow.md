@@ -7,8 +7,6 @@ Prompt: Explain me below concept in short and simple way as per given format.
 
 Format:
 
-Sure — here's a short and simple explanation of the main React Nested Routing concepts from your notes.
-
 ---
 
 # 1. What is Nested Routing?
