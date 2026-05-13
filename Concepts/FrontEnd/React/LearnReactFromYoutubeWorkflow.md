@@ -4,6 +4,8 @@ First you quickly grasp the concept using llm like chatgpt and then you watch th
 
 This prompt example is especially helpful because unlike this example most YT tutorials use multiple files to explain which is not so good to digest the topics easily. 
 
+First you go through the llm say chatgpt concepts quickly (no need to slow down) just like skimming the page to get the Gist. But don't really skim understand each line at own pace but don't be too slow, then watch video (YT) tutorial. 
+
 You can also download thir github given repo and ask llm or agent to simplify each topic like below and give explain like below as comments and you can add your own comments also and commit to your repo. That way you can execute locally and notes will be saved. 
 
 
