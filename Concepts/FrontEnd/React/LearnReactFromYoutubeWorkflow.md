@@ -1,3 +1,6 @@
+## This file tells you how to grasp long boring and sometimes slow (sometimes not so to the point) concept in an easier way. 
+
+
 1. Summerize YouTube video
 2. Copy paste summary in chatgpt and ask to generate and explain further concepts as per below format in short and simple way. 
 
