@@ -1,58 +1,111 @@
-# GitHub Self-Hosted Runner on a Windows Laptop
+# GitHub Self-Hosted Runner Guide (Windows, Linux, WSL, and macOS)
 
-It is entirely possible to run GitHub Actions on your own Windows laptop. GitHub officially supports **self-hosted runners** on Windows, Linux, and macOS.
+## Platform Comparison
 
-## How It Works
-
-A self-hosted runner is a lightweight agent installed on your machine.
-
-The runner:
-
-* Connects **outbound** to GitHub (no inbound firewall rules required)
-* Continuously polls GitHub for jobs
-* Receives workflow jobs assigned to it
-* Executes those jobs directly on your laptop instead of a GitHub-hosted VM
-
-This is particularly useful when workflows need access to:
-
-* Local Docker containers
-* Internal services
-* On-premise infrastructure
-* Development environments not accessible from GitHub-hosted runners
+| Platform                           | Recommended          | Best For                                                         | Notes                            |
+| ---------------------------------- | -------------------- | ---------------------------------------------------------------- | -------------------------------- |
+| Windows                            | ✅ Yes                | Local Windows applications, Docker Desktop, Visual Studio builds | Simplest setup for Windows users |
+| Linux                              | ✅ Highly Recommended | CI/CD, Docker, Kubernetes, Server workloads                      | Most common production setup     |
+| WSL2 (Windows Subsystem for Linux) | ✅ Yes                | Linux tooling while staying on Windows                           | Great compromise for developers  |
+| macOS                              | ✅ Yes                | iOS/macOS builds, Xcode projects                                 | Required for native Apple builds |
 
 ---
 
-## Setup Steps
+# Overview
 
-### 1. Register a Self-Hosted Runner
+GitHub officially supports **self-hosted runners** on:
+
+* Windows
+* Linux
+* macOS
+
+A self-hosted runner is a lightweight agent installed on your own machine that executes GitHub Actions workflows.
+
+Instead of GitHub creating a temporary cloud VM, jobs run directly on your machine.
+
+Typical use cases:
+
+* Accessing local Docker containers
+* Accessing internal services
+* Publishing to local repositories (Artifactory/Nexus)
+* Accessing VPN-protected resources
+* Running platform-specific builds
+* Avoiding GitHub-hosted runner minute limits
+
+---
+
+# Architecture
+
+```text
+GitHub Workflow Triggered
+          │
+          ▼
+GitHub Actions Service
+          │
+          ▼
+Self-Hosted Runner Polls GitHub
+          │
+          ▼
+Job Assigned
+          │
+          ▼
+Runner Executes Locally
+          │
+          ▼
+Access Local Services
+          │
+          ▼
+Build / Test / Deploy
+```
+
+Important:
+
+```text
+localhost = The Machine Hosting The Runner
+```
+
+If the runner is installed on:
+
+* Windows → localhost refers to Windows
+* Linux → localhost refers to Linux
+* WSL → localhost refers to WSL
+* macOS → localhost refers to macOS
+
+---
+
+---
+
+# Windows Setup
+
+## Step 1: Create Runner
 
 Navigate to:
 
 ```text
-Repository → Settings → Actions → Runners → New self-hosted runner
+Repository
+ └── Settings
+      └── Actions
+           └── Runners
+                └── New Self-hosted Runner
 ```
 
-Select:
+Choose:
 
 ```text
-Operating System: Windows
+OS: Windows
 Architecture: x64
 ```
 
-GitHub will generate customized setup commands for your repository.
-
 ---
 
-### 2. Install the Runner
-
-Create a folder for the runner:
+## Step 2: Install Runner
 
 ```powershell
 mkdir actions-runner
 cd actions-runner
 ```
 
-Download the runner package:
+Download:
 
 ```powershell
 Invoke-WebRequest `
@@ -60,7 +113,7 @@ Invoke-WebRequest `
   -OutFile actions-runner-win-x64.zip
 ```
 
-Extract the archive:
+Extract:
 
 ```powershell
 Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -71,7 +124,7 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 )
 ```
 
-Configure the runner using the token provided by GitHub:
+Configure:
 
 ```powershell
 .\config.cmd `
@@ -79,7 +132,7 @@ Configure the runner using the token provided by GitHub:
   --token YOUR_TOKEN
 ```
 
-Start the runner:
+Run:
 
 ```powershell
 .\run.cmd
@@ -87,9 +140,22 @@ Start the runner:
 
 ---
 
-### 3. Update Your Workflow
+## Install As Service
 
-Replace the GitHub-hosted runner with your self-hosted runner:
+```powershell
+.\svc.cmd install
+.\svc.cmd start
+```
+
+Verify:
+
+```powershell
+Get-Service actions.runner*
+```
+
+---
+
+## Workflow Example
 
 ```yaml
 jobs:
@@ -98,184 +164,404 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Build
-        run: echo "Running on my laptop"
 ```
 
 ---
 
-### 4. Install as a Windows Service (Recommended)
+---
 
-To ensure the runner starts automatically after reboot:
+# Linux Setup (Ubuntu Example)
+
+## Prerequisites
+
+```bash
+sudo apt update
+sudo apt install -y curl tar
+```
+
+---
+
+## Create Runner Directory
+
+```bash
+mkdir actions-runner
+cd actions-runner
+```
+
+---
+
+## Download Runner
+
+```bash
+curl -o actions-runner-linux-x64.tar.gz -L \
+https://github.com/actions/runner/releases/download/v2.x.x/actions-runner-linux-x64-2.x.x.tar.gz
+```
+
+---
+
+## Extract
+
+```bash
+tar xzf actions-runner-linux-x64.tar.gz
+```
+
+---
+
+## Configure
+
+```bash
+./config.sh \
+  --url https://github.com/YOUR_ORG/YOUR_REPO \
+  --token YOUR_TOKEN
+```
+
+---
+
+## Run
+
+```bash
+./run.sh
+```
+
+---
+
+## Install As Service
+
+```bash
+sudo ./svc.sh install
+sudo ./svc.sh start
+```
+
+Check status:
+
+```bash
+sudo systemctl status actions.runner.*
+```
+
+---
+
+## Why Linux Is Preferred For CI
+
+* Lowest resource consumption
+* Native Docker support
+* Easier automation
+* Better Kubernetes integration
+* Most CI/CD examples target Linux
+
+For production runners, Linux is usually the preferred choice.
+
+---
+
+---
+
+# WSL2 Setup (Windows + Linux)
+
+## When To Use WSL
+
+Use WSL when:
+
+* You primarily work on Windows
+* Your build tools require Linux
+* You want Linux containers and tooling
+
+Examples:
+
+* Python
+* Node.js
+* Docker
+* Terraform
+* Kubernetes
+* Ansible
+
+---
+
+## Install WSL
 
 ```powershell
-.\svc.cmd install
-.\svc.cmd start
+wsl --install
 ```
 
-Verify the service status:
+Install Ubuntu:
 
 ```powershell
-Get-Service actions.runner*
+wsl --install -d Ubuntu
 ```
 
 ---
 
-## What Happens During Execution?
+## Inside Ubuntu
 
-Assume you have:
-
-* Docker Desktop running
-* A local Artifactory container listening on `http://localhost:8082`
-* A GitHub workflow configured with `runs-on: self-hosted`
-
-Workflow execution flow:
-
-```text
-GitHub Workflow Triggered
-          │
-          ▼
-Self-Hosted Runner Polls GitHub
-          │
-          ▼
-GitHub Assigns Job
-          │
-          ▼
-Runner Executes on Laptop
-          │
-          ▼
-Workflow Accesses localhost Services
-          │
-          ▼
-twine upload → Local Artifactory
-```
-
-Since the workflow is running directly on your laptop:
-
-```text
-localhost = your laptop
-```
-
-Therefore, services like:
-
-```text
-http://localhost:8082
-http://localhost:5000
-http://localhost:9200
-```
-
-are accessible to the workflow.
+Follow the exact same Linux runner installation steps.
 
 ---
 
-## Example: Publishing to Local Artifactory
+## Important Networking Notes
+
+If your workflow needs:
+
+```text
+Windows Docker Desktop
+Windows Artifactory
+Windows Nexus
+```
+
+then networking becomes important.
+
+WSL2 can usually access Windows services through:
+
+```bash
+curl http://host.docker.internal:8082
+```
+
+or
+
+```bash
+curl http://<windows-ip>:8082
+```
+
+Test connectivity before relying on it.
+
+---
+
+## Recommended WSL Use Cases
+
+| Scenario                    | Recommendation       |
+| --------------------------- | -------------------- |
+| Java + Maven                | ✅ Excellent          |
+| Python Builds               | ✅ Excellent          |
+| Docker Builds               | ✅ Excellent          |
+| Kubernetes                  | ✅ Excellent          |
+| Windows GUI Applications    | ❌ Not ideal          |
+| Visual Studio Native Builds | ❌ Use Windows Runner |
+
+---
+
+---
+
+# macOS Setup
+
+## Why Use macOS Runners
+
+Required for:
+
+* Xcode
+* iOS builds
+* macOS application builds
+* Swift projects
+
+Apple licensing requires macOS for these workloads.
+
+---
+
+## Create Directory
+
+```bash
+mkdir actions-runner
+cd actions-runner
+```
+
+---
+
+## Download Runner
+
+```bash
+curl -o actions-runner-osx-x64.tar.gz -L \
+https://github.com/actions/runner/releases/download/v2.x.x/actions-runner-osx-x64-2.x.x.tar.gz
+```
+
+For Apple Silicon:
+
+```bash
+curl -o actions-runner-osx-arm64.tar.gz -L \
+https://github.com/actions/runner/releases/download/v2.x.x/actions-runner-osx-arm64-2.x.x.tar.gz
+```
+
+---
+
+## Extract
+
+```bash
+tar xzf actions-runner-osx-arm64.tar.gz
+```
+
+---
+
+## Configure
+
+```bash
+./config.sh \
+  --url https://github.com/YOUR_ORG/YOUR_REPO \
+  --token YOUR_TOKEN
+```
+
+---
+
+## Run
+
+```bash
+./run.sh
+```
+
+---
+
+## Install As Launch Service
+
+```bash
+./svc.sh install
+./svc.sh start
+```
+
+---
+
+---
+
+# Using Local Services
+
+Suppose:
+
+```text
+Artifactory -> localhost:8082
+Nexus       -> localhost:8081
+Postgres    -> localhost:5432
+Redis       -> localhost:6379
+```
+
+Your workflow can directly access them.
+
+Example:
 
 ```yaml
-name: Publish Package
+- name: Upload Package
+  run: |
+    twine upload \
+      --repository-url http://localhost:8082/artifactory/api/pypi/pypi-local \
+      dist/*
+```
 
+---
+
+# Security Considerations
+
+## Private Repositories
+
+Generally safe.
+
+Recommended:
+
+```yaml
 on:
   workflow_dispatch:
-
-jobs:
-  publish:
-    runs-on: self-hosted
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build Package
-        run: python -m build
-
-      - name: Upload to Local Artifactory
-        run: |
-          twine upload \
-            --repository-url http://localhost:8082/artifactory/api/pypi/pypi-local \
-            dist/*
 ```
 
----
-
-## Practical Limitations
-
-| Concern                    | Reality                                                                                        |
-| -------------------------- | ---------------------------------------------------------------------------------------------- |
-| **Laptop must be on**      | Yes. If the machine is powered off or sleeping, jobs remain queued until it becomes available. |
-| **Docker must be running** | Yes, if your workflow depends on local containers.                                             |
-| **Internet connectivity**  | Required so the runner can communicate with GitHub.                                            |
-| **Security**               | Be careful with workflows that execute untrusted code, especially in public repositories.      |
-| **Machine availability**   | Other team members cannot rely on your laptop being online.                                    |
-| **Performance**            | Large builds may consume CPU, memory, and disk resources on your personal machine.             |
-| **Maintenance**            | You are responsible for updating the runner software and maintaining the environment.          |
-
----
-
-## Security Recommendations
-
-### For Private Repositories
-
-Generally safe for personal projects and internal testing.
-
-### For Public Repositories
-
-Avoid automatically running workflows from:
+or
 
 ```yaml
-pull_request
-pull_request_target
+on:
+  push:
 ```
 
-unless you fully understand the security implications.
+---
 
-A malicious contributor could potentially execute arbitrary commands on your machine through a workflow.
+## Public Repositories
 
-Consider:
+Be extremely careful.
+
+Potential risk:
 
 ```yaml
-workflow_dispatch
+on:
+  pull_request:
 ```
 
-or protected branches for safer operation.
+A malicious PR could execute arbitrary commands on your machine.
+
+Avoid unless you understand the implications.
 
 ---
 
-## Advantages of Self-Hosted Runners
+# Practical Limitations
 
-✅ Access to local services and Docker containers
-
-✅ No GitHub-hosted runner minute limits
-
-✅ Faster builds if dependencies are already cached
-
-✅ Full control over installed tools and software
-
-✅ Can access internal corporate resources (VPN, intranet, databases)
-
-✅ Ideal for local POCs and experimentation
+| Concern                | Reality                   |
+| ---------------------- | ------------------------- |
+| Machine must stay on   | Yes                       |
+| Internet required      | Yes                       |
+| Docker must be running | If workflow depends on it |
+| Maintenance            | Your responsibility       |
+| Runner upgrades        | Manual or scripted        |
+| Team dependency        | Not ideal                 |
+| Resource usage         | Consumes local CPU/RAM    |
 
 ---
 
-## When NOT to Use It
+# Advantages
 
-Self-hosted runners are usually a poor choice when:
+✅ Local service access
 
-* Multiple developers depend on the same CI infrastructure
-* High availability is required
-* Builds need to run 24×7
-* You want a fully managed CI/CD solution
+✅ No GitHub Actions minute limits
 
-In such cases, GitHub-hosted runners or dedicated self-hosted build servers are typically better options.
+✅ Faster builds with cached dependencies
+
+✅ Complete control of environment
+
+✅ Access to VPN/internal resources
+
+✅ Ideal for POCs and experimentation
+
+✅ Supports Docker, Kubernetes, Terraform, Python, Java, Node.js, etc.
 
 ---
 
-# Realistic Verdict for Your POC
+# When NOT To Use Self-Hosted Runners
 
-For a personal proof of concept, this approach works very well:
+Avoid for:
 
-1. Keep your laptop powered on.
-2. Start Docker Desktop.
-3. Ensure Artifactory is running locally.
-4. Trigger the workflow manually using `workflow_dispatch`.
-5. The self-hosted runner executes the workflow and publishes directly to your local Artifactory instance.
+* Mission-critical CI/CD
+* 24×7 build availability
+* Large development teams
+* High-security environments
+* Shared corporate CI infrastructure
 
-This is an excellent setup for learning, testing, and experimentation. However, it should not be treated as a production-grade CI/CD solution because it depends entirely on the availability of your personal machine.
+Instead consider:
+
+* GitHub-hosted runners
+* Dedicated Linux build servers
+* Kubernetes-based runners
+* Cloud VM runners
+
+---
+
+# Realistic Verdict
+
+For personal projects, learning, and proofs of concept:
+
+✅ Excellent choice
+
+Typical workflow:
+
+1. Start laptop
+2. Start Docker Desktop
+3. Ensure Artifactory/Nexus is running
+4. Trigger workflow manually
+5. Runner executes locally
+6. Artifacts are published successfully
+
+For production-grade CI/CD, prefer dedicated infrastructure instead of relying on a personal laptop.
+
+---
+
+# Recommendation by Use Case
+
+| Use Case                           | Best Runner            |
+| ---------------------------------- | ---------------------- |
+| Java + Maven + Docker              | Linux                  |
+| Python Packaging                   | Linux                  |
+| Node.js                            | Linux                  |
+| Kubernetes                         | Linux                  |
+| Terraform                          | Linux                  |
+| Visual Studio C#                   | Windows                |
+| Windows Desktop Apps               | Windows                |
+| iOS Development                    | macOS                  |
+| macOS Apps                         | macOS                  |
+| Windows User Needing Linux Tooling | WSL2                   |
+| Personal POC                       | Any Platform           |
+| Enterprise CI/CD                   | Dedicated Linux Server |
