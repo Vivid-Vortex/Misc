@@ -1,7 +1,7 @@
 **Your question:**
 If I have to deal with AKS, can you tell me which Azure fundamentals I need to be aware of? You mentioned Azure Resource Groups, Azure Virtual Networks (VNet), Azure Load Balancers, Azure Managed Identity, and Azure Container Registry (ACR). Are these the main concepts, or are there many more? Tell me the minimum set of concepts that I absolutely require to start with AKS.
 
-**ChatGpt Answers:**
+**ChatGpt Answers:[AKIS-Learning-Strategy](https://github.com/Vivid-Vortex/Misc/blob/dev_m1_1.0.0/Concepts/DevOps/Cloud/Azure/AKIS-Learning-Strategy.md)**
 Deepak, this is exactly the right question to ask.
 
 Many people try to learn all of Azure before AKS and get overwhelmed. As a Java Lead Engineer aiming toward architecture, you should learn Azure just enough to understand how AKS integrates with Azure services.
