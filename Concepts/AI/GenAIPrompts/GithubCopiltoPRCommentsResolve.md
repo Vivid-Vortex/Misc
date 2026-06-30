@@ -57,6 +57,7 @@ Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. 
 
 * Prefer batch commits. 1 batch per purpose say check, copilot review,human review etc. 
 * Don't take human reviewers name in the commit or comment.
+* If the scope mentioned in pr title or description drifs after any round pr review, then do the corrections in pr title and description.
 * Ensure all CI checks  pass before considering the task complete.
 * Do not resolve a Copilot comment without first providing a response.
 * Do not resolve reviewer comments unless explicitly instructed.
