@@ -1,4 +1,4 @@
-# Pull Request Review Instructions
+8 # Pull Request Review Instructions
 
 Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. Let me know if authentication assistance is required. If you can complete the setup yourself, proceed independently.
 
@@ -55,8 +55,9 @@ Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. 
 
 ## Notes
 
-* Prefer small, focused commits.
-* Ensure all CI checks pass before considering the task complete.
+* Prefer batch commits. 1 batch per purpose say check, copilot review,human review etc. 
+* Don't take human reviewers name in the commit or comment.
+* Ensure all CI checks  pass before considering the task complete.
 * Do not resolve a Copilot comment without first providing a response.
 * Do not resolve reviewer comments unless explicitly instructed.
 * Use separate commits whenever changes are logically independent.
