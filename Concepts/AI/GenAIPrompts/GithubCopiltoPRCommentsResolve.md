@@ -77,6 +77,30 @@ Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. 
    - **In Simple Terms what it means**
    - **Your Assessement or thoughts**
 
+   Each review comment will be assigned a unique ID (e.g., C1, C2, C3...).
+   
+For example:-
+
+### C1
+- **GitHub Link:** https://github.com/org/repo/pull/123#discussion_r123456789
+- **File Reference:** src/main/java/com/example/service/UserService.java
+- **Line:** 42
+- **Reviewer Comment:** Consider extracting this logic into a separate method.
+- **Simple Explanation:** The reviewer thinks this method is doing too much and should be broken into smaller, reusable methods.
+- **Assessment:** Agree. This will improve readability and make the code easier to test.
+
+---
+
+### C2
+- **GitHub Link:** https://github.com/org/repo/pull/123#discussion_r987654321
+- **File Reference:** src/main/java/com/example/controller/UserController.java
+- **Line:** 88
+- **Reviewer Comment:** Please handle the null case before accessing the object.
+- **Simple Explanation:** The code may throw a NullPointerException if the object is null.
+- **Assessment:** Agree. Add a null check or use Optional to make the code safer.
+
+etc.
+
 2. Once I say **"Proceed"**, copy and paste that plan along with my comments. After I say **"Proceed"** again, please **strictly follow that plan**.
 
 3. Then, show me what you did in below **tabular form** as step 1 in addition you can have one more column as "My Comments" and leave **one column empty** for me to paste my comments.
