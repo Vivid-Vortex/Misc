@@ -1,4 +1,4 @@
-8 # Pull Request Review Instructions
+8 # Pull Request Review Instructions (Strictly review the PR as per this prompt only)
 
 Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. Let me know if authentication assistance is required. If you can complete the setup yourself, proceed independently.
 
