@@ -62,3 +62,34 @@ Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. 
 * Do not resolve a Copilot comment without first providing a response.
 * Do not resolve reviewer comments unless explicitly instructed.
 * Use separate commits whenever changes are logically independent.
+* **Do not commit or push** without my consent, as I may ask you to change something again.
+* > **Very Important:** ALWAYS PREFER WHAT REVIEWER IS ASKING "IF THAT SOUNDS GOOD" AND DON'T TRY TO FORMULATE A BETTER SOLUTION OR SOMETHING FROM YOURSELF. IF THE SOLUTION OR ASK FROM REVIEWER IS NOT LEGIT, GIVE ME THE REASON WHY IT'S NOT TRUE AND LET ME THINK ON IT.
+
+## Workflow
+
+1. First, please generate a plan in the following sections in list form not tabular:
+   - Some tags which I can use to refer in the subsecutent line to address that to you.
+   - **direct Github comment link (find from gh)** 
+   - **File with dirct clickable reference if possible**
+   - **Line**
+   - **Proposed or comments from the reviewer**
+   - **In Simple Terms what it means**
+   - **Your Assessement or thoughts**
+
+2. Once I say **"Proceed"**, copy and paste that plan along with my comments. After I say **"Proceed"** again, please **strictly follow that plan**.
+
+3. Then, show me what you did in below **tabular form** as step 1 in addition you can have one more column as "My Comments" and leave **one column empty** for me to paste my comments.
+
+| Original From Step 1 as list form                    | Suggested Column Name                   |
+| ---------------------------------------------------- | --------------------------------------- |
+| **tags**                                             | tag
+| **direct Github comment link (find from gh)**        | **GitHub Link**                         |
+| **File with direct clickable reference if possible** | **File Reference** (or **File Link**)   |
+| **Line**                                             | **Line**                                |
+| **Proposed or comments from the reviewer**           | **Reviewer Comment**                    |
+| **In Simple Terms what it means**                    | **Simple Explanation** (or **Meaning**) |
+| **Your Assessment or thoughts**                      | **Assessment** (or **My Assessment**)   |
+
+5. We many have some iterations.
+6. Then finally I will say comit then commti and when I say push you must push.
+
