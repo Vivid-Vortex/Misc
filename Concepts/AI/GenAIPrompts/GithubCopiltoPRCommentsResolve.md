@@ -83,6 +83,7 @@ For example:
 - **Reviewer Comment:** The exact reviewer comment or proposed change.
 - **Simple Explanation:** Explain the review comment in simple, easy-to-understand terms.
 - **Assessment:** Your assessment of the comment (e.g., Agree/Disagree/Partially Agree) along with your reasoning. Mention clearly if **changes needed** or **just a response**.
+- **comment** Leave blank for me to comment. When I say YA LGTM mean Your Assessment Looks Good To Me. If I say something else then follow that.
 
 ---
 
@@ -93,6 +94,9 @@ For example:
 - **Reviewer Comment:** The exact reviewer comment or proposed change.
 - **Simple Explanation:** Explain the review comment in simple, easy-to-understand terms.
 - **Assessment:** Your assessment of the comment (e.g., Agree/Disagree/Partially Agree) along with your reasoning.  Mention clearly if **changes needed** or **just a response**.
+- **comment** Leave blank for me to comment. When I say YA LGTM mean Your Assessment Looks Good To Me. If I say something else then follow that.
+
+---
 
 ---
 
