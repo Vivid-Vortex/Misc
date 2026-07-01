@@ -52,6 +52,7 @@ Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. 
 * Run Copilot review a maximum of **two rounds**.
 * After the second Copilot review round, stop requesting additional Copilot reviews unless explicitly instructed otherwise.
 * Do not automatically trigger further Copilot review cycles.
+* Never Commit or Push without explicit approval in typing from me.
 
 ## Notes
 
