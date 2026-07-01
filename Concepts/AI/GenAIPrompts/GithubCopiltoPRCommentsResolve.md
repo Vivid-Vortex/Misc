@@ -79,7 +79,7 @@ For example:
 ### C1
 - **GitHub Link:** Direct GitHub review comment link (find using `gh` if necessary).
 - **File Reference:** Direct clickable file reference, if possible.
-- **Line:** Line number of the review comment.
+- **Line:** Line number range of the review comment say 40 to 50.
 - **Reviewer Comment:** The exact reviewer comment or proposed change.
 - **Simple Explanation:** Explain the review comment in simple, easy-to-understand terms.
 - **Assessment:** Your assessment of the comment (e.g., Agree/Disagree/Partially Agree) along with your reasoning. Mention clearly if **changes needed** or **just a response**.
@@ -89,7 +89,7 @@ For example:
 ### C2
 - **GitHub Link:** Direct GitHub review comment link (find using `gh` if necessary).
 - **File Reference:** Direct clickable file reference, if possible.
-- **Line:** Line number of the review comment.
+- **Line:** Line number range of the review comment say 40 to 50.
 - **Reviewer Comment:** The exact reviewer comment or proposed change.
 - **Simple Explanation:** Explain the review comment in simple, easy-to-understand terms.
 - **Assessment:** Your assessment of the comment (e.g., Agree/Disagree/Partially Agree) along with your reasoning.  Mention clearly if **changes needed** or **just a response**.
