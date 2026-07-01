@@ -68,42 +68,43 @@ Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. 
 
 ## Workflow
 
-1. First, please generate a plan in the following sections in list form not tabular:
-   - Some tags which I can use to refer in the subsecutent line to address that to you.
-   - **direct Github comment link (find from gh)** 
-   - **File with dirct clickable reference if possible**
-   - **Line**
-   - **Proposed or comments from the reviewer**
-   - **In Simple Terms what it means**
-   - **Your Assessement or thoughts**
+### Phase 1: Plan
 
-   Each review comment will be assigned a unique ID (e.g., C1, C2, C3...).
-   
-For example:-
+1. First, generate a plan describing how you will organize the review comments.
+2. In your plan, mention that each review comment will be assigned a unique identifier (e.g., `C1`, `C2`, `C3`, ...) so I can refer to it in subsequent prompts.
+3. The plan should show the structure that will be used for every review comment (use a list, **not** a table).
+
+For example:
 
 ### C1
-- **GitHub Link:** https://github.com/org/repo/pull/123#discussion_r123456789
-- **File Reference:** src/main/java/com/example/service/UserService.java
-- **Line:** 42
-- **Reviewer Comment:** Consider extracting this logic into a separate method.
-- **Simple Explanation:** The reviewer thinks this method is doing too much and should be broken into smaller, reusable methods.
-- **Assessment:** Agree. This will improve readability and make the code easier to test.
+- **GitHub Link:** Direct GitHub review comment link (find using `gh` if necessary).
+- **File Reference:** Direct clickable file reference, if possible.
+- **Line:** Line number of the review comment.
+- **Reviewer Comment:** The exact reviewer comment or proposed change.
+- **Simple Explanation:** Explain the review comment in simple, easy-to-understand terms.
+- **Assessment:** Your assessment of the comment (e.g., Agree/Disagree/Partially Agree) along with your reasoning.
 
 ---
 
 ### C2
-- **GitHub Link:** https://github.com/org/repo/pull/123#discussion_r987654321
-- **File Reference:** src/main/java/com/example/controller/UserController.java
-- **Line:** 88
-- **Reviewer Comment:** Please handle the null case before accessing the object.
-- **Simple Explanation:** The code may throw a NullPointerException if the object is null.
-- **Assessment:** Agree. Add a null check or use Optional to make the code safer.
+- **GitHub Link:** Direct GitHub review comment link (find using `gh` if necessary).
+- **File Reference:** Direct clickable file reference, if possible.
+- **Line:** Line number of the review comment.
+- **Reviewer Comment:** The exact reviewer comment or proposed change.
+- **Simple Explanation:** Explain the review comment in simple, easy-to-understand terms.
+- **Assessment:** Your assessment of the comment (e.g., Agree/Disagree/Partially Agree) along with your reasoning.
 
-etc.
+---
 
-2. Once I say **"Proceed"**, copy and paste that plan along with my comments. After I say **"Proceed"** again, please **strictly follow that plan**.
+Continue this structure for all review comments (`C3`, `C4`, ...).
 
-3. Then, show me what you did in below **tabular form** as step 1 in addition you can have one more column as "My Comments" and leave **one column empty** for me to paste my comments.
+2. ### Phase 2: Execution
+   
+Once I say **"Proceed"**, copy and paste that plan along with my comments. After I say **"Proceed"** again, please **strictly follow that plan**.
+
+3.### Phase 3: Result
+
+Then, show me what you did in below **tabular form** as step 1 in addition you can have one more column as "My Comments" and leave **one column empty** for me to paste my comments.
 
 | Original From Step 1 as list form                    | Suggested Column Name                   |
 | ---------------------------------------------------- | --------------------------------------- |
@@ -115,6 +116,11 @@ etc.
 | **In Simple Terms what it means**                    | **Simple Explanation** (or **Meaning**) |
 | **Your Assessment or thoughts**                      | **Assessment** (or **My Assessment**)   |
 
-5. We many have some iterations.
-6. Then finally I will say commit then commit and when I say push you must push.
+4. ### Phase 4: Looping
+   
+We many have some iterations.
+
+5. ### Phase 5: Wrap Up
+   
+Then finally I will say commit then commit and when I say push you must push.
 
