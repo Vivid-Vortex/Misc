@@ -63,7 +63,7 @@ Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. 
 * Do not resolve reviewer comments unless explicitly instructed.
 * Use separate commits whenever changes are logically independent.
 * **Do not commit or push** without my consent, as I may ask you to change something again.
-* > **Very Important:** ALWAYS PREFER WHAT REVIEWER IS ASKING "IF THAT SOUNDS GOOD" AND DON'T TRY TO FORMULATE A BETTER SOLUTION OR SOMETHING FROM YOURSELF. IF THE SOLUTION OR ASK FROM REVIEWER IS NOT LEGIT, GIVE ME THE REASON WHY IT'S NOT TRUE AND LET ME THINK ON IT.
+* > **Very Important:** ALWAYS PREFER WHAT REVIEWER IS ASKING "IF THAT SOUNDS GOOD" AND DON'T TRY TO FORMULATE A BETTER SOLUTION OR SOMETHING FROM YOURSELF. IF THE SOLUTION OR ASK FROM REVIEWER IS NOT LEGIT, GIVE ME THE REASON WHY IT'S NOT TRUE OR LEGIT AND LET ME THINK ON IT.
 
 ## Workflow
 
@@ -91,5 +91,5 @@ Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. 
 | **Your Assessment or thoughts**                      | **Assessment** (or **My Assessment**)   |
 
 5. We many have some iterations.
-6. Then finally I will say comit then commti and when I say push you must push.
+6. Then finally I will say commit then commit and when I say push you must push.
 
