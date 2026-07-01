@@ -82,7 +82,7 @@ For example:
 - **Line:** Line number of the review comment.
 - **Reviewer Comment:** The exact reviewer comment or proposed change.
 - **Simple Explanation:** Explain the review comment in simple, easy-to-understand terms.
-- **Assessment:** Your assessment of the comment (e.g., Agree/Disagree/Partially Agree) along with your reasoning.
+- **Assessment:** Your assessment of the comment (e.g., Agree/Disagree/Partially Agree) along with your reasoning. Mention clearly if **changes needed** or **just a response**.
 
 ---
 
@@ -92,7 +92,7 @@ For example:
 - **Line:** Line number of the review comment.
 - **Reviewer Comment:** The exact reviewer comment or proposed change.
 - **Simple Explanation:** Explain the review comment in simple, easy-to-understand terms.
-- **Assessment:** Your assessment of the comment (e.g., Agree/Disagree/Partially Agree) along with your reasoning.
+- **Assessment:** Your assessment of the comment (e.g., Agree/Disagree/Partially Agree) along with your reasoning.  Mention clearly if **changes needed** or **just a response**.
 
 ---
 
