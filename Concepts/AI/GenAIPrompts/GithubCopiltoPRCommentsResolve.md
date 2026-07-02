@@ -102,11 +102,17 @@ For example:
 
 Continue this structure for all review comments (`C3`, `C4`, ...).
 
-2. ### Phase 2: Execution
+### Phase 2: Execution
 
 Some points to Note: a. When I say YA LGTM mean Your Asssessment Looks Good To Me.
 b. Comment exactly what you did in case of code changes in minimum (with necessary technical points in simple way) words possible, if using using less words not possible to explain is not feasible or sufficient then you can use bit more but always prefer less words possible but convey full meaning in simple way.
 c. If not usre Ask and don't assume.
+d. > [!IMPORTANT]
+>
+> ## 🚨 Most Important
+>
+> For every modification, in this PR review changes, always track **what** changed, **why**, **where**, **when** (if relevant), and the associated **PR review comment** (if applicable). Maintain this history throughout the task so changes can be easily reviewed, traced, reverted, or extended at any time.
+
 
 Once I say **"Proceed"**, copy and paste that plan along with my comments. After I say **"Proceed"** again, please **strictly follow that plan**.
 
@@ -123,8 +129,11 @@ Then, show me what you did in below **tabular form** as step 1 in addition you c
 | **Proposed or comments from the reviewer**           | **Reviewer Comment**                    |
 | **In Simple Terms what it means**                    | **Simple Explanation** (or **Meaning**) |
 | **Your Assessment or thoughts**                      | **Assessment** (or **My Assessment**)   |
+|**In case of any type of modification- What was before**| **Before (or N/A in case of not change)**|
+|**In case of any type of modification- What is now**| **After (or N/A in case of not change)**|
+| **Your Assessment or thoughts**                      | **Assessment** (or **My Assessment**)   |
 
-4. ### Phase 4: Looping
+### Phase 4: Looping
    
 We many have some iterations.
 
