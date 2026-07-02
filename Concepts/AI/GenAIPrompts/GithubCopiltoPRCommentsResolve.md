@@ -139,5 +139,5 @@ We many have some iterations.
 
 ### Phase 5: Wrap Up
    
-Then finally I will say commit then commit and when I say push you must push.
+Commit only when I explicitly say "commit". Before committing, perform a full build and run all applicable tests. If any build or test fails, fix the issues and re-run the build and tests until everything passes. Only then create the commit. Likewise, push only when I explicitly say "push", and do not push automatically.
 
