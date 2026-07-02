@@ -1,4 +1,4 @@
-# Pull Request Review Instructions (Strictly review the PR as per this prompt only and please remember this in memory for this repo unless posted any updated version or new prompt for PR)
+# Pull Request Review Instructions (Strictly review the PR as per this prompt only and please remember this in memory for this repo unless posted any updated version or new prompt for PR and always use this prompt to review the pr unless specified otherwise)
 
 Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. Let me know if authentication assistance is required. If you can complete the setup yourself, proceed independently.
 
