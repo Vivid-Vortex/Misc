@@ -141,3 +141,11 @@ We many have some iterations.
    
 Commit only when I explicitly say "commit". Before committing, perform a full build and run all applicable tests. If any build or test fails, fix the issues and re-run the build and tests until everything passes. Only then create the commit. Likewise, push only when I explicitly say "push", and do not push automatically.
 
+> [!IMPORTANT]
+>
+> **For API-based PRs:** Test all affected APIs locally using `curl` (or an equivalent HTTP client). **For frontend-based PRs:** Perform end-to-end validation using an automated browser tool (e.g., Playwright). In both cases, verify existing and new functionality, fix any issues, and repeat until all checks pass.
+
+> [!IMPORTANT]
+>
+> **For frontend-based PRs:** Before considering the task complete, build and run the application locally, then perform end-to-end validation using an automated browser tool (e.g., Playwright). Verify all affected user flows, including existing and new functionality. Fix any issues, re-test, and repeat until everything passes. 
+
