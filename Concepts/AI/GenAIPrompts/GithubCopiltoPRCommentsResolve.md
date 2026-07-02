@@ -137,7 +137,7 @@ Then, show me what you did in below **tabular form** as step 1 in addition you c
    
 We many have some iterations.
 
-5. ### Phase 5: Wrap Up
+### Phase 5: Wrap Up
    
 Then finally I will say commit then commit and when I say push you must push.
 
