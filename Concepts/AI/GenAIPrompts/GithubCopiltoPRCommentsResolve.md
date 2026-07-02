@@ -143,7 +143,7 @@ Commit only when I explicitly say "commit". Before committing, perform a full bu
 
 > [!IMPORTANT]
 >
-> **For API-based PRs:** Test all affected APIs locally using `curl` (or an equivalent HTTP client). **For frontend-based PRs:** Perform end-to-end validation using an automated browser tool (e.g., Playwright). In both cases, verify existing and new functionality, fix any issues, and repeat until all checks pass.
+> **For API-based PRs:** Before considering the task complete, test all affected APIs (both existing and newly added) locally using `curl` (or an equivalent HTTP client). Verify that each endpoint behaves as expected, including success paths, error cases, and any impacted existing functionality. Resolve any issues, re-test, and repeat until all API checks pass.
 
 > [!IMPORTANT]
 >
