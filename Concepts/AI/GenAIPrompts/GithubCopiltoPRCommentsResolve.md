@@ -36,10 +36,12 @@ Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. 
    * Address each comment.
    * Create separate commits for logically independent changes whenever possible.
 
-8. If there are reviewer comments, respond to all reviewer comments.
+8. If there are reviewer comments, respond to all reviewer comments but always seek approval.
 
    * Add comments under my name.
    * Keep responses concise (one-line explanations are sufficient).
+   * VERY IMPORTANT: COMMENT EXACTLY WHAT YOU DID EVEN IF IT TAKE TIME TO THINK FOR YOU.
+   * Comment exactly what you did in case of code changes in minimum (with necessary technical points in simple way) words possible, if using using less words not possible to explain is not feasible or sufficient then you can use bit more but always prefer less words possible but convey full meaning in simple way.
 
 9. Do not resolve reviewer comments.
 
