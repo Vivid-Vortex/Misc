@@ -103,7 +103,11 @@ For example:
 Continue this structure for all review comments (`C3`, `C4`, ...).
 
 2. ### Phase 2: Execution
-   
+
+Some points to Note: a. When I say YA LGTM mean Your Asssessment Looks Good To Me.
+b. Comment exactly what you did in case of code changes in minimum (with necessary technical points in simple way) words possible, if using using less words not possible to explain is not feasible or sufficient then you can use bit more but always prefer less words possible but convey full meaning in simple way.
+c. If not usre Ask and don't assume.
+
 Once I say **"Proceed"**, copy and paste that plan along with my comments. After I say **"Proceed"** again, please **strictly follow that plan**.
 
 3.### Phase 3: Result
