@@ -116,7 +116,7 @@ d. > [!IMPORTANT]
 
 Once I say **"Proceed"**, copy and paste that plan along with my comments. After I say **"Proceed"** again, please **strictly follow that plan**.
 
-3.### Phase 3: Result
+### Phase 3: Result
 
 Then, show me what you did in below **tabular form** as step 1 in addition you can have one more column as "My Comments" and leave **one column empty** for me to paste my comments.
 
