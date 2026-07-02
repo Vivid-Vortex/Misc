@@ -1,4 +1,4 @@
-# Pull Request Review Instructions (Strictly review the PR as per this prompt only)
+# Pull Request Review Instructions (Strictly review the PR as per this prompt only and please remember this in memory for this repo unless posted any updated version or new prompt for PR)
 
 Use GitHub CLI for this task. If GitHub CLI is not installed, install it first. Let me know if authentication assistance is required. If you can complete the setup yourself, proceed independently.
 
@@ -98,8 +98,6 @@ For example:
 
 ---
 
----
-
 Continue this structure for all review comments (`C3`, `C4`, ...).
 
 ### Phase 2: Execution
@@ -111,7 +109,7 @@ d. > [!IMPORTANT]
 >
 > ## 🚨 Most Important
 >
-> For every modification, in this PR review changes, always track **what** changed, **why**, **where**, **when** (if relevant), and the associated **PR review comment** (if applicable). Maintain this history throughout the task so changes can be easily reviewed, traced, reverted, or extended at any time.
+> For every modification, in this PR review changes, always track **what** changed, **why**, **where**, **when** (if relevant), and the associated **PR review comment** (if applicable). Maintain this history (in memory) throughout the task so changes can be easily reviewed, traced, reverted, or extended at any time.
 
 
 Once I say **"Proceed"**, copy and paste that plan along with my comments. After I say **"Proceed"** again, please **strictly follow that plan**.
