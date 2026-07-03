@@ -107,6 +107,11 @@ Continue this structure for all review comments (`C3`, `C4`, ...).
 Some points to Note: a. When I say YA LGTM mean Your Asssessment Looks Good To Me.
 b. Comment exactly what you did in case of code changes in minimum (with necessary technical points in simple way) words possible, if using using less words not possible to explain is not feasible or sufficient then you can use bit more but always prefer less words possible but convey full meaning in simple way.
 c. If not usre Ask and don't assume.
+d. Also during execution phase I want you to show me diff one by one (as the changes can be too long in multiple files sometimes) of the changes before you implement. When I say apply or skip, you apply or skip the diff.
+e. First show me the files in, say, C1 which would be touched or newly created with `+` (for addition) or `*` (for new). Then, file by file, keep showing me the diff and I would say apply or skip.
+f. After showing each diff, explain what the changes mean in simple terms. Use the programming language of that file for the explanation. If the language is not Java, also explain the same concept using Java/Spring Boot terminology or an equivalent Java/Spring Boot example so I can easily understand the purpose of the change.
+g. Never mention or imply that the changes, comments, commits, or responses were generated, suggested, or assisted by Copilot, ChatGPT, Claude, Gemini, any LLM, AI, or any other tool. Write and post everything as if it were authored directly by me. Only my identity should be reflected in the repository, PR discussions, commits, and review replies.
+
 d. > [!IMPORTANT]
 >
 > ## 🚨 Most Important
@@ -149,3 +154,9 @@ Commit only when I explicitly say "commit". Before committing, perform a full bu
 >
 > **For frontend-based PRs:** Before considering the task complete, build and run the application locally, then perform end-to-end validation using an automated browser tool (e.g., Playwright). Verify all affected user flows, including existing and new functionality. Fix any issues, re-test, and repeat until everything passes. 
 
+Before the final wrap-up, make sure that:
+
+- All approved changes have been committed and pushed to the remote repository.
+- Verify that there are no uncommitted or untracked changes left in the working tree.
+- Ensure all the conversations are replied with latest comments from my side.
+- Ensure all PR review replies are well-organized. Do not post multiple consecutive replies to the same review comment. Instead, consolidate updates into a single, meaningful reply whenever possible, and avoid back-to-back comments in this cycle on the same thread unless absolutely necessary.
