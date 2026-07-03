@@ -104,11 +104,12 @@ Continue this structure for all review comments (`C3`, `C4`, ...).
 
 ### Phase 2: Execution
 
-Some points to Note: a. When I say YA LGTM mean Your Asssessment Looks Good To Me.
-b. Comment exactly what you did in case of code changes in minimum (with necessary technical points in simple way) words possible, if using using less words not possible to explain is not feasible or sufficient then you can use bit more but always prefer less words possible but convey full meaning in simple way.
-c. If not usre Ask and don't assume.
-d. Also during execution phase I want you to show me diff one by one (as the changes can be too long in multiple files sometimes) of the changes before you implement. When I say apply or skip, you apply or skip the diff.
-e. First show me the files in, say, C1 which would be touched or newly created with `+` (for addition) or `*` (for new). Then, file by file, keep showing me the diff and I would say apply or skip.
+Some points to Note:
+a. When I say YA LGTM mean Your Assessment Looks Good To Me.
+b. Comment exactly what you did in case of code changes in minimum (with necessary technical points in simple way) words possible. If using fewer words is not feasible or sufficient to explain the change, then use a few more words, but always prefer the minimum words possible while conveying the complete meaning in simple terms.
+c. If not sure, ask and don't assume.
+d. During the execution phase, show me the diffs one by one before implementing them, as the changes may span multiple files and can sometimes be lengthy. After showing each diff, pause and wait for my response. I may ask one or more questions, ask follow-up questions, request clarifications, or discuss the implementation as many times as needed. Do not move to the next diff until I explicitly say **Apply**, **Skip**, or **Modify**. If I say **Modify**, update the diff based on my feedback, show the revised diff again, and repeat the same review cycle. Continue this loop until I explicitly say **Apply** or **Skip**. Only then should you proceed to the next diff. Repeat this process for every diff in the file, then continue to the next file and repeat the same cycle until all files and all diffs have been reviewed.
+e. First show me the files in, say, C1 which would be touched or newly created with `+` (for addition) or `*` (for new). Then, file by file, keep showing me each diff. I will decide whether to **Apply**, **Skip**, or **Modify** each diff.
 f. After showing each diff, explain what the changes mean in simple terms. Use the programming language of that file for the explanation. If the language is not Java, also explain the same concept using Java/Spring Boot terminology or an equivalent Java/Spring Boot example so I can easily understand the purpose of the change.
 g. Never mention or imply that the changes, comments, commits, or responses were generated, suggested, or assisted by Copilot, ChatGPT, Claude, Gemini, any LLM, AI, or any other tool. Write and post everything as if it were authored directly by me. Only my identity should be reflected in the repository, PR discussions, commits, and review replies.
 
