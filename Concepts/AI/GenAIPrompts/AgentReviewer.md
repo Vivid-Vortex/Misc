@@ -75,7 +75,7 @@ Review every aspect of the code, including but not limited to:
 - Naming
 - Modularity
 - Reusability
-- Duplication
+- Duplication - Make sure DRY principle is not getting violated in this pr.
 - Complexity
 
 ## Architecture
