@@ -86,7 +86,7 @@ PR #42:              X' --- Y' --- Z'
 Since commit history changed, push using:
 
 ```bash
-git push --force-with-lease
+git push --force-with-lease (https://github.com/Vivid-Vortex/Misc/blob/dev_m1_1.0.0/CommandsAndShortcuts/Git/Git.mds/gitForcePushVsForcePushVsLease.md)
 ```
 
 Finally merge PR #42.
