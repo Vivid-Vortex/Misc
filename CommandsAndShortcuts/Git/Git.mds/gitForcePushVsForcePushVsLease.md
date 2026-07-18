@@ -118,6 +118,8 @@ Nothing is overwritten.
 
 Developer B's work is safe.
 
+Follow this If [push rejected] (https://github.com/Vivid-Vortex/Misc/blob/dev_m1_1.0.0/CommandsAndShortcuts/Git/Git.mds/git%20push%20--force-with-lease%20Rejected.md)
+
 ---
 
 ## Visual comparison
