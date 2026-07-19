@@ -1,5 +1,3 @@
-You're right on spot, Deepak.
-
 # Reactor Signals & Error Propagation
 
 ## A Reactor pipeline sends only three kinds of signals:
