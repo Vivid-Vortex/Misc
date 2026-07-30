@@ -1,6 +1,7 @@
 # FlatMap Operator in Project Reactor
 
-`flatMap` flattens the publisher and returns the actual object inside that publisher.
+`flatMap` is used when your mapping function returns another `Publisher` (`Mono` or `Flux`).
+It automatically **flattens the nested publisher**, so you get the emitted values instead of a nested `Mono` or `Flux`.
 
 For example:
 
@@ -13,14 +14,16 @@ Flux.just(1, 2, 3)
 
 You get:
 
-- `User1` and **not** `Mono<User1>` because of `flatMap`.
+- `User1` and **not** `Mono<User1>` because `flatMap` unwraps the returned `Mono<User>`.
 - `User2` and **not** `Mono<User2>` because of `flatMap`.
 
-## Real Use Case
+---
 
-### Use of `flatMap` in Spring WebFlux
+# Real Use Case
 
-Example 3: Now we need another database call.
+## Use of `flatMap` in Spring WebFlux
+
+Example: We need to make another database call after fetching the user.
 
 This is where `flatMap()` is needed.
 
@@ -31,7 +34,7 @@ Suppose we have the following tables.
 **User**
 
 | Column |
-|--------|
+|---------|
 | id |
 | name |
 | addressId |
@@ -41,7 +44,7 @@ Suppose we have the following tables.
 **Address**
 
 | Column |
-|--------|
+|---------|
 | id |
 | city |
 | country |
@@ -64,7 +67,10 @@ Mono<Address> findById(Long id);
 public Mono<Address> getAddress(Long userId) {
 
     return repository.findById(userId)
-            .flatMap(user -> addressRepository.findById(user.getAddressId())); // Here you need flatmap becuase above findById is returning Map<Addres> but you need address to pass in below method.
+            .flatMap(user ->
+                    addressRepository.findById(user.getAddressId()));
+    // We use flatMap because the lambda returns Mono<Address>.
+    // flatMap unwraps it and returns Mono<Address>, not Mono<Mono<Address>>.
 }
 ```
 
@@ -96,23 +102,23 @@ which returns
 Mono<Address>
 ```
 
-So you're doing
+So your lambda is doing:
 
 ```text
 User
-   ↓
+  ↓
 Mono<Address>
 ```
 
-Whenever your lambda returns a `Mono`, use `flatMap()`.
+Since the lambda returns a `Mono`, use `flatMap()`.
 
 ---
 
 # `map` vs `flatMap`
 
-`map`, as you know from Java Streams, is used to convert one form into another.
+`map`, as you know from Java Streams, is used for **synchronous transformations**—when you convert one object into another object.
 
-Using the same example as above:
+Using the same example:
 
 ```java
 Mono<User> findById(int id);
@@ -132,3 +138,12 @@ Profile1
 Profile2
 etc.
 ```
+
+Here, the lambda returns a `Profile` object, **not** a `Mono<Profile>`, so `map` is the correct choice.
+
+---
+
+## Rule of Thumb
+
+- If your lambda returns a **normal object**, use **`map()`**.
+- If your lambda returns a **`Mono` or `Flux`**, use **`flatMap()`**.
