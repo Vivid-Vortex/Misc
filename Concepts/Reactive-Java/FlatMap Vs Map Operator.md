@@ -112,6 +112,51 @@ Mono<Address>
 
 Since the lambda returns a `Mono`, use `flatMap()`.
 
+## Why Not `map()`?
+
+Suppose you wrote:
+
+```java
+repository.findById(userId)
+    .map(user ->
+        addressRepository.findById(user.getAddressId()));
+```
+
+The lambda returns a `Mono<Address>`.
+
+Since `map()` wraps whatever the lambda returns, the result becomes:
+
+```java
+Mono<Mono<Address>>
+```
+
+which looks like:
+
+```text
+Mono
+ └── Mono
+      └── Address
+```
+
+Think of it as **a box inside another box**.
+
+You usually don't want that.
+
+`flatMap()` removes one level of wrapping (flattens the nested publisher), so the result is simply:
+
+```java
+Mono<Address>
+```
+
+which looks like:
+
+```text
+Mono
+ └── Address
+```
+
+**Rule:** If your lambda returns a `Mono` or `Flux`, use **`flatMap()`**, not **`map()`**.
+
 ---
 
 # `map` vs `flatMap`
