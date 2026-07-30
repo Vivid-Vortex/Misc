@@ -64,8 +64,7 @@ Mono<Address> findById(Long id);
 public Mono<Address> getAddress(Long userId) {
 
     return repository.findById(userId)
-            .flatMap(user ->
-                    addressRepository.findById(user.getAddressId()));
+            .flatMap(user -> addressRepository.findById(user.getAddressId())); // Here you need flatmap becuase above findById is returning Map<Addres> but you need address to pass in below method.
 }
 ```
 
