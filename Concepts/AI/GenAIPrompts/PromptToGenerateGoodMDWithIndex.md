@@ -26,6 +26,8 @@ When I ask you to create Markdown notes for a technical topic:
 15. Prioritize clarity over completeness. Explain the simplest mental model first, then add deeper technical details.
 16. If there are other important related methods/operators/concepts that I have not mentioned, add a separate section such as "More Useful Operators" rather than mixing them into my original notes.
 17. When generating the Markdown file, make sure all internal links work correctly.
+
+Example md (you can trace this to get the example) -> https://github.com/ReactiveJava-Vivid-Vortex/ReactiveJavaWebFluxProjectReactorConcept-2/blob/2ea0708a5f70ea2908c10f48d7cbdf2cfa6243c5/ProjectReactor/Operators/Reactive_Error_Handling_Project_Reactor_Notes.md#section-14
 ```
 
 ### For your Java/Reactor learning specifically
