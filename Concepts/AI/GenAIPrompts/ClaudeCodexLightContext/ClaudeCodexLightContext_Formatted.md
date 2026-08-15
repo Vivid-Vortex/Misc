@@ -2,7 +2,6 @@
 
 > **Purpose:** Keep AI coding-agent context small, focused, and task-specific while preserving enough project knowledge for correct implementation.
 >
-> **Source:** [ClaudeCodexLightContext.md](https://github.com/Vivid-Vortex/Misc/blob/dev_m1_1.0.0/Concepts/AI/GenAIPrompts/ClaudeCodexLightContext/ClaudeCodexLightContext.md)
 
 ---
 
