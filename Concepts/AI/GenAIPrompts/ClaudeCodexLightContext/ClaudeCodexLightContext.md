@@ -261,6 +261,7 @@ Yes. For your use case, I would make the agent create **a lightweight root `CLAU
 
 The prompt below is designed to make Claude Code **inspect the repository first, identify applicable ecosystems, create the structure, and avoid unnecessary context loading**.
 
+```
 # Goal
 
 Analyze the current repository and create a context-efficient documentation and instruction structure for Claude Code.
@@ -1159,3 +1160,5 @@ After completing the work, report:
 3. How Claude Code should use the structure.
 4. An example of how to start a new task using `docs/tasks/current-task.md`.
 5. Any important recommendations for keeping context small over time.
+
+```
