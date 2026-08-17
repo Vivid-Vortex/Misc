@@ -35,7 +35,7 @@ Offset
   3  → Order D
 ```
 
-Kafka assigns an **offset** to each message within the partition.
+Kafka assigns an <mark>**offset**</mark> to each message within the partition.
 
 The important point is:
 
