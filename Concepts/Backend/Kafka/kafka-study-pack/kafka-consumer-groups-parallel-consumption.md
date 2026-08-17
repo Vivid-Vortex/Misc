@@ -267,7 +267,7 @@ Therefore:
 
 ---
 
-## Q: Can different consumer groups consume the same Kafka topic?
+## Q: Can different consumer groups consume the same Kafka topic? (same as question two)
 
 ### Answer
 
