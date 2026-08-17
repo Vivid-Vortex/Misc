@@ -23,7 +23,7 @@ Each `P0`, `P1`, `P2` is a **partition**.
 
 ### What does a partition contain?
 
-Each partition is basically an **ordered log of messages**:
+Each partition is basically an **ordered log of messages**: <mark>Below is a very good example to understand difference between Partion and offset.</mark>
 
 ```text
 Partition 0
