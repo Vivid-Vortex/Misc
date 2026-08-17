@@ -215,7 +215,7 @@ This is actually the **core reason Kafka consumer groups are so powerful**: you 
 
 ### Answer
 
-**Normally, no.**
+**Normally, no.** because they will receive message from different partition even if they consumer from same topic. Or in other words, Within the same consumer group, a partition is assigned to only one consumer at a time. Therefore, a particular message in that partition is processed by only that consumer within the group.
 
 For a given partition, a particular record is processed by only **one consumer within a consumer group at a time**.
 
