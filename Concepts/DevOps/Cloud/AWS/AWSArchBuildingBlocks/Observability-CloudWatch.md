@@ -134,6 +134,65 @@ For example, they may keep CloudWatch for AWS-native services and send data to D
 
 So if you're making an **AWS architecture diagram**, you generally don't need to put **CloudWatch + Datadog + Prometheus + Grafana + ELK** unless the architecture actually uses all of them.
 
+---
+
+## Q: Does that mean CloudWatch can only be used with AWS environments and its services?
+
+**Yes, basically — but with one small clarification.**
+
+CloudWatch is primarily designed for **AWS environments and AWS services**.
+
+For example:
+
+```text
+AWS EC2
+AWS ECS
+AWS EKS
+AWS Lambda
+AWS RDS
+AWS S3
+AWS API Gateway
+       ↓
+   CloudWatch
+       ↓
+Logs + Metrics + Alerts + Monitoring
+```
+
+However, CloudWatch can also receive some **custom/application metrics and logs** from applications running outside AWS. So it's **not technically limited to AWS machines**.
+
+But if you have a completely non-AWS environment, such as:
+
+```text
+On-premise servers
+Kubernetes
+VMware
+Bare-metal servers
+Azure
+GCP
+```
+
+then CloudWatch usually isn't the natural choice.
+
+You'd more commonly use something like:
+
+```text
+Prometheus → Metrics
+Loki/ELK  → Logs
+Grafana   → Dashboards
+Jaeger/Tempo → Tracing
+Alertmanager → Alerts
+```
+
+### The easiest way to remember
+
+> **CloudWatch → AWS-centric observability**
+
+> **Datadog → Cloud/vendor-neutral observability**
+
+> **Prometheus + Grafana + Loki + Tempo → self-hosted/cloud-neutral observability**
+
+So if your architecture is **100% AWS**, CloudWatch can be enough as your main observability platform.
+
 
 For your architecture notes, I'd remember it as:
 
