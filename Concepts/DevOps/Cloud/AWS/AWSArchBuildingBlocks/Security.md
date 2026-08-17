@@ -5,9 +5,11 @@
 
 ---
 
+```
 HashiCorp Vault and Azure Key Vault (To know how both managed in Azure Key vault look below section)
    ↓
 Secrets + key management + cryptographic operations
+```
 
 ---
 
