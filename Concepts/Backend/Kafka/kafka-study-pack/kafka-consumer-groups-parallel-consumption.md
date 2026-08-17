@@ -49,7 +49,7 @@ This is how Kafka achieves **parallel processing** within a consumer group.
 
 ---
 
-## Q: ***Consumers in the same consumer group can consume from the same topic but different partitions of that topic (but not from the same partition of the same topic)***? But what about consumers from different consumer groups? Can they consume from the same partition of the same topic?
+## Q: <mark>Consumers in the same consumer group can consume from the same topic but different partitions of that topic (but not from the same partition of the same topic)</mark>? But what about consumers from different consumer groups? Can they consume from the same partition of the same topic?
 
 **Yes, absolutely.** This is one of the most important Kafka concepts.
 
