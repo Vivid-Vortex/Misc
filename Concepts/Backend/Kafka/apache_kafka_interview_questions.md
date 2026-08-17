@@ -58,13 +58,13 @@ Ans. As the main role of the Leader is to perform the task of all read and write
 
 ### Q.13 What roles do Replicas and the ISR play?
 Ans. Basically, a list of nodes that replicate the log is Replicas. Especially, for a particular partition. However, they are irrespective of whether they play the role of the Leader.
-In addition, ISR refers to In-Sync Replicas. On defining ISR, it is a set of message replicas that are synced to the leaders.
+In addition, ISR refers to In-Sync Replicas. On defining ISR, it is a set of message replicas that are synced to the leaders. For easy understanding check [this](https://github.com/Vivid-Vortex/Misc/blob/50612658d881a858f73ab03855dd28928460b424/Concepts/Backend/Kafka/ISR%20or%20replicas.md)
 
 ### Q.14 Why are Replications critical in Kafka?
-Ans. Because of Replication, we can be sure that published messages are not lost and can be consumed in the event of any machine error, program error or frequent software upgrades.
+Ans. Because of Replication, we can be sure that published messages are not lost and can be consumed in the event of any machine error, program error or frequent software upgrades.  For easy understanding check [this](https://github.com/Vivid-Vortex/Misc/blob/50612658d881a858f73ab03855dd28928460b424/Concepts/Backend/Kafka/ISR%20or%20replicas.md)
 
 ### Q.15 If a Replica stays out of the ISR for a long time, what does it signify?
-Ans. Simply, it implies that the Follower cannot fetch data as fast as data accumulated by the Leader.
+Ans. Simply, it implies that the Follower cannot fetch data as fast as data accumulated by the Leader.  For easy understanding check [this](https://github.com/Vivid-Vortex/Misc/blob/50612658d881a858f73ab03855dd28928460b424/Concepts/Backend/Kafka/ISR%20or%20replicas.md)
 
 ### Q.16 What is the process for starting a Kafka server?
 Ans. It is the very important step to initialize the ZooKeeper server because Kafka uses ZooKeeper.So, the process for starting a Kafka server is:
