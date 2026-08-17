@@ -40,7 +40,7 @@ Ans. There are some advantages of Kafka, which makes it significant to use:
 * **Fault-Tolerant** : Kafka is resistant to node/machine failure within a cluster.
 * **Durability** : As Kafka supports messages replication, so,  messages are never lost. It is one of the reasons behind durability.
 * **Scalability** : Kafka can be scaled-out, without incurring any downtime on the fly by adding additional nodes.  
-[Kafka – Pros & Cons](https://data-flair.training/blogs/advantages-and-disadvantages-of-kafka/) 
+![Kafka – Pros & Cons](https://github.com/Vivid-Vortex/Misc/blob/dev_m1_1.0.0/Concepts/Backend/Kafka/kafka-study-pack/images/Kafka%20Key%20benefits.png) 
 
 ### Q.9 What are main APIs of Kafka?
 Ans. Apache Kafka has 4 main APIs:
