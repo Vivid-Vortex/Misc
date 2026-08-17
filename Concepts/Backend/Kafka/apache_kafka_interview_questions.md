@@ -30,7 +30,7 @@ Ans. It is impossible to bypass Zookeeper and connect directly to the Kafka serv
 ### Q.7 What do you know about Partition in Kafka?
 
 Ans. In every Kafka broker, there are few partitions available. And, here each partition in Kafka can be either a leader or a replica of a topic.
-[Kafka partition and parition vs offset]([https://stackoverflow.com/questions/49054946/kafka-topic-partitions](https://github.com/Vivid-Vortex/Misc/blob/2bd3a39996f24f8d25083788bf4f7351a426a1db/Concepts/Backend/Kafka/kafka-study-pack/Kafka%20partition%20and%20partition%20vs%20offset.md))
+[Kafka partition and parition vs offset](https://stackoverflow.com/questions/49054946/kafka-topic-partitions](https://github.com/Vivid-Vortex/Misc/blob/2bd3a39996f24f8d25083788bf4f7351a426a1db/Concepts/Backend/Kafka/kafka-study-pack/Kafka%20partition%20and%20partition%20vs%20offset.md)
 
 ### Q.8 Why is Kafka technology significant to use?
 
