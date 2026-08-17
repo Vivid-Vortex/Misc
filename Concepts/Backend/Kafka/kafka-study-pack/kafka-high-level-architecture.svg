@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="white"/>
+<text x="500" y="45" text-anchor="middle" font-family="Arial" font-size="28" font-weight="bold">Kafka — High-Level Architecture</text>
+<rect x="50" y="110" width="180" height="90" rx="12" fill="none" stroke="black" stroke-width="2"/>
+<text x="140" y="145" text-anchor="middle" font-family="Arial" font-size="20">Producer</text>
+<text x="140" y="175" text-anchor="middle" font-family="Arial" font-size="15">publishes records</text>
+<line x1="230" y1="155" x2="340" y2="155" stroke="black" stroke-width="2"/>
+<polygon points="340,155 325,147 325,163" fill="black"/>
+<rect x="340" y="80" width="300" height="260" rx="14" fill="none" stroke="black" stroke-width="2"/>
+<text x="490" y="112" text-anchor="middle" font-family="Arial" font-size="21" font-weight="bold">Kafka Cluster</text>
+<rect x="370" y="135" width="240" height="55" rx="8" fill="none" stroke="black"/>
+<text x="490" y="169" text-anchor="middle" font-family="Arial" font-size="17">Broker 1 — Topic / Partitions</text>
+<rect x="370" y="205" width="240" height="55" rx="8" fill="none" stroke="black"/>
+<text x="490" y="239" text-anchor="middle" font-family="Arial" font-size="17">Broker 2 — Replicas</text>
+<rect x="370" y="275" width="240" height="55" rx="8" fill="none" stroke="black"/>
+<text x="490" y="309" text-anchor="middle" font-family="Arial" font-size="17">Broker 3 — Replicas</text>
+<line x1="640" y1="155" x2="750" y2="155" stroke="black" stroke-width="2"/>
+<polygon points="750,155 735,147 735,163" fill="black"/>
+<rect x="750" y="110" width="200" height="90" rx="12" fill="none" stroke="black" stroke-width="2"/>
+<text x="850" y="145" text-anchor="middle" font-family="Arial" font-size="20">Consumer</text>
+<text x="850" y="175" text-anchor="middle" font-family="Arial" font-size="15">reads records</text>
+<text x="500" y="405" text-anchor="middle" font-family="Arial" font-size="18">Topics are split into partitions; partitions are distributed across brokers.</text>
+<text x="500" y="435" text-anchor="middle" font-family="Arial" font-size="18">Replication provides fault tolerance, while consumers track offsets.</text>
+</svg>
