@@ -39,7 +39,7 @@ Kafka assigns an <mark>**offset**</mark> to each message within the partition.
 
 The important point is:
 
-> **Messages are ordered within a partition.**
+> <mark>**Messages are ***ordered*** within a partition.**</mark>
 
 So Kafka knows:
 
@@ -47,7 +47,7 @@ So Kafka knows:
 A → B → C → D
 ```
 
-But if you have multiple partitions:
+But if you have <mark>multiple partitions:</mark>
 
 ```text
 Partition 0:  A → B → C
@@ -55,19 +55,19 @@ Partition 0:  A → B → C
 Partition 1:  D → E → F
 ```
 
-Kafka does **not** guarantee an overall order like:
+<mark>Kafka does **not** guarantee an overall order like:</mark>
 
 ```text
 A → B → C → D → E → F
 ```
 
-The ordering guarantee is **within each partition**.
+<mark>***The ordering guarantee is **within each partition**.***</mark>
 
 ---
 
-## Q: Why does Kafka use partitions?
+## Q: <mark>Why does Kafka use partitions?</mark>
 
-The biggest reason is **parallelism and scalability**.
+The biggest reason is <mark>**parallelism and scalability**.</mark>
 
 Imagine you have 1 million messages.
 
@@ -95,9 +95,9 @@ Topic
  +-- P2 → Consumer 3
 ```
 
-Now three consumers can process messages **in parallel**.
+<mark>Now three consumers can process messages **in parallel**.</mark>
 
-This is one of the fundamental ways Kafka achieves high throughput.
+<mark>This is one of the fundamental ways Kafka achieves high throughput.</mark>
 
 ---
 
@@ -140,7 +140,7 @@ But if you have **different consumer groups**:
           P0                P0
 ```
 
-Both groups can consume from the **same partition** independently.
+<mark>Both (multiple) groups can consume from the **same partition** independently.</mark>
 
 That's why the rule we discussed earlier is:
 
@@ -149,4 +149,4 @@ That's why the rule we discussed earlier is:
 
 ### One sentence to remember
 
-> **A Kafka partition is an ordered, append-only sequence of records within a topic, and partitions allow Kafka to distribute data and processing across multiple consumers and brokers.**
+> <mark>**A Kafka partition is an ordered, append-only immutable sequence of records within a topic, and partitions allow Kafka to distribute data and processing across multiple consumers and brokers.**</mark>
