@@ -211,7 +211,7 @@ So your understanding should be:
 This is actually the **core reason Kafka consumer groups are so powerful**: you can have one group processing orders, another doing analytics, and another sending notifications—all reading the **same partitions and same events independently**.
 
 ---
-## Q: Can multiple consumers in the same consumer group receive the same message?
+## Q: Can multiple consumers in the same consumer group receive the same message? (Based on explanation on above topics)
 
 ### Answer
 
