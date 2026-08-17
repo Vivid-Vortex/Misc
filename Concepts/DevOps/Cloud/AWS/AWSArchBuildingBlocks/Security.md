@@ -117,6 +117,16 @@ Azure Key Vault
     └── my-application-certificate
 ```
 
+Azure Key Vault has three main object types:
+
+* 🔑 **Key** → encryption/signing keys
+* 🔐 **Secret** → passwords, API keys, tokens, etc.
+* 📜 **Certificate** → digital certificates
+
+So:
+
+> **Azure Key Vault = a secure container that manages Keys + Secrets + Certificates.**
+
 ### 🔑 Key
 
 An Azure **Key** is specifically designed for cryptographic operations.
