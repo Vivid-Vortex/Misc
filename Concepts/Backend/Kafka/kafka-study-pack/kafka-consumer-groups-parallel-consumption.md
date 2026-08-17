@@ -365,7 +365,7 @@ Each group can consume the same events **independently**.
 
 **Yes, but not the same consumer instance at the same time.**
 
-A Kafka **consumer instance** belongs to exactly **one consumer group**.
+<mark>A Kafka **consumer instance** belongs to exactly **one consumer group**.</mark>
 
 For example:
 
