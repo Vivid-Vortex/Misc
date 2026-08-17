@@ -1,6 +1,6 @@
 ## Security
 - IAM - Just like Azure IAM
-- KMS (Key Management Service)  - Key lifecycle (Operations like Create, Enable / Disable, Rotate, Schedule deletion etc. For more info look below sections) + cryptographic operations (operations like encrypt, decrypt etc. For more info look below sections)
+- KMS (Key Management Service)  - Key lifecycle (Operations like Create, Enable / Disable, Rotate, Schedule deletion etc. For more info look below sections) + cryptographic operations (Operations like encrypt, decrypt etc. For more info look below sections)
 - Secrets Manager - Only for secrets just like github actions secerets for actions.
 - ACM (AWS Certificate Manager) - Dedicated servcie for managing certificates. Certificate and KMS (Key management) and Secret Manager (Secret management) all happens through different object types in Azure (See below section for more information)
 
