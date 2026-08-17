@@ -58,7 +58,7 @@ Ans. As the main role of the Leader is to perform the task of all read and write
 
 ### Q.13 What roles do Replicas and the ISR play?
 Ans. Basically, a list of nodes that replicate the log is Replicas. Especially, for a particular partition. However, they are irrespective of whether they play the role of the Leader.
-In addition, ISR refers to In-Sync Replicas. On defining ISR, it is a set of message replicas that are synced to the leaders. For easy understanding check [this](https://github.com/Vivid-Vortex/Misc/blob/50612658d881a858f73ab03855dd28928460b424/Concepts/Backend/Kafka/ISR%20or%20replicas.md)
+In addition, [ISR](https://github.com/Vivid-Vortex/Misc/blob/50612658d881a858f73ab03855dd28928460b424/Concepts/Backend/Kafka/ISR%20or%20replicas.md) refers to In-Sync Replicas. On defining ISR, it is a set of message replicas that are synced to the leaders. For easy understanding check [this](https://github.com/Vivid-Vortex/Misc/blob/50612658d881a858f73ab03855dd28928460b424/Concepts/Backend/Kafka/ISR%20or%20replicas.md)
 
 ### Q.14 Why are Replications critical in Kafka?
 Ans. Because of Replication, we can be sure that published messages are not lost and can be consumed in the event of any machine error, program error or frequent software upgrades.  For easy understanding check [this](https://github.com/Vivid-Vortex/Misc/blob/50612658d881a858f73ab03855dd28928460b424/Concepts/Backend/Kafka/ISR%20or%20replicas.md)
