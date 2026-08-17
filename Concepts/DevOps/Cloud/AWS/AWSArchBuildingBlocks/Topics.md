@@ -9,6 +9,8 @@ Focus on the **architectural building blocks**:
 - ECS
 - Lambda
 
+Side Learning (along with ECS) : ECR
+
 ## Networking
 - VPC
 - Subnets
