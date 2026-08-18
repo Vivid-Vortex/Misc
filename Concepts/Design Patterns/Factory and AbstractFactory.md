@@ -314,7 +314,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ConnectionFactory factory =
+        DatabaseFactory factory =
                 DatabaseFactoryProvider.getFactory("mysql");
 
         Connection connection =
@@ -340,7 +340,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ConnectionFactory factory =
+        DatabaseFactory factory =
                 DatabaseFactoryProvider.getFactory("postgres");
 
         Connection connection =
