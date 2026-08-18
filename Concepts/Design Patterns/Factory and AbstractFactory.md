@@ -145,7 +145,7 @@ More precisely, the GoF definition is **“an interface for creating families of
 
 ---
 
-# Abstract Factory
+# 2. Abstract Factory
 
 ## Q: Is Abstract Factory a Factory of Factory?
 
