@@ -192,6 +192,8 @@ interface Connection {
 
 ## 2. MySQL products
 
+- <mark>Simple Rule you remember for naming: Whereever You implement any interface to any concrete class. You append part or subpart of the interface name to that class Name as shwon below.</mark>
+  
 ```java
 class MySQLConnection implements Connection {
 
@@ -202,6 +204,8 @@ class MySQLConnection implements Connection {
 ```
 
 ---
+
+- <mark>Simple Rule you remember for naming: Whereever You implement any interface to any concrete class. You append part or subpart of the interface name to that class Name as shwon below.</mark>
 
 ## 3. PostgreSQL products
 
@@ -233,6 +237,8 @@ interface DatabaseFactory {
 
 # 5. MySQL Factory
 
+- <mark>Simple Rule you remember for naming: Whereever You implement any interface to any concrete class. You append part or subpart of the interface name to that class Name as shwon below.</mark>
+
 ```java
 class MySQLFactory implements DatabaseFactory {
 
@@ -243,6 +249,8 @@ class MySQLFactory implements DatabaseFactory {
 ```
 
 ---
+
+- <mark>Simple Rule you remember for naming: Whereever You implement any interface to any concrete class. You append part or subpart of the interface name to that class Name as shwon below.</mark>
 
 # 6. PostgreSQL Factory
 
