@@ -143,7 +143,11 @@ So if the creation logic becomes complicated, you don't have that logic scattere
 
 More precisely, the GoF definition is **“an interface for creating families of related objects”**, but **“factory of factories”** is a very good way to visualize how it works.
 
-# Q: Is Abstract Factory a Factory of Factory?
+---
+
+# Abstract Factory
+
+## Q: Is Abstract Factory a Factory of Factory?
 
 **Yes, conceptually.** Let's use a very simple example.
 
