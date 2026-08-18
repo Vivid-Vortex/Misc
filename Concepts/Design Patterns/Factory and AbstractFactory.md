@@ -305,32 +305,116 @@ This is our **factory of factories**.
 
 # 8. Client
 
-The client simply does:
+- The client simply chooses the database and lets the factory chain create the correct `Connection`.
+
+## MySQL client
 
 ```java
-DatabaseFactory factory =
-        DatabaseFactoryProvider.getFactory("mysql");
+public class Main {
 
-Connection connection = factory.createConnection();
+    public static void main(String[] args) {
 
-connection.connect();
+        ConnectionFactory factory =
+                DatabaseFactoryProvider.getFactory("mysql");
+
+        Connection connection =
+                factory.createConnection();
+
+        connection.connect();
+    }
+}
 ```
 
-Notice the sequence:
+Output:
 
 ```text
-Client
-  |
-  | "I need MySQL"
-  ↓
-DatabaseFactoryProvider
-  |
-  | gives me
-  ↓
-MySQLFactory
-  |
-  +----> MySQLConnection
+Connecting to MySQL
 ```
+
+## PostgreSQL client
+
+Just change `"mysql"` to `"postgres"`:
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        ConnectionFactory factory =
+                DatabaseFactoryProvider.getFactory("postgres");
+
+        Connection connection =
+                factory.createConnection();
+
+        connection.connect();
+    }
+}
+```
+
+Output:
+
+```text
+Connecting to PostgreSQL
+```
+
+### Complete flow
+
+```text
+                    Main
+                     |
+                     | "mysql"
+                     ↓
+          DatabaseFactoryProvider
+                     |
+                     ↓
+              MySQLFactory
+                     |
+                     ↓
+            MySQLConnection
+                     |
+                     ↓
+                  connect()
+```
+
+For PostgreSQL:
+
+```text
+                    Main
+                     |
+                     | "postgres"
+                     ↓
+          DatabaseFactoryProvider
+                     |
+                     ↓
+             PostgresFactory
+                     |
+                     ↓
+           PostgresConnection
+                     |
+                     ↓
+                  connect()
+```
+
+So the **client (`Main`) never directly does**:
+
+```java
+new MySQLConnection();
+```
+
+or
+
+```java
+new PostgresConnection();
+```
+
+It only knows about the abstractions:
+
+```java
+ConnectionFactory
+Connection
+```
+
+That's the key benefit of the pattern.
 
 That's exactly why people often explain Abstract Factory as:
 
