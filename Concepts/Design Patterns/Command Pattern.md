@@ -73,6 +73,8 @@ class Fan {
 
 ### Light Command
 
+- <mark>Simple Rule you remember for naming: Whereever You implement any interface to any concrete class. You append part or subpart of the interface name to that class Name as shwon below.</mark>
+
 ```java
 class LightOnCommand implements Command {
 
@@ -91,6 +93,8 @@ class LightOnCommand implements Command {
 ---
 
 ### Fan Command
+
+- <mark>Simple Rule you remember for naming: Whereever You implement any interface to any concrete class. You append part or subpart of the interface name to that class Name as shwon below.</mark>
 
 ```java
 class FanOnCommand implements Command {
@@ -130,11 +134,12 @@ class RemoteControl {
 
 ## 5. Main Class
 
+-
 ```java
 public class Main {
 
     public static void main(String[] args) {
-
+        
         // Receivers
         Light light = new Light();
         Fan fan = new Fan();
@@ -145,6 +150,8 @@ public class Main {
 
         // Invoker
         RemoteControl remote = new RemoteControl();
+
+        // A simple rule for such clients: Always create all the objects or beans of all the conceret classes you have created first, like you have done inthis main method in above lines.
 
         // Turn ON Light
         remote.setCommand(lightOn);
