@@ -158,7 +158,7 @@ MySQL
 PostgreSQL
 ```
 
-And for each database, we need two things:
+And for each database, we need one thing:
 
 ```text
 Connection
