@@ -33,6 +33,8 @@ print("banana" not in thisset)
 
 #########Update items of set
 #Once a set is created, you cannot change its items, but you can add new items.
+
+#########Delete items of set
 thisset.remove("banana") #If the item to remove does not exist, remove() will raise an error.
 print(thisset)
 
