@@ -1,6 +1,6 @@
 ### You can run this in any compiler or online compiler like [onlinegdb](https://www.onlinegdb.com/)
 
-- ***In Python, tuples are immutable, meaning you cannot directly add, append, or modify elements once they are created. However, you can achieve this by concatenating two tuples or converting the tuple to a list and back. So <mark>Create, Update, Delete operation directly not possible on tuple</mark>.
+- ***In Python, tuples are immutable, meaning you cannot directly add, append, or modify elements once they are created. However, you can achieve this by concatenating two tuples or converting the tuple to a list and back.*** So <mark>Create, Update, Delete operation directly not possible on tuple</mark>.
 
 ```
 thistuple = ("apple", "banana", "cherry")
