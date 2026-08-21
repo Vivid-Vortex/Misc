@@ -1,4 +1,4 @@
-### You can run this in any compiler or online compiler like [](https://www.onlinegdb.com/)
+### You can run this in any compiler or online compiler like [onlinegdb](https://www.onlinegdb.com/)
 ```
 thisdict = {}
 
