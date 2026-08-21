@@ -55,6 +55,13 @@ for x in thistuple:
 thistuple = ("apple", "banana", "cherry")
 for i in range(len(thistuple)): #range(len(3))
   print(thistuple[i])
+
+#Unpacking a Tuple
+fruits = ("apple", "banana", "cherry")
+(green, yellow, red) = fruits
+print(green)
+print(yellow)
+print(red)
 ```
 
 
