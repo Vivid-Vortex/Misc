@@ -55,10 +55,10 @@ for x in thistuple:
 
 #Loop Through the Index Numbers
 thistuple = ("apple", "banana", "cherry")
-for i in range(len(thistuple)): #range(len(3))
+for i in range(len(thistuple)): #range(3) #len=3
   print(thistuple[i])
 
-#Unpacking a Tuple
+#Unpacking a Tuple. <mark>Unpacking can be doned on any iterable type say list, String etc.</mark>
 fruits = ("apple", "banana", "cherry")
 (green, yellow, red) = fruits
 print(green)
