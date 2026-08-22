@@ -19,7 +19,7 @@ Once installed, you don't need to mess around manually exporting terminal variab
    1. Run kimi in your project directory.
    2. Type /login inside the interactive prompt.
    3. Select Kimi Platform (API Key).
-   4. Paste your API key from platform.kimi.ai.
+   4. Paste your API key from `platform.kimi.ai`.
    5. (Optional) Type /model to explicitly switch to the budget-friendly Kimi K2.7 Code or the flagship Kimi K3. [8, 9, 10, 11] 
 
 ## 🤖 How It Works For Learning
