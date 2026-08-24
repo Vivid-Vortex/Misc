@@ -242,7 +242,7 @@ You said:
 
 The more precise understanding is:
 
-> <mark>**When we call the state setter returned by `useState`, such as `setCount()`, React schedules the component for re-rendering. During the re-render, React executes the component function again and calculates what the UI should look like based on the new state. React then updates only the necessary parts of the actual DOM.**</mark>
+> <mark>**When we call the state setter returned by `useState`, such as `setCount()`, React <mark style="background-color: lightblue;">schedules</mark> the component for re-rendering. During the re-render, React executes the component function again and calculates what the UI should look like based on the new state. React then updates only the necessary parts of the actual DOM.**</mark>
 
 ---
 
