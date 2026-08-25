@@ -1,4 +1,6 @@
-# Java Map Interface
+# Java Map Interface (Master and memorize each and every methods of map and solve as many DSA questions on it as possible, as with Map interface (specifically HashMap and TreeMap), you can tackle approximately 40% to 50% of all FAANG-level Data Structures and Algorithms (DSA) questions either directly or indirectly.)
+
+![Master Java Map](images/Master Java Map for DSA.png)
 
 ## Table of Contents
 
