@@ -1,8 +1,5 @@
 Learn all [these](https://github.com/Vivid-Vortex/Misc/tree/8d1c62e483470bb530322d05354df1fde0509e91/Concepts/Backend/Interview%20Questions/Java%20Question%20Bank) real interview experience question bank. Also keep expanding these as and when you attend any interviews.
 
-Java:
-Difference between interfaces and abstract classes?
-
 Microservices pattern:
 Learn all the [microservices pattern](https://github.com/Vivid-Vortex/Misc/tree/5931621f9f1b1af00c124642cdb0bc1213d1e006/Concepts/Design%20Patterns/Microservices%20design%20pattern)
 What is SAGA and it's type?
