@@ -888,6 +888,8 @@ for common insertion, removal, and lookup operations.
 
 # Map Interface
 
+For deper insights check [this](https://github.com/Vivid-Vortex/Misc/blob/130df58e2489e2845a22d3d8d125bb4cf4c09602/Concepts/Backend/Interview%20Questions/Collections%20In%20Java/Java_Map_Interface.md)
+
 A `Map` stores:
 
 ```text
