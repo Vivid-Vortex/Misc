@@ -48,7 +48,7 @@ Learn memorize all the java versions popular and real life project use case feat
 
 Cloud: Learn all the Cloud services and it's basic understanding with it's non-cloud popular alternative. Check this [AWS important servcies](https://github.com/Vivid-Vortex/Misc/tree/abe4de8499f4694279b99081662a049323fddad1/Concepts/DevOps/Cloud/AWS/AWSArchBuildingBlocks). Now your job is map these same services to Azure and GCP. Ask to Chatgpt what are the equvalent servcie for say S3 in Azure and GCP. And also expand [this](https://github.com/Vivid-Vortex/Misc/tree/abe4de8499f4694279b99081662a049323fddad1/Concepts/DevOps/Cloud) knowledge base for cloud like that.
 
-Find Project reactor notes and go through it.
+Reactive Programming with Webflux and Project Reactor: Learn this. Check [this](https://github.com/ReactiveJava-Vivid-Vortex/ReactiveJavaWebFluxProjectReactorConcept-2/tree/f07e5b266b75874fede04f12d90d0abc761290f4/ProjectReactor)
 
 Go through Kafka topics. Check [this](https://github.com/Vivid-Vortex/Misc/tree/2b9fddc8a240aab7b30f4ff226e226a955adc94a/Concepts/Backend/Kafka)
 
