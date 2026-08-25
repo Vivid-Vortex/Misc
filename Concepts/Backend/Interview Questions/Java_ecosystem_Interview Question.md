@@ -1,11 +1,4 @@
-Sealed classes:
-What do you mean by sealed classes in java?
-
-Springboot: 
-How do you configure two databases in springboot?
-
-DB:
-How to optimize database query?
+Learn all [these](https://github.com/Vivid-Vortex/Misc/tree/8d1c62e483470bb530322d05354df1fde0509e91/Concepts/Backend/Interview%20Questions/Java%20Question%20Bank) real interview experience question bank. Also keep expanding these as and when you attend any interviews.
 
 Java:
 Difference between interfaces and abstract classes?
