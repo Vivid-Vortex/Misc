@@ -36,4 +36,13 @@ Check [this](https://github.com/Vivid-Vortex/Misc/tree/be875ed5ff8526dd21174dbe2
 
 Learn Collections and Map in java. Check [this](https://github.com/Vivid-Vortex/Misc/blob/3646406ed7d381cfacfc5bfc0047160b42ce8657/Concepts/Backend/Interview%20Questions/Collections%20In%20Java/Collections_in_Java.md)
 
+Learn all the collections interview questions especially form JTpoint collections interview questions. Check [this](https://github.com/Vivid-Vortex/Misc/blob/685b272b5246ca61966b84351146442a3a641b95/Concepts/Backend/Interview%20Questions/Java_Collections_Interview_Questions_Notes.md)
+
+Learn Springboot annotations. Check [this](https://github.com/Springboot-Spring-Vivid-Vortex/annotations-cheatsheet/blob/a8489f968bd5ed3dd8a9f37a95c0918c3cca6194/annotations.pptx)
+
+Learn spring Cloud components like spring config, service-discovery etc.
+
+Learn Spring Data JPA relationship annotations. Check [this](https://github.com/Springboot-Spring-Vivid-Vortex/SpringDataJpaSimpleRelationshipAnnotationDemo.git)
+
+
 
