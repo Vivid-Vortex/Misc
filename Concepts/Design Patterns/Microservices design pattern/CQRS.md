@@ -25,6 +25,9 @@
 
 > **Command Query Responsibility Segregation**
 
+In Summary:
+
+In CQRS, <mark>we separate read and write operations.</mark> Read operations are usually more frequent and need to be fast, while write operations focus more on data validation and consistency. The Write Side publishes events through a message broker or event-streaming platform like Kafka, and the Read Side consumes those events to update its own database.
 In simple terms:
 
 > **Separate the code responsible for changing data from the code responsible for reading data.**
