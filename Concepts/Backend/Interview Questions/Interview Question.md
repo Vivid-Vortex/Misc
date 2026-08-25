@@ -30,6 +30,8 @@ Ans. 2 Objects or 1 obj depending on the string literal. For more info check
 [this](https://github.com/Vivid-Vortex/Misc/blob/c7de702112ab358e1cd6e0512c2a27b8694236fc/Concepts/Backend/Interview%20Questions/String%20number%20of%20object.md)
 
 Question: *How do I have two or multiple databases in Spring Boot?
+
+Learn all the Function package functions. Check [this](https://github.com/Vivid-Vortex/Misc/blob/4acfd7402278f406c8c73b2596e37c2cc3a977e6/Concepts/Backend/Interview%20Questions/Function%20package%20functions.md)
 Check [this](https://github.com/Vivid-Vortex/Misc/tree/be875ed5ff8526dd21174dbe2dadc09b4d311432/Concepts/Backend/Interview%20Questions)
 
 
