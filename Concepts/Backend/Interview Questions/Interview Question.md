@@ -34,5 +34,6 @@ Question: *How do I have two or multiple databases in Spring Boot?
 Learn all the Function package functions. Check [this](https://github.com/Vivid-Vortex/Misc/blob/4acfd7402278f406c8c73b2596e37c2cc3a977e6/Concepts/Backend/Interview%20Questions/Function%20package%20functions.md)
 Check [this](https://github.com/Vivid-Vortex/Misc/tree/be875ed5ff8526dd21174dbe2dadc09b4d311432/Concepts/Backend/Interview%20Questions)
 
+Learn Collections and Map in java. Check [this](https://github.com/Vivid-Vortex/Misc/blob/3646406ed7d381cfacfc5bfc0047160b42ce8657/Concepts/Backend/Interview%20Questions/Collections%20In%20Java/Collections_in_Java.md)
 
 
