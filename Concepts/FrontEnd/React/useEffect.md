@@ -1,6 +1,5 @@
 ### Handling Dependency in useEffect.
 
-![HandlingDependencyInUseEffect](images/HandlingDependencyInUseEffect.png)
+![HandlingDependencyInUseEffect](images/image.png)
 
 ---
-
