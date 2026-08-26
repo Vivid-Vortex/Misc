@@ -1,0 +1,1 @@
+[Streams based Questions pattern and top interview progmming question.md](https://github.com/Vivid-Vortex/Java-8-plus/blob/c6ae16d77b5246a4d90bf6b594c019c78c354e43/Java8.new-feature/src/main/java/com/Java8/newfeature/Java8/streams/Streams%20based%20Questions%20pattern%20and%20top%20interview%20progmming%20question.md)
