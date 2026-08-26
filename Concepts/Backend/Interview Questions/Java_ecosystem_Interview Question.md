@@ -12,8 +12,9 @@ Singleton pattern
 
 Solid design priciple
 
-Learn all the streams methods and do somep practice with all practice questions. Check [this](https://github.com/Vivid-Vortex/Java-8-plus/tree/86d29b0e2129173ef78d90fb4709eb84b61f35b0/Java8.new-feature/src/main/java/com/Java8/newfeature/Java8/streams)
+Learn all the streams methods and do somep practice with all practice questions. Check [this](https://github.com/Vivid-Vortex/Misc/blob/abf9af3c03b60dd194c796f0fe336eec3d6ee3bf/Concepts/Backend/Interview%20Questions/Java%208%20Streams.md)
 
+Learn all the java 8 Streams based question patterns. Check [this]()
 
 Java: Q: String str = new String("obj"); in Java — how many objects are created?
 
