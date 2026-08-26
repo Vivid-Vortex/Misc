@@ -155,30 +155,44 @@ It doesn't need props from `Parent` and `Child`.
 # <mark>Complete example</mark>
 
 ```jsx
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
+// 1. Create Context
 const UserContext = createContext();
 
-function App() {
+function Header() {
+  // 4. Read shared data from Context
+  const { user } = useContext(UserContext);
+
+  return <h1>Welcome, {user}</h1>;
+}
+
+function UserProfile() {
+  // 5. Read and update shared state from Context
+  const { user, setUser } = useContext(UserContext);
+
   return (
-    <UserContext.Provider value="Deepak">
-      <Parent />
-    </UserContext.Provider>
+    <>
+      <h2>Current User: {user}</h2>
+
+      <button onClick={() => setUser("Rahul")}>
+        Change User
+      </button>
+    </>
   );
 }
 
-function Parent() {
-  return <Child />;
-}
+export default function App() {
+  // 2. Create State
+  const [user, setUser] = useState("Deepak");
 
-function Child() {
-  return <GrandChild />;
-}
-
-function GrandChild() {
-  const user = useContext(UserContext);
-
-  return <h1>Hello {user}</h1>;
+  return (
+    // 3. Share State through Context
+    <UserContext value={{ user, setUser }}>
+      <Header />
+      <UserProfile />
+    </UserContext>
+  );
 }
 ```
 
