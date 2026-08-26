@@ -1,6 +1,6 @@
 ### Handling Dependency in useEffect.
 
-![HandlingDependencyInUseEffect](images/HandlingDependency.png)
+![HandlingDependencyInUseEffect](../../images//HandlingDependency.png)
 
 # Summary of All the constructors (Also given in below, just copied just for summary)
 
