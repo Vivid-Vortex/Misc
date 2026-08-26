@@ -45,3 +45,5 @@ Reactive Programming with Webflux and Project Reactor: Learn this. Check [this](
 Go through Kafka topics. Check [this](https://github.com/Vivid-Vortex/Misc/tree/2b9fddc8a240aab7b30f4ff226e226a955adc94a/Concepts/Backend/Kafka)
 
 Graphql: Go through Graphql inteview questions. Chek [this](https://github.com/Vivid-Vortex/Misc/blob/2b9fddc8a240aab7b30f4ff226e226a955adc94a/Concepts/Backend/Graphql/GraphQL_Interview_Questions.md) for interview questions and [this](https://github.com/Springboot-Spring-Vivid-Vortex/spring-graphql.git) for project to understand basic CRUD api building in graphql.
+
+Learn and practice and memorize patterns of SQL. Check [this](https://github.com/DbDesign-Vivid-Vortex/DbQueryPracticeWithPostgres.git)
