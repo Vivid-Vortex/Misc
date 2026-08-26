@@ -327,3 +327,380 @@ Think:
 > **"When state changes, React runs the component again to calculate the new UI, then efficiently synchronizes the real DOM."**
 
 That single mental model will make `useState`, props, parent-child rendering, `useEffect`, and later optimization concepts much easier to understand.
+
+---
+
+![alt text](../images/UseStateArrowFunctionExampleForQuestion.png)
+
+**Your question:** In `onClick`, sometimes we pass an arrow function, and sometimes we directly pass the function name. What is the difference?
+
+Your question is clear. A more natural version would be:
+
+> **In React, why do we sometimes use an arrow function in `onClick`, while other times we directly pass a function name? What is the difference?**
+
+## Q: What are the two common ways to write an `onClick` handler?
+
+### 1. Passing a function directly
+
+```jsx
+<button onClick={increment}>Increment</button>
+```
+
+### 2. Using an arrow function
+
+```jsx
+<button onClick={() => increment()}>Increment</button>
+```
+
+Both work, but there is an important difference in **how and when the function is called**.
+
+---
+
+## Q: What happens when we directly pass the function name?
+
+```jsx
+function increment() {
+  setCount(count + 1);
+}
+
+<button onClick={increment}>Increment</button>
+```
+
+Here, you are giving the `increment` function to React.
+
+You are essentially saying:
+
+> **"React, when the user clicks the button, you call this function."**
+
+So the function is **not executed immediately**.
+
+### Important point
+
+```jsx
+onClick={increment}
+```
+
+means:
+
+```text
+Give the function to React
+↓
+User clicks the button
+↓
+React calls increment()
+```
+
+This is the simplest and preferred approach when you only need to call one existing function.
+
+---
+
+# Q: What happens when we use an arrow function?
+
+```jsx
+<button onClick={() => increment()}>Increment</button>
+```
+
+Here, you are giving React a **new arrow function**.
+
+You are essentially saying:
+
+> **"React, when the user clicks the button, first execute this arrow function. The arrow function will then call `increment()`."**
+
+Flow:
+
+```text
+Give arrow function to React
+↓
+User clicks the button
+↓
+React calls the arrow function
+↓
+Arrow function calls increment()
+```
+
+So:
+
+```jsx
+onClick={() => increment()}
+```
+
+is an extra layer compared with:
+
+```jsx
+onClick={increment}
+```
+
+---
+
+# Q: If both work, why do we need an arrow function?
+
+Because sometimes you need to do **something before calling the function**, or you need to **pass your own argument**.
+
+## Case 1: Passing an argument
+
+Suppose:
+
+```jsx
+function incrementBy(number) {
+  setCount(count + number);
+}
+```
+
+You cannot write:
+
+```jsx
+<button onClick={incrementBy(1)}>Increment</button>
+```
+
+❌ This is wrong.
+
+Why?
+
+Because:
+
+```jsx
+incrementBy(1)
+```
+
+calls the function **immediately during rendering**.
+
+Instead:
+
+```jsx
+<button onClick={() => incrementBy(1)}>
+  Increment
+</button>
+```
+
+Now the flow is:
+
+```text
+Component renders
+↓
+React stores the arrow function
+↓
+User clicks
+↓
+Arrow function runs
+↓
+incrementBy(1) runs
+```
+
+---
+
+# Q: What is the biggest mistake beginners make?
+
+This:
+
+```jsx
+<button onClick={increment()}>
+  Increment
+</button>
+```
+
+❌ Wrong.
+
+Because the parentheses mean:
+
+> **Call the function now.**
+
+So this happens:
+
+```text
+Component renders
+↓
+increment() immediately executes
+↓
+setCount() changes state
+↓
+Component renders again
+↓
+increment() immediately executes again
+```
+
+This can cause repeated rendering problems.
+
+---
+
+# Q: So when should I use each one?
+
+### Use the function name directly when:
+
+```jsx
+<button onClick={increment}>Increment</button>
+```
+
+Your handler only needs to execute that function.
+
+This is the **cleanest and simplest approach**.
+
+---
+
+### Use an arrow function when you need:
+
+#### 1. Arguments
+
+```jsx
+<button onClick={() => incrementBy(1)}>
+  Increment
+</button>
+```
+
+#### 2. Multiple operations
+
+```jsx
+<button onClick={() => {
+  console.log("Button clicked");
+  increment();
+}}>
+  Increment
+</button>
+```
+
+#### 3. Extra logic
+
+```jsx
+<button onClick={() => {
+  if (count < 10) {
+    increment();
+  }
+}}>
+  Increment
+</button>
+```
+
+---
+
+# Q: In your original example, why is the arrow function used?
+
+Your example is:
+
+```jsx
+<button onClick={() => setCount(count + 1)}>
+  Counter {count}
+</button>
+```
+
+The arrow function is being used because the `setCount` call contains an expression:
+
+```jsx
+setCount(count + 1)
+```
+
+It needs to be executed **only when the button is clicked**.
+
+If you wrote:
+
+```jsx
+<button onClick={setCount(count + 1)}>
+```
+
+then `setCount(count + 1)` would execute immediately while rendering.
+
+So React needs this wrapper:
+
+```jsx
+() => setCount(count + 1)
+```
+
+---
+
+# Q: Can we avoid the arrow function in your example?
+
+Yes. Define a separate function:
+
+```jsx
+function App() {
+  const [count, setCount] = useState(0);
+
+  function increment() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <Counter />
+
+      <button onClick={increment}>
+        Counter {count}
+      </button>
+    </div>
+  );
+}
+```
+
+This is perfectly valid and, for a reusable handler, often more readable.
+
+---
+
+# Q: What is the simplest rule to remember?
+
+## Without parentheses = give the function
+
+```jsx
+onClick={increment}
+```
+
+Meaning:
+
+> React will call it later.
+
+---
+
+## With parentheses = call the function now
+
+```jsx
+increment()
+```
+
+Meaning:
+
+> Execute immediately.
+
+---
+
+## Arrow function = create a function that React will call later
+
+```jsx
+onClick={() => increment()}
+```
+
+Meaning:
+
+> When clicked, execute this function, which will then call `increment()`.
+
+---
+
+## Final shortcut
+
+```text
+onClick={functionName}
+        ↓
+Use when no custom arguments or extra logic are needed.
+
+onClick={() => functionName()}
+        ↓
+Use when you need to call it later with arguments or extra logic.
+
+onClick={functionName()}
+        ↓
+Usually wrong for event handlers because it runs immediately.
+```
+
+### My recommendation
+
+For simple React code, prefer:
+
+```jsx
+onClick={handleClick}
+```
+
+Use an arrow function only when it actually provides something extra:
+
+```jsx
+onClick={() => handleClick(id)}
+```
+
+That is the cleanest mental model.
+
+---
