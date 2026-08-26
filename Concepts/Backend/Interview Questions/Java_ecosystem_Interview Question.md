@@ -14,7 +14,7 @@ Solid design priciple
 
 Learn all the streams methods and do somep practice with all practice questions. Check [this](https://github.com/Vivid-Vortex/Misc/blob/abf9af3c03b60dd194c796f0fe336eec3d6ee3bf/Concepts/Backend/Interview%20Questions/Java%208%20Streams.md)
 
-Learn all the java 8 Streams based question patterns. Check [this]()
+Learn all the java 8 Streams based question patterns. Check [this](https://github.com/Vivid-Vortex/Misc/blob/af2494006b1fbd8c3888d09ee6463f6f77f39fae/Concepts/Backend/Interview%20Questions/Streams%20based%20Questions%20pattern%20and%20top%20interview%20progmming%20question.md)
 
 Java: Q: String str = new String("obj"); in Java — how many objects are created?
 
