@@ -536,3 +536,149 @@ useReducer → dispatch → action → reducer → new state → re-render
 ```
 
 Once this is crystal clear, concepts like **Redux, Redux Toolkit, and complex React state management** become much easier.
+
+---
+
+## Question: “For side effects, we should use `useEffect` rather than `useReducer`, right?”
+
+side effects - Anything extra apart from that particular block is designed for like given above.
+
+You're right on spot. **Yes, generally side effects should be handled with `useEffect`, not inside the reducer.**
+
+## Q: Why?
+
+### A:
+
+Think of their responsibilities like this:
+
+```text
+useReducer
+   ↓
+Purely calculates the next state
+
+useEffect
+   ↓
+Performs side effects
+```
+
+### Reducer:
+
+```jsx
+function reducer(state, action) {
+  if (action.type === "INCREMENT") {
+    return state + 1;
+  }
+
+  return state;
+}
+```
+
+This is pure:
+
+```text
+Current State + Action → New State
+```
+
+---
+
+### `useEffect`:
+
+```jsx
+useEffect(() => {
+  console.log("Count changed:", count);
+}, [count]);
+```
+
+This performs something **because state changed**.
+
+Examples of side effects:
+
+```text
+API calls
+Timers
+Subscriptions
+Direct DOM interaction
+localStorage operations
+WebSocket connections
+```
+
+---
+
+## The clean architecture is:
+
+```text
+User Action
+    ↓
+dispatch()
+    ↓
+Reducer calculates new state
+    ↓
+React updates state
+    ↓
+Component re-renders
+    ↓
+useEffect runs because state changed
+    ↓
+Perform side effect
+```
+
+### Example
+
+```jsx
+import { useEffect, useReducer } from "react";
+
+function reducer(state, action) {
+  if (action.type === "INCREMENT") {
+    return state + 1;
+  }
+
+  return state;
+}
+
+export default function Counter() {
+  const [count, dispatch] = useReducer(reducer, 0);
+
+  // Side effect
+  useEffect(() => {
+    console.log("Count changed:", count);
+  }, [count]);
+
+  return (
+    <button onClick={() => dispatch({ type: "INCREMENT" })}>
+      Count: {count}
+    </button>
+  );
+}
+```
+
+## Simple separation of responsibility
+
+```text
+useReducer:
+"What should the new state be?"
+
+useEffect:
+"Now that the state/UI changed, what external work should happen?"
+```
+
+### One important nuance
+
+You don't always need `useEffect` just because you have a side effect. For example, an API call directly triggered by a button click can often be done in the event handler:
+
+```jsx
+async function handleSave() {
+  const response = await saveUser();
+
+  dispatch({
+    type: "SAVE_SUCCESS",
+    payload: response
+  });
+}
+```
+
+So the practical rule is:
+
+> **Never put side effects inside a reducer. Use `useEffect` for side effects caused by rendering/state changes, or an event handler for side effects directly caused by a user action.**
+
+That distinction is very important in modern React.
+
