@@ -1,6 +1,8 @@
 ## Question: What is this syntax in React or JavaScript?
 
+```
 data?.error && <span></span>
+```
 
 Your question is understandable. The code in the image is:
 
