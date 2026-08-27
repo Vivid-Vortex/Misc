@@ -472,3 +472,180 @@ That is why a nested update requires:
 ```
 
 The most important correction in your screenshot is: **remove direct mutation like `data.name = val` and `data.address.city = city`**. Use `setData` with new objects directly.
+
+---
+
+## Q: So, is the property written after the spread operator inside `{}` the replacement property in the new object?
+
+Yes, **you are right**. That is exactly the main idea.
+
+Consider:
+
+```js
+const newObject = {
+    ...oldObject,
+    property: newValue
+};
+```
+
+The object is processed **from top to bottom**.
+
+### Step 1: Spread all properties
+
+```js
+...oldObject
+```
+
+Suppose:
+
+```js
+const oldObject = {
+    name: "Anil",
+    age: 30
+};
+```
+
+After spreading:
+
+```js
+{
+    name: "Anil",
+    age: 30
+}
+```
+
+### Step 2: The property after the spread is added or replaced
+
+```js
+{
+    ...oldObject,
+    name: "Rahul"
+}
+```
+
+Conceptually:
+
+```js
+{
+    name: "Anil", // from spread
+    age: 30,      // from spread
+    name: "Rahul" // written later → replaces previous name
+}
+```
+
+So the final result is:
+
+```js
+{
+    name: "Rahul",
+    age: 30
+}
+```
+
+### Rule to remember
+
+> **If the same property exists after the spread operator, the later property value replaces the earlier property value.**
+
+---
+
+## In your React example
+
+```js
+setData({
+    ...data,
+    name: val
+});
+```
+
+Here:
+
+```js
+...data
+```
+
+copies:
+
+```js
+{
+    name: "Anil",
+    address: {...}
+}
+```
+
+Then:
+
+```js
+name: val
+```
+
+replaces:
+
+```js
+name: "Anil"
+```
+
+with:
+
+```js
+name: val
+```
+
+---
+
+## Nested example
+
+```js
+setData({
+    ...data,
+    address: {
+        ...data.address,
+        city: city
+    }
+});
+```
+
+First:
+
+```js
+...data.address
+```
+
+copies:
+
+```js
+{
+    city: "Delhi",
+    country: "India"
+}
+```
+
+Then:
+
+```js
+city: city
+```
+
+replaces the copied `city`.
+
+Result:
+
+```js
+{
+    city: "Mumbai",
+    country: "India"
+}
+```
+
+So yes, **the property written after the spread operator is the replacement/override property if that property already exists**. If it does not exist, it simply becomes a **new property**.
+
+```js
+{
+    ...data,
+    phone: "12345" // new property
+}
+```
+
+### One-line mental model
+
+> **Spread copies existing properties; properties written afterward override matching properties or add new ones.**
+
