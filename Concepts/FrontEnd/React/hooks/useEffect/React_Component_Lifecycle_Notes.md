@@ -31,6 +31,8 @@
 
 ------------------------------------------------------------------------
 
+![Life Cycle In React Components](../../images/Life_Cycle.png)
+
 # 1. What is a Lifecycle in Human Life?
 
 Think about a human:
