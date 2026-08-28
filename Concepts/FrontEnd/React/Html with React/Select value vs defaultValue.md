@@ -6,6 +6,8 @@
 
 `value` exists in the **browser/HTML DOM**, but when used in React JSX, it is passed as a **React prop**.
 
+<mar>**Every HTML property for that matter is passed as React prompt**</mark>
+
 ```jsx
 <select value={subject}>
 ```
