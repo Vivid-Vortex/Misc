@@ -250,3 +250,85 @@ defaultValue
 ### Best one-line understanding
 
 > **`value` means React owns the current value, while `defaultValue` means React only provides the starting value.**
+
+---
+
+## Q: So `value` and `defaultValue` both are HTML properties only, right?
+
+Your question is understandable. A more natural version is:
+
+> **So, are `value` and `defaultValue` both HTML properties?**
+
+**No. This is the important distinction:**
+
+### `value`
+
+`value` is a **native browser/DOM property** for elements like:
+
+```html
+<input>
+<textarea>
+<select>
+<option>
+```
+
+Example:
+
+```js
+input.value
+```
+
+---
+
+### `defaultValue`
+
+`defaultValue` is also a **native DOM property** for certain form elements such as `<input>` and `<textarea>`.
+
+However, in React:
+
+```jsx
+<input defaultValue="Deepak" />
+```
+
+React uses `defaultValue` as a prop to set the initial/default value of an uncontrolled form element.
+
+---
+
+## The easiest correct mental model
+
+```text
+Browser DOM properties
+    ↓
+value
+defaultValue
+    ↓
+React exposes/uses them as props in JSX
+```
+
+So in React:
+
+```jsx
+<input value={name} />
+```
+
+and:
+
+```jsx
+<input defaultValue="Deepak" />
+```
+
+both `value` and `defaultValue` are **React props**.
+
+But they are not identical:
+
+```text
+value
+→ Current value
+
+defaultValue
+→ Default/initial value
+```
+
+### Final answer
+
+> **Yes, both concepts exist in the browser DOM (or Html), and React exposes them as props in JSX. But in React, `value` is used for the current controlled value, while `defaultValue` is used for the initial/default value of an uncontrolled component.**
