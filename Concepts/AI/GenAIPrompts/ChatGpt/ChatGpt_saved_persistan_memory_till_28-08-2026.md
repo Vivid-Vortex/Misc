@@ -188,4 +188,4 @@ For a specific topic:
 
 ## Remember This
 
-Please remember these preferences and use them when helping me in future conversations.
+Please remember these preferences and use them when helping me in future conversations. please save these all as it is and not in a condensed form
