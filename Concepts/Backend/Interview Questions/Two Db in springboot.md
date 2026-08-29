@@ -9,7 +9,7 @@ In Spring Boot, you can connect to multiple databases by creating:
 3. **Multiple `TransactionManager` objects** — one for each database.
 4. Separate **Entity** and **Repository** packages.
 
-Below summary: You do NOT need to memorize the entire UserDatabaseConfig class (as it's too long), simply rememer structure and say either of the two.
+Below summary: You do NOT need to memorize the entire UserDatabaseConfig class or ProductDatabaseConfig class (as it's too long), simply rememer structure and say either of the two.
 
 For each database, we configure a separate DataSource, EntityManagerFactory, and TransactionManager, and use @EnableJpaRepositories with different basePackages, entityManagerFactoryRef, and transactionManagerRef to map the repositories to the correct database.
 
