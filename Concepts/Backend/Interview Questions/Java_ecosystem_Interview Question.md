@@ -8,7 +8,7 @@ What is CQRS and how do Read and write communicate?
 GoF pattern:
 Learn all the [GoF Pattern](https://github.com/Vivid-Vortex/Misc/tree/5931621f9f1b1af00c124642cdb0bc1213d1e006/Concepts/Design%20Patterns/GoF%20Patterns)
 
-Singleton pattern
+Singleton pattern. Check [this](https://drive.google.com/file/d/1M4X0xaY7O2edpTgtONGLg6faeoZqJdc8/view?usp=sharing)
 
 Solid design priciple
 
