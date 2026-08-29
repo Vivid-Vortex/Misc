@@ -12,6 +12,8 @@ Singleton pattern. Check [this](https://drive.google.com/file/d/1M4X0xaY7O2edpTg
 
 Solid design priciple
 
+Learn Final keyword related topics. Check [this](https://github.com/Vivid-Vortex/Misc/blob/a2697b2342caf6f00d6e4e15d50be21fb2003a8b/Concepts/Backend/Interview%20Questions/Final%20Keyword.md)
+
 Learn all the streams methods and do somep practice with all practice questions. Check [this](https://github.com/Vivid-Vortex/Misc/blob/abf9af3c03b60dd194c796f0fe336eec3d6ee3bf/Concepts/Backend/Interview%20Questions/Java%208%20Streams.md)
 
 Learn all the java 8 Streams based question patterns. Check [this](https://github.com/Vivid-Vortex/Misc/blob/af2494006b1fbd8c3888d09ee6463f6f77f39fae/Concepts/Backend/Interview%20Questions/Streams%20based%20Questions%20pattern%20and%20top%20interview%20progmming%20question.md)
