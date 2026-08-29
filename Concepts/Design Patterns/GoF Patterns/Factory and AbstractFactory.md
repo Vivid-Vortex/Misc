@@ -143,6 +143,7 @@ So if the creation logic becomes complicated, you don't have that logic scattere
 
 More precisely, the GoF definition is **“an interface for creating families of related objects”**, but **“factory of factories”** is a very good way to visualize how it works.
 
+For the Abstract Factory Version of Notification system, please check [Notification System as Abstract Factory](https://github.com/Vivid-Vortex/Misc/blob/2a0d1fff88535aa11d789b26a836c47348b1ed4c/Concepts/Design%20Patterns/GoF%20Patterns/Abstract%20Factory%20Example%20%E2%80%94%20Notification%20System.md)
 ---
 
 # 2. Abstract Factory
