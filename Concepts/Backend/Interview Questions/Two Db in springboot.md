@@ -1,8 +1,4 @@
-### Question: *How do I have two or multiple databases in Spring Boot?*
-
-Your question is understandable. A more natural version would be:
-
-> **How can I configure and use two or multiple databases in Spring Boot?**
+# Question: How can I configure and use two or multiple databases in Spring Boot?
 
 ## Simple answer
 
@@ -22,25 +18,31 @@ Suppose you have:
 ```text
 Application
      |
-     ├── Primary Database
+     ├── User Database
      │      ├── DataSource
-     │      ├── EntityManager
+     │      ├── EntityManagerFactory
      │      └── TransactionManager
      │
-     └── Secondary Database
+     └── Product Database
             ├── DataSource
-            ├── EntityManager
+            ├── EntityManagerFactory
             └── TransactionManager
 ```
 
 For example:
 
 ```text
-User Service
-    |
-    +-----> User Database
-    |
-    +-----> Product Database
+Spring Boot Application
+        |
+        ├── UserRepository
+        │       |
+        │       ↓
+        │   User Database
+        |
+        └── ProductRepository
+                |
+                ↓
+            Product Database
 ```
 
 ---
@@ -74,13 +76,20 @@ com.example.app
 # 1. Configure two databases in `application.properties`
 
 ```properties
-# Database 1
+# =========================
+# User Database
+# =========================
+
 app.datasource.user.url=jdbc:mysql://localhost:3306/user_db
 app.datasource.user.username=root
 app.datasource.user.password=password
 app.datasource.user.driver-class-name=com.mysql.cj.jdbc.Driver
 
-# Database 2
+
+# =========================
+# Product Database
+# =========================
+
 app.datasource.product.url=jdbc:mysql://localhost:3306/product_db
 app.datasource.product.username=root
 app.datasource.product.password=password
@@ -89,7 +98,9 @@ app.datasource.product.driver-class-name=com.mysql.cj.jdbc.Driver
 
 ---
 
-# 2. Create the first database configuration
+# 2. Configure the User Database
+
+Create `UserDatabaseConfig.java`:
 
 ```java
 @Configuration
@@ -115,12 +126,122 @@ public class UserDatabaseConfig {
                 .initializeDataSourceBuilder()
                 .build();
     }
+
+    @Bean
+    @Primary
+    public LocalContainerEntityManagerFactoryBean userEntityManagerFactory(
+            EntityManagerFactoryBuilder builder) {
+
+        return builder
+                .dataSource(userDataSource())
+                .packages("com.example.app.user.entity")
+                .persistenceUnit("user")
+                .build();
+    }
+
+    @Bean
+    @Primary
+    public PlatformTransactionManager userTransactionManager(
+            EntityManagerFactory userEntityManagerFactory) {
+
+        return new JpaTransactionManager(userEntityManagerFactory);
+    }
 }
 ```
 
+## What is happening here?
+
+The configuration creates four important beans:
+
+```text
+userDataSourceProperties()
+        ↓
+userDataSource()
+        ↓
+userEntityManagerFactory()
+        ↓
+userTransactionManager()
+```
+
+### `userDataSource()`
+
+Creates the connection configuration for the User database.
+
+```java
+@Bean
+@Primary
+public DataSource userDataSource() {
+    return userDataSourceProperties()
+            .initializeDataSourceBuilder()
+            .build();
+}
+```
+
+### `userEntityManagerFactory()`
+
+Creates the JPA `EntityManagerFactory` for the User database.
+
+```java
+@Bean
+@Primary
+public LocalContainerEntityManagerFactoryBean userEntityManagerFactory(
+        EntityManagerFactoryBuilder builder) {
+
+    return builder
+            .dataSource(userDataSource())
+            .packages("com.example.app.user.entity")
+            .persistenceUnit("user")
+            .build();
+}
+```
+
+The important part is:
+
+```java
+.dataSource(userDataSource())
+```
+
+This tells JPA:
+
+> Use the User database's `DataSource`.
+
+And:
+
+```java
+.packages("com.example.app.user.entity")
+```
+
+tells JPA:
+
+> These entities belong to this database.
+
+### `userTransactionManager()`
+
+Creates the transaction manager for the User database.
+
+```java
+@Bean
+@Primary
+public PlatformTransactionManager userTransactionManager(
+        EntityManagerFactory userEntityManagerFactory) {
+
+    return new JpaTransactionManager(userEntityManagerFactory);
+}
+```
+
+It uses:
+
+```java
+userEntityManagerFactory
+```
+
+to manage transactions for the User database.
+
 ---
 
-# 3. Create the second database configuration
+# 3. Configure the Product Database
+
+Create `ProductDatabaseConfig.java`:
 
 ```java
 @Configuration
@@ -144,123 +265,357 @@ public class ProductDatabaseConfig {
                 .initializeDataSourceBuilder()
                 .build();
     }
+
+    @Bean
+    public LocalContainerEntityManagerFactoryBean productEntityManagerFactory(
+            EntityManagerFactoryBuilder builder) {
+
+        return builder
+                .dataSource(productDataSource())
+                .packages("com.example.app.product.entity")
+                .persistenceUnit("product")
+                .build();
+    }
+
+    @Bean
+    public PlatformTransactionManager productTransactionManager(
+            EntityManagerFactory productEntityManagerFactory) {
+
+        return new JpaTransactionManager(productEntityManagerFactory);
+    }
 }
 ```
 
-For a full JPA setup, you would also configure a separate `EntityManagerFactory` and `TransactionManager` for each database.
+The Product database has the same structure:
+
+```text
+productDataSourceProperties()
+        ↓
+productDataSource()
+        ↓
+productEntityManagerFactory()
+        ↓
+productTransactionManager()
+```
+
+The important difference is that everything points to the Product database.
 
 ---
 
-# How Spring knows which database to use
+# 4. How Spring knows which repository uses which database
 
 This is the most important part.
 
-You map repositories to databases:
+For the User database:
 
 ```java
 @EnableJpaRepositories(
-    basePackages = "com.example.app.user.repository"
+        basePackages = "com.example.app.user.repository",
+        entityManagerFactoryRef = "userEntityManagerFactory",
+        transactionManagerRef = "userTransactionManager"
 )
+```
+
+This tells Spring:
+
+```text
+com.example.app.user.repository
+             |
+             ↓
+userEntityManagerFactory
+             |
+             ↓
+userDataSource
+             |
+             ↓
+User Database
+```
+
+For the Product database:
+
+```java
+@EnableJpaRepositories(
+        basePackages = "com.example.app.product.repository",
+        entityManagerFactoryRef = "productEntityManagerFactory",
+        transactionManagerRef = "productTransactionManager"
+)
+```
+
+This tells Spring:
+
+```text
+com.example.app.product.repository
+             |
+             ↓
+productEntityManagerFactory
+             |
+             ↓
+productDataSource
+             |
+             ↓
+Product Database
+```
+
+---
+
+# 5. Why do we need `entityManagerFactoryRef`?
+
+Because we now have **two EntityManagerFactory beans**:
+
+```text
+userEntityManagerFactory
+productEntityManagerFactory
+```
+
+Spring needs to know which one a repository should use.
+
+For example:
+
+```java
+entityManagerFactoryRef = "userEntityManagerFactory"
 ```
 
 means:
 
-```text
-Repositories inside:
+> User repositories should use `userEntityManagerFactory`.
 
-com.example.app.user.repository
+Similarly:
 
-        ↓
-
-use
-
-        ↓
-
-User Database
+```java
+entityManagerFactoryRef = "productEntityManagerFactory"
 ```
+
+means:
+
+> Product repositories should use `productEntityManagerFactory`.
+
+---
+
+# 6. Why do we need `transactionManagerRef`?
+
+For the same reason.
+
+We have two transaction managers:
+
+```text
+userTransactionManager
+productTransactionManager
+```
+
+So:
+
+```java
+transactionManagerRef = "userTransactionManager"
+```
+
+means:
+
+> Use the User database transaction manager.
 
 And:
 
 ```java
-@EnableJpaRepositories(
-    basePackages = "com.example.app.product.repository"
-)
+transactionManagerRef = "productTransactionManager"
 ```
 
 means:
 
-```text
-Repositories inside:
+> Use the Product database transaction manager.
 
-com.example.app.product.repository
+---
 
-        ↓
+# 7. What happens when we call `userRepository.save()`?
 
-use
+Suppose we have:
 
-        ↓
-
-Product Database
+```java
+public interface UserRepository extends JpaRepository<User, Long> {
+}
 ```
 
-So your application code can look normal:
+and:
 
 ```java
 userRepository.save(user);
 ```
 
-This automatically goes to:
+The flow is:
 
 ```text
-user_db
+userRepository.save(user)
+        ↓
+UserRepository
+        ↓
+userEntityManagerFactory
+        ↓
+userDataSource
+        ↓
+User Database
 ```
 
-While:
+Similarly:
 
 ```java
 productRepository.save(product);
 ```
 
-goes to:
+flows through:
 
 ```text
-product_db
+productRepository.save(product)
+        ↓
+ProductRepository
+        ↓
+productEntityManagerFactory
+        ↓
+productDataSource
+        ↓
+Product Database
 ```
 
 ---
 
-# Your screenshot and multiple databases
+# 8. Complete architecture
 
-Your screenshot shows:
+The complete setup can be remembered like this:
 
-```javascript
-const formattedTotalPrice = `$${totalPrice.toFixed(2)}`;
+```text
+                    Spring Boot Application
+                             |
+              ┌──────────────┴──────────────┐
+              |                             |
+        User Repository              Product Repository
+              |                             |
+              ↓                             ↓
+   userEntityManagerFactory      productEntityManagerFactory
+              |                             |
+              ↓                             ↓
+       userDataSource               productDataSource
+              |                             |
+              ↓                             ↓
+        User Database              Product Database
 ```
 
-That is unrelated to Spring Boot databases, but the idea of multiple databases is conceptually similar to having multiple separate sources of data.
+And each database has its own transaction manager:
+
+```text
+User Database
+     |
+     └── userTransactionManager
+
+
+Product Database
+     |
+     └── productTransactionManager
+```
+
+---
+
+# 9. What are these `userEntityManagerFactory` and `userTransactionManager`?
+
+A common confusion is that these look like classes.
+
+They are **not classes**.
+
+They are **Spring bean names**.
+
+For example:
+
+```java
+@Bean
+public LocalContainerEntityManagerFactoryBean userEntityManagerFactory(...) {
+    ...
+}
+```
+
+The method:
+
+```java
+userEntityManagerFactory()
+```
+
+creates a Spring bean whose name is:
+
+```text
+userEntityManagerFactory
+```
+
+Similarly:
+
+```java
+@Bean
+public PlatformTransactionManager userTransactionManager(...) {
+    ...
+}
+```
+
+creates a bean named:
+
+```text
+userTransactionManager
+```
+
+That's why we can reference them here:
+
+```java
+entityManagerFactoryRef = "userEntityManagerFactory"
+```
+
+and:
+
+```java
+transactionManagerRef = "userTransactionManager"
+```
+
+---
+
+# 10. Why is `@Primary` used?
+
+We have multiple beans of the same type.
 
 For example:
 
 ```text
-React UI
-   |
-   |
-Spring Boot API
-   |
-   ├── UserRepository
-   │        |
-   │        ↓
-   │     User DB
-   |
-   └── ProductRepository
-            |
-            ↓
-         Product DB
+DataSource
+    ├── userDataSource
+    └── productDataSource
 ```
+
+and:
+
+```text
+EntityManagerFactory
+    ├── userEntityManagerFactory
+    └── productEntityManagerFactory
+```
+
+Spring may not know which one should be the default when something is injected without a qualifier.
+
+Therefore, we mark one database as:
+
+```java
+@Primary
+```
+
+For example:
+
+```java
+@Bean
+@Primary
+public DataSource userDataSource() {
+    ...
+}
+```
+
+This means:
+
+> If Spring needs a `DataSource` and no specific bean is requested, use `userDataSource`.
+
+`@Primary` does **not** mean that the other database cannot be used. It only establishes the default choice when there is ambiguity.
 
 ---
 
-# Even simpler alternative: two databases using JDBC
+# 11. Even simpler alternative: two databases using JDBC
 
 If you don't need JPA, the concept is simpler.
 
@@ -278,7 +633,7 @@ public DataSource productDataSource() {
 }
 ```
 
-Then inject them using `@Qualifier`:
+Then you can inject them using `@Qualifier`:
 
 ```java
 @Autowired
@@ -290,36 +645,128 @@ private DataSource userDataSource;
 private DataSource productDataSource;
 ```
 
+Here you don't need separate `EntityManagerFactory` and JPA `TransactionManager` configurations because you are not using JPA.
+
 ---
 
-# My recommendation for you
+# 12. The complete mental model
 
-Since you are learning Spring Boot with your Java background, remember this architecture:
+For **multiple databases with Spring Data JPA**, remember:
 
 ```text
-Multiple Database
-       =
-Multiple DataSource
-       +
-Multiple EntityManagerFactory
-       +
-Multiple TransactionManager
-       +
-Separate Repository Mapping
+Multiple Databases
+        ↓
+Multiple DataSources
+        ↓
+Multiple EntityManagerFactories
+        ↓
+Multiple TransactionManagers
+        ↓
+Separate Repository Packages
+        ↓
+@EnableJpaRepositories maps them together
 ```
 
-The **most important concept** is that Spring must know:
+Or even more simply:
 
-> **Which repository belongs to which database.**
+```text
+Database
+   ↓
+DataSource
+   ↓
+EntityManagerFactory
+   ↓
+TransactionManager
+   ↓
+Repository
+```
 
-That is why `@EnableJpaRepositories` with `basePackages`, `entityManagerFactoryRef`, and `transactionManagerRef` becomes important.
+For two databases:
 
-For production systems, this is commonly used for:
+```text
+USER DB                         PRODUCT DB
+   ↓                               ↓
+User DataSource              Product DataSource
+   ↓                               ↓
+User EMF                      Product EMF
+   ↓                               ↓
+User TransactionManager      Product TransactionManager
+   ↓                               ↓
+User Repository              Product Repository
+```
 
-* **CQRS** → separate read and write databases.
-* **Legacy database + new database** during migration.
-* **Multi-tenant applications**.
-* Different business domains using separate databases.
-* Separate operational and analytics databases.
+---
 
-A useful next step for you would be: **“Show me a complete working Spring Boot example with two MySQL databases, including Entity, Repository, Service, configuration, and transactions.”** That will make the concept much clearer for your architect/system-design learning.
+# 13. Why would we use multiple databases?
+
+Multiple databases are commonly used for:
+
+### CQRS
+
+Separate read and write databases:
+
+```text
+                 Application
+                     |
+              ┌──────┴──────┐
+              ↓             ↓
+          Write DB       Read DB
+              |             |
+              └─── Kafka ───┘
+```
+
+### Legacy database migration
+
+```text
+New Application
+      |
+      ├── New Database
+      |
+      └── Legacy Database
+```
+
+### Different business domains
+
+```text
+Application
+    |
+    ├── User DB
+    ├── Product DB
+    └── Order DB
+```
+
+### Analytics
+
+```text
+Operational DB
+       |
+       ↓
+     Kafka
+       |
+       ↓
+Analytics DB
+```
+
+---
+
+# Interview answer
+
+If an interviewer asks:
+
+> **How do you configure multiple databases in Spring Boot?**
+
+A good concise answer is:
+
+> "I configure a separate `DataSource` for each database. Since I'm using Spring Data JPA, I also configure a separate `EntityManagerFactory` and `TransactionManager` for each database. I keep the entities and repositories in separate packages and use `@EnableJpaRepositories` with `entityManagerFactoryRef` and `transactionManagerRef` to map each repository package to the correct database."
+
+The key architecture to remember is:
+
+```text
+DataSource
+    ↓
+EntityManagerFactory
+    ↓
+TransactionManager
+    ↓
+Repository
+```
