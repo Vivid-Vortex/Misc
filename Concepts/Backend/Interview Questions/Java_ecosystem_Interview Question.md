@@ -40,8 +40,6 @@ Learn spring Cloud components like spring config, service-discovery etc.
 
 Learn Spring Data JPA relationship annotations. Check [this](https://github.com/Springboot-Spring-Vivid-Vortex/SpringDataJpaSimpleRelationshipAnnotationDemo.git)
 
-Learn about Joins types. Check [this](https://github.com/Vivid-Vortex/Misc/blob/fb38455f5ec2a1858b293259208aec9c02d01d86/Concepts/Backend/Interview%20Questions/DB%20Joins.md)
-
 Learn memorize all the java versions popular and real life project use case features. Some of the features upto Java 21 are [here](https://github.com/Vivid-Vortex/Misc/blob/7498ee6b9bfc19c57ba986864c89af0926bfa498/Concepts/Backend/Java/Java_version-wise_features/java-8-vs-java-11-vs-java-17-vs-java-21-a-comprehensive-comparison.md)
 
 Cloud: Learn all the Cloud services and it's basic understanding with it's non-cloud popular alternative. Check this [AWS important servcies](https://github.com/Vivid-Vortex/Misc/tree/abe4de8499f4694279b99081662a049323fddad1/Concepts/DevOps/Cloud/AWS/AWSArchBuildingBlocks). Now your job is map these same services to Azure and GCP. Ask to Chatgpt what are the equvalent servcie for say S3 in Azure and GCP. And also expand [this](https://github.com/Vivid-Vortex/Misc/tree/abe4de8499f4694279b99081662a049323fddad1/Concepts/DevOps/Cloud) knowledge base for cloud like that.
@@ -53,3 +51,5 @@ Go through Kafka topics. Check [this](https://github.com/Vivid-Vortex/Misc/tree/
 Graphql: Go through Graphql inteview questions. Chek [this](https://github.com/Vivid-Vortex/Misc/blob/2b9fddc8a240aab7b30f4ff226e226a955adc94a/Concepts/Backend/Graphql/GraphQL_Interview_Questions.md) for interview questions and [this](https://github.com/Springboot-Spring-Vivid-Vortex/spring-graphql.git) for project to understand basic CRUD api building in graphql.
 
 Learn and practice and memorize patterns of SQL. Check [this](https://github.com/DbDesign-Vivid-Vortex/DbQueryPracticeWithPostgres.git)
+
+Learn about Joins types. Check [this](https://github.com/Vivid-Vortex/Misc/blob/fb38455f5ec2a1858b293259208aec9c02d01d86/Concepts/Backend/Interview%20Questions/DB%20Joins.md)
