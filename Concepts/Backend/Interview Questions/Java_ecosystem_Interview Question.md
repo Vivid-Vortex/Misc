@@ -5,6 +5,8 @@ Learn all the [microservices pattern](https://github.com/Vivid-Vortex/Misc/tree/
 What is SAGA and it's type?
 What is CQRS and how do Read and write communicate?
 
+Learn about OOPs concept like abstraction, polymorphism, inhertance, encapsulation, aggregation, composition etc.
+
 GoF pattern:
 Learn all the [GoF Pattern](https://github.com/Vivid-Vortex/Misc/tree/5931621f9f1b1af00c124642cdb0bc1213d1e006/Concepts/Design%20Patterns/GoF%20Patterns)
 
