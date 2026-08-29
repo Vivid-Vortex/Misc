@@ -152,6 +152,8 @@ For the Abstract Factory Version of Notification system, please check [Notificat
 
 **Yes, conceptually.** Let's use a very simple example.
 
+For Factory Pattern example of Db Connection, please check [DB Connection as Factory pattern](https://github.com/Vivid-Vortex/Misc/blob/e83ac68310383055b11e0e20936004b7056ed582/Concepts/Design%20Patterns/GoF%20Patterns/Factory%20And%20Abstract%20Factory/Factory%20Pattern%20Example%20%E2%80%94%20Database%20Connection.md)
+
 Suppose we have two types of databases:
 
 ```text
