@@ -8,6 +8,10 @@ In simple terms:
 
 > **Front Controller means having one central entry point that receives all incoming requests and then decides where each request should go.**
 
+Summary:
+
+In Spring MVC, DispatcherServlet acts as the Front Controller. It receives incoming HTTP requests and dispatches them to the appropriate controller based on the request mapping/path. The controller then processes the request, typically through the service and repository layers, and the result is returned back through the DispatcherServlet, which sends the HTTP response to the client.
+
 Instead of every request directly reaching its own controller/handler:
 
 ```text
