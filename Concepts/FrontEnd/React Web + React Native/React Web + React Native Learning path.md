@@ -68,7 +68,7 @@ Your target:
        │             │                     │             │
        │        ┌────┴────┐                │           Expo
        │        │         │                │
-       │  Flex(Upto 90%) Grid(upto 70%)  NativeWind(You can use tailing wind classes here)
+       │  Flex(Upto 90%) Grid(upto 70%)  NativeWind(You can use tailwind classes here)
        │        │         │                │
        │        └────┬────┘                │
        │             │                     │
@@ -86,7 +86,7 @@ Your target:
             │                 │
           Web              Mobile
             │                 │
-       Tailwind(upto 90%    NativeWind (You can use tailwind classes here, so focus well on tailwind first as it will payoff here.
+       Tailwind(upto 90%    NativeWind (You can use tailwind classes here, so focus well on tailwind first as it will payoff here.)
             │                 │
             └────────┬────────┘
                      │
