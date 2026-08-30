@@ -2,6 +2,8 @@ https://github.com/FrontendWebMisc/react-redux-toolkit-2026/blob/e743754b0860970
 
 In this code, how did he take out addToCart.actions? Where is he pointing to the reducer, as action is under reducers?
 
+For Redux and Slice diagram check [this](https://github.com/FrontendWebMisc/react-redux-toolkit-2026/blob/2b062d83e52f17fa402d896337a9e286b984a3e3/src/redux/ReducerAndReduxToolkit.md)
+
 ### Your question:
 
 > **“In this code, how did he take out `addToCart.actions`? Where is he pointing to the reducer, as `action` is under `reducers`?”**
