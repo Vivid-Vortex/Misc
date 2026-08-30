@@ -74,11 +74,11 @@ Your target:
        │             │                     │
        └─────────────┼─────────────────────┘
                      │
-                JavaScript
+                JavaScript (both RectJS and React Native, 100% of knowledge you can use in both)
                      │
-                TypeScript
+                TypeScript (both RectJS and React Native, 100% of knowledge you can use in both)
                      │
-                   React
+                   React (For Web you have to learn bit extra but in react navtive only select few core features master. But intermediate knowledge of ReactJS is imperative in both)
                      │
              State Management
                      │
