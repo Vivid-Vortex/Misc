@@ -30,185 +30,187 @@ Build & deployment
 
 # Your question
 
-> **“I like your previous output. One more thing: for my React Native mobile app, I want to support both iOS and Android, with Android as the first priority. I don't plan to use a Java-based backend. I want to use some sort of SDK with Supabase as the backend. Keeping this in mind, please generate the full previous output again.”**
+> **“For styling, I can use Tailwind classes in React Native with NativeWind, right? So if I master Tailwind, it can help with NativeWind. And I think I can focus on mastering Flexbox only since I can do almost everything using Flexbox on web plus mobile Flexbox is the default. Also include and regenerate. Don't put Supabase and SDK stuff into this; treat these as a black box. Only mention Web and Mobile-related topics.”**
 
-Yes — and this actually makes your roadmap **cleaner**.
+Yes — **your thinking is mostly correct**, with one important qualification:
 
-Your target is essentially:
+> **Mastering Tailwind will make NativeWind much easier, and mastering Flexbox should be a very high priority. But don't completely ignore CSS Grid, positioning, and other CSS fundamentals for Web.**
+
+For your particular goal, I'd make **Flexbox your primary layout system** and learn **Grid at a practical level**, rather than trying to become a CSS-Grid expert.
+
+Also, I'll treat your backend as a **black box** from this point:
 
 ```text
-                 YOUR DEVELOPMENT GOAL
-                         │
-          ┌──────────────┴──────────────┐
-          │                             │
-     OFFICE WORK                   PERSONAL
-          │                             │
-    React Web                     React Native
-          │                       Android First
-    Full Stack                         │
-          │                       iOS Second
-          │                             │
-    Existing Java                 Supabase
-    Backend Stack                      │
-                                Supabase SDK
+React Web ──────┐
+                ├── Backend / APIs [BLACK BOX]
+React Native ───┘
 ```
 
-So I would **keep Java/Spring in your professional backend track**, but **completely separate it from your personal React Native product stack**.
-
-For your personal products, your initial stack can be:
-
-> **React Native + Expo + TypeScript + Supabase + Supabase JS SDK + PostgreSQL + Edge Functions when needed**
-
-You don't need to introduce Java/Spring just because you're already strong in Java.
+So the roadmap below focuses only on **Web + Mobile + their shared frontend technologies**.
 
 ---
 
-# 🗺️ COMPLETE ROADMAP
+# 🗺️ Complete React Web + React Native Roadmap
 
-Here's the roadmap I'd recommend specifically for **your two goals**:
+Your target:
 
 ```text
-                         YOUR ROADMAP
-                              │
-       ┌──────────────────────┼──────────────────────┐
-       │                      │                      │
-    WEB / JOB              MOBILE / BUSINESS     FOUNDATION
-       │                      │                      │
- HTML → CSS              React Native           JavaScript
-       │                  Expo                   TypeScript
-       │                      │                      │
- Tailwind                Android                Git/npm
-       │                  ↓
- React                  iOS
-       │                      │
- TypeScript                  Supabase
-       │                      │
- Next.js                 Supabase SDK
-       │                      │
- Redux Toolkit           PostgreSQL
-       │                      │
- API Integration        Auth / Storage
-       │                      │
- Testing                Edge Functions
-       │                      │
- Performance            Push Notifications
-       │                      │
- Architecture           Payments
-       │                      │
- Deployment             App Store / Play Store
-       │                      │
-       └──────────────┬───────┘
-                      │
-                REAL PRODUCTS
-                      │
-                MONETIZATION
+                         FRONTEND ENGINEER
+                                │
+              ┌─────────────────┴─────────────────┐
+              │                                   │
+          React Web                         React Native
+          Office Work                       Personal Apps
+              │                                   │
+       ┌──────┴──────┐                     ┌──────┴──────┐
+       │             │                     │             │
+      HTML          CSS                  Native UI     Native APIs
+       │             │                     │             │
+       │        ┌────┴────┐                │           Expo
+       │        │         │                │
+       │      Flex      Grid           NativeWind
+       │        │         │                │
+       │        └────┬────┘                │
+       │             │                     │
+       └─────────────┼─────────────────────┘
+                     │
+                JavaScript
+                     │
+                TypeScript
+                     │
+                   React
+                     │
+             State Management
+                     │
+            ┌────────┴────────┐
+            │                 │
+          Web              Mobile
+            │                 │
+       Tailwind          NativeWind
+            │                 │
+            └────────┬────────┘
+                     │
+              Testing / Performance
+                     │
+                Architecture
+                     │
+              Production Apps
 ```
 
 ---
 
-# PHASE 0 — Understand How Applications Work
+# PHASE 0 — Web & Mobile Fundamentals
 
-Before learning React, understand the basic architecture.
+Before jumping into React, understand the environments you're developing for.
 
-You don't need to spend months here.
+## Web
 
 Understand:
 
-* Internet
-* Browser
-* Mobile application
-* Client/server
-* HTTP/HTTPS
-* REST APIs
-* JSON
-* Request/response
-* DNS
-* Cookies
-* Authentication
-* Authorization
-* CORS
-* WebSockets
-* CDN
-* caching
-
-For your personal mobile app, understand this architecture:
-
 ```text
-React Native App
-       │
-       │ Supabase SDK
-       ▼
-   Supabase
-       │
- ┌─────┼──────────────┐
- │     │              │
-Auth  Database      Storage
- │     │              │
- │  PostgreSQL        │
- │                    │
- └────────────────────┘
+Browser
+DOM
+CSS
+JavaScript
+HTTP
+URL
+Cookies
+Storage
+Responsive design
 ```
 
-Later:
+Basic browser flow:
 
 ```text
+User
+ ↓
+Browser
+ ↓
+HTML
+ ↓
+CSS
+ ↓
+JavaScript
+ ↓
+DOM
+ ↓
+Rendered UI
+```
+
+---
+
+## Mobile
+
+Understand:
+
+```text
+Mobile App
+ ↓
 React Native
-      │
-      ├── Supabase SDK
-      │
-      ├── Edge Functions
-      │
-      └── External APIs
+ ↓
+Native UI
+ ↓
+Android / iOS
 ```
 
-This is very different from:
+The important difference:
 
 ```text
+React Web
+
+React
+ ↓
+DOM
+ ↓
+Browser
+
+
 React Native
-      ↓
-Java/Spring
-      ↓
-PostgreSQL
+
+React
+ ↓
+React Native
+ ↓
+Native UI
+ ↓
+Android / iOS
 ```
 
-which you **don't need for your initial personal projects**.
+You don't need to learn native Android/iOS development deeply at this stage.
 
 ---
 
 # PHASE 1 — HTML
 
-You don't need to become an HTML specialist.
+Don't over-invest here.
 
-But you need strong fundamentals.
-
-## Level 1 — Basic HTML
+## Level 1 — Basics
 
 Learn:
 
 ```html
-<html>
-<head>
-<body>
+html
+head
+body
 
-<h1>
-<p>
-<div>
-<span>
+h1-h6
+p
+div
+span
 
-<a>
-<img>
+a
+img
 
-<ul>
-<ol>
-<li>
+ul
+ol
+li
 
-<button>
-<input>
+button
+input
 ```
 
 Understand:
 
-* tags
 * elements
 * attributes
 * nesting
@@ -218,19 +220,19 @@ Understand:
 
 # HTML Level 2 — Semantic HTML
 
-Learn:
+Master:
 
 ```html
-<header>
-<nav>
-<main>
-<section>
-<article>
-<aside>
-<footer>
+header
+nav
+main
+section
+article
+aside
+footer
 ```
 
-Understand **why semantic HTML exists**.
+Understand why semantic HTML matters.
 
 ---
 
@@ -239,21 +241,22 @@ Understand **why semantic HTML exists**.
 Learn:
 
 ```text
+form
 input
-checkbox
-radio
+label
 select
 textarea
 button
-form
-label
 ```
 
 Understand:
 
-* validation
-* submission
-* accessibility
+```text
+form submission
+validation
+input types
+controlled forms later in React
+```
 
 ---
 
@@ -261,23 +264,26 @@ Understand:
 
 Learn:
 
-* semantic elements
-* keyboard navigation
-* focus
-* ARIA
-* accessible forms
-* screen readers
-* color contrast
+```text
+semantic HTML
+keyboard navigation
+focus
+ARIA
+accessible forms
+screen readers
+```
 
-This is important for professional React Web development.
+This matters significantly in professional Web development.
 
 ---
 
 # PHASE 2 — CSS
 
-**Do not skip CSS because you plan to use Tailwind.**
+This is where I want you to spend more time.
 
-Tailwind becomes much easier when you understand CSS.
+But **don't try to memorize every CSS property**.
+
+Build a strong mental model.
 
 ---
 
@@ -308,24 +314,27 @@ height
 
 # CSS Level 2 — Box Model
 
-Master:
+Master this:
 
 ```text
-content
-padding
-border
-margin
+┌─────────────────────────┐
+│         margin          │
+│  ┌───────────────────┐  │
+│  │      border       │  │
+│  │  ┌─────────────┐  │  │
+│  │  │   padding   │  │  │
+│  │  │ ┌─────────┐ │  │  │
+│  │  │ │ content │ │  │  │
+│  │  │ └─────────┘ │  │  │
+│  │  └─────────────┘  │  │
+│  └───────────────────┘  │
+└─────────────────────────┘
 ```
 
 Understand:
 
 ```css
 box-sizing
-```
-
-and:
-
-```text
 width
 height
 min-width
@@ -334,29 +343,86 @@ max-width
 
 ---
 
-# CSS Level 3 — Flexbox
+# ⭐ CSS Level 3 — Flexbox
+
+This should be your **#1 CSS layout priority**.
+
+And I agree with your reasoning.
 
 Master:
 
 ```text
-display:flex
+display: flex
 flex-direction
 justify-content
 align-items
+align-content
 gap
+
+flex
 flex-grow
 flex-shrink
 flex-basis
+
+flex-wrap
+align-self
+order
 ```
+
+Understand the two axes:
+
+```text
+             MAIN AXIS
+──────────────────────────────>
+
+             CROSS AXIS
+                 ↑
+                 │
+                 │
+```
+
+And understand:
+
+```text
+row
+column
+row-reverse
+column-reverse
+```
+
+You should be able to build:
+
+```text
+Navbar
+Card
+Sidebar
+Dashboard
+Form
+Toolbar
+List
+Grid-like layouts
+Centered UI
+Responsive layout
+```
+
+using Flexbox.
 
 ---
 
 # CSS Level 4 — Grid
 
-Learn:
+Here's where I slightly disagree with:
+
+> "I can do almost everything using Flex."
+
+**For many UI layouts, yes.**
+
+But don't completely skip Grid.
+
+You only need practical Grid knowledge:
 
 ```text
-display:grid
+display: grid
 grid-template-columns
 grid-template-rows
 gap
@@ -364,15 +430,60 @@ grid-column
 grid-row
 ```
 
+Understand:
+
+```text
+Flexbox → one-dimensional layout
+
+Grid → two-dimensional layout
+```
+
+That's enough initially.
+
+You don't need to become a Grid wizard.
+
 ---
 
-# CSS Level 5 — Responsive Design
+# CSS Level 5 — Positioning
+
+Very important for both Web and Native concepts.
+
+Master:
+
+```text
+relative
+absolute
+fixed
+sticky
+```
+
+Understand:
+
+```text
+positioning context
+z-index
+stacking
+overlapping
+```
+
+Especially:
+
+```text
+parent: relative
+child: absolute
+```
+
+This pattern is extremely common.
+
+---
+
+# CSS Level 6 — Responsive Design
 
 Learn:
 
 ```text
-media queries
 mobile-first
+media queries
 breakpoints
 %
 rem
@@ -381,52 +492,112 @@ vw
 vh
 ```
 
-Build:
+Think:
 
 ```text
-Desktop
-Tablet
 Mobile
+   ↓
+Tablet
+   ↓
+Desktop
 ```
 
-versions of the same website.
+Don't design desktop first and squeeze it into mobile.
 
 ---
 
-# CSS Level 6 — Advanced
+# CSS Level 7 — Visual Styling
 
 Learn:
 
 ```text
-position
-relative
-absolute
-fixed
-sticky
+colors
+fonts
+font-size
+font-weight
+line-height
+borders
+border-radius
+shadows
+backgrounds
+gradients
+```
 
-z-index
-stacking context
+---
 
-pseudo classes
-pseudo elements
+# CSS Level 8 — Interaction
 
-transitions
-transforms
-animations
+Learn:
 
+```text
+:hover
+:focus
+:active
+:disabled
+```
+
+and:
+
+```text
+transition
+transform
+animation
+```
+
+---
+
+# CSS Level 9 — Modern CSS
+
+Eventually learn:
+
+```text
 CSS variables
 dark mode
 container queries
 modern selectors
+clamp()
+min()
+max()
+calc()
 ```
+
+---
+
+# 🎯 Your CSS Strategy
+
+You don't need:
+
+> "Master every corner of CSS."
+
+Instead:
+
+```text
+CSS
+ │
+ ├── Box Model ⭐⭐⭐⭐⭐
+ │
+ ├── Flexbox ⭐⭐⭐⭐⭐
+ │
+ ├── Responsive ⭐⭐⭐⭐⭐
+ │
+ ├── Positioning ⭐⭐⭐⭐
+ │
+ ├── Grid ⭐⭐⭐
+ │
+ ├── Typography ⭐⭐⭐
+ │
+ └── Advanced CSS ⭐⭐
+```
+
+That's a much better investment for your Web + Mobile goal.
 
 ---
 
 # PHASE 3 — JavaScript
 
-This is the **most important foundation for both React Web and React Native**.
+This is your **most important technology**.
 
-You should go much deeper here than HTML/CSS.
+React and React Native are both built around JavaScript/TypeScript.
 
 ---
 
@@ -484,7 +655,7 @@ Learn:
 parameters
 return
 default parameters
-rest parameters
+rest
 spread
 callbacks
 arrow functions
@@ -492,7 +663,7 @@ arrow functions
 
 ---
 
-# JavaScript Level 3 — Arrays & Objects
+# JavaScript Level 3 — Arrays
 
 Master:
 
@@ -509,21 +680,32 @@ splice
 includes
 ```
 
-And:
+Don't just memorize syntax.
+
+Understand what each operation does.
+
+---
+
+# JavaScript Level 4 — Objects
+
+Learn:
 
 ```text
+object creation
+property access
+computed properties
 destructuring
 spread
-rest
+nested objects
 optional chaining
 nullish coalescing
 ```
 
 ---
 
-# JavaScript Level 4 — Scope
+# JavaScript Level 5 — Scope
 
-Go deep into:
+Go deep:
 
 ```text
 scope
@@ -534,14 +716,13 @@ closure
 hoisting
 TDZ
 execution context
-call stack
 ```
 
-**Closures are extremely important for React.**
+Closures are particularly important for React.
 
 ---
 
-# JavaScript Level 5 — `this`
+# JavaScript Level 6 — `this`
 
 Understand:
 
@@ -555,7 +736,7 @@ arrow functions
 
 ---
 
-# JavaScript Level 6 — Async JavaScript
+# JavaScript Level 7 — Async JavaScript
 
 Master:
 
@@ -566,7 +747,7 @@ async/await
 fetch
 ```
 
-Then understand:
+Then:
 
 ```text
 event loop
@@ -575,31 +756,11 @@ microtask queue
 task queue
 ```
 
-You should be able to predict:
-
-```js
-console.log(1);
-
-setTimeout(() => {
-    console.log(2);
-}, 0);
-
-console.log(3);
-```
-
-Output:
-
-```text
-1
-3
-2
-```
-
 ---
 
-# JavaScript Level 7 — DOM
+# JavaScript Level 8 — DOM
 
-Even though React abstracts the DOM, understand:
+Learn enough DOM to understand what React abstracts:
 
 ```text
 DOM
@@ -610,29 +771,27 @@ event capturing
 event delegation
 ```
 
-Build a small:
-
-> Todo application using vanilla JavaScript.
+Build one small application without React.
 
 ---
 
-# JavaScript Level 8 — Modules
+# JavaScript Level 9 — Modules
 
 Master:
 
-```js
+```text
+import
 export
 export default
-import
 ```
 
-This will directly help with React and React Native.
+This will directly help with React.
 
 ---
 
-# JavaScript Level 9 — Advanced JavaScript
+# JavaScript Level 10 — Advanced
 
-Eventually learn:
+Eventually:
 
 ```text
 prototype
@@ -650,8 +809,6 @@ memory
 garbage collection
 ```
 
-You don't need all of this before React.
-
 ---
 
 # PHASE 4 — Git + npm + Tooling
@@ -664,9 +821,9 @@ GitHub
 npm
 npx
 package.json
-package-lock.json
 dependencies
 devDependencies
+scripts
 ```
 
 Git:
@@ -692,14 +849,14 @@ Tooling:
 Vite
 ESLint
 Prettier
-Chrome DevTools
+Browser DevTools
 VS Code debugging
 environment variables
 ```
 
 ---
 
-# PHASE 5 — React
+# PHASE 5 — React Fundamentals
 
 Now start React.
 
@@ -720,7 +877,7 @@ Understand:
 ```text
 component
 JSX
-props
+component composition
 children
 ```
 
@@ -728,7 +885,7 @@ children
 
 # React Level 2 — Props
 
-Understand:
+Learn:
 
 ```jsx
 <User name="Deepak" />
@@ -742,12 +899,14 @@ function User({ name }) {
 }
 ```
 
-Learn:
+Understand:
 
-* props
-* children
-* passing functions
-* destructuring
+```text
+props
+children
+passing functions
+destructuring
+```
 
 ---
 
@@ -759,12 +918,6 @@ Master:
 useState()
 ```
 
-Start simple:
-
-```js
-const [count, setCount] = useState(0);
-```
-
 Understand deeply:
 
 ```text
@@ -773,7 +926,7 @@ setter
 render
 re-render
 state snapshot
-functional update
+functional updates
 batching
 ```
 
@@ -789,15 +942,6 @@ onChange
 onSubmit
 keyboard events
 mouse events
-```
-
-Build:
-
-```text
-Counter
-Todo
-Search
-Form
 ```
 
 ---
@@ -832,7 +976,7 @@ and understand:
 key
 ```
 
-especially **why React needs keys**.
+especially why keys matter.
 
 ---
 
@@ -849,11 +993,9 @@ subscriptions
 timers
 ```
 
-Also learn:
+And importantly:
 
-> **When NOT to use `useEffect`.**
-
-That's an important modern React skill.
+> **When should you NOT use `useEffect`?**
 
 ---
 
@@ -865,10 +1007,10 @@ Learn:
 controlled components
 uncontrolled components
 validation
-form submission
+submission
 ```
 
-Eventually:
+Then:
 
 ```text
 React Hook Form
@@ -909,28 +1051,13 @@ Provider
 useContext
 ```
 
-Learn when Context is appropriate.
+and when it should/shouldn't be used.
 
 ---
 
 # React Level 11 — useReducer
 
-This will directly prepare you for Redux.
-
-```js
-function reducer(state, action) {
-
-    if (action.type === "increment") {
-        return {
-            count: state.count + 1
-        };
-    }
-
-    return state;
-}
-```
-
-Understand:
+This prepares you for Redux:
 
 ```text
 state
@@ -943,9 +1070,7 @@ dispatch
 
 # PHASE 6 — TypeScript
 
-Now introduce TypeScript seriously.
-
-This will be important for **both React Web and React Native**.
+Now make TypeScript part of your daily React development.
 
 ---
 
@@ -980,9 +1105,9 @@ interfaces
 
 ---
 
-# TypeScript Level 3 — Functions
+# TypeScript Level 3
 
-Learn:
+Functions:
 
 ```text
 function types
@@ -993,9 +1118,9 @@ callbacks
 
 ---
 
-# TypeScript Level 4 — Generics
+# TypeScript Level 4
 
-Go deeper:
+Deep dive:
 
 ```text
 generics
@@ -1007,8 +1132,6 @@ conditional types
 mapped types
 template literal types
 ```
-
-Don't rush this part.
 
 ---
 
@@ -1023,58 +1146,187 @@ events
 refs
 hooks
 context
-API responses
 forms
 children
-```
-
-Example:
-
-```tsx
-type UserProps = {
-    name: string;
-    age: number;
-};
-
-function User({ name, age }: UserProps) {
-    return <div>{name}</div>;
-}
+API responses
 ```
 
 ---
 
-# PHASE 7 — Tailwind CSS
+# PHASE 7 — Tailwind CSS ⭐
 
-Only after understanding CSS.
+Now your CSS knowledge pays off.
 
-Learn:
+Your mental model should be:
 
 ```text
-spacing
-colors
-typography
-flex
-grid
-responsive
-hover
-focus
-dark mode
-arbitrary values
+CSS
+ ↓
+Tailwind
+ ↓
+Utility classes
 ```
 
-You should look at:
+For example:
 
 ```jsx
-className="flex items-center gap-4 p-4"
+<div className="flex items-center gap-4 p-4">
 ```
 
-and understand the underlying CSS immediately.
+You should immediately understand:
+
+```text
+display: flex
+align-items: center
+gap
+padding
+```
 
 ---
 
-# PHASE 8 — Professional React Web
+# Tailwind — What to Master
 
-This is your **office-career track**.
+### Layout
+
+```text
+flex
+grid
+block
+inline
+hidden
+```
+
+### Flexbox
+
+```text
+flex-row
+flex-col
+justify-*
+items-*
+content-*
+gap-*
+flex-*
+```
+
+### Spacing
+
+```text
+p-*
+px-*
+py-*
+m-*
+mx-*
+my-*
+gap-*
+```
+
+### Sizing
+
+```text
+w-*
+h-*
+min-w-*
+max-w-*
+min-h-*
+max-h-*
+```
+
+### Typography
+
+```text
+text-*
+font-*
+leading-*
+tracking-*
+```
+
+### Responsive
+
+```text
+sm:
+md:
+lg:
+xl:
+```
+
+### States
+
+```text
+hover:
+focus:
+active:
+disabled:
+```
+
+### Dark Mode
+
+```text
+dark:
+```
+
+---
+
+# ⭐ PHASE 8 — NativeWind
+
+Now you'll find NativeWind much easier.
+
+Your existing knowledge:
+
+```text
+CSS
+ ↓
+Flexbox
+ ↓
+Tailwind
+ ↓
+React
+```
+
+transfers into:
+
+```text
+React Native
+ ↓
+NativeWind
+```
+
+Conceptually:
+
+```text
+Tailwind
+
+flex
+items-center
+justify-center
+p-4
+rounded-lg
+
+
+        ↓
+
+
+NativeWind
+
+flex
+items-center
+justify-center
+p-4
+rounded-lg
+```
+
+So **yes, mastering Tailwind first is a very good strategy for you.**
+
+But remember:
+
+> NativeWind gives you Tailwind-style utility classes; it doesn't mean React Native becomes identical to browser CSS.
+
+There are platform-specific differences.
+
+---
+
+# PHASE 9 — Professional React Web
+
+This is your **office priority**.
 
 ---
 
@@ -1083,7 +1335,7 @@ This is your **office-career track**.
 Learn:
 
 ```text
-routing
+routes
 nested routes
 dynamic routes
 protected routes
@@ -1096,7 +1348,17 @@ query parameters
 
 ## API Integration
 
-Master:
+Treat your backend as a black box:
+
+```text
+React
+ ↓
+HTTP/API
+ ↓
+[ BLACK BOX ]
+```
+
+Learn:
 
 ```text
 fetch
@@ -1105,14 +1367,12 @@ REST
 HTTP methods
 status codes
 headers
-authentication
-authorization
+loading
+error handling
 pagination
 filtering
 sorting
 search
-loading
-error handling
 caching
 ```
 
@@ -1132,27 +1392,42 @@ Context
 Redux concepts
    ↓
 Redux Toolkit
-   ↓
-RTK Query
 ```
 
-And understand:
+Then understand:
 
 ```text
 local UI state
-server state
 global client state
+server state
 URL state
 form state
 ```
 
-Don't put everything into Redux.
+Don't automatically put everything into Redux.
+
+---
+
+# React Web Architecture
+
+Learn:
+
+```text
+component architecture
+feature-based architecture
+shared components
+custom hooks
+services
+API layer
+state layer
+UI layer
+```
 
 ---
 
 # React Performance
 
-Learn:
+Master:
 
 ```text
 rendering
@@ -1167,8 +1442,6 @@ virtualization
 bundle size
 ```
 
-Understand **why** something re-renders before trying to optimize it.
-
 ---
 
 # Testing
@@ -1177,24 +1450,30 @@ Learn:
 
 ```text
 unit testing
-integration testing
 component testing
+integration testing
 E2E
 ```
 
-Tools:
+Tools/ecosystem:
 
 ```text
 Vitest/Jest
 React Testing Library
-Playwright/Cypress
+Playwright
 ```
 
 ---
 
-# PHASE 9 — Next.js
+# PHASE 10 — Next.js
 
-For your professional React Web career, learn Next.js after React fundamentals.
+For your professional Web career:
+
+```text
+React
+ ↓
+Next.js
+```
 
 Learn:
 
@@ -1213,23 +1492,9 @@ deployment
 
 ---
 
-# 📱 PHASE 10 — React Native
+# 📱 PHASE 11 — React Native
 
-Now start your **personal-product track**.
-
-The good news is that you already know:
-
-```text
-JavaScript
-TypeScript
-React
-Hooks
-State
-APIs
-Git
-```
-
-So you don't start from zero.
+Now your mobile track becomes serious.
 
 ---
 
@@ -1245,56 +1510,101 @@ Pressable
 ScrollView
 FlatList
 TextInput
-SafeAreaView
 Modal
+SafeAreaView
 KeyboardAvoidingView
 ```
 
-Understand the difference:
+Understand:
 
 ```text
 React Web              React Native
 
-<div>                   <View>
-<p>                     <Text>
-<button>                <Pressable>
-<input>                 <TextInput>
-<img>                   <Image>
+<div>                  <View>
+<span>/<p>             <Text>
+<button>               <Pressable>
+<input>                <TextInput>
+<img>                  <Image>
 ```
 
 ---
 
-# React Native Level 2 — Styling
+# React Native Level 2 — Layout
+
+This is where your Flexbox investment pays off.
+
+React Native uses Flexbox heavily.
+
+Master:
+
+```text
+flexDirection
+justifyContent
+alignItems
+alignSelf
+flex
+flexGrow
+flexShrink
+flexBasis
+flexWrap
+gap
+```
+
+Your goal:
+
+> **Be extremely comfortable building RN layouts using Flexbox.**
+
+---
+
+# React Native Level 3 — Styling
 
 Learn:
 
 ```text
 StyleSheet
-Flexbox
 dimensions
 spacing
+typography
+colors
+borders
+shadows
 positioning
-platform differences
 ```
 
-Your CSS knowledge transfers significantly.
+Then:
+
+```text
+NativeWind
+```
+
+So:
+
+```text
+CSS knowledge
+      ↓
+Flexbox
+      ↓
+Tailwind
+      ↓
+NativeWind
+```
+
+is a very efficient learning path.
 
 ---
 
-# React Native Level 3 — Expo
+# React Native Level 4 — Expo
 
-For your personal projects, I would make **Expo** your default starting point.
-
-Learn:
+For your personal projects:
 
 ```text
 Expo
 Expo Router
 EAS
 development builds
-app configuration
 Android builds
 iOS builds
+configuration
 OTA updates
 ```
 
@@ -1305,11 +1615,11 @@ Android ⭐⭐⭐⭐⭐
 iOS     ⭐⭐⭐
 ```
 
-But architect the app so that both platforms are supported.
+But build with both platforms in mind.
 
 ---
 
-# React Native Level 4 — Navigation
+# React Native Level 5 — Navigation
 
 Learn:
 
@@ -1326,298 +1636,73 @@ Deep linking
 
 ---
 
-# React Native Level 5 — Supabase ⭐
+# React Native Level 6 — Forms
 
-This becomes a **major part of your personal-product stack**.
-
-Understand Supabase as:
+Use the same conceptual knowledge from Web:
 
 ```text
-                 Supabase
-                    │
-       ┌────────────┼─────────────┐
-       │            │             │
-     Auth       PostgreSQL      Storage
-       │            │             │
-       │        Database          │
-       │                          │
-       └────────────┬─────────────┘
-                    │
-              React Native
-                    │
-              Supabase SDK
+controlled inputs
+validation
+form state
+submission
 ```
 
-Learn:
-
-### Authentication
+Then reuse:
 
 ```text
-signup
-login
-logout
-session
-password reset
-OAuth
-email verification
+React Hook Form
+Zod
 ```
+
+where appropriate.
 
 ---
 
-### Database
+# React Native Level 7 — Networking
 
-Because Supabase uses PostgreSQL, learn:
-
-```text
-tables
-rows
-columns
-primary keys
-foreign keys
-relationships
-indexes
-constraints
-transactions
-views
-functions
-```
-
-You already have a strong backend/Java background, so PostgreSQL should be relatively comfortable.
-
----
-
-### Row Level Security ⭐⭐⭐⭐⭐
-
-**This is extremely important.**
-
-Don't treat Supabase as:
-
-> "Frontend directly talks to database."
-
-Understand:
+Treat the backend as a black box:
 
 ```text
 React Native
       ↓
-Supabase SDK
+API / SDK
       ↓
-Supabase
-      ↓
-PostgreSQL
-      ↓
-RLS policies
+[ BLACK BOX ]
 ```
 
 Learn:
 
 ```text
-authentication
-authorization
-RLS policies
-roles
-user ownership
-database security
-```
-
-For example:
-
-> A user should only be able to read their own expenses.
-
-That authorization should be properly enforced, not merely hidden in the UI.
-
----
-
-# PHASE 11 — Supabase SDK
-
-Learn how your React Native application communicates with Supabase.
-
-Typical flow:
-
-```text
-React Native
-     │
-     │ supabase-js
-     ▼
-Supabase
-     │
-     ├── Auth
-     ├── Database
-     ├── Storage
-     └── Realtime
-```
-
-Learn:
-
-```text
-queries
-insert
-update
-delete
-filters
-relationships
+fetch
+Axios
+request states
+loading
+error handling
+retry
 pagination
-authentication
-sessions
-storage
-realtime
+caching
+offline handling
 ```
+
+No backend technology needs to be part of this roadmap.
 
 ---
 
-# PHASE 12 — Supabase Storage
+# React Native Level 8 — Storage
 
-Learn:
-
-```text
-file upload
-file download
-images
-avatars
-documents
-buckets
-access policies
-signed URLs
-```
-
-Very useful for mobile apps.
-
-Example:
-
-```text
-Profile Photo
-      ↓
-React Native
-      ↓
-Supabase Storage
-      ↓
-PostgreSQL stores URL/reference
-```
-
----
-
-# PHASE 13 — Supabase Realtime
-
-Eventually learn:
-
-```text
-Realtime subscriptions
-database changes
-presence
-broadcast
-```
-
-Useful for:
-
-```text
-chat
-live notifications
-collaboration
-live dashboards
-```
-
-Don't learn this until you actually need it.
-
----
-
-# PHASE 14 — Edge Functions
-
-This is where Supabase becomes more powerful.
-
-Sometimes you **shouldn't put logic directly in React Native**.
-
-Instead:
-
-```text
-React Native
-      ↓
-Edge Function
-      ↓
-External API
-```
-
-Learn Edge Functions for:
-
-```text
-secret API keys
-server-side logic
-webhooks
-payment processing
-third-party integrations
-custom business logic
-```
-
-### Very important rule
-
-Never put secrets like:
-
-```text
-Stripe secret key
-OpenAI secret key
-private API credentials
-```
-
-inside your React Native application.
-
-Mobile applications are distributed to users.
-
-Use server-side functions for secrets.
-
----
-
-# PHASE 15 — React Native State Management
-
-Use the same progression:
-
-```text
-useState
-   ↓
-useReducer
-   ↓
-Context
-   ↓
-Redux Toolkit
-```
-
-But don't automatically choose Redux.
-
-For smaller personal applications, a simpler state-management solution may be enough.
-
-Understand the difference between:
-
-```text
-UI state
-server state
-authentication state
-cached server data
-persistent state
-```
-
----
-
-# PHASE 16 — Mobile Storage
-
-Learn:
+Learn the frontend/mobile side:
 
 ```text
 AsyncStorage
-Secure storage
-SQLite
-local databases
+secure storage
+local persistence
 caching
 offline data
 ```
 
-Especially understand:
-
-```text
-normal application data
-        vs
-sensitive credentials/tokens
-```
-
 ---
 
-# PHASE 17 — Native Device Features
+# React Native Level 9 — Device APIs
 
 Learn progressively:
 
@@ -1629,112 +1714,45 @@ Files
 Clipboard
 Sharing
 Device information
-Notifications
-Contacts
 Biometrics
+Notifications
 ```
 
-Don't learn every native API upfront.
+Don't learn all of these upfront.
 
-Learn them **when your product requires them**.
+Learn them when your application requires them.
 
 ---
 
-# PHASE 18 — Authentication Architecture
+# React Native Level 10 — Android ⭐
 
-Build a complete flow:
+Because Android is your first priority:
 
-```text
-Launch App
-    ↓
-Check Session
-    ↓
-Session exists?
-  /       \
-Yes       No
- |         |
-Home      Login
- |
-Logout
- |
-Login
-```
-
-Understand:
+Learn enough Android fundamentals to confidently build and debug:
 
 ```text
-access token
-refresh token
-session
-secure storage
-expiration
-logout
-```
-
----
-
-# PHASE 19 — Push Notifications
-
-Learn:
-
-```text
-permissions
-device tokens
-notification delivery
-foreground notifications
-background notifications
-deep linking
-notification actions
-```
-
-Eventually connect:
-
-```text
-Supabase
-   ↓
-Edge Function
-   ↓
-Push Notification Service
-   ↓
-Android / iOS
-```
-
----
-
-# PHASE 20 — Android First
-
-Since Android is your first priority, learn the Android side properly.
-
-Understand:
-
-```text
-Android project structure
 application ID
-debug vs release
+Android manifest
+permissions
+debug/release
+Gradle basics
 signing
 keystore
-permissions
-manifest
-build variants
-Gradle basics
 APK
 AAB
 Play Store
 ```
 
-You don't need to become a Kotlin expert initially.
-
-But you should understand enough native Android concepts to debug React Native issues.
+You don't need to become a Kotlin developer immediately.
 
 ---
 
-# PHASE 21 — iOS Second
+# React Native Level 11 — iOS
 
-After Android becomes comfortable:
+Then learn:
 
 ```text
 Xcode
-iOS project structure
 bundle identifier
 signing
 certificates
@@ -1744,546 +1762,477 @@ TestFlight
 App Store
 ```
 
-You don't need to become a Swift expert initially either.
-
-But understand enough to diagnose native issues.
+Again, you don't initially need to become a Swift developer.
 
 ---
 
-# PHASE 22 — React Native Performance
+# PHASE 12 — React Native Performance
 
 Learn:
 
 ```text
 re-rendering
-memoization
+React.memo
+useMemo
+useCallback
 FlatList optimization
 image optimization
-bundle size
 startup time
+bundle size
+memory
 JS thread
 UI thread
-animations
-native modules
-memory usage
 ```
 
-For large lists, understand:
+Especially master:
 
 ```text
 FlatList
 ```
 
-very deeply.
+because mobile lists can become expensive quickly.
 
 ---
 
-# PHASE 23 — Animations
-
-Then learn:
-
-```text
-LayoutAnimation
-Animated
-Reanimated
-Gesture handling
-```
-
-Since you specifically want to build polished mobile products, animation knowledge will eventually become valuable.
-
----
-
-# PHASE 24 — Mobile Testing
+# PHASE 13 — Animations
 
 Learn:
 
 ```text
-unit tests
-component tests
-integration tests
+Animated
+LayoutAnimation
+Reanimated
+gesture handling
+```
+
+For polished personal products, this becomes very useful.
+
+---
+
+# PHASE 14 — Testing
+
+Learn:
+
+```text
+unit testing
+component testing
+integration testing
 E2E
 ```
 
-Eventually:
+For React Native:
 
 ```text
 Jest
 React Native Testing Library
-Detox / modern E2E alternatives
+E2E tooling
 ```
 
 ---
 
-# PHASE 25 — Production Mobile App
+# PHASE 15 — Production Web
 
-This is where your **second-income goal** really begins.
-
-Learn:
+For your office work, understand:
 
 ```text
-analytics
-crash reporting
+build
+environment variables
+production configuration
+deployment
+CI/CD
 logging
+monitoring
+error tracking
 performance monitoring
-remote configuration
-feature flags
-app versioning
+```
+
+---
+
+# PHASE 16 — Production Mobile
+
+For your personal projects:
+
+```text
+Android release
+iOS release
+versioning
+build numbers
+crash reporting
+analytics
+logging
+performance
 OTA updates
-```
-
-Your production architecture becomes:
-
-```text
-                  React Native
-                       │
-              ┌────────┴─────────┐
-              │                  │
-          Android               iOS
-              │                  │
-              └────────┬─────────┘
-                       │
-                 Supabase SDK
-                       │
-        ┌──────────────┼─────────────┐
-        │              │             │
-       Auth        PostgreSQL      Storage
-                       │
-                      RLS
-                       │
-                 Edge Functions
-                       │
-             External Services
+app permissions
+deep linking
 ```
 
 ---
 
-# PHASE 26 — Payments & Monetization
+# PHASE 17 — Product Development
 
-For your personal products, eventually learn:
+Now move beyond:
 
-```text
-subscriptions
-one-time payments
-in-app purchases
-payment webhooks
-entitlements
-premium features
-trial periods
-subscription lifecycle
-```
+> "I know React Native."
 
-For mobile apps, **don't assume a web payment flow is automatically appropriate for digital goods sold inside the app**. Learn the platform-specific billing rules before implementing monetization.
+and become:
+
+> **"I can build and ship a mobile product."**
+
+Build projects progressively.
 
 ---
 
-# PHASE 27 — Product Analytics
+# 🧪 Project 1 — React Web
 
-This is something many developers completely ignore.
+Build:
 
-Learn:
+> **Admin Dashboard**
 
-```text
-DAU
-MAU
-retention
-activation
-conversion
-churn
-funnel
-cohort
-```
-
-For example:
+Features:
 
 ```text
-1000 downloads
-      ↓
-700 sign up
-      ↓
-400 use app
-      ↓
-100 pay
+Login UI
+Dashboard
+Users
+Search
+Filter
+Pagination
+Forms
+Responsive layout
+Dark mode
 ```
 
-Now you can ask:
+Technologies:
 
-> Where are users dropping?
-
-That's product engineering rather than just coding.
+```text
+React
+TypeScript
+Tailwind
+API
+React Router
+```
 
 ---
 
-# PHASE 28 — Build Real Products
-
-Don't wait until the end of the roadmap.
-
-Start building around the middle.
-
----
-
-## Product #1 — Simple
+# 📱 Project 2 — React Native
 
 Build:
 
 > **Expense Tracker**
 
-React Native + Supabase.
-
 Features:
 
 ```text
-Signup/Login
+Login
+Home
 Add expense
 Edit expense
 Delete expense
 Categories
-Monthly total
+Monthly summary
 Profile
+Dark mode
 ```
 
-You'll learn:
+Technologies:
 
 ```text
 React Native
 Expo
 TypeScript
-Supabase Auth
-PostgreSQL
-RLS
-Supabase SDK
-Forms
-Navigation
+NativeWind
+API/SDK → BLACK BOX
 ```
 
 ---
 
-# Product #2 — Intermediate
+# 🚀 Project 3 — Production-Style Mobile App
 
-Build something with:
+Build something that has:
 
 ```text
 authentication
-profiles
+multiple screens
 search
 pagination
-notifications
 file upload
-multiple entities
+notifications
+offline handling
+analytics
+error handling
 ```
 
-For example:
-
-> Personal productivity application
+Now you're learning real product engineering.
 
 ---
 
-# Product #3 — Monetizable
+# 💰 Project 4 — Monetizable Product
 
-Now build something where someone might actually pay.
-
-For example:
+Eventually build:
 
 ```text
 Free
  ↓
-Basic features
- ↓
 Premium
  ↓
-Subscription
+Subscription / Paid feature
 ```
 
-Learn:
+Learn the **frontend/mobile side** of:
 
 ```text
 payments
-subscriptions
+subscription UI
+entitlements
+premium screens
+paywalls
 analytics
-notifications
-premium access
+user conversion
 ```
 
 ---
 
-# Your Two Career Tracks
+# 🧠 Your Most Important Shared Knowledge
 
-This is the important part.
+This is the beauty of your plan.
 
-## 🏢 Office Track
-
-Your professional stack:
+A lot of your learning gets reused.
 
 ```text
-HTML
- ↓
-CSS
- ↓
-JavaScript
- ↓
-TypeScript
- ↓
-React
- ↓
-Tailwind
- ↓
-API Integration
- ↓
-Redux Toolkit
- ↓
-RTK Query
- ↓
-Testing
- ↓
-Performance
- ↓
-Next.js
- ↓
-Architecture
- ↓
-CI/CD
-```
-
-And your existing:
-
-```text
-Java
-Spring Boot
-Microservices
-Kafka
-Databases
-System Design
-```
-
-remain your backend advantage.
-
----
-
-# 🚀 Personal Product Track
-
-```text
-JavaScript
- ↓
-TypeScript
- ↓
-React
- ↓
-React Native
- ↓
-Expo
- ↓
-Expo Router
- ↓
-Supabase
- ↓
-Supabase SDK
- ↓
-PostgreSQL
- ↓
-RLS
- ↓
-Storage
- ↓
-Realtime
- ↓
-Edge Functions
- ↓
-Notifications
- ↓
-Payments
- ↓
-Analytics
- ↓
-Android
- ↓
-iOS
- ↓
-Play Store / App Store
+                  JavaScript
+                      │
+                  TypeScript
+                      │
+                    React
+                      │
+          ┌───────────┴───────────┐
+          │                       │
+       React Web             React Native
+          │                       │
+       HTML/CSS               RN Components
+          │                       │
+       Tailwind              NativeWind
+          │                       │
+          └───────────┬───────────┘
+                      │
+                Shared Skills
+                      │
+             Hooks / State / APIs
+             Forms / TypeScript
+             Testing / Architecture
+             Performance
 ```
 
 ---
 
-# The Final Architecture You Are Targeting
+# ⭐ Your Flexbox Strategy
 
-Eventually you could build something like:
+I **agree with your idea**, with this adjustment:
+
+### Master these extremely well:
 
 ```text
-                     YOUR PRODUCT
+⭐⭐⭐⭐⭐ Flexbox
+⭐⭐⭐⭐⭐ Responsive design
+⭐⭐⭐⭐⭐ Box model
+⭐⭐⭐⭐ Positioning
+⭐⭐⭐ Grid
+```
+
+You don't need to become a CSS Grid specialist.
+
+Think:
+
+```text
+Flexbox
+   ↓
+Your primary layout weapon
+
+Grid
+   ↓
+Secondary layout tool when 2D layout is genuinely easier
+```
+
+And on React Native:
+
+```text
+Flexbox
+   ↓
+Primary layout system
+```
+
+So the investment has **double value**:
+
+```text
+                    Flexbox
+                   /       \
+                  /         \
+             React Web    React Native
+                 │             │
+              Tailwind     NativeWind
+```
+
+That's a very efficient strategy.
+
+---
+
+# 🏆 Your Final Learning Tree
+
+```text
+                         YOU
                           │
-              ┌───────────┴───────────┐
-              │                       │
-          React Web              React Native
-              │                       │
-          Tailwind                Expo
-              │                       │
-          Next.js                Android ⭐
-              │                   iOS
-              │                       │
-              └──────────┬────────────┘
-                         │
-                   Supabase SDK
-                         │
-              ┌──────────┼───────────┐
-              │          │           │
-             Auth     PostgreSQL   Storage
-                         │
-                        RLS
-                         │
-                  Edge Functions
-                         │
-              ┌──────────┼───────────┐
-              │          │           │
-           Payments   External APIs  Notifications
-```
-
-And you can still use your **Java/Spring expertise** separately when a product eventually becomes complex enough to justify a custom backend:
-
-```text
-Simple product
-     ↓
-Supabase
-
-Growing product
-     ↓
-Supabase + Edge Functions
-
-Complex product
-     ↓
-Supabase + custom services
-     ↓
-Java/Spring/Kafka if justified
-```
-
-**Don't build a distributed Java backend for a product that has 100 users.** 😄
-Use the simplest architecture that can support the product.
-
----
-
-# 🧭 The Exact Learning Sequence I'd Follow
-
-If I were designing your learning plan from scratch, I'd do:
-
-```text
-                    FOUNDATION
-                         │
-                ┌────────┴────────┐
-                │                 │
-               HTML              CSS
-                │                 │
-                └────────┬────────┘
-                         │
-                    JavaScript ⭐
-                         │
-               Git + npm + tooling
-                         │
-                       React ⭐
-                         │
-                   TypeScript ⭐
-                         │
-              React + TypeScript
-                         │
-              ┌──────────┴──────────┐
-              │                     │
-          React Web             React Native
-              │                     │
-           Tailwind                Expo
-              │                     │
-         API integration        Navigation
-              │                     │
-         State management       Supabase ⭐
-              │                     │
-      Redux Toolkit             PostgreSQL
-              │                     │
-          RTK Query                RLS
-              │                     │
-          Next.js              Storage
-              │                     │
-          Testing              Edge Functions
-              │                     │
-       Performance             Notifications
-              │                     │
-       Architecture            Payments
-              │                     │
-          Deployment          Android ⭐
-                                    │
-                                   iOS
-                                    │
-                               Monetization
+                 Frontend Engineer
+                          │
+        ┌─────────────────┴─────────────────┐
+        │                                   │
+      WEB                                MOBILE
+        │                                   │
+      HTML                             React Native
+        │                                   │
+       CSS                                Expo
+        │                                   │
+   ┌────┴────┐                        NativeWind
+   │         │                             │
+ Flex      Grid                         Flexbox
+   │                                       │
+   └───────┐                         Android ⭐
+           │                              │
+       Tailwind                          iOS
+           │
+           └──────────┐
+                      │
+                  JavaScript
+                      │
+                  TypeScript
+                      │
+                    React
+                      │
+        ┌─────────────┼──────────────┐
+        │             │              │
+       Hooks       State           Forms
+        │          Management        │
+        │             │              │
+        │       Redux Toolkit       Zod
+        │                           │
+        └─────────────┬─────────────┘
+                      │
+                 API Integration
+                  [BLACK BOX]
+                      │
+              ┌───────┴────────┐
+              │                │
+          Web Testing       RN Testing
+              │                │
+          Performance       Performance
+              │                │
+          Next.js           Deployment
+              │                │
+              └───────┬────────┘
+                      │
+                 Architecture
+                      │
+                 REAL PRODUCTS
+                      │
+                 MONETIZATION
 ```
 
 ---
 
-# ⭐ What I Would Prioritize
+# 🎯 The Exact Order I'd Follow
 
-If your available learning time is limited, don't give every technology equal weight.
-
-I'd prioritize:
-
-| Priority | Technology        | Why                           |
-| -------- | ----------------- | ----------------------------- |
-| ⭐⭐⭐⭐⭐    | JavaScript        | Foundation for everything     |
-| ⭐⭐⭐⭐⭐    | React             | Office + RN foundation        |
-| ⭐⭐⭐⭐⭐    | TypeScript        | Professional development      |
-| ⭐⭐⭐⭐⭐    | React Native      | Your personal product goal    |
-| ⭐⭐⭐⭐⭐    | Supabase          | Your personal backend         |
-| ⭐⭐⭐⭐     | CSS               | Critical for React Web        |
-| ⭐⭐⭐⭐     | HTML              | Web foundation                |
-| ⭐⭐⭐⭐     | Expo              | Faster RN development         |
-| ⭐⭐⭐⭐     | PostgreSQL        | Supabase foundation           |
-| ⭐⭐⭐⭐     | RLS               | Supabase security             |
-| ⭐⭐⭐      | Tailwind          | Professional web productivity |
-| ⭐⭐⭐      | Redux Toolkit     | Useful for larger apps        |
-| ⭐⭐⭐      | Next.js           | Valuable for React Web        |
-| ⭐⭐⭐      | Testing           | Professional quality          |
-| ⭐⭐⭐      | Mobile deployment | Required to make money        |
-| ⭐⭐⭐      | Analytics         | Required to understand users  |
-| ⭐⭐⭐      | Payments          | Required for monetization     |
-| ⭐⭐       | Native Android    | Debugging/deeper RN           |
-| ⭐⭐       | Native iOS        | Later priority                |
-
----
-
-# 🎯 Your Real End Goal
-
-I wouldn't define your goal as:
-
-> "I want to learn React, React Native, TypeScript, Tailwind, Redux..."
-
-That's too technology-focused.
-
-Your actual goal should be:
-
-> **Become a full-stack engineer who can independently build, deploy and monetize production-quality web and mobile applications.**
-
-That means:
+If you want the shortest path without sacrificing depth:
 
 ```text
-             YOU
-              │
-      ┌───────┴────────┐
-      │                │
-Professional         Entrepreneur
-Engineer             / Builder
-      │                │
-React Web          React Native
-      │                │
-Java/Spring        Supabase
-      │                │
-Microservices      PostgreSQL
-      │                │
-Kafka              Edge Functions
-      │                │
-Architecture       Payments
-      │                │
-Enterprise         Play Store
-Systems            App Store
-      │                │
-      └────────┬───────┘
-               │
-        Full Product Engineer
+01. HTML
+       ↓
+02. CSS fundamentals
+       ↓
+03. CSS Box Model
+       ↓
+04. CSS Flexbox ⭐⭐⭐⭐⭐
+       ↓
+05. CSS Responsive Design
+       ↓
+06. CSS Positioning
+       ↓
+07. CSS Grid — practical level
+       ↓
+08. JavaScript ⭐⭐⭐⭐⭐
+       ↓
+09. Git + npm + tooling
+       ↓
+10. React fundamentals ⭐⭐⭐⭐⭐
+       ↓
+11. React Hooks
+       ↓
+12. React Forms
+       ↓
+13. React Context / useReducer
+       ↓
+14. TypeScript ⭐⭐⭐⭐⭐
+       ↓
+15. React + TypeScript
+       ↓
+16. Tailwind ⭐⭐⭐⭐
+       ↓
+17. React Web routing/API/testing
+       ↓
+18. Redux Toolkit
+       ↓
+19. Next.js
+       ↓
+20. React Native ⭐⭐⭐⭐⭐
+       ↓
+21. Expo
+       ↓
+22. NativeWind
+       ↓
+23. RN Navigation
+       ↓
+24. RN APIs / Storage
+       ↓
+25. Android deployment ⭐⭐⭐⭐⭐
+       ↓
+26. iOS deployment
+       ↓
+27. RN Performance
+       ↓
+28. Testing
+       ↓
+29. Production apps
+       ↓
+30. Monetizable products
 ```
 
-That is a **very strong combination**.
+## The key optimization for your situation
 
-And because you already have substantial Java/backend experience, **don't spend disproportionate time relearning backend fundamentals**. Your biggest return now is becoming extremely strong in **JavaScript → TypeScript → React → React Native → Supabase → product shipping**.
+You are **not really learning 30 separate technologies**.
 
-One final recommendation: **start building your first small React Native + Supabase app well before you've "finished" this roadmap.** The roadmap should run alongside projects, not before them. That's how you'll turn this from a list of technologies into an actual second-income capability.
+You're building one core skill tree:
+
+```text
+              JavaScript
+                   ↓
+              TypeScript
+                   ↓
+                React
+              /       \
+             /         \
+       React Web    React Native
+           │             │
+       HTML/CSS         Expo
+           │             │
+       Tailwind       NativeWind
+```
+
+And **Flexbox is one of the highest-return skills in that tree**, because you can reuse the mental model on both Web and React Native.
+
+Your backend remains:
+
+```text
+              API / SDK
+                 ↓
+            [ BLACK BOX ]
+```
+
+So you can focus your learning energy on becoming **exceptionally strong at the Web + React + Mobile frontend side**, while using your existing backend expertise when your applications need it.
