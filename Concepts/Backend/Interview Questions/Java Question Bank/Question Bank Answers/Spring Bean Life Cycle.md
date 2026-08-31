@@ -8,13 +8,15 @@ Think of a Spring Bean like an employee joining a company:
 
 Spring manages all of these steps for you.
 
-![Image](https://images.openai.com/static-rsc-4/Mf3P_nM0RYMp_Hzu7sjaLXjAcqM8mVgCMP3n_CcOX7jqMqiZ25jFpDUI4sbC3Nx_i0ycs0-FaXiFZzwP0voKVZIT2H6jJ8DzEKhjfrFSOZCU6XGJR7IroQPU9Ha-8soFrQkgUET7RcIo0XVVbjed6AFJgV0LRYiw3hu-8TmZwqYvDfE_mQoXjzLoUeUj4iH6?purpose=fullsize)
+![alt text](image-3.png)
 
-![Image](https://images.openai.com/static-rsc-4/NRc3kSL9PSRdQgBXpK83Sk4UdLVumaKs_ijD5STXipJvXZmR_mdNqNXihjZx9SgPyi4794BE0YgemWwYO6UKgnb8RRgKcNPbpIaubA-vf9tSB05dal629rJxBNxCtOAl8S0fBHUNBstYNWigJWPTaU2vDmEkVtlAEl-KOeegzOHGCvVf28bRLtPwNFGNm9IE?purpose=fullsize)
+![alt text](image.png)
 
-![Image](https://images.openai.com/static-rsc-4/YZpHeVl33sc8rrx7S1-j01s2dPu5BxJ2qV76KU5udAcDfz24ijB56gWsQlHsJWcYM99MAoz0JMo8vq9ibPBPCGUZ7rwOQI8hm1LNbXSe2u_9Va042v3G79hD7QKrIFADJQz45nlo0BFHJ41mlq_EPCx8h8rgGe_gddKCossS2dJ1HPiOQfwziqBZpZUNq28d?purpose=fullsize)
+![alt text](image-1.png)
 
-![Image](https://images.openai.com/static-rsc-4/rmv6SKOzj0YPH6UOfAC8A0YKYc9AYrRn-zqKnLWBB2TWjXeu2CMfW-SZoYxCJqPGg--7nbqScVX5ZtGUJHW-xQ3GpqmZbSz8q4_CUbA9ECd_sTeF1m1DwmyNJ0utPJ7gWvquK_c3lHCi3B2PPFU9izB-ieNy0L0ggjDDIJKF7A809lyq-X07eBu97ihq5jUJ?purpose=fullsize)
+![alt text](image-2.png)
+
+
 
 The simplified lifecycle is:
 
