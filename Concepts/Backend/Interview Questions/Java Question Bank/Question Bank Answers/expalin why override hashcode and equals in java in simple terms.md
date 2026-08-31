@@ -144,6 +144,8 @@ equals()   → Confirm equality
 
 # 5. Why must we override BOTH?
 
+In short, first hashcode always try to put in the same index and when it reaches that index it uses equals to determine if that objectis already present or not. That way hashing based Collection can determine duplicate key. This explanatino is as per internal working of Map.
+
 This is the most important part.
 
 Suppose we override only `equals()`:
