@@ -1,1 +1,1 @@
-please remember always connect the dots with java/springboot (as it's my core language) when explaining some language other than java. It helps me understand and grasp and retain the concept quickly.
+please remember always to connect the dots with java/springboot (as it's my core language) when explaining some language other than java. It helps me understand and grasp and retain the concept quickly.
