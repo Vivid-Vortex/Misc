@@ -383,7 +383,7 @@ If readiness fails, Kubernetes can **stop sending traffic** to that instance wit
 Think:
 
 ```text
-Liveness  → Should I restart you?
+Liveness  → Should I (essentially K8s service pod) restart you?
 Readiness → Should I send traffic to you?
 ```
 
