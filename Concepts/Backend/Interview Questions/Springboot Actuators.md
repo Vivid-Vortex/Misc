@@ -124,7 +124,7 @@ But **don't blindly do this in production**, because some endpoints reveal sensi
 
 # Q: What is `/actuator/health` actually checking?
 
-This is one of the most important concepts. <mark>**This endpoint is used by K8s. It pings internally at regular inteval to check if the service. is up. If it's not then it restart the pod.
+This is one of the most important concepts. Check this for know about [Actuator with k8s](https://github.com/Vivid-Vortex/Misc/blob/41e967ff2e8fac0683bb6a7373e690d2425d9b80/Concepts/Backend/Interview%20Questions/Springboot%20Actuator%20with%20K8s.md)
 
 Suppose your application uses:
 
