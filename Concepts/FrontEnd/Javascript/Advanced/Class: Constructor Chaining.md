@@ -6,7 +6,7 @@ Ans:
 
 ---
 
-Yes, JavaScript has **constructor chaining** in class inheritance, and it is mandatory when a child class defines its own constructor.
+Yes, It is almost similar to Java constructor chaining. JavaScript has **constructor chaining** in class inheritance, and it is mandatory when a child class defines its own constructor.
 
 ---
 
