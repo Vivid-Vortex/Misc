@@ -372,7 +372,7 @@ Is my application alive?
 
 If liveness fails, Kubernetes may **restart the application**.
 
-### Readiness
+### Readiness (<mark>If this endpoint works then you can send and receive messages. Also after deployment if this endpoint is configured correctly then you can test if deployment is successful.</mark>)
 
 ```text
 Can my application currently handle requests?
