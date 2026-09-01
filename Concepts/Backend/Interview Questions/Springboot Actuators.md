@@ -124,7 +124,7 @@ But **don't blindly do this in production**, because some endpoints reveal sensi
 
 # Q: What is `/actuator/health` actually checking?
 
-This is one of the most important concepts.
+This is one of the most important concepts. <mark>**This endpoint is used by K8s. It pings internally at regular inteval to check if the service. is up. If it's not then it restart the pod.
 
 Suppose your application uses:
 
