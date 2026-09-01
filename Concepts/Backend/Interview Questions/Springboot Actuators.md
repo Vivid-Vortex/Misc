@@ -384,7 +384,7 @@ Think:
 
 ```text
 Liveness  → Should I (essentially K8s service pod) restart you?
-Readiness → Should I send traffic to you?
+Readiness → Should I (client) send traffic to you?
 ```
 
 ---
