@@ -293,4 +293,8 @@ Think:
 
 <mark>**My recommendation:** Avoid `!` by default. Prefer normal property access or `?.` depending on the actual data contract. Use `!` only when you have a solid reason to tell TypeScript to trust you.</mark>
 
+Even VS Code by default shows ? operator as shown in the screenshot instead of ! operator.
+
+![alt text](image.png)
+
 
