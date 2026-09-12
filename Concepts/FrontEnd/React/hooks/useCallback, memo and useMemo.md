@@ -576,3 +576,297 @@ think:
 > **Calculated value optimization**
 
 **And all three are React-specific APIs built on top of JavaScript behavior.** `useCallback` and `useMemo` are not JavaScript language features.
+
+---
+
+You're right on spot — just a small spelling correction: **`useCallback`**.
+
+# Q: Is the lifecycle of `useCallback` the same as `useEffect`?
+
+**No. They are fundamentally different.**
+
+The easiest way to remember:
+
+> **`useCallback` = remembers a function**
+> **`useEffect` = performs a side effect**
+
+They both accept a dependency array, which makes them *look* similar, but their behavior is very different.
+
+---
+
+## 1. `useCallback` does NOT run your function
+
+```jsx
+const handleClick = useCallback(() => {
+  console.log("Hello");
+}, []);
+```
+
+Here:
+
+```text
+Component renders
+      ↓
+useCallback checks dependencies
+      ↓
+Returns/keeps the function reference
+      ↓
+NOTHING inside () => { ... } executes
+```
+
+The function executes only when **you call it**:
+
+```jsx
+handleClick();
+```
+
+So `useCallback` is basically saying:
+
+> "React, please give me the same function reference unless these dependencies change."
+
+---
+
+## 2. `useEffect` actually executes your callback
+
+```jsx
+useEffect(() => {
+  console.log("Hello");
+}, []);
+```
+
+Here:
+
+```text
+Component renders
+      ↓
+React commits the UI
+      ↓
+Effect callback runs
+      ↓
+console.log("Hello")
+```
+
+So `useEffect` is saying:
+
+> "React, run this code after rendering when these dependencies require it."
+
+---
+
+# 3. Compare them directly
+
+### `useCallback`
+
+```jsx
+const fn = useCallback(() => {
+  console.log("Hello");
+}, []);
+```
+
+Think:
+
+```text
+        useCallback
+             ↓
+     "Remember this function"
+             ↓
+       function reference
+```
+
+### `useEffect`
+
+```jsx
+useEffect(() => {
+  console.log("Hello");
+}, []);
+```
+
+Think:
+
+```text
+         useEffect
+             ↓
+       "Run this code"
+             ↓
+          execute
+```
+
+---
+
+# 4. What happens when dependencies change?
+
+This is where the similarity ends.
+
+### `useCallback`
+
+```jsx
+const fn = useCallback(() => {
+  console.log(count);
+}, [count]);
+```
+
+Suppose:
+
+```text
+count = 0
+```
+
+React creates/remembers:
+
+```text
+Function #1
+```
+
+Then:
+
+```text
+count changes → 1
+```
+
+React creates/remembers a **new function reference**:
+
+```text
+Function #2
+```
+
+But **the function doesn't execute automatically**.
+
+---
+
+### `useEffect`
+
+```jsx
+useEffect(() => {
+  console.log(count);
+}, [count]);
+```
+
+When:
+
+```text
+count = 0
+```
+
+effect runs.
+
+Then:
+
+```text
+count changes → 1
+```
+
+React runs the effect again.
+
+So:
+
+```text
+useCallback:
+dependency changes
+       ↓
+new function reference
+       ↓
+doesn't execute
+
+
+useEffect:
+dependency changes
+       ↓
+effect callback executes
+```
+
+---
+
+# 5. One very important distinction
+
+You can think of them like this:
+
+```jsx
+// useCallback
+const handleClick = useCallback(() => {
+  console.log("Clicked");
+}, []);
+```
+
+**Creation/reference management**
+
+versus:
+
+```jsx
+// useEffect
+useEffect(() => {
+  console.log("Component rendered");
+}, []);
+```
+
+**Execution/side effect management**
+
+---
+
+# 6. Is there a "lifecycle" for `useCallback`?
+
+Not really in the same sense as `useEffect`.
+
+`useCallback` participates in React's rendering process:
+
+```text
+Render
+  ↓
+useCallback()
+  ↓
+React checks dependencies
+  ↓
+same dependencies?
+  ├── YES → reuse previous function
+  └── NO  → create/store new function
+```
+
+`useEffect` has a more explicit lifecycle:
+
+```text
+Render
+  ↓
+Commit UI
+  ↓
+Run effect
+  ↓
+Dependency changes?
+  ↓
+Cleanup previous effect
+  ↓
+Run new effect
+```
+
+For example:
+
+```jsx
+useEffect(() => {
+  console.log("start");
+
+  return () => {
+    console.log("cleanup");
+  };
+}, [count]);
+```
+
+That **cleanup concept does not exist for `useCallback`**.
+
+---
+
+# ⭐ Interview-level takeaway
+
+If someone asks:
+
+**"What's the difference between `useCallback` and `useEffect`?"**
+
+A very good simple answer is:
+
+> **`useCallback` memoizes a function reference, whereas `useEffect` runs side-effect code after React commits a render. `useCallback` does not execute the function automatically; `useEffect` does execute its callback according to its dependency rules.**
+
+And remember:
+
+```text
+useMemo      → remembers a VALUE
+useCallback  → remembers a FUNCTION
+useEffect    → RUNS a SIDE EFFECT
+memo         → skips COMPONENT re-render
+```
+
