@@ -26,3 +26,5 @@ However, confusion usually arises because the executor function itself accepts t
 We are calling Executor service just like Java's lambda function.
 
 Here resolve and reject is a callback function which are prewritten fuction made to accept only a value so can't pass another function.
+
+Same thing mentioned in [here](https://github.com/Vivid-Vortex/Misc/blob/987afffa9992219a8ed9789e1477d58973b27f5b/Concepts/FrontEnd/Javascript/Advanced/Promise.md)
