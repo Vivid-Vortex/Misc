@@ -2,7 +2,7 @@ Whenever you pass a function to be executed later, JavaScript developers call it
 
 so that mean either you write that internal function or it's prewritten just like java.
 
-1. **Prewritten inbuilt Function"" - Either you pass a value or function to any prewritten function which are made as such to accept those. If the prewriten function only accepts value you cannn't pass function to it. In java we cann't pass function as an argument to another function. But in Javascript it just like python or golang we can do so so both are acceptable. But in case of prewritten function you cann't do anything on your own if the fucntion doesn't allows.7
+1. **Prewritten inbuilt Function** - Either you pass a value or function to any prewritten function which are made as such to accept those. If the prewriten function only accepts value you cannn't pass function to it. In java we cann't pass function as an argument to another function. But in Javascript it just like python or golang we can do so so both are acceptable. But in case of prewritten function you cann't do anything on your own if the fucntion doesn't allows.7
 
 2. **Custom Function** - You can do anything you want. Pass a value or fuction as an argument, if that custom function you or someone els has createt as such.
 
