@@ -23,4 +23,6 @@ However, confusion usually arises because the executor function itself accepts t
 
 2. reject: A function to call when the operation fails.
 
+We are calling Executor service just like Java's lambda function.
+
 Here resolve and reject is a callback function which are prewritten fuction made to accept only a value so can't pass another function.
