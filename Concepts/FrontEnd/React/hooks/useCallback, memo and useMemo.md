@@ -870,3 +870,397 @@ useEffect    → RUNS a SIDE EFFECT
 memo         → skips COMPONENT re-render
 ```
 
+---
+
+## Difference between useCallback and useEffect
+
+Basically, `useCallback` remembers the **function reference** so that when the component re-renders, React can reuse the previous function reference instead of creating a new function object; unlike `useEffect`, `useCallback` **only remembers the function and does not execute it**, while `useEffect` **executes its enclosed function** after rendering. The `[]` dependency array in `useCallback` means the function reference is recreated only when one of the values inside `[]` changes; otherwise, the same reference is reused. Similarly, the `[]` dependency array in `useEffect` controls when its effect function executes—an empty `[]` means it runs once after the initial mount, while changes to dependencies cause it to run again; its optional cleanup function runs when the component unmoun
+
+Yes — **your core understanding is correct**. There are just **2–3 important corrections** that will make your mental model precise.
+
+# Q: Is my understanding of `useCallback` and `useEffect` correct?
+
+### 1. Your understanding of `useCallback` is correct ✅
+
+You said:
+
+> "`useCallback` just remembers the function reference so that when the component rerenders it will keep that old function reference rather than creating a new function object altogether."
+
+**Exactly.** 👍
+
+For example:
+
+```jsx
+const handleClick = useCallback(() => {
+  console.log("Hello");
+}, []);
+```
+
+Without `useCallback`:
+
+```text
+Render 1 → create Function A
+Render 2 → create Function B
+Render 3 → create Function C
+```
+
+With `useCallback`:
+
+```text
+Render 1 → create Function A
+Render 2 → reuse Function A
+Render 3 → reuse Function A
+```
+
+**Important:** The component itself still re-renders. `useCallback` does **not** stop the parent component from rendering.
+
+It only helps keep the **function reference stable**.
+
+---
+
+# 2. `useCallback` does NOT execute the function ✅
+
+You said:
+
+> "`useCallback` just remembers but does not execute the enclosed function."
+
+Correct.
+
+```jsx
+const handleClick = useCallback(() => {
+  console.log("Hello");
+}, []);
+```
+
+This does **not** print `"Hello"`.
+
+You have to call it:
+
+```jsx
+handleClick();
+```
+
+So:
+
+```text
+useCallback
+     ↓
+remember function
+     ↓
+return function reference
+     ↓
+DO NOT execute
+```
+
+---
+
+# 3. Your understanding of `[]` is mostly correct, but one wording needs correction ⚠️
+
+You said:
+
+> "`[]` means change the function reference only when the states inside `[]` changes."
+
+Almost.
+
+`[]` doesn't specifically mean **states**.
+
+It means **dependencies**.
+
+For example:
+
+```jsx
+const handleClick = useCallback(() => {
+  console.log(name);
+}, [name]);
+```
+
+Here `name` is a dependency.
+
+If `name` changes:
+
+```text
+name = "Deepak"
+       ↓
+name = "John"
+       ↓
+useCallback creates a new function reference
+```
+
+If `name` doesn't change:
+
+```text
+name = "Deepak"
+       ↓
+component re-renders
+       ↓
+same function reference
+```
+
+So the better statement is:
+
+> **The dependency array tells React when the memoized function needs to be replaced with a new function reference.**
+
+And:
+
+```jsx
+useCallback(fn, [])
+```
+
+means:
+
+> **There are no dependencies, so React keeps the same function reference across renders** (for that mounted component instance).
+
+---
+
+# 4. Your `useEffect` understanding is also mostly correct
+
+You said:
+
+> "`useEffect` also the same but it will execute the enclosed function when states inside `[]` changes."
+
+Yes, with the same correction:
+
+**dependencies**, not necessarily states.
+
+```jsx
+useEffect(() => {
+  console.log(name);
+}, [name]);
+```
+
+When `name` changes:
+
+```text
+name changes
+     ↓
+component renders
+     ↓
+React commits the render
+     ↓
+useEffect runs
+```
+
+---
+
+# 5. But `useEffect` + `[]` has an important difference
+
+You said:
+
+> "also on mount, unmount etc."
+
+This needs correction.
+
+### `useEffect(..., [])`
+
+```jsx
+useEffect(() => {
+  console.log("Effect");
+}, []);
+```
+
+Normally:
+
+```text
+Component mounts
+      ↓
+Effect executes
+
+Component re-renders
+      ↓
+Effect does NOT execute again
+
+Component unmounts
+      ↓
+Effect callback does NOT execute again
+```
+
+However, if you return a cleanup function:
+
+```jsx
+useEffect(() => {
+  console.log("Effect");
+
+  return () => {
+    console.log("Cleanup");
+  };
+}, []);
+```
+
+Then:
+
+```text
+MOUNT
+ ↓
+Effect runs
+
+RE-RENDER
+ ↓
+Nothing
+
+UNMOUNT
+ ↓
+Cleanup runs
+```
+
+So **`useEffect` itself doesn't "execute on unmount."**
+
+Its **cleanup function** executes on unmount.
+
+---
+
+# 6. The most important comparison
+
+This is the mental model I recommend you keep:
+
+### `useCallback`
+
+```jsx
+const fn = useCallback(() => {
+  console.log("Hello");
+}, [count]);
+```
+
+Think:
+
+```text
+                 useCallback
+                      ↓
+              "Remember this function"
+                      ↓
+              Function Reference
+                      ↓
+       ┌──────────────┴──────────────┐
+       ↓                             ↓
+ count unchanged               count changed
+       ↓                             ↓
+same function reference        new function reference
+       ↓
+NO automatic execution
+```
+
+---
+
+### `useEffect`
+
+```jsx
+useEffect(() => {
+  console.log("Hello");
+}, [count]);
+```
+
+Think:
+
+```text
+                  useEffect
+                     ↓
+             "Run this side effect"
+                     ↓
+               dependencies
+                     ↓
+       ┌─────────────┴─────────────┐
+       ↓                           ↓
+ count unchanged             count changed
+       ↓                           ↓
+ don't run again              run effect
+```
+
+And:
+
+```text
+Unmount
+   ↓
+cleanup function runs
+```
+
+if you provided one.
+
+---
+
+# 7. One subtle but VERY important point
+
+Don't think:
+
+> "`useCallback` prevents creating a new function."
+
+That's **slightly too simplistic**.
+
+Think:
+
+> **`useCallback` gives you a stable function reference when dependencies haven't changed.**
+
+That's the behavior you care about.
+
+And why does that matter?
+
+Because of `memo`.
+
+```jsx
+const Child = memo(function Child({ onClick }) {
+  ...
+});
+```
+
+Parent:
+
+```jsx
+const handleClick = useCallback(() => {
+  ...
+}, []);
+```
+
+Now:
+
+```text
+Parent re-renders
+       ↓
+useCallback returns SAME function reference
+       ↓
+Child receives same onClick reference
+       ↓
+memo says "props haven't changed"
+       ↓
+Child can skip re-render
+```
+
+That's the **real reason `useCallback` is useful**.
+
+---
+
+# 🧠 Your final mental model
+
+You can memorize this:
+
+```text
+useCallback
+     ↓
+REMEMBER FUNCTION REFERENCE
+     ↓
+does NOT execute it
+
+
+useMemo
+     ↓
+REMEMBER CALCULATED VALUE
+     ↓
+does NOT execute it again unless dependencies change
+
+
+useEffect
+     ↓
+RUN SIDE EFFECT
+     ↓
+runs after render when dependencies require it
+     ↓
+cleanup runs when effect is replaced/unmounted
+```
+
+And the dependency array:
+
+```text
+[]          → no dependencies
+[a]         → depends on a
+[a, b]      → depends on a and b
+```
+
+One final terminology improvement: **`[]` is called the dependency array**, not "state array." Dependencies can be props, state, variables, functions, etc.
+
