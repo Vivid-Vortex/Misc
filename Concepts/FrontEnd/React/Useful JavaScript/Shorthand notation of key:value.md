@@ -19,3 +19,9 @@ Another example where we are retrning object and object key and value name are s
 Here both errors key and value are array with same name so you can simply use only key as below as a shorthand notation.
 
 ![alt text](image-7.png)
+
+---
+
+![alt text](image-10.png)
+
+Same thing happening here as well.
