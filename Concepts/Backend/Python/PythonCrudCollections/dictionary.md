@@ -1,4 +1,7 @@
 ### You can run this in any compiler or online compiler like [onlinegdb](https://www.onlinegdb.com/)
+
+Dic is same as Java map. Both add and update, happens through update method, read happens just like list through indexes. And .keys and .values follows same as java .keys and .values for map. Delete happens throygh java queue similar methods such as pop and extra method like popitem.
+
 ```
 thisdict = {}
 
